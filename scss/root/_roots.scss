@@ -1,0 +1,75 @@
+//-------first styles
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: $font;
+  line-height: 1.62rem;
+  overflow-x: hidden;
+  background: $white-1;
+  color: $black-1;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+i span {
+  font-family: $font;
+}
+
+input,
+textarea,
+select {
+  font-family: $font;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  font-family: $font;
+}
+
+::placeholder {
+  @extend .t-body;
+  color: $gray-1;
+}
+
+:focus-visible {
+  outline: 0;
+}
+
+// ---------------------------------------- default style
+input {
+  border: none;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+
+// -------------------------------------------container style
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1rem 
+}
