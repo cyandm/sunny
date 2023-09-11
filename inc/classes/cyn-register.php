@@ -7,11 +7,9 @@ if (!class_exists('cyn_register')) {
         {
             add_action('init', [$this, 'cyn_post_type_register']);
             add_action('init', [$this, 'cyn_register_admin_menu']);
-
-
         }
 
-//**************************************** add menu in admin menu
+        //**************************************** add menu in admin menu
         public function cyn_register_admin_menu()
         {
             function cyn_add_custom_menus()
@@ -51,7 +49,7 @@ if (!class_exists('cyn_register')) {
             add_action('admin_menu', 'cyn_add_custom_menus');
         }
 
-//************************************ register post type
+        //************************************ register post type
         public function cyn_post_type_register()
         {
             function func_register_post_type($name, $slug, $icon, $menu)
@@ -82,7 +80,7 @@ if (!class_exists('cyn_register')) {
                     'exclude_from_search' => false,
                     'has_archive' => true,
                     'hierarchical' => false,
-//                    'menu_position' = null,
+                    //                    'menu_position' = null,
                     'menu_icon' => $icon,
                     'supports' => array('title', 'editor', 'thumbnail')
                 ];
@@ -137,7 +135,5 @@ if (!class_exists('cyn_register')) {
             $courseFormIcon = "dashicons-email-alt2";
             func_register_post_type($courseFormName, $courseFormSlug, $courseFormIcon, $menu);
         }
-
-
     }
 }
