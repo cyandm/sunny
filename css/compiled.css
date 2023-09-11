@@ -70,8 +70,156 @@
   font-style: normal;
   font-display: swap;
 }
-main {
-  background-color: #fff;
+.flex-r {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography**************/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: "peyda";
+  line-height: 1.62rem;
+  overflow-x: hidden;
+  background: #FEFFFF;
+  color: #1A212A;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+i span {
+  font-family: "peyda";
+}
+
+input,
+textarea,
+select {
+  font-family: "peyda";
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  font-family: "peyda";
+}
+
+::placeholder {
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  color: #8C9094;
+}
+
+:focus-visible {
+  outline: 0;
+}
+
+input {
+  border: none;
+}
+input:focus-visible {
+  outline: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  margin-block: 5rem 1.38rem;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+footer .footer-top {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+footer .footer-top .line {
+  display: flex;
+  flex-direction: row;
+  height: 0.25rem;
+  flex: 1 0 0;
+  background: #FFF48D;
+}
+footer .footer-top .line.right a {
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid transparent;
+  background: #1A212A;
+  color: #FEFFFF;
+  box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+footer .footer-top .line.right a:hover {
+  border: 1px solid #1A212A;
+  background: #FEFFFF;
+  color: #1A212A;
+}
+footer .footer-top .footer-logo {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+}
+footer .footer-top .footer-logo img {
+  width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=compiled.css.map */

@@ -12,5 +12,6 @@
     "w-js": "esbuild ./js/index.js --outfile=./js/dist/scripts.bundle.js --target=es6,chrome58,edge18,firefox54,safari11 --bundle --watch",
     "build-js": "esbuild ./js/index.js --outfile=./js/dist/scripts.bundle.min.js --target=es6,chrome58,edge18,firefox54,safari11 --bundle --minify --sourcemap"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.js"
 }

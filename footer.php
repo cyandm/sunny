@@ -37,11 +37,16 @@ function menu($menuSlug)
 ?>
 <footer class="container">
 	<div class="footer-top">
-		<div class="line right"></div>
-		<div class="footer-logo">
-			
+		<div class="line right">
+			<a href="">test</a>
+			jfjhfefhur
 		</div>
-		<div class="line left"></div>
+		<div class="footer-logo">
+		<?php the_custom_logo() ?>
+		</div>
+		<div class="line left">
+			ffjhrfurfur
+		</div>
 	</div>
 	<div class="widget-row">
 		<?php ?>
