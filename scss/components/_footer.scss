@@ -1,3 +1,33 @@
-footer{
-    
+footer {
+  margin-block-start: 5rem;
+  margin-block-end: 1.38rem;
+  @extend .flex-c;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  .footer-top {
+    @extend .flex-r;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    .line {
+        @extend .flex-r;
+        height: 0.25rem;
+        flex: 1 0 0;
+        background: $yellow-1;
+
+    }
+    .line.right {
+    }
+    .line.left {
+    }
+    .footer-logo {
+        flex-shrink: 0;
+      width: 4rem;
+      height: 4rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
 }

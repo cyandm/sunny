@@ -36,6 +36,13 @@ function menu($menuSlug)
 
 ?>
 <footer class="container">
+	<div class="footer-top">
+		<div class="line right"></div>
+		<div class="footer-logo">
+			
+		</div>
+		<div class="line left"></div>
+	</div>
 	<div class="widget-row">
 		<?php ?>
 		<!-- -------------------first widget -->
@@ -92,9 +99,6 @@ function menu($menuSlug)
 			<?php endif; ?>
 		</div>
 	</div>
-
-
-
 	<div class="sotioal-row"></div>
 </footer>
 
