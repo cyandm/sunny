@@ -25,6 +25,7 @@ body {
 a {
   color: unset;
   text-decoration: none;
+  cursor: pointer;
 }
 
 ul,
@@ -65,6 +66,9 @@ button {
 input {
   border: none;
   &:focus-visible {
+    outline: none;
+  }
+  &:focus {
     outline: none;
   }
 }

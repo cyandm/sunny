@@ -18,6 +18,7 @@ $footerMapRepeater = get_field('footer_contact_map_repeater', $frontId);
 $whataappLink = get_field('footer_whatsapp_link', $frontId);
 $instagramLink = get_field('footer_insta_link', $frontId);
 $telegramLink = get_field('footer_telegram_link', $frontId);
+
 function widget_title($title)
 {
 	if ($title) : ?>
@@ -27,25 +28,30 @@ function widget_title($title)
 function menu($menuSlug)
 {
 	if ($menuSlug) : ?>
-		<div class="menu">
+		<div class="footer-menu">
 			<?php wp_nav_menu(['theme_location' => $menuSlug]) ?>
 		</div>
-<?php endif;
+	<?php endif;
+}
+
+function social_media($socialLink, $icon)
+{
+	if ($socialLink) { ?>
+		<a href="<?= $socialLink ?>"><i class="<?= $icon ?>"></i></a>
+<?php
+	}
 }
 
 
 ?>
 <footer class="container">
 	<div class="footer-top">
-		<div class="line right">
-			<a href="">test</a>
-			jfjhfefhur
+		<div class="line">
 		</div>
 		<div class="footer-logo">
-		<?php the_custom_logo() ?>
+			<?php the_custom_logo() ?>
 		</div>
-		<div class="line left">
-			ffjhrfurfur
+		<div class="line">
 		</div>
 	</div>
 	<div class="widget-row">
@@ -83,28 +89,36 @@ function menu($menuSlug)
 		</div>
 
 		<!-- -------------------fifth widget -->
-		<div class="footer-widget">
+		<div class="footer-widget address-column">
 			<?php widget_title($fifthMenuTitle); ?>
 			<?php if ($footeAddress) : ?>
 				<div class="address-widget">
-					<p></p>
+					<p><?= $footeAddress ?></p>
 				</div>
 			<?php endif; ?>
 		</div>
 
 		<!-- -------------------sixth widget -->
-		<div class="footer-widget">
+		<div class="footer-widget map-column">
 			<?php widget_title($sixthMenuTitle); ?>
 			<?php if ($footerMapRepeater) : ?>
 				<div class="map-widget">
 					<?php foreach ($footerMapRepeater as $map) : ?>
-						<a href="<?= $map['map_link'] ?>"><?= wp_get_attachment_image($map['map_image'], 'thumbnail', false, []); ?>"</a>
+						<a href="<?= $map['map_link'] ?>"><?= wp_get_attachment_image($map['map_image'], 'thumbnail', false, []); ?></a>
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
 		</div>
 	</div>
-	<div class="sotioal-row"></div>
+	<div class="sotioal-row">
+		<?php
+		// -----------telegram
+		$icon = "star";
+		social_media($telegramLink, $icon);
+		social_media($instagramLink, $icon);
+		social_media($whataappLink, $icon);
+		?>
+	</div>
 </footer>
 
 <div class="wp-scripts">
