@@ -2,7 +2,7 @@
 
 footer {
   @include flex(column);
-
+  flex-wrap: wrap;
   margin-block: 5rem 1.38rem;
   gap: 1.5rem;
   align-items: center;
@@ -12,21 +12,15 @@ footer {
     @include flex();
     gap: 0.75rem;
     flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
 
     .line {
       @include flex();
       height: 0.25rem;
       flex: 1 0 0;
       background: $yellow-1;
-    }
-
-    .line.right {
-      a {
-        @include btn();
-      }
-    }
-
-    .line.left {
+      width: 100%;
     }
 
     .footer-logo {
@@ -39,6 +33,73 @@ footer {
       }
     }
 
+  }
+
+  .widget-row {
+    @include flex();
+    flex-wrap: wrap;
+    width: 100%;
+    .footer-widget {
+      flex: 1;
+      h4 {
+        @include font_style($type: h4);
+        margin-bottom: 1rem;
+      }
+      div {
+        @include font_style($type: body);
+        color: $gray-1;
+        li {
+          margin-bottom: 0.25rem;
+        }
+      }
+      .map-widget {
+        @include flex();
+        gap: 0.62rem;
+      }
+      .numbers {
+        @include flex(column);
+        gap: 0.25rem;
+        color: $blue-2;
+      }
+
+      @media (width<=992px) {
+        flex-basis: 33%;
+      }
+      @media (width<=768px) {
+        flex-basis: 50%;
+      }
+    }
+    .address-column {
+      @media (width<=768px) {
+        flex-basis: 100%;
+      }
+    }
+    @media (width<=992px) {
+      row-gap: 1.75rem;
+    }
+  }
+  .sotioal-row {
+    @include flex();
+    gap: 1rem;
+    i {
+      @include flex();
+      width: 2rem;
+      height: 2rem;
+      background-color: $pink-1;
+      border-radius: 0.25rem;
+      box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+      &::before {
+        font-size: 1.5rem;
+        color: $white-1;
+      }
+    }
+    @media (width<=768px) {
+      width: 100%;
+      justify-content: start;
+    }
+  }
+  @media (width<=768px) {
+    gap: 1rem;
   }
 
 }

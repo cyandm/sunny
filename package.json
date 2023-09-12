@@ -9,7 +9,7 @@
     "b-scss": "sass ./scss/index.scss ./css/compiled.css -s compressed",
     "b-pre-css": "postcss ./css/compressed.css -o ./css/final.css --use autoprefixer -m",
     "build-css": "npm run b-scss && npm run b-pre-css",
-    "w-js": "esbuild ./js/index.js --outfile=./js/dist/scripts.bundle.js --target=es6,chrome58,edge18,firefox54,safari11 --bundle --watch",
+    "w-js": "esbuild ./js/index.js --bundle --outfile=./js/dist/scripts.bundle.min.js --target=es6,chrome58,edge18,firefox54,safari11 --watch",
     "build-js": "esbuild ./js/index.js --outfile=./js/dist/scripts.bundle.min.js --target=es6,chrome58,edge18,firefox54,safari11 --bundle --minify --sourcemap"
   },
   "license": "ISC",

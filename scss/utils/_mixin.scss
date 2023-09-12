@@ -63,6 +63,7 @@
   $background: $black-1;
   $color: $white-1;
   $box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+  transition: all 0.3s ease-in-out;
 
   @if ($icon) {
     $padding: 0.5rem 1.25rem 0.5rem 1.5rem;
@@ -109,4 +110,66 @@
     background: $white-1;
     color: $black-1;
   }
+}
+
+//**************************** serach form
+@mixin search_form($hasIcon: true, $IconSide: right) {
+  form {
+    @include flex();
+    width: 13.125rem;
+    padding: 0.5rem 1rem 0.5rem 1.25rem;
+    border-radius: 2.5rem;
+    border: 1px solid $gray-2;
+    background: $white-2;
+    gap: 0;
+  }
+
+  > * {
+    @include flex();
+
+    @if ($hasIcon) {
+      gap: 0.25rem;
+    }
+
+    @if ($hasIcon)  {
+      @if($IconSide == "left"){
+
+
+      justify-content: space-between;
+      i {
+        &::before {
+          color: $blue-2;
+        }
+      }
+    }
+    }
+    width: 100%;
+    color: $gray-1;
+
+    i {
+      @include flex();
+      &::before {
+        font-size: 1.5rem;
+      }
+    }
+
+    input {
+      background: $white-2;
+    }
+  }
+  &:focus {
+    border: 1px solid $black-1;
+    > * {
+      color: $black-1;
+    }
+  }
+}
+
+//********************* before after mixin
+@mixin before_after($content, $color, $size) {
+  content: $content;
+  font-family: perda;
+  color: $color;
+  font-size: $size;
+  transition: all 0.3s ease-in-out;
 }

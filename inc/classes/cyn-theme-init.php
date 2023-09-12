@@ -26,7 +26,7 @@ if (!class_exists('cyn-theme-init')) {
 
 
 
-			wp_enqueue_script('cyn-global', get_stylesheet_directory_uri() . '/js/dist/scripts.bundle.js', [], false, true); //When @build must change to scripts.bundle.min.js 
+            wp_enqueue_script('cyn-script', get_stylesheet_directory_uri() . '/js/dist/scripts.bundle.min.js', [], null, true);
 			wp_dequeue_script('global-styles');
 		}
 
