@@ -30,7 +30,12 @@
     font-size: 1rem;
     font-weight: 500;
   }
-
+  @if ($type== "body-small") {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
   @if ($type == "body") {
     font-size: 1rem;
     font-weight: 400;
@@ -109,6 +114,13 @@
     border: 1px solid $black-1;
     background: $white-1;
     color: $black-1;
+    @if ($icon) {
+      i {
+        &::before {
+          color: $black-1;
+        }
+      }
+    }
   }
 }
 
@@ -122,54 +134,59 @@
     border: 1px solid $gray-2;
     background: $white-2;
     gap: 0;
-  }
 
-  > * {
-    @include flex();
+    > div {
+      @include flex();
 
-    @if ($hasIcon) {
-      gap: 0.25rem;
-    }
+      @if ($hasIcon) {
+        gap: 0.25rem;
+      }
 
-    @if ($hasIcon)  {
-      @if($IconSide == "left"){
-
-
-      justify-content: space-between;
-      i {
-        &::before {
-          color: $blue-2;
+      @if ($hasIcon) {
+        @if ($IconSide == "left") {
+          justify-content: space-between;
+          i {
+            &::before {
+              color: $blue-2;
+            }
+          }
         }
       }
-    }
-    }
-    width: 100%;
-    color: $gray-1;
+      align-items: center;
+      width: 100%;
+      color: $gray-1;
 
-    i {
-      @include flex();
-      &::before {
-        font-size: 1.5rem;
+      i {
+        @include flex();
+        &::before {
+          font-size: 1.5rem;
+        }
+      }
+
+      input {
+        background: $white-2;
+        @include font_style(body);
       }
     }
-
-    input {
-      background: $white-2;
-    }
-  }
-  &:focus {
-    border: 1px solid $black-1;
-    > * {
-      color: $black-1;
+    &:focus {
+      border: 1px solid $black-1;
+      > * {
+        color: $black-1;
+      }
     }
   }
 }
 
 //********************* before after mixin
-@mixin before_after($content, $color, $size) {
-  content: $content;
-  font-family: perda;
-  color: $color;
-  font-size: $size;
-  transition: all 0.3s ease-in-out;
+@mixin sudo($sudo, $content, $color, $size: 1.5rem) {
+  position: relative;
+
+  &::#{$sudo} {
+    content: $content;
+    font-family: "icomoon" !important;
+    color: $color;
+    font-size: $size;
+    transition: all 0.3s ease-in-out;
+    @content;
+  }
 }

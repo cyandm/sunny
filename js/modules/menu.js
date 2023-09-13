@@ -1,7 +1,7 @@
 // ************************************************ mobile menu
-let mobile = document.querySelector(".hamburger-menu");
+const mobile = document.querySelector(".hamburger-menu");
 
-let close_mobile = document.getElementById("close-menu");
+const close_mobile = document.getElementById("close-menu");
 
 if (mobile) {
   (function () {
@@ -18,25 +18,22 @@ if (mobile) {
     });
   })();
 
-  let mobileMenuContainer = document.querySelector(".menu-contain");
-
-  let menuItemsHasChildren = mobileMenuContainer.querySelectorAll(
+  const menuItemsHasChildren = document.querySelectorAll(
     "li.menu-item-has-children"
   );
 
-  for (let i = 0; i < menuItemsHasChildren.length; i++) {
-    menuItemsHasChildren[i].addEventListener("click", function (event) {
-      event.stopPropagation();
-      let subMenu = this.getElementsByClassName("sub-menu");
-      if (subMenu[0].classList.contains("active-sub")) {
-        subMenu[0].style.height = 0;
-        subMenu[0].classList.remove("active-sub");
-        menuItemsHasChildren[i].classList.remove("active-2");
+  menuItemsHasChildren.forEach((menuItem) => {
+    menuItem.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      const subMenu = menuItem.querySelector("ul");
+      if (menuItem.classList.contains("active-menu")) {
+        menuItem.classList.remove("active-menu");
+        subMenu.style.height = 0;
       } else {
-        subMenu[0].classList.add("active-sub");
-        subMenu[0].style.height = subMenu[0].scrollHeight + "px";
-        menuItemsHasChildren[i].classList.add("active-2");
+        menuItem.classList.add("active-menu");
+        subMenu.style.height = subMenu.scrollHeight + "px";
       }
     });
-  }
+  });
 }

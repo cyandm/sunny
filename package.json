@@ -13,5 +13,8 @@
     "build-js": "esbuild ./js/index.js --outfile=./js/dist/scripts.bundle.min.js --target=es6,chrome58,edge18,firefox54,safari11 --bundle --minify --sourcemap"
   },
   "license": "ISC",
-  "main": "index.js"
+  "main": "index.js",
+  "dependencies": {
+    "gsap": "^3.12.2"
+  }
 }

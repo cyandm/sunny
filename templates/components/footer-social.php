@@ -10,16 +10,16 @@ $telegramLink = get_field('footer_telegram_link', $frontId);
     <?php
     $icon = "star";
     if ($telegramLink) { ?>
-        <a href="<?= $telegramLink ?>"><i class=""></i></a>
-        <?php
+        <a href="<?= $telegramLink ?>"><i class="icon-telegram"></i></a>
+    <?php
     }
     if ($instagramLink) { ?>
-        <a href="<?= $instagramLink ?>"><i class=""></i></a>
-        <?php
+        <a href="<?= $instagramLink ?>"><i class="icon-insta"></i></a>
+    <?php
     }
     if ($whataappLink) { ?>
-        <a href="<?= $whataappLink ?>"><i class=""></i></a>
-        <?php
+        <a href="<?= $whataappLink ?>"><i class="icon-whatsapp"></i></a>
+    <?php
     }
     ?>
 </div>
