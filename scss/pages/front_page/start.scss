@@ -1,0 +1,12 @@
+@use "../../utils/index" as *;
+
+.start-section{
+  .start-content{
+    @include flex();
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    >div{
+      flex: 1;
+    }
+  }
+}

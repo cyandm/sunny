@@ -12,7 +12,11 @@
 
 @mixin font_style($type) {
   @include base_font();
+  @if ($type == "t1") {
+    font-size: 8.75rem;
+    font-weight: 700;
 
+  }
   @if ($type == "h1") {
     font-size: 2.75rem;
   }
@@ -158,6 +162,7 @@
 
       i {
         @include flex();
+
         &::before {
           font-size: 1.5rem;
         }
@@ -168,8 +173,10 @@
         @include font_style(body);
       }
     }
+
     &:focus {
       border: 1px solid $black-1;
+
       > * {
         color: $black-1;
       }
@@ -178,7 +185,7 @@
 }
 
 //********************* before after mixin
-@mixin sudo($sudo, $content, $color, $size: 1.5rem) {
+@mixin sudo_icon($sudo, $content:"", $color, $size: 1.5rem) {
   position: relative;
 
   &::#{$sudo} {
@@ -190,3 +197,33 @@
     @content;
   }
 }
+
+@mixin sudo($sudo,$width, $height, $background) {
+  &::#{$sudo} {
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    @content;
+  }
+}
+
+
+//@mixin sudo($pseudo, $content:"", $color, $size: 1.5rem, $icon: true, $width, $height) {
+//
+//  &::#{$pseudo} {
+//    content: $content;
+//    transition: all 0.3s ease-in-out;
+//
+//    @if $icon {
+//      font-family: "icomoon" !important;
+//      color: $color;
+//      font-size: $size;
+//    } @else {
+//      width: $width;
+//      height: $height;
+//      background: $color;
+//    }
+//    @content;
+//  }
+//}

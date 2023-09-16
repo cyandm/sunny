@@ -15,5 +15,11 @@
     get_template_part('templates/pages/front/shop');
     get_template_part('templates/pages/front/contacts');
     ?>
-</main>
+
+
+
+        </main>
+
+    </div>
+<!--</main>-->
 <?php get_footer(); ?>

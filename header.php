@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <header class=container "<?= (is_front_page() || is_category('category')) ? 'header-white' : '' ?>">
-        <div class="header-large-view">
+    <header class= "<?= (is_front_page() || is_category('category')) ? 'header-white' : '' ?>">
+        <div class="container header-large-view">
             <div class="menu-column">
                 <?php the_custom_logo() ?>
                 <?php wp_nav_menu(['theme_location' => 'header']);
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="header-mobile">
+        <div class="container header-mobile">
             <div class="hamburger-menu">
 
                 <i class="icon-hamberger"></i>
