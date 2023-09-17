@@ -1,0 +1,34 @@
+@use "../../utils/index" as *;
+
+.front-contact-section {
+  .front-contact-content {
+    @include flex();
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    > div {
+      @include flex(row, space-between, start);
+      @include font_style(body);
+
+      position: relative;
+      border-radius: 2.5rem;
+      padding: 2rem 1.5rem;
+
+      h4 {
+        @include font_style(h4);
+      }
+    }
+    .contact-box-right{
+      background: $pink-1;
+    }
+
+    .contact-box-left{
+      background: $yellow-1;
+    }
+
+    .contact-box-wide{
+      background: $blue-1;
+    }
+  }
+
+}

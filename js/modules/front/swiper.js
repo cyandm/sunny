@@ -17,3 +17,20 @@ if (coachSlider) {
     //   },
   });
 }
+
+
+// ****************************** testimonial swiper slider
+const testimonialSlider = document.querySelector(".testimonial-slider");
+
+if (testimonialSlider) {
+  const swiper = new Swiper(testimonialSlider, {
+    slidesPerView: 3.2,
+    spaceBetween: 16,
+    loop: true,
+
+    //   autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: false,
+    //   },
+  });
+}

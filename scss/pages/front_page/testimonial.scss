@@ -1,0 +1,36 @@
+
+@use "../../utils/index" as *;
+
+.testimonial-section{
+  .front-testimonial-content{
+    @include flex();
+    align-items: start;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    > div {
+      flex: 1;
+    }
+    .video-container{
+
+    }
+    .testimonial-content{
+      @include flex(column);
+
+      .person_info{
+
+      }
+      .other-person-content{
+        h3{
+
+        }
+        .testimonial-slider{
+          .swiper-slide{
+            img{
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,20 @@
+<?php
+$termID = $cat->term_id;
+$newQueryArgs = [
+    'post_type' => "post",
+    'posts_per_page' => 999,
+    'tax_query' => [
+        [
+            'taxonomy' => 'category',
+            'field'    => 'term_id',
+            'terms'     => $termID,
+            'operator'  => 'IN'
+        ]
+    ]
+];
+$allProducts = new WP_Query($newQueryArgs);
+?>
+
 <section id="blog" class="blog-section">
     <div class="container">
         <div class="section-title">
@@ -17,7 +34,9 @@
             </ul>
         </div>
         <div class="row-front-blog">
-        <div class="front-blog-box"></div>
+        <div class="front-blog-box">
+
+        </div>
         </div>
     </div>
     <div class="breadcrumb-btn">

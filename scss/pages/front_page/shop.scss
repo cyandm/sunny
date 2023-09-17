@@ -1,0 +1,16 @@
+@use "../../utils/index" as *;
+
+.shop-section{
+
+  .shop-content{
+    @include flex();
+    gap: 1rem;
+    flex-wrap: wrap;
+    >*{
+      flex: 1 1 25%;
+      border-radius: 2.5rem;
+      border: 1px solid $gray-2;
+      background: $white-1;
+    }
+  }
+}
