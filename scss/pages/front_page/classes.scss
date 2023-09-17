@@ -1,45 +1,80 @@
 @use "../../utils/index" as *;
 
-.section-title{
+.section-title {
   @include flex();
   width: 100%;
   align-items: center;
   justify-content: space-between;
   margin-block-start: 1.5rem;
   margin-block-end: 0.75rem;
-  h2{
+  h2 {
     @include font_style(h1);
   }
-  a{
-    @include btn($red: false);
-
+  a {
+    @include btn($red: true);
   }
 }
 
-.breadcrumb-btn{
+.breadcrumb-btn {
   @include flex();
   width: 100%;
   align-items: center;
   justify-content: space-between;
   margin-block-start: 1.5rem;
-  a.btn-right{
-    @include btn(true,true);
-  }
-  a.btn-left{
-    @include btn(true,true);
+  a {
+    @include btn($icon: true, $side: true) {
+      color: $black-1;
+    }
   }
 }
 
-
 //----------------------------- class section style
-#classes{
-  .class-content{
-    @include flex();
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    >div{
-      flex: 1;
+#classes {
+  .coach-slider {
+    .swiper-slide {
+      @include flex();
+      align-items: start;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      > div {
+        flex: 1;
+      }
+
+      .front-coach-img {
+      }
+
+      .front-coach-content {
+        @include flex(column);
+        align-items: start;
+        gap: 0.62rem;
+
+        h3 {
+          @include font_style(h2);
+          @include text_overflow(1);
+        }
+
+        .description {
+          color: $black-1;
+          p {
+            @include text_overflow(5);
+          }
+        }
+        h4 {
+          @include font_style(h3);
+        }
+        .studets-row {
+          @include flex();
+          gap: 1rem;
+          flex-wrap: wrap;
+          .student-info {
+            flex: 1;
+            img {
+              height: 14.25rem;
+              border-radius: 1.5rem;
+            }
+          }
+        }
+      }
     }
-    .
   }
 }

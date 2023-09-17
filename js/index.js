@@ -1,2 +1,2 @@
 import "./modules/menu";
-import "./modules/front-gsap";
+import "./modules/front/index";
