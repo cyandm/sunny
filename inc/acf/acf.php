@@ -196,7 +196,7 @@ if ( ! class_exists( 'ACF' ) ) {
 			acf_include( 'includes/forms/form-nav-menu.php' );
 			acf_include( 'includes/forms/form-post.php' );
 			acf_include( 'includes/forms/form-gutenberg.php' );
-			acf_include( 'includes/forms/form-taxonomy-product.php' );
+			acf_include( 'includes/forms/form-taxonomy.php' );
 			acf_include( 'includes/forms/form-user.php' );
 			acf_include( 'includes/forms/form-widget.php' );
 
@@ -270,7 +270,7 @@ if ( ! class_exists( 'ACF' ) ) {
 			// Add post types and taxonomies.
 			if ( acf_get_setting( 'enable_post_types' ) ) {
 				acf_include( 'includes/post-types/class-acf-post-type.php' );
-				acf_include( 'includes/post-types/class-acf-taxonomy-product.php' );
+				acf_include( 'includes/post-types/class-acf-taxonomy.php' );
 			}
 
 			// Include fields.
@@ -294,7 +294,7 @@ if ( ! class_exists( 'ACF' ) ) {
 			acf_include( 'includes/fields/class-acf-field-post_object.php' );
 			acf_include( 'includes/fields/class-acf-field-page_link.php' );
 			acf_include( 'includes/fields/class-acf-field-relationship.php' );
-			acf_include( 'includes/fields/class-acf-field-taxonomy-product.php' );
+			acf_include( 'includes/fields/class-acf-field-taxonomy.php' );
 			acf_include( 'includes/fields/class-acf-field-user.php' );
 			acf_include( 'includes/fields/class-acf-field-google-map.php' );
 			acf_include( 'includes/fields/class-acf-field-date_picker.php' );
@@ -322,7 +322,7 @@ if ( ! class_exists( 'ACF' ) ) {
 			acf_include( 'includes/locations/class-acf-location-post-status.php' );
 			acf_include( 'includes/locations/class-acf-location-post-format.php' );
 			acf_include( 'includes/locations/class-acf-location-post-category.php' );
-			acf_include( 'includes/locations/class-acf-location-post-taxonomy-product.php' );
+			acf_include( 'includes/locations/class-acf-location-post-taxonomy.php' );
 			acf_include( 'includes/locations/class-acf-location-post.php' );
 			acf_include( 'includes/locations/class-acf-location-page-template.php' );
 			acf_include( 'includes/locations/class-acf-location-page-type.php' );
@@ -332,7 +332,7 @@ if ( ! class_exists( 'ACF' ) ) {
 			acf_include( 'includes/locations/class-acf-location-current-user-role.php' );
 			acf_include( 'includes/locations/class-acf-location-user-form.php' );
 			acf_include( 'includes/locations/class-acf-location-user-role.php' );
-			acf_include( 'includes/locations/class-acf-location-taxonomy-product.php' );
+			acf_include( 'includes/locations/class-acf-location-taxonomy.php' );
 			acf_include( 'includes/locations/class-acf-location-attachment.php' );
 			acf_include( 'includes/locations/class-acf-location-comment.php' );
 			acf_include( 'includes/locations/class-acf-location-widget.php' );

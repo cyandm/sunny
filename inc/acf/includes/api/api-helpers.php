@@ -3027,7 +3027,7 @@ function acf_maybe_get_GET( $key = '', $default = null ) {
 function acf_get_attachment( $attachment ) {
 
 	// Allow filter to short-circuit load attachment logic.
-	// Alternatively, this filter may be used to switch _blogs.scss for multisite media functionality.
+	// Alternatively, this filter may be used to switch blogs for multisite media functionality.
 	$response = apply_filters( 'acf/pre_load_attachment', null, $attachment );
 	if ( $response !== null ) {
 		return $response;

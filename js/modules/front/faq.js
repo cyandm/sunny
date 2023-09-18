@@ -1,5 +1,6 @@
 // ******************************************************faq script
 const acardion = document.querySelectorAll(".accardion");
+
 acardion.forEach((wrapper) => {
   if (wrapper.classList.contains("show")) {
     const divContain = wrapper.querySelector(".answer");
@@ -9,6 +10,7 @@ acardion.forEach((wrapper) => {
   const span = wrapper.querySelector(".question");
   span.addEventListener("click", (e) => {
     const contain = wrapper.querySelector(".answer");
+
     if (wrapper.classList.contains("show")) {
       wrapper.classList.remove("show");
       contain.style.maxHeight = 0;

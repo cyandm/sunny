@@ -66,7 +66,7 @@ if ( ! class_exists( 'ACF_Taxonomy' ) ) {
 			if ( is_admin() ) {
 				acf_include( 'includes/admin/admin-internal-post-type-list.php' );
 				acf_include( 'includes/admin/admin-internal-post-type.php' );
-				acf_include( 'includes/admin/post-types/admin-taxonomy-product.php' );
+				acf_include( 'includes/admin/post-types/admin-taxonomy.php' );
 				acf_include( 'includes/admin/post-types/admin-taxonomies.php' );
 			}
 

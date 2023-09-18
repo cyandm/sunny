@@ -1,0 +1,76 @@
+@use "../../utils/index" as *;
+
+.faq-section {
+  .faq-content {
+    @include flex();
+    align-items: start;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    > div {
+      flex: 1;
+    }
+    .faq-drop-down {
+      @include flex(column);
+      padding: 1.625rem;
+      border-radius: 2.5rem;
+      border: 1px solid $gray-2;
+      background: $white-1;
+
+      .accardion {
+        @include flex(column);
+        @include font_style(body);
+        align-items: start;
+        border-bottom: 1px solid $gray-2;
+        padding: 1rem 0;
+
+        .question {
+          @include flex();
+
+          cursor: pointer;
+          color: $black-1;
+          justify-content: space-between;
+          width: 100%;
+          i {
+            @include flex();
+            width: 2rem;
+            height: 2rem;
+            background: $white-1;
+            border: 1px solid $pink-1;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out;
+
+            &::before {
+              font-size: 1.5rem;
+              color: $pink-1;
+            }
+          }
+        }
+        .answer {
+          color: $gray-1;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease-in-out;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      .accardion.show {
+        .question {
+          i {
+            background: $pink-1;
+            transform: rotate(-90deg);
+            &::before {
+              color: $white-1;
+            }
+          }
+        }
+      }
+    }
+    .faq-img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

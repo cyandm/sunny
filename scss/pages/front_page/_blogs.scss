@@ -1,0 +1,80 @@
+@use "../../utils/index" as *;
+
+.blog-section{
+
+    .front-blog-content{
+        article{
+            position: relative;
+    height: 150px;
+overflow: hidden;
+        .row-blog{
+            @include flex();
+
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            transition: all 0.3s ease-in-out;
+            gap: 1rem;
+            flex-wrap: wrap;
+            >*{
+                flex: 1;
+                transition: all 1s ease-in-out;
+            }
+         
+        }
+        .row-blog.active-blogs{
+            opacity: 1;
+            visibility: visible;
+            .active{
+                flex: 2;
+            }
+        }
+    
+    }
+} 
+
+}
+
+.blog-tab{
+    border-bottom: 1px solid $yellow-1;
+    margin-block-end: 0.75rem;
+        ul{
+            @include flex();
+
+justify-content: start;
+
+@media (width<=768px) {
+    display: none;
+    
+}
+li{
+    @include font_style(body);
+    padding: 0.75rem 1.625rem 0.5rem 1.625rem;
+    pointer:curser;
+
+
+}
+li.active-cat{
+    position: relative;
+    @include sudo(before,100%,100%,$yellow-1) {
+     border-radius: 2.5rem 2.5rem 0rem 0rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+}
+        }    
+
+        }
+
+        .blog-tab-mobile{
+            display: none;
+            @media (width<=768px) {
+                display: flex;
+                
+            }
+        }
+    
