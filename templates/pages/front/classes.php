@@ -1,69 +1,61 @@
 <?php
 $frontId = get_option('page_on_front');
-
 $title = get_field('coach_section_title', $frontId);
 $btnTitle = get_field('coach_section_btn_title', $frontId);
 $btnLink = get_field('coach_section_btn_link', $frontId);
-
-$coches = get_field('choose_coches', $frontId);
+$coaches = get_field('choose_coaches', $frontId);
 $topStudentTitle = get_field('top_student_title', $frontId);
-
 ?>
+
 <section id="classes" class="full-screen">
     <div class="container">
-        <?Php if ($title) : ?>
+        <?php if ($title) : ?>
             <div class="section-title">
-                <h2><?= $title ?></h2>
-                <?Php if ($btnTitle) : ?>
-                    <a href="<?= $btnLink ?>"><?= $btnTitle ?></a>
-                <?php endif ?>
+                <h2><?= esc_html($title) ?></h2>
+                <?php if ($btnTitle && $btnLink) : ?>
+                    <a href="<?= esc_url($btnLink) ?>"><?= esc_html($btnTitle) ?></a>
+                <?php endif; ?>
             </div>
-        <?php endif ?>
+        <?php endif; ?>
+
         <div class="swiper coach-slider">
             <div class="swiper-wrapper">
-                <?php foreach ($coches as $coche) :
-                    if (is_array($coches) && count($coches) > 0) : ?>
+                <?php foreach ($coaches as $coach) :
+                    if (is_array($coaches) && count($coaches) > 0) :
+                        ?>
                         <div class="swiper-slide">
                             <div class="front-coach-img">
                                 <div class="shape top-circle"></div>
                                 <div class="img">
-                                    <?= wp_get_attachment_image(get_post_thumbnail_id($coche->ID), 'full', false, []);
-                                    ?>
+                                    <?= wp_get_attachment_image(get_post_thumbnail_id($coach->ID), 'full', false, []); ?>
                                     <div class="img-shadow"></div>
                                 </div>
                             </div>
                             <div class="front-coach-content">
-                                <h3><?= $coche->post_title ?></h3>
-
+                                <h3><?= esc_html($coach->post_title) ?></h3>
                                 <div class="description">
-                                    <?= $coche->post_content ?>
+                                    <?= wp_kses_post($coach->post_content) ?>
                                 </div>
 
                                 <?php if ($topStudentTitle) : ?>
-                                    <h4><?= $topStudentTitle ?></h4>
+                                    <h4><?= esc_html($topStudentTitle) ?></h4>
                                 <?php endif;
-                                $topStudents = get_field('choose_students', $coche->ID);
+                                $topStudents = get_field('choose_students', $coach->ID);
 
-                                if (is_array($topStudents) && count($topStudents) > 0) : ?>
-
-                                    <div class="studets-row">
+                                if (is_array($topStudents) && count($topStudents) > 0) :
+                                    ?>
+                                    <div class="students-row">
                                         <?php foreach ($topStudents as $student) : ?>
                                             <div class="student-info">
-                                                <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []);
-                                                ?>
+                                                <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []); ?>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
-
                                 <?php endif; ?>
                             </div>
                         </div>
                     <?php endif; ?>
-
                 <?php endforeach; ?>
-
-
-
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>

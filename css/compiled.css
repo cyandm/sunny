@@ -991,6 +991,11 @@ header .header-large-view .menu-column ul.menu li.menu-item-has-children ul.sub-
   white-space: nowrap;
   width: 100%;
 }
+header .header-large-view .menu-column ul.menu li.menu-item-has-children ul.sub-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
 header .header-large-view .menu-column ul.menu li.menu-item-has-children:hover ul.sub-menu {
   opacity: 1;
   visibility: visible;

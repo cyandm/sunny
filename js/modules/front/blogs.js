@@ -1,73 +1,74 @@
-// ******************************************tab click for front page
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to set the height of an element based on its content
+    function setElementHeight(element) {
+        element.parentElement.style.height = element.clientHeight + "px";
+    }
 
-// first height for default reload
-function heightFunc(height) {
-  height.parentElement.style.height = height.clientHeight + "px";
-}
+    // Function to add the "active" class to the first element in a list
+    function activateFirstElement(elements) {
+        if (elements.length > 0) {
+            elements[0].classList.add("active");
 
-const firstHeight = document.querySelector(".active-blogs");
-heightFunc(firstHeight);
-window.onresize = function (event) {
-  heightFunc(firstHeight);
-};
-
-// mobile or large view
-let windowWidth = window.innerWidth;
-let tabCategory;
-if (windowWidth <= 992) {
-  tabCategory = document.querySelector("#cat-select-mobile");
-} else {
-  tabCategory = document.querySelectorAll(".category-tab");
-}
-
-// tab loop landing
-tabCategory.forEach((category) => {
-  category.addEventListener("click", (e) => {
-    category.classList.add("active-cat");
-    tabCategory.forEach((cat) => {
-      if (cat != category) {
-        cat.classList.remove("active-cat");
-      }
-    });
-
-    const blogs = document.querySelectorAll(".row-blog");
-
-    blogs.forEach((blogs) => {
-      // get slug attribute from category
-      const slug = category.getAttribute("data-slug");
-      console.log(slug);
-      if (blogs.classList.contains(slug)) {
-        blogs.classList.add("active-blogs");
-        heightFunc(blogs);
-        window.onresize = function (event) {
-          heightFunc(blogs);
-        };
-      } else {
-        blogs.classList.remove("active-blogs");
-      }
-    });
-
-    // ****************************** add active class in first child
-    const cardBlogs = document.querySelectorAll(".active-blogs .cart-blog");
-
-    cardBlogs[0].classList.add("active");
-
-    cardBlogs.forEach((blog) => {
-      blog.addEventListener("mouseover", () => {
-        if (blog.classList.contains("active")) {
-          blog.classList.remove("active");
-        } else {
-          blog.classList.add("active");
+            elements.forEach((element) => {
+                element.addEventListener("mouseover", () => {
+                    if (!element.classList.contains("active")) {
+                        elements.forEach((el) => {
+                            el.classList.remove("active");
+                        });
+                        element.classList.add("active");
+                    }
+                });
+            });
         }
-        blog.classList.add("active");
-        cardBlogs.forEach((cart) => {
-          if (cart != blog) {
-            cart.classList.remove("active");
-          }
-        });
-      });
-    });
-  });
-});
+    }
 
-// tab loop for mobile
+    // Set the height for the first element with class "active-blogs"
+    const firstHeight = document.querySelector(".active-blogs");
+    setElementHeight(firstHeight);
+    window.onresize = function (event) {
+        setElementHeight(firstHeight);
+    };
+
+    // Determine the appropriate category tabs based on screen width
+    let windowWidth = window.innerWidth;
+    let tabCategory;
+    if (windowWidth <= 992) {
+        tabCategory = document.querySelector("#cat-select-mobile");
+    } else {
+        tabCategory = document.querySelectorAll(".category-tab");
+    }
+
+    // Event listener for category tabs
+    tabCategory.forEach((category) => {
+        category.addEventListener("click", (e) => {
+            category.classList.add("active-cat");
+            tabCategory.forEach((cat) => {
+                if (cat != category) {
+                    cat.classList.remove("active-cat");
+                }
+            });
+
+            // Get the slug attribute from the clicked category
+            const slug = category.getAttribute("data-slug");
+            console.log(slug);
+
+            // Toggle the "active-blogs" class based on the slug
+            const blogs = document.querySelectorAll(".row-blog");
+            blogs.forEach((blog) => {
+                if (blog.classList.contains(slug)) {
+                    blog.classList.add("active-blogs");
+                    setElementHeight(blog);
+                    window.onresize = function (event) {
+                        setElementHeight(blog);
+                    };
+                } else {
+                    blog.classList.remove("active-blogs");
+                }
+            });
+
+            // Activate the first child of "active-blogs" after the toggle
+            const cardBlogs = document.querySelectorAll(".active-blogs .cart-blog");
+            activateFirstElement(cardBlogs);
+        });
+    });
+});

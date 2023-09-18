@@ -5,19 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/modules/front/blogs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/modules/front/testimonial.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/pages/front_page/contact.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/pages/front_page/package.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/pages/front_page/shop.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/pages/front_page/testimonial.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modules/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/front/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/front/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/front/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/front/swiper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/front/blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/front/blogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/front/testimonial.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/front/testimonial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_card-blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-blog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/front/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/contacts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/classes.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/classes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/faq.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/hero.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/hero.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/start.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/start.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/front/testimonial.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/testimonial.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/maryam/Local Sites/shahran-clinic-/app/public/wp-content/themes/shahran-clinic",
+    "last_opened_file_path": "C:/Users/maryam/Local Sites/sunny/app/public/wp-content/themes/sunny",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,7 +88,8 @@
       <workItem from="1694859925789" duration="950000" />
       <workItem from="1694860967075" duration="14059000" />
       <workItem from="1694880183979" duration="11592000" />
-      <workItem from="1694967723131" duration="11947000" />
+      <workItem from="1694967723131" duration="12123000" />
+      <workItem from="1695057272080" duration="7757000" />
     </task>
     <servers />
   </component>

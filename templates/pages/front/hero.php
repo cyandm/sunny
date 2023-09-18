@@ -1,17 +1,12 @@
 <?php
 $frontId = get_option('page_on_front');
-
 $heroSliders = get_field('front_page_hero_section', $frontId);
-
 ?>
 
 <section id="panels" class="scroll-section panel-section">
-
     <div id="panels-container" class="panels-container" style="width: <?= count($heroSliders) * 100 ?>%;">
-        <?php
-        $num = 1;
-        foreach ($heroSliders as $heroSlide): ?>
-            <article id="panel-<?= $num ?>" class="slide panel full-screen <?= $heroSlide['hero_slider_bg_color'] ?>">
+        <?php foreach ($heroSliders as $num => $heroSlide) : ?>
+            <article id="panel-<?= $num + 1 ?>" class="slide panel full-screen <?= $heroSlide['hero_slider_bg_color'] ?>">
                 <div class="row">
                     <div class="container slide-container">
                         <div class="shape  <?= $heroSlide['hero_slider_shape'] ?>"></div>
@@ -31,29 +26,18 @@ $heroSliders = get_field('front_page_hero_section', $frontId);
                             <div class="shadow"></div>
                         </div>
                         <div class="panels-navigation">
-                            <?php if ($num == 1): ?>
-                                <div class="nav-panel next" data-sign="plus"><a href="#panel-<?= $num + 1 ?>" class="anchor"><i
-                                                class="icon-arrow-single-big"></i>next</a>
-                                </div>
-                            <?php elseif ($num == count($heroSliders)): ?>
-                                <div class="nav-panel prv" data-sign="minus"><a href="#panel-<?= $num - 1 ?>"
-                                                                            class="anchor"><i
-                                                class="icon-arrow-single-big"></i>prv</a></div>
-                            <?php else: ?>
-                                <div class="nav-panel prv" data-sign="minus"><a href="#panel-<?= $num - 1 ?>"
-                                                                            class="anchor"><i
-                                                class="icon-arrow-single-big"></i>prv</a></div>
-                                <div class="nav-panel next" data-sign="plus"><a href="#panel-<?= $num + 1 ?>" class="anchor"><i
-                                                class="icon-arrow-single-big"></i>next</a>
-                                </div>
+                            <?php if ($num == 0) : ?>
+                                <div class="nav-panel next" data-sign="plus"><a href="#panel-<?= $num + 2 ?>" class="anchor"><i class="icon-arrow-single-big"></i>next</a></div>
+                            <?php elseif ($num == count($heroSliders) - 1) : ?>
+                                <div class="nav-panel prv" data-sign="minus"><a href="#panel-<?= $num ?>" class="anchor"><i class="icon-arrow-single-big"></i>prv</a></div>
+                            <?php else : ?>
+                                <div class="nav-panel prv" data-sign="minus"><a href="#panel-<?= $num ?>" class="anchor"><i class="icon-arrow-single-big"></i>prv</a></div>
+                                <div class="nav-panel next" data-sign="plus"><a href="#panel-<?= $num + 2 ?>" class="anchor"><i class="icon-arrow-single-big"></i>next</a></div>
                             <?php endif; ?>
                         </div>
                     </div>
                 </div>
             </article>
-            <?php $num++; endforeach; ?>
+        <?php endforeach; ?>
     </div>
 </section>
-
-
-

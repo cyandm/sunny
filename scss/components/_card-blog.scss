@@ -1,7 +1,7 @@
 @use "../utils/index" as *;
 
 .cart-blog {
-  @include flex(column,$align: start);
+  @include flex(column, $align: start);
 
   padding: 1rem 1rem 1.62rem 1rem;
   gap: 1rem;
@@ -17,23 +17,25 @@
     @include flex();
 
     width: 100%;
-    a{
+
+    a {
       width: 100%;
 
-  overflow: hidden;
-  height: 19rem;
-  border-radius: 1.5rem;
+      overflow: hidden;
+      height: 19rem;
+      border-radius: 1.5rem;
+
       img {
         width: 100%;
-         height: auto;
-         object-fit: cover;
-   
-         transition: all 0.3s ease-in-out;
-       
-       
-           }
+        height: auto;
+        object-fit: cover;
+
+        transition: all 0.3s ease-in-out;
+
+
+      }
     }
- 
+
   }
 
   .content-cart-blog {
@@ -51,16 +53,17 @@
         @include text_overflow(1);
       }
     }
-    div.description {
-    p{
-      @include font_style(body);
-      @include text_overflow(1);
 
-      @media (width<=768px) {
-        @include text_overflow(3);
+    div.description {
+      p {
+        @include font_style(body);
+        @include text_overflow(1);
+
+        @media (width<=768px) {
+          @include text_overflow(3);
+        }
       }
-      }
-      
+
     }
   }
 
@@ -76,30 +79,33 @@
 
     .study-time {
     }
+
     .blog-date {
     }
   }
 
   &:hover {
     border-color: $black-1;
+
     img {
       transform: scale(1.1);
     }
+
     h3 {
       color: $blue-2;
     }
   }
 }
 
-  div.description {
-    p{
-      @include text_overflow(2);
-    }
+div.description {
+  p {
+    @include text_overflow(2);
   }
+}
 
-  .cart-blog.active{
-    .content-cart-blog ,
-    .info-cart-blog{
-      padding: 0rem 1.25rem;
-    }
+.cart-blog.active {
+  .content-cart-blog,
+  .info-cart-blog {
+    padding: 0rem 1.25rem;
+  }
 }

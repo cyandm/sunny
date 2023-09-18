@@ -9,9 +9,9 @@ header {
   z-index: 9999;
   left: 0;
   right: 0;
+
   .header-large-view {
     @include flex();
-
     width: 100%;
     justify-content: space-between;
 
@@ -58,7 +58,6 @@ header {
             opacity: 0;
             visibility: hidden;
             position: absolute;
-            // transform: translateY(1rem);
             z-index: 999;
             transition: all 0.3s ease-in-out;
             border-radius: 1.25rem 0rem 1.25rem 1.25rem;
@@ -70,17 +69,20 @@ header {
             transition: all 0.3s ease-in-out;
 
             > li {
-              //   padding: 0.5rem;
               padding-left: 3rem;
               width: 100%;
 
               a {
                 color: $gray_1;
-                // font-size: 1rem;
-                // padding: 0.5rem;
                 white-space: nowrap;
                 width: 100%;
               }
+            }
+
+            &:hover {
+              opacity: 1;
+              visibility: visible;
+              display: block;
             }
           }
 
@@ -130,6 +132,7 @@ header {
         background: $white-2;
         box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
         height: 100%;
+
         i {
           &:hover {
             background: $black-1;
@@ -144,7 +147,6 @@ header {
     }
   }
 
-  // ----------mobile style
   .header-mobile {
     display: none;
     justify-content: space-between;
@@ -189,7 +191,7 @@ header {
         -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
         -webkit-transition: -webkit-transform 0.4s ease-in-out,
-          visibility 0s 0.4s;
+        visibility 0s 0.4s;
         transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
 
         .logo-close-btn {
@@ -244,9 +246,11 @@ header {
               @include flex();
               gap: 0.88rem;
               margin-inline-start: 0.63rem;
+
               &::before {
                 font-size: 1.5rem;
               }
+
               > a {
                 color: $black-1;
                 display: flex;
@@ -263,6 +267,7 @@ header {
 
             li.menu-item-has-children {
               transition: all 0.3s ease-in-out;
+
               > a {
                 display: inline;
                 @include sudo_icon("after", "\e91e", $gray-1, 1.5rem);
@@ -272,7 +277,6 @@ header {
                 @include flex(column);
                 align-items: center;
                 width: auto;
-                // gap: 0.5rem;
                 height: 0;
                 transition: height 0.3s ease-in-out;
                 overflow: hidden;
@@ -286,13 +290,12 @@ header {
                   position: relative;
 
                   @include sudo('before',3.44rem,2px,$gray-2) {
-
                     display: block;
                     margin-left: 1rem;
                     position: absolute;
                   }
 
-                  @include sudo("after",2px,3.5rem,$gray-2){
+                  @include sudo("after",2px,3.5rem,$gray-2) {
                     position: absolute;
                     right: 0;
                     top: -1.8rem;
@@ -305,14 +308,14 @@ header {
                     padding-right: 4.7rem;
                     position: relative;
 
-                    @include sudo("before",0.62rem,0.62rem,$gray-2){
+                    @include sudo("before",0.62rem,0.62rem,$gray-2) {
                       border-radius: 50%;
                       position: absolute;
                       right: 3.4rem;
                       top: 7px;
                     }
-
                   }
+
                   &:last-of-type {
                     padding-block-end: 0;
                     margin-block-end: 3.25rem;
@@ -320,6 +323,7 @@ header {
                 }
               }
             }
+
             li.menu-item-has-children.active-menu {
               position: relative;
               &::before {
@@ -329,17 +333,19 @@ header {
                 padding: 0.25rem;
                 right: -5px;
               }
+
               @include sudo('after',2px,1.5rem,#8c9094) {
                 position: absolute;
                 top: 2.1rem;
                 right: 0.7rem;
               }
+
               > a {
                 padding-inline-start: 2.5rem;
               }
             }
-            // ------------icon style
 
+            // Icon styles
             li.home-menu {
               @include sudo_icon("before", "\e90e", $black-1, "1.5rem");
             }
