@@ -9,23 +9,14 @@
     </div>
 
     <div class="package-content">
-      <div class="package-box">
-          <div class="package-info-box">
-              <div>
-                  <h3></h3>
-                  <span></span>
-              </div>
-              <div> <span></span></div>
 
-          </div>
-          <div class="package-img-box">
-              <img src="" alt="">
-              <div class="img-shadow">
-                  <img src="" alt="">
-                  <div class="shadow"></div>
-              </div>
-          </div>
-      </div>
+        <?php
+        get_template_part(
+            '/templates/components/card-blog',
+            null,
+            ['id' => get_the_ID()]
+        ); ?>
+
     </div>
     <div class="breadcrumb-btn">
         <a href="" class="btn-right"><i class="icon-arrow-side-right"></i></a>

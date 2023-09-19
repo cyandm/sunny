@@ -1,55 +1,53 @@
-import {add_active_class_loop, add_class} from '../functions';
+import { addActiveClassLoop, addClass } from "../functions";
 
 // ********************************* tab click on testimonial
-const testimonial = document.querySelectorAll('person-img');
+const testimonial = document.querySelectorAll(".person-img");
+
 if (testimonial) {
+  // first video play
+  const firstVideo = document.querySelector(".video-content.active");
+  const firstPlay = firstVideo.querySelector("i");
 
-    testimonial.forEach(person => {
+  firstPlay.addEventListener("click", () => {
+    firstVideo.querySelector("img").remove();
+    firstPlay.remove();
+    firstVideo.querySelector("video").play();
+  });
 
-        person.addEventListener('click', () => {
-            // add class to element
-            const eventName = 'click', className = 'active';
-            add_active_class_loop(person, className, testimonial);
+  testimonial.forEach((person) => {
+    person.addEventListener("click", () => {
+      // add class to element
 
-            // add class to video section
-            const videoContainer = document.querySelectorAll('video-container')
-            videoContainer.forEach(video => {
+      addActiveClassLoop(person, testimonial);
 
-                const ifContent = video.getAttribute('data-id') == person.getAttribute('data-id');
-                add_class(ifContent, className);
-            })
+      // add class to video section
+      const videoContainer = document.querySelectorAll(".video-content");
 
-            // add class in testimonial info section
-            const personInfo = document.querySelectorAll('person_info');
-            personInfo.forEach(info => {
+      videoContainer.forEach((video) => {
+        const ifContent =
+          video.getAttribute("data-id") == person.getAttribute("data-id");
 
-                const content = info.getAttribute('data-id') == person.getAttribute('data-id');
-                add_class(content, className);
-            })
+        addClass(ifContent, video);
 
-        });
+        // play video
+        if (video.classList.contains("active")) {
+          const play = video.querySelector("i");
+          play.addEventListener("click", () => {
+            video.querySelector("img").remove();
+            play.remove();
+            video.querySelector("video").play();
+          });
+        }
+      });
 
+      // add class in testimonial info section
+      const personInfo = document.querySelectorAll(".person_info");
 
+      personInfo.forEach((info) => {
+        const contentIf =
+          info.getAttribute("data-id") == person.getAttribute("data-id");
+        addClass(contentIf, info);
+      });
     });
-
+  });
 }
-
-// play video on clicl
-const showVideo = document.querySelector('.video-container.active');
-if(showVideo){
-    showVideo.addEventListener('click', function () {
-        const videoPopup = document.querySelector('video-container.active .video-popup');
-        videoPopup.classList.add('active');
-
-        // close popup
-        const closePopupButton = videoPopup.querySelector('.close-popup');
-        closePopupButton.addEventListener('click', function () {
-            videoPopup.classList.remove('active');
-        });
-    });
-}
-
-
-
-
-

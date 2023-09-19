@@ -1,8 +1,10 @@
 <?php
 $frontId = get_option('page_on_front');
-$startSliders = get_field('slider_start_section', $frontId);
-?>
 
+$startSliders = get_field('slider_start_section', $frontId);
+
+
+?>
 <section id="panels2" class="scroll-section panel-section start-section">
 
     <div id="panels-container2" class="panels-container" style="width: <?= count($startSliders) * 100 ?>%;">

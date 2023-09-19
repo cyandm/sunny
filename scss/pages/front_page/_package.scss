@@ -1,56 +1,9 @@
 @use "../../utils/index" as *;
 
 .package-content {
-
   .package-content {
-
     @include flex();
     gap: 1rem;
     flex-wrap: wrap;
-
-    .package-box {
-      @include flex(column);
-      align-items: start;
-      flex: 1;
-      border-radius: 2.5rem;
-      padding: 1.5rem 1rem;
-
-      .package-info-box {
-        @include flex(column);
-
-        gap: 0.4375rem;
-        border-radius: 1.5rem;
-        background: $white-1;
-        box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.20);
-
-        > div {
-          @include flex();
-          justify-content: space-between;
-        }
-
-        h3 {
-          @include font_style(h2);
-
-        }
-
-        span {
-          @include font_style(body_b);
-        }
-      }
-
-      .package-img-box {
-        position: relative;
-
-        > img {
-          position: absolute;
-          z-index: -1;
-        }
-
-        .img-shadow {
-
-        }
-      }
-
-    }
   }
 }

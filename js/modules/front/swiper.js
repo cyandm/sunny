@@ -18,7 +18,6 @@ if (coachSlider) {
   });
 }
 
-
 // ****************************** testimonial swiper slider
 const testimonialSlider = document.querySelector(".testimonial-slider");
 
