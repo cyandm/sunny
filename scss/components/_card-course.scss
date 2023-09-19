@@ -1,0 +1,92 @@
+@use "../utils/index" as *;
+
+.course-card {
+  @include flex(column);
+  gap: 0.31rem;
+  padding: 1.5rem;
+  border-radius: 2.5rem;
+  flex: 1;
+
+  .course-info-card {
+    @include flex(column, center, start);
+    gap: 0.44rem;
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+    background: var(--white-1, #FEFFFF);
+    box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.20);
+    width: 100%;
+
+    > * {
+      @include flex(row, space-between, center);
+      width: 100%;
+    }
+
+
+    h3 {
+      @include font_style(h2)
+    }
+
+    span {
+      @include font_style(body_b);
+    }
+  }
+
+  .course-img-card {
+    @include flex();
+    position: relative;
+
+    .circle {
+      @include flex();
+      @include sudo(before, 14rem, 14rem, none) {
+        border: 2rem solid rgba(255, 255, 255, 0.50);
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      @include sudo(after, 6rem, 6rem, none) {
+        border: 1rem solid rgba(255, 255, 255, 0.50);
+        border-radius: 50%;
+        position: absolute;
+      }
+
+
+      width: 23rem;
+      height: 23rem;
+      background: none;
+      border: 2.5rem solid rgba(255, 255, 255, 0.50);
+      border-radius: 50%;
+
+      @media (width<= 500px) {
+        width: 19.5rem;
+        height: 19.54rem;
+        @include sudo(before, 12rem, 12rem, none);
+        @include sudo(after, 4.7rem, 4.7rem, none);
+      }
+    }
+
+    .img-shadow {
+      position: absolute;
+      bottom: -2rem;
+
+      img {
+        max-width: 22rem;
+        max-height: 20rem;
+      }
+    }
+  }
+}
+
+.course-card.blue {
+  background: $blue-1;
+
+}
+
+.course-card.pink {
+  background: $pink-1;
+
+}
+
+.course-card.yellow {
+  background: $yellow-1;
+
+}

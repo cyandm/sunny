@@ -13,13 +13,60 @@
       position: relative;
       border-radius: 2.5rem;
       padding: 2rem 1.5rem;
+      height: 17rem;
+      flex: 1 1 48%;
+      overflow: hidden;
 
       h4 {
         @include font_style(h4);
       }
+      .images{
+        position: absolute;
+        left: 0;
+        top: 0;
+        img{
+          @include sudo(before, 17.56rem, 17.56rem, $pink-2){
+            border-radius: 50%;
+            position: absolute;
+
+          }
+        }
+
+      }
+      .info{
+        @include flex(column,start,start);
+        gap: 1rem;
+      }
+a{
+  @include flex();
+  direction: ltr;
+}
     }
     .contact-box-right{
+      @include font_style(body);
+      color: $white-1;
       background: $pink-1;
+      a{
+        gap: 0.62rem;
+        i{
+          @include flex();
+          width: 1.8rem;
+          height: 1.8rem;
+          background-color: $black-1;
+          border-radius: 0.25rem;
+          box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+          align-items: center;
+          justify-content: center;
+          i {
+            &::before {
+              font-size: 1.2rem;
+              color: $white-1;
+            }
+          }
+        }
+      }
+
+
     }
 
     .contact-box-left{
@@ -28,6 +75,11 @@
 
     .contact-box-wide{
       background: $blue-1;
+
+      .maps-link{
+        @include flex();
+        gap: 0.62rem;
+      }
     }
   }
 
