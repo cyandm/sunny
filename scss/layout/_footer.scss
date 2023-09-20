@@ -2,6 +2,7 @@
 
 footer {
   @include flex(column);
+  display: none;
   flex-wrap: wrap;
   margin-block: 5rem 1.38rem;
   gap: 1.5rem;
@@ -98,6 +99,7 @@ footer {
     }
   }
   @media (width<=768px) {
+    display: flex;
     gap: 1rem;
   }
 }

@@ -68,8 +68,36 @@
       }
     }
     .faq-img {
+      @include flex();
+      @include sudo(before, 36.875rem, 36.875rem, #00A195){
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+      }
+      @include sudo(after, 36.875rem, 36.875rem, none){
+        border-radius: 50%;
+        position: absolute;
+        border: 1px solid #00A195;
+        top: 3%;
+      }
+      position: relative;
+
       img {
-        width: 100%;
+        max-width: 36.875rem;
+        max-height: 36.875rem;
+
+
+      }
+      @media (width<=768px) {
+        &:before,
+        &:after{
+          width: 18.625rem;
+          height: 18.625rem;
+        }
+        img{
+          max-width: 18.625rem;
+          max-height: 18.625rem;
+        }
       }
     }
   }

@@ -201,7 +201,7 @@
 
 @mixin sudo($sudo, $width, $height, $background) {
   &::#{$sudo} {
-    content: "";
+    content: " ";
     width: $width;
     height: $height;
     background: $background;

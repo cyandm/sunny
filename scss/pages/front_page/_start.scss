@@ -18,6 +18,12 @@
           position: relative;
           @include flex();
           .circle {
+            @include sudo(before, 34rem,34rem,none){
+              position: absolute;
+              bottom: 2%;
+              border: 1px solid $blue-1;
+              border-radius: 50%;
+            }
             width: 34rem;
             height: 34rem;
             border-radius: 50%;
@@ -25,12 +31,7 @@
             position: absolute;
             top: -8%;
             z-index: -1;
-            &::before {
-              border: 1px solid $black-1;
-              border-radius: 50%;
-              top: -10%;
-              z-index: -2;
-            }
+
           }
           .diamond {
             width: 28rem;
@@ -39,16 +40,47 @@
             background: $pink-1;
             position: absolute;
             z-index: -1;
-            &::before {
-              content: "";
-              width: 28rem;
-              height: 28rem;
-              background-color: $white-1;
-              border: 1px solid $pink-1;
-              transform: rotate(60deg);
 
-              z-index: -1;
+            @include sudo(before, 28rem,28rem,none){
+              position: absolute;
+              border: 1px solid $pink-1;
+              transform: rotate(4deg);
             }
+
+          }
+          .video-content{
+            @include flex();
+            @include sudo(before,7.56756rem,7.56756rem,none){
+              border: 1rem solid rgba(255, 255, 255, 0.20);
+
+              position: absolute;
+              border-radius: 50%;
+            }
+            @include sudo(after,8.75rem,8.75rem,none){
+              border: 1rem solid rgba(255, 255, 255, 0.10);
+
+              position: absolute;
+              border-radius: 50%;
+            }
+            position: absolute;
+            left: 0;
+            top:-7%;
+            img{
+
+              position: absolute;
+
+            }
+            i{
+              position: absolute;
+              &:before{
+                font-size: 1.5rem;
+              }
+            }
+            .video-popup{
+              visibility: hidden;
+              opacity: 0;
+            }
+
           }
         }
         .start-text {

@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/pages/course/course-block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/video.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_card-blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-blog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/layout/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_blogs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_blogs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/utils/_mixin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/utils/_mixin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/start.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/start.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +89,8 @@
       <workItem from="1694967723131" duration="12123000" />
       <workItem from="1695057272080" duration="7757000" />
       <workItem from="1695140542921" duration="7685000" />
-      <workItem from="1695148446634" duration="8113000" />
+      <workItem from="1695148446634" duration="8455000" />
+      <workItem from="1695178034051" duration="5301000" />
     </task>
     <servers />
   </component>
