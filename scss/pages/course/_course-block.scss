@@ -1,0 +1,149 @@
+@use "../../utils/index" as *;
+
+.course-block {
+  @include flex();
+
+  flex-wrap: wrap;
+  .course-info {
+    .course-info-content {
+      @include flex(column, start, start);
+      @include font_style(body);
+
+      padding: 2.5rem;
+      gap: 1.25rem;
+      border-radius: 2.5rem 0rem 0rem 2.5rem;
+      border: 1px solid $gray-2;
+      background: $white-1;
+
+      .title {
+        @include flex(row, space-between);
+        width: 100%;
+        padding-block-end: 0.62rem;
+
+        h3 {
+          @include font_style(h2);
+          @include text_overflow(1);
+        }
+        span {
+          @include font_style(h4);
+          color: $gray-1;
+        }
+      }
+
+      .content {
+        @include flex(row, start);
+        width: 100%;
+        .description {
+          @include text_overflow(4);
+        }
+
+        .detail {
+          @include flex(row, space-between);
+          width: 100%;
+          span {
+            @include flex(row, start, center);
+
+            gap: 0.25rem;
+          }
+        }
+      }
+      .btn {
+        @include flex(row, center, start);
+        a {
+          @include btn();
+        }
+      }
+    }
+    .course-img {
+      @include flex();
+
+      img {
+        max-width: 22.22256rem;
+        max-height: 25.74163rem;
+      }
+    }
+  }
+  .course-form-block {
+    .show-form {
+      @include flex(column, start);
+      @include font_style(h3);
+      width: 6rem;
+      height: 100%;
+      border-radius: 0rem 2.5rem 2.5rem 0rem;
+    }
+    .course-form {
+      opacity: 0;
+      visibility: hidden;
+      width: 0;
+    }
+  }
+
+  @media (width<=768px) {
+    .course-info {
+      .course-info-content {
+        border-radius: 1.75rem 0rem 0rem 1.75rem;
+        .title {
+          h3 {
+            @include font_style(h4);
+          }
+        }
+        .btn {
+          @include flex();
+          a {
+            width: 100%;
+          }
+        }
+      }
+      .course-img {
+        display: block;
+      }
+    }
+    .course-form-block {
+      .show-form {
+        @include flex(row, space-between, center);
+        order: -1;
+        width: 100%;
+        height: 5rem;
+        border-radius: 0rem 2.5rem 2.5rem 0rem;
+      }
+    }
+  }
+}
+
+.course-block.yellow {
+  .course-info {
+    .course-info-content > .title {
+      border-bottom: $yellow-1;
+    }
+  }
+  .course-form-block {
+    .show-form {
+      background: $yellow-1;
+    }
+  }
+}
+.course-block.pink {
+  .course-info {
+    .course-info-content > .title {
+      border-bottom: $pink-1;
+    }
+  }
+  .course-form-block {
+    .show-form {
+      background: $pink-1;
+    }
+  }
+}
+
+.course-block.blue {
+  .course-info {
+    .course-info-content > .title {
+      border-bottom: $blue-1;
+    }
+  }
+  .course-form-block {
+    .show-form {
+      background: $blue-1;
+    }
+  }
+}

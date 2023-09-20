@@ -1,0 +1,94 @@
+@use "../../utils/index" as *;
+.course-form {
+  border: 1px solid $gray-2;
+  .details-course {
+    > diV {
+      span {
+      }
+    }
+  }
+  .form {
+    form {
+      @include flex();
+      gap: 1rem;
+      flex-wrap: wrap;
+      .form-wrapper {
+        @include flex(column, space-between, start);
+        @include font_style(body);
+        flex: 1 1 48%;
+        lable {
+        }
+        input {
+          @include font_style(body);
+          padding: 0.5rem 1rem 0.5rem 1.25rem;
+          width: 100%;
+          border-radius: 2.5rem;
+          border: 1px solid $gray-2;
+          background: $white-2;
+          color: $gray-1;
+        }
+      }
+      .form-btn {
+        margin-block-start: 1rem;
+      }
+    }
+  }
+
+  .circle-content {
+    border-radius: 0rem 2.5rem 2.5rem 0rem;
+
+    position: relative;
+    .circle {
+      @include flex();
+      @include sudo(before, 14rem, 14rem, none) {
+        border: 2rem solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+      }
+
+      @include sudo(after, 6rem, 6rem, none) {
+        border: 1rem solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+      }
+
+      width: 23rem;
+      height: 23rem;
+      background: none;
+      border: 2.5rem solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      position: absolute;
+      left: -20%;
+      @media (width<= 500px) {
+        width: 19.5rem;
+        height: 19.54rem;
+        @include sudo(before, 12rem, 12rem, none);
+        @include sudo(after, 4.7rem, 4.7rem, none);
+      }
+    }
+  }
+}
+
+.course-block.yellow {
+  .circle-content {
+    background: $yellow-1;
+  }
+  .course-form {
+    background: $yellow-1;
+  }
+}
+.course-block.pink {
+  .circle-content {
+    background: $pink-1;
+  }
+  .course-form {
+    background: $pink-1;
+  }
+}
+
+.course-block.blue {
+  .circle-content {
+    background: $blue-1;
+  }
+  .course-form {
+    background: $blue-1;
+  }
+}

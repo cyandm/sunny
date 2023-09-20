@@ -2588,4 +2588,392 @@ header .header-mobile .sotioal-row a i::before {
   background: #FEFFFF;
 }
 
+.all-course-overview .course-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+}
+@media (width <= 768px) {
+  .all-course-overview .course-row {
+    gap: 1rem;
+  }
+}
+.all-course-overview .ticker-section .ticker ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.all-course-overview .ticker-section .ticker ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.37rem;
+  border-radius: 2.5rem;
+  background: #ff3d5a;
+}
+.all-course-overview .ticker-section .ticker ul li span {
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #FEFFFF;
+}
+.all-course-overview .ticker-section .ticker ul li i {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 3.4375rem;
+  height: 3.4375rem;
+  background: #FEFFFF;
+  border-radius: 50%;
+}
+.all-course-overview .ticker-section .ticker ul li i::before {
+  font-size: 1.5rem;
+  color: #1A212A;
+}
+
+.course-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.course-block .course-info .course-info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  padding: 2.5rem;
+  gap: 1.25rem;
+  border-radius: 2.5rem 0rem 0rem 2.5rem;
+  border: 1px solid #8C9094;
+  background: #FEFFFF;
+}
+.course-block .course-info .course-info-content .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-block-end: 0.62rem;
+}
+.course-block .course-info .course-info-content .title h3 {
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 5;
+  -webkit-line-clamp: 1;
+  white-space: pre-wrap;
+}
+.course-block .course-info .course-info-content .title span {
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #8C9094;
+}
+.course-block .course-info .course-info-content .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+.course-block .course-info .course-info-content .content .description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 5;
+  -webkit-line-clamp: 4;
+  white-space: pre-wrap;
+}
+.course-block .course-info .course-info-content .content .detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.course-block .course-info .course-info-content .content .detail span {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.25rem;
+}
+.course-block .course-info .course-info-content .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+}
+.course-block .course-info .course-info-content .btn a {
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid transparent;
+  background: #1A212A;
+  color: #FEFFFF;
+  box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.course-block .course-info .course-info-content .btn a:hover {
+  border: 1px solid #1A212A;
+  background: #FEFFFF;
+  color: #1A212A;
+}
+.course-block .course-info .course-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.course-block .course-info .course-img img {
+  max-width: 22.22256rem;
+  max-height: 25.74163rem;
+}
+.course-block .course-form-block .show-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1.25rem;
+  font-weight: 500;
+  width: 6rem;
+  height: 100%;
+  border-radius: 0rem 2.5rem 2.5rem 0rem;
+}
+.course-block .course-form-block .course-form {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+}
+@media (width <= 768px) {
+  .course-block .course-info .course-info-content {
+    border-radius: 1.75rem 0rem 0rem 1.75rem;
+  }
+  .course-block .course-info .course-info-content .title h3 {
+    color: #1A212A;
+    font-family: "peyda";
+    font-size: 8.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .course-block .course-info .course-info-content .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .course-block .course-info .course-info-content .btn a {
+    width: 100%;
+  }
+  .course-block .course-info .course-img {
+    display: block;
+  }
+  .course-block .course-form-block .show-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    order: -1;
+    width: 100%;
+    height: 5rem;
+    border-radius: 0rem 2.5rem 2.5rem 0rem;
+  }
+}
+
+.course-block.yellow .course-info .course-info-content > .title {
+  border-bottom: #FFF48D;
+}
+.course-block.yellow .course-form-block .show-form {
+  background: #FFF48D;
+}
+
+.course-block.pink .course-info .course-info-content > .title {
+  border-bottom: #FF6883;
+}
+.course-block.pink .course-form-block .show-form {
+  background: #FF6883;
+}
+
+.course-block.blue .course-info .course-info-content > .title {
+  border-bottom: #67D6F9;
+}
+.course-block.blue .course-form-block .show-form {
+  background: #67D6F9;
+}
+
+.course-form {
+  border: 1px solid #8C9094;
+}
+.course-form .form form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.course-form .form form .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  flex: 1 1 48%;
+}
+.course-form .form form .form-wrapper input {
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  padding: 0.5rem 1rem 0.5rem 1.25rem;
+  width: 100%;
+  border-radius: 2.5rem;
+  border: 1px solid #8C9094;
+  background: rgba(255, 255, 255, 0.02);
+  color: #8C9094;
+}
+.course-form .form form .form-btn {
+  margin-block-start: 1rem;
+}
+.course-form .circle-content {
+  border-radius: 0rem 2.5rem 2.5rem 0rem;
+  position: relative;
+}
+.course-form .circle-content .circle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 23rem;
+  height: 23rem;
+  background: none;
+  border: 2.5rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  left: -20%;
+}
+.course-form .circle-content .circle::before {
+  content: " ";
+  width: 14rem;
+  height: 14rem;
+  background: none;
+  border: 2rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+.course-form .circle-content .circle::after {
+  content: " ";
+  width: 6rem;
+  height: 6rem;
+  background: none;
+  border: 1rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+@media (width <= 500px) {
+  .course-form .circle-content .circle {
+    width: 19.5rem;
+    height: 19.54rem;
+  }
+  .course-form .circle-content .circle::before {
+    content: " ";
+    width: 12rem;
+    height: 12rem;
+    background: none;
+  }
+  .course-form .circle-content .circle::after {
+    content: " ";
+    width: 4.7rem;
+    height: 4.7rem;
+    background: none;
+  }
+}
+
+.course-block.yellow .circle-content {
+  background: #FFF48D;
+}
+.course-block.yellow .course-form {
+  background: #FFF48D;
+}
+
+.course-block.pink .circle-content {
+  background: #FF6883;
+}
+.course-block.pink .course-form {
+  background: #FF6883;
+}
+
+.course-block.blue .circle-content {
+  background: #67D6F9;
+}
+.course-block.blue .course-form {
+  background: #67D6F9;
+}
+
 /*# sourceMappingURL=compiled.css.map */
