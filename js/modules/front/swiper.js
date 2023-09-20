@@ -33,3 +33,24 @@ if (testimonialSlider) {
     //   },
   });
 }
+
+// ********************************* front page main slider
+const mainSlider = new Swiper(".home-main-slider", {
+  direction: "vertical",
+  slidesPerView: 1,
+  spaceBetween: 0,
+  mousewheel: true,
+  speed: 1000,
+});
+
+const horizontalSliders = document.querySelectorAll(".home-nested-slider");
+
+horizontalSliders.forEach((slider) => {
+  const horizontalSwiper = new Swiper(slider, {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 1000,
+    nested: true,
+    mousewheel: true,
+  });
+});

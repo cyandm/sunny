@@ -29,21 +29,37 @@
 }
 
 //----------------------------- class section style
-#classes {
+.classes-slide {
   .coach-slider {
     .swiper-slide {
       @include flex();
+      position: relative;
       align-items: start;
       gap: 1.25rem;
       flex-wrap: wrap;
-      > div {
-        flex: 1;
-      }
 
       .front-coach-img {
+        flex: 1 1 43%;
+        .img-content {
+          @include flex();
+          @include sudo(before, 32.35rem, 100%, $yellow-1) {
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+          }
+
+          img {
+            max-width: 32rem;
+            max-height: 33.3rem;
+            position: absolute;
+            bottom: -10%;
+          }
+        }
       }
 
       .front-coach-content {
+        flex: 1 1 55%;
         @include flex(column);
         align-items: start;
         gap: 0.62rem;
@@ -53,24 +69,36 @@
           @include text_overflow(1);
         }
 
+        .nav-btn {
+          position: relative;
+          height: 2.8rem;
+        }
+
         .description {
+          @include font_style(body);
           color: $black-1;
+          height: 9rem;
           p {
-            @include text_overflow(5);
+            @include text_overflow(4);
           }
         }
         h4 {
           @include font_style(h3);
         }
-        .studets-row {
+        .students-row {
           @include flex();
           gap: 1rem;
           flex-wrap: wrap;
+          width: 100%;
+          margin-block-start: -0.3rem;
+
           .student-info {
             flex: 1;
             img {
               height: 14.25rem;
               border-radius: 1.5rem;
+              width: 100%;
+              object-fit: cover;
             }
           }
         }

@@ -3,17 +3,14 @@ $frontId = get_option('page_on_front');
 $title = get_field('testimonial_section_title', $frontId);
 $testimonials = get_field('testimonial_choose', $frontId); ?>
 
-<section id="testimonial" class="testimonial-section">
+<div class="swiper-slide testimonial-section">
+
     <div class="container">
         <?php if ($title) : ?>
             <div class="section-title">
                 <h2><?= esc_html($title) ?></h2>
             </div>
         <?php endif; ?>
-    </div>
-
-    <div class="container">
-
 
         <div class="front-testimonial-content">
             <div class="video-container">
@@ -77,14 +74,10 @@ $testimonials = get_field('testimonial_choose', $frontId); ?>
             </div>
         </div>
 
-    </div>
-    </div>
-
-
-    <div class="container">
         <div class="breadcrumb-btn">
             <a href="" class="btn-right"><i class="icon-arrow-side-right"></i></a>
             <a href="" class="btn-left"><i class="icon-arrow-side-left"></i></a>
         </div>
     </div>
-</section>
+
+</div>

@@ -17,9 +17,9 @@
       background: $white-1;
 
       .accardion {
-        @include flex(column);
+        @include flex(column, start, start);
         @include font_style(body);
-        align-items: start;
+
         border-bottom: 1px solid $gray-2;
         padding: 1rem 0;
 
@@ -37,7 +37,7 @@
             background: $white-1;
             border: 1px solid $pink-1;
             border-radius: 50%;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.5s ease-in-out;
 
             &::before {
               font-size: 1.5rem;
@@ -50,6 +50,7 @@
           max-height: 0;
           overflow: hidden;
           transition: all 0.3s ease-in-out;
+          text-align: right;
         }
         &:last-child {
           border-bottom: none;
@@ -68,8 +69,34 @@
       }
     }
     .faq-img {
+      @include flex();
+      @include sudo(before, 36.875rem, 36.875rem, #00a195) {
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+      }
+      @include sudo(after, 36.875rem, 36.875rem, none) {
+        border-radius: 50%;
+        position: absolute;
+        border: 1px solid #00a195;
+        top: 3%;
+      }
+      position: relative;
+
       img {
-        width: 100%;
+        max-width: 36.875rem;
+        max-height: 36.875rem;
+      }
+      @media (width<=768px) {
+        &:before,
+        &:after {
+          width: 18.625rem;
+          height: 18.625rem;
+        }
+        img {
+          max-width: 18.625rem;
+          max-height: 18.625rem;
+        }
       }
     }
   }

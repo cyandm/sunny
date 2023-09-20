@@ -8,7 +8,9 @@ $btnLink = get_field('blog_section_link_btn', $frontId);
 $categories = get_field('choose_category', $frontId);
 ?>
 
-<section id="blog" class="blog-section">
+
+
+<div id="blog" class="swiper-slide blog-section">
     <div class="container">
         <?Php if ($title) : ?>
             <div class="section-title">
@@ -67,4 +69,4 @@ $categories = get_field('choose_category', $frontId);
         </div>
         </article>
     </div>
-</section>
+</div>

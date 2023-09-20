@@ -5,10 +5,9 @@ $faqTitle = get_field('title_faq_section', $frontId);
 $allFaqs = get_field('choose_faqs', $frontId);
 $faqImg = get_field('image_faq_section', $frontId);
 
-
-
 ?>
-<section id="faq" class="faq-section">
+
+<div class="swiper-slide faq-section">
     <div class="container">
         <?Php if ($faqTitle) : ?>
             <div class="section-title">
@@ -28,7 +27,9 @@ $faqImg = get_field('image_faq_section', $frontId);
                                 <span><?= $faq->post_title ?></span>
                                 <i class="icon-arrow-single-big"></i>
                             </div>
-                            <div class="answer"><?= $faq->post_content ?></div>
+                            <div class="answer">
+                                <?= (strlen($faq->post_content) > 800) ? substr($faq->post_content, 0, 800) . '...' : $faq->post_content; ?>
+                            </div>
                         </div>
                 <?php endif;
                     $acardionNum++;
@@ -45,4 +46,4 @@ $faqImg = get_field('image_faq_section', $frontId);
             <a href="" class="btn-left"><i class="icon-arrow-side-left"></i></a>
         </div>
     </div>
-</section>
+</div>

@@ -11,7 +11,6 @@ export const addClass = (ifContent, target) => {
   if (ifContent) {
     target.classList.add("active");
 
-    target.parentElement.style.height = target.clientHeight + "px";
   } else {
     target.classList.remove("active");
   }

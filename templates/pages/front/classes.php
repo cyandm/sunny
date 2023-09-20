@@ -5,11 +5,11 @@ $title = get_field('coach_section_title', $frontId);
 $btnTitle = get_field('coach_section_btn_title', $frontId);
 $btnLink = get_field('coach_section_btn_link', $frontId);
 
-$coches = get_field('choose_coches', $frontId);
+$coaches = get_field('choose_coaches', $frontId);
 $topStudentTitle = get_field('top_student_title', $frontId);
 
 ?>
-<section id="classes" class="full-screen">
+<div class="swiper-slide classes-slide">
     <div class="container">
         <?Php if ($title) : ?>
             <div class="section-title">
@@ -21,32 +21,32 @@ $topStudentTitle = get_field('top_student_title', $frontId);
         <?php endif ?>
         <div class="swiper coach-slider">
             <div class="swiper-wrapper">
-                <?php foreach ($coches as $coche) :
-                    if (is_array($coches) && count($coches) > 0) : ?>
+                <?php if (is_array($coaches) && count($coaches) > 0) :
+                    foreach ($coaches as $coach) : ?>
                         <div class="swiper-slide">
                             <div class="front-coach-img">
-                                <div class="shape top-circle"></div>
-                                <div class="img">
-                                    <?= wp_get_attachment_image(get_post_thumbnail_id($coche->ID), 'full', false, []);
+                                <div class="img-content">
+                                    <?= wp_get_attachment_image(get_post_thumbnail_id($coach->ID), 'full', false, []);
                                     ?>
-                                    <div class="img-shadow"></div>
                                 </div>
-                            </div>
-                            <div class="front-coach-content">
-                                <h3><?= $coche->post_title ?></h3>
 
+                            </div>
+
+                            <div class="front-coach-content">
+                                <h3><?= $coach->post_title ?></h3>
+                                <div class="nav-btn"></div>
                                 <div class="description">
-                                    <?= $coche->post_content ?>
+                                    <?= get_field('description_text', $coach->ID) ?>
                                 </div>
 
                                 <?php if ($topStudentTitle) : ?>
                                     <h4><?= $topStudentTitle ?></h4>
                                 <?php endif;
-                                $topStudents = get_field('choose_students', $coche->ID);
+                                $topStudents = get_field('choose_students', $coach->ID);
 
                                 if (is_array($topStudents) && count($topStudents) > 0) : ?>
 
-                                    <div class="studets-row">
+                                    <div class="students-row">
                                         <?php foreach ($topStudents as $student) : ?>
                                             <div class="student-info">
                                                 <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []);
@@ -58,9 +58,9 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                 <?php endif; ?>
                             </div>
                         </div>
-                    <?php endif; ?>
 
-                <?php endforeach; ?>
+                <?php endforeach;
+                endif; ?>
 
 
 
@@ -74,4 +74,4 @@ $topStudentTitle = get_field('top_student_title', $frontId);
             <a href="" class="btn-left">چرا ریتمیک<i class="icon-arrow-side-left"></i></a>
         </div>
     </div>
-</section>
+</div>
