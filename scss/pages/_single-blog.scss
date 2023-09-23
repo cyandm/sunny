@@ -1,1 +1,17 @@
 @use "../utils/index" as *;
+
+.single-blog {
+  .blog-content {
+    @include flex();
+
+    .sidebar {
+    }
+    .all-content {
+      @include flex(column, start, start);
+      gap: 1rem;
+      h1 {
+        @include font_style(h1);
+      }
+    }
+  }
+}

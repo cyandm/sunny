@@ -3,20 +3,10 @@ $post_id = get_queried_object_id();
 $blog = get_post($post_id);
 
 $currentCat = get_the_category($post_id);
-$args = [
-    'post_type' => 'post',
-    'posts_per_page' => 99999,
-    'tag' => 'special',
-    'tax_query' =>
-    [
-        'taxonomy' => 'category',
-        'terms' => $currentCat[0]->term_id,
-        'field' => 'id',
-    ],
-];
-$blogs = get_posts($args);
+
+$blogs = get_field('choose_course-blog', $post_id);
 ?>
-<main class="  main single-blog">
+<main class="main single-blog">
     <section class="single-blog">
         <div class="container main-container">
 

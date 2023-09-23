@@ -1,6 +1,7 @@
 <?php
 $post_id = get_queried_object_id();
 $currentCat = get_the_category($post_id);
+
 ?>
 <div class="sidebar">
     <?php
