@@ -1,17 +1,36 @@
-import { activateFirstElement, setElementHeight } from "../functions";
-const frontBlogSection = document.querySelector("#blog-section");
-if (frontBlogSection) {
+import { activateFirstElement, setElementHeight } from "./functions";
+import Swiper from "swiper";
+
+const blogPage = document.querySelector("#blogs-overview");
+
+if (blogPage) {
+  // *********************************swiper slider
+  const blogOverviewSlider = document.querySelector(".blog-page-slider");
+  if (blogOverviewSlider) {
+    const mainSlider = new Swiper(blogOverviewSlider, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      mousewheel: true,
+      // speed: 1000,
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      // },
+    });
+  }
+
+  // ************************************ tab blogs
   // Activate the first child of "active-blogs" after the toggle
-  const cardBlogs = document.querySelectorAll(".active-blogs .cart-blog");
-  activateFirstElement(cardBlogs);
+  // const cardBlogs = document.querySelectorAll(".active-blogs .cart-blog");
+  // activateFirstElement(cardBlogs);
 
   // Set the height for the first element with class "active-blogs"
 
-  const firstHeight = document.querySelector("article .active-blogs");
-  console.log(firstHeight);
-  setElementHeight(firstHeight);
+  const blogFirstHeight = document.querySelector("article .active-blogs");
+  console.log(tabCategory);
+  setElementHeight(blogFirstHeight);
   window.onresize = function (event) {
-    setElementHeight(firstHeight);
+    setElementHeight(blogFirstHeight);
   };
 
   // Determine the appropriate category tabs based on screen width

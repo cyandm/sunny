@@ -31,6 +31,6 @@ $studyTime = $countWords / 200;
         <p class="study-time">زمان مطالعه <span><?= round($studyTime); ?></span> دقیقه</p>
 
 
-        <div class="blog-date"> <?= get_the_date('j / F / Y', $post_id); ?></div>
+        <div class="blog-date"> <?= get_the_date('Y/m/d', $post_id); ?></div>
     </div>
 </div>

@@ -28,13 +28,13 @@ function menu($menuSlug)
 		<div class="footer-menu">
 			<?php wp_nav_menu(['theme_location' => $menuSlug]) ?>
 		</div>
-	<?php endif;
+<?php endif;
 }
 
 
 
 ?>
-<footer class="container">
+<footer class="container <?= (get_queried_object_id() == $frontId) ? 'footer-front' : '' ?>">
 	<div class="footer-top">
 
 		<div class="line">
@@ -104,7 +104,7 @@ function menu($menuSlug)
 			<?php endif; ?>
 		</div>
 	</div>
-    <?php  get_template_part('templates/components/footer-social');?>
+	<?php get_template_part('templates/components/footer-social'); ?>
 </footer>
 
 <div class="wp-scripts">

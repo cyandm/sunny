@@ -9,6 +9,7 @@
   border: 1px solid $gray-2;
   transition: all 0.3s ease-in-out;
   background: $white-1;
+  transition: all 0.3s ease-in-out;
   @media (width<= 768px) {
     gap: 1.25rem;
   }

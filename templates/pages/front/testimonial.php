@@ -3,7 +3,7 @@ $frontId = get_option('page_on_front');
 $title = get_field('testimonial_section_title', $frontId);
 $testimonials = get_field('testimonial_choose', $frontId); ?>
 
-<div class="swiper-slide testimonial-section">
+<div class="swiper-slide testimonial-section" id="testimonial-section">
 
     <div class="container">
         <?php if ($title) : ?>

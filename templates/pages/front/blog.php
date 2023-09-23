@@ -10,7 +10,7 @@ $categories = get_field('choose_category', $frontId);
 
 
 
-<div id="blog" class="swiper-slide blog-section">
+<div id="blog-section" class="swiper-slide blog-section">
     <div class="container">
         <?Php if ($title) : ?>
             <div class="section-title">

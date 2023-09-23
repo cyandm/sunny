@@ -1,0 +1,51 @@
+@use "../utils/index" as *;
+
+.search-content {
+  @include flex(column, start, start);
+
+  padding-block-start: 10rem;
+
+  @media (width <= 768px) {
+    margin-top: 1.5rem;
+    flex-direction: column;
+  }
+
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  .result-content {
+    @include flex(column, start, start);
+    gap: 1rem;
+    width: 100%;
+    .cart-blog {
+      flex: 1 1 32%;
+    }
+    .result-row {
+      @include flex();
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      @media (width <= 768px) {
+        flex-direction: column;
+      }
+      .search-title {
+        @include font_style(h4);
+        color: $gray_1;
+      }
+    }
+    .not-found-img {
+      @include flex();
+      width: 100%;
+    }
+    .search-title {
+      h2 {
+        @include font_style(h4);
+        color: $black-1;
+      }
+      h3 {
+        @include font_style(h4);
+        color: $black-1;
+      }
+    }
+  }
+}
