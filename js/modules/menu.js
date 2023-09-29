@@ -37,3 +37,11 @@ if (mobile) {
     });
   });
 }
+
+
+
+// *****************************mobile menu search box
+const searchMenuMobile=document.querySelector('.form-search.menu-mobile');
+searchMenuMobile.addEventListener('click',()=>{
+  searchMenuMobile.classList.remove('menu-mobile');
+})

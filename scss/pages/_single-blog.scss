@@ -1,17 +1,158 @@
 @use "../utils/index" as *;
 
-.single-blog {
+main.single-blog {
+  padding-block-start: 6.25rem;
+
   .blog-content {
-    @include flex();
+    @include flex(row, center, stert);
+
+    gap: 1.13rem;
 
     .sidebar {
+      flex: 0.8;
+
     }
+
     .all-content {
       @include flex(column, start, start);
       gap: 1rem;
+      flex: 2;
+
       h1 {
         @include font_style(h1);
+        @include text_overflow(1);
+
+      }
+
+      .blog-img-single {
+        height: 30.8125rem;
+        width: 100%;
+        border-radius: 2.5rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 2.5rem;
+        }
+      }
+
+      .quick-access {
+        display: none;
+      }
+      .content-single{
+position: relative;
+        h2{
+          @include font_style(h2);
+          //transform: translateX(1rem);
+
+          //
+          //background: var(--gray-2, #E8E9EA);
+transition: all 0.3s ease-in-out;
+        }
+        h2,h3,img{
+          margin: 1rem 0;
+
+        }
+        img{
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 2.5rem;
+          margin-block-end: 0.5rem;
+
+        }
       }
     }
+
+    @media (width<=992px) {
+      flex-direction: column;
+      gap: 0.75rem;
+      .all-content {
+        h1 {
+          @include font_style(h2);
+          @include text_overflow(2);
+        }
+
+        .quick-access {
+          display: flex;
+          flex-direction: column;
+          border-radius: 2.5rem;
+          border: 1px solid $gray-2;
+          background: $white-1;
+          padding: 1.25rem;
+          width: 100%;
+
+        }
+
+      }
+
+    }
+    @media (width<=768px) {
+
+      .all-content {
+
+        .blog-img-single {
+          height: 18.3125rem;
+        }
+      }
+
+    }
+
   }
+
+  @media (width<=992px) {
+    padding-block-start: 2.1rem;
+
+  }
+  @media (width>=992px) {
+    .blog-content > .sidebar {
+      min-height: 200px;
+      overflow: auto;
+      position: sticky;
+      top: 5%;
+    }
+  }
+  }
+
+
+.blog-special-progress-bar{
+  margin-inline-start: 1rem;
+  @include sudo(before,4px,100%,#E8E9EA){
+    position: absolute;
+    top: 1rem;
+    right: 0;
+
+  }
+  h2{
+    position: relative;
+
+    @include sudo(before,100%, 100%,#E8E9EA){
+      position: absolute;
+      z-index: -1;
+      right: -1rem;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+h2.custom-style-h2{
+  color: $white-1 !important;
+
+  @include sudo(after,100%, 100%,$blue-2){
+    position: absolute;
+    right: -1rem;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+  }
+
 }
+}
+.progress-bar {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  width: 4px; /* Width of the progress bar */
+  height: 0; /* Initial height */
+  background-color: $blue-2;
+  transition: height 0.5s ease;
+}
+

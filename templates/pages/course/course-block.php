@@ -1,32 +1,57 @@
-<div class="course-block">
+<?php
+$post_id = '';
+if ($args['id']) {
+    $post_id = $args['id'];
+}
+$description = get_field('course_excerpt', $post_id);
+$startTerm = get_field('start_new_term', $post_id);
+$classCapacity = get_field('class_capacity', $post_id);
+$bgColor = get_field('course_color', $post_id);
+
+?>
+
+<div class="course-block <?= $bgColor?>">
     <div class="course-info">
 
         <div class="course-info-content">
             <div class="title">
-                <h3></h3><span></span>
+                <h3><?= get_the_title($post_id) ?></h3><span><?= get_field('course_level', $post_id) ?></span>
             </div>
             <div class="content">
-                <div class="description"></div>
+                <?php if ($description): ?>
+                    <div class="description"><?= $description ?></div>
+                <?php endif; ?>
                 <div class="detail">
-                    <span><i></i></span>
-                    <span><i></i></span>
+                    <?php if ($startTerm): ?>
+                        <div><span class="title-name">شروع ترم جدید:<i class=""></i></span>
+                            <span><?= $startTerm ?></span></div>
+                    <?php endif;
+                    if ($classCapacity): ?>
+                        <div><span class="title-name">ظرفیت کلاس:<i
+                                        class=""></i></span><span><?= $classCapacity ?></span></div>
+                    <?php endif; ?>
                 </div>
 
             </div>
             <div class="btn">
-                <a href=""></a>
+                <a href="<?= get_field('call_to _us_btn', $post_id)?>">تماس با ما </a>
             </div>
         </div>
-        <div class="course-img"></div>
+        <div class="course-img">
+
+            <?php $thumbnail_id = get_post_thumbnail_id($post_id); ?>
+            <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
+        </div>
     </div>
 
-    <div class="course-form-block">
-        <span class="show-form"><i class=""></i></span>
+    <div class="course-form-block <?= $bgColor?>">
+
+        <span class="show-form"><span>ثبت نام</span><i class="icon-arrow-right"></i></span>
         <?php
         get_template_part(
             '/templates/pages/course/course-form',
             null,
-            // ['id' => get_the_ID()]
+//         ['id' => get_the_ID()]
         );
         ?>
     </div>

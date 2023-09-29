@@ -1,6 +1,5 @@
 <?php
 $pageId = get_queried_object_id();
-$blogSliders = get_field('blog_overview_hero_section', $pageId);
 $categories = get_terms(
     array(
         'taxonomy' => 'category',
@@ -15,31 +14,9 @@ $categories = get_terms(
 
 <main id="blogs-overview" class="blogs-overview-page">
 
-    <?php if ($blogSliders['hero_slider_1']['hero_slider_image']) : ?>
-
-        <div class="blog-page-slider swiper-container">
-            <div class="swiper-wrapper">
-
-                <?php foreach ($blogSliders as $slide) : ?>
-                    <div class="swiper-slide blog-slide">
-                        <div class="content">
-                            <div class="blog-hero-title">
-                                <h1><?= $slide['hero_slider_title'] ?></h1>
-                                <h4><?= $slide['hero_title_sub_title'] ?></h4>
-                                <p class="description-slide"><?= $slide['slider_description'] ?></p>
-                                <a href="<?= $slide['btn_page_link'] ?>" class="btn-link">مشاهده آموزش</a>
-                            </div>
-                            <div class="image-box">
-                                <div class="blog-circle"></div>
-                                <?= wp_get_attachment_image($slide['hero_slider_image'], 'full', false, []); ?>
-
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    <?php endif ?>
+  <?php
+  get_template_part('templates/pages/blog/hero-blog');
+  ?>
 
     <div class="blog-section">
         <div class="container">
@@ -52,12 +29,15 @@ $categories = get_terms(
 
                     <?php
                     $num = 1;
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
                     foreach ($categories as $cat) :
 
                         $termID = $cat->term_id;
                         $Args = [
                             'post_type' => "post",
                             'posts_per_page' => 2,
+                            'paged' => $paged,
                             'tax_query' => [
                                 [
                                     'taxonomy' => 'category',
@@ -67,12 +47,13 @@ $categories = get_terms(
                                 ]
                             ]
                         ];
-                        $allBlogs = new WP_Query($Args); ?>
+                     ;
+                        $allBlogs = new WP_Query($Args);?>
                         <div class="blog-page-row-blog <?= $cat->slug ?> <?= ($num == 1) ? 'active-blogs' : ''; ?>">
 
                             <?php
                             if ($allBlogs->have_posts()) : ?>
-                                <div class="row-blog active-blogs ">
+                                <div class="row-blog show-blog-page">
                                     <?php while ($allBlogs->have_posts()) {
                                         $allBlogs->the_post();
 

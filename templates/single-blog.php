@@ -3,8 +3,8 @@ $post_id = get_queried_object_id();
 $blog = get_post($post_id);
 
 $currentCat = get_the_category($post_id);
+$post = get_post($post_id);
 
-$blogs = get_field('choose_course-blog', $post_id);
 ?>
 <main class="main single-blog">
     <section class="single-blog">
@@ -17,14 +17,27 @@ $blogs = get_field('choose_course-blog', $post_id);
                     null,
                 );
                 ?>
-                <div class="all-content container">
-                    <h1 class="h2"><?= get_the_title($post_id) ?></h1>
+                <div class="all-content">
+                    <h1><?= get_the_title($post_id) ?></h1>
                     <div class="blog-img-single">
-                        <?= wp_get_attachment_image(get_field('blog_main_img', $post_id), 'full', false, []); ?>
+                        <?php $thumbnail_id = get_post_thumbnail_id($post_id); ?>
+                        <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
                     </div>
 
-                    <?php if ($blog->post_content) : ?>
+<!--                    mobile quick access-->
+                    <?php if ($post->post_content) : ?>
+                        <div class="quick-access">
+                            <h4>در این مقاله خواهید خواند</h4>
+                            <ul class="scroll-list-mobile">
+
+                            </ul>
+                        </div>
+                    <?php endif;
+
+                    if ($blog->post_content) : ?>
+
                         <div class="content-single" id="content-single">
+
                             <?= get_the_content(); ?>
                         </div>
                     <?php endif; ?>
@@ -34,22 +47,7 @@ $blogs = get_field('choose_course-blog', $post_id);
                         </div>
                         <?php comments_template(); ?>
                     </div>
-                    <?php
-                    if (is_array($blogs) && count($blogs) > 0) : ?>
-                        <div class="mobile-recommended-blogs">
-                            <h5>شاید بپسندید</h5>
 
-                            <div class="pin-blog-sidebar">
-                                <?php foreach ($blogs as $blog) :
-                                    set_query_var('id', $blog->ID);
-                                    get_template_part(
-                                        'templates/components/card-blog',
-                                        null,
-                                    );
-                                endforeach; ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
                 </div>
             </div>
         </div>

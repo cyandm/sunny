@@ -1,4 +1,6 @@
-import Swiper from "swiper";
+//
+// import { Mousewheel,Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules/' ;
+// import { Swiper } from 'swiper';
 
 const coachSlider = document.querySelector(".coach-slider");
 
@@ -52,5 +54,9 @@ horizontalSliders.forEach((slider) => {
     speed: 1000,
     nested: true,
     mousewheel: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
   });
 });

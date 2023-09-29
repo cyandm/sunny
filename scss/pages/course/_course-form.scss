@@ -1,5 +1,12 @@
 @use "../../utils/index" as *;
 .course-form {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
   border: 1px solid $gray-2;
   .details-course {
     > diV {
@@ -91,4 +98,10 @@
   .course-form {
     background: $blue-1;
   }
+}
+
+.course-form.active{
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
 }

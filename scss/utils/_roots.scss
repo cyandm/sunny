@@ -63,16 +63,19 @@ button {
 }
 
 // ---------------------------------------- default style
-input {
+input,
+textarea,
+select {
   border: none;
+
   &:focus-visible {
-    outline: none;
+    border: none;
   }
+
   &:focus {
     outline: none;
   }
 }
-
 // -------------------------------------------container style
 .container {
   max-width: 1440px;

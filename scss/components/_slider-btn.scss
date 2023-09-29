@@ -1,0 +1,24 @@
+@use "../utils/index" as *;
+.panels-navigation {
+  display: flex;
+  gap: 0.38rem;
+  margin-block-end: 1.12rem;
+  .next {
+    i {
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  i {
+    @include flex();
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: $pink-1;
+    border-radius: 50%;
+    &::before {
+      font-size: 1.5rem;
+      color: $white-1;
+    }
+  }
+}

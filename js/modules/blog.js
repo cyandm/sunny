@@ -1,79 +1,56 @@
 import { activateFirstElement, setElementHeight } from "./functions";
-import Swiper from "swiper";
 
-const blogPage = document.querySelector("#blogs-overview");
+let blogPageblog = document.querySelector("#blogs-overview");
 
-if (blogPage) {
+if (blogPageblog) {
   // *********************************swiper slider
   const blogOverviewSlider = document.querySelector(".blog-page-slider");
   if (blogOverviewSlider) {
-    const mainSlider = new Swiper(blogOverviewSlider, {
+    const blogMainSlider = new Swiper(blogOverviewSlider, {
       slidesPerView: 1,
       spaceBetween: 0,
-      mousewheel: true,
-      // speed: 1000,
+      speed: 1000,
+      // mousewheel: true,
+      mousewheel: {
+        forceToAxis: false,
+        sensitivity: 1,
+        releaseOnEdges: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+
       // autoplay: {
       //   delay: 3000,
       //   disableOnInteraction: false,
       // },
     });
+    blogMainSlider.on('reachEnd', function () {
+
+      document.body.style.overflowY = 'scroll';
+    });
+
   }
 
   // ************************************ tab blogs
-  // Activate the first child of "active-blogs" after the toggle
-  // const cardBlogs = document.querySelectorAll(".active-blogs .cart-blog");
-  // activateFirstElement(cardBlogs);
-
-  // Set the height for the first element with class "active-blogs"
-
-  const blogFirstHeight = document.querySelector("article .active-blogs");
-  console.log(tabCategory);
-  setElementHeight(blogFirstHeight);
-  window.onresize = function (event) {
-    setElementHeight(blogFirstHeight);
-  };
-
-  // Determine the appropriate category tabs based on screen width
-  let windowWidth = window.innerWidth;
-  let tabCategory;
-  if (windowWidth <= 992) {
-    tabCategory = document.querySelector("#cat-select-mobile");
-  } else {
-    tabCategory = document.querySelectorAll(".category-tab");
   }
 
-  // Event listener for category tabs
-  tabCategory.forEach((category) => {
-    category.addEventListener("click", (e) => {
-      category.classList.add("active-cat");
-      tabCategory.forEach((cat) => {
-        if (cat != category) {
-          cat.classList.remove("active-cat");
-        }
-      });
 
-      // Get the slug attribute from the clicked category
+// ********************************* add class to humberger menu in single blog
+const backBtn= document.querySelector('#back-btn');
+if(backBtn){
+  document.querySelector('.hamburger-menu').classList.add('single-blog');
+}
 
-      const slug = category.getAttribute("data-slug");
+// **************************************page load category for single blog page
+let mobileCategoryList = document.querySelector('#mobile-category-list');
+if(mobileCategoryList){
+  let options = mobileCategoryList.querySelectorAll('option');
 
-      // Toggle the "active-blogs" class based on the slug
-      const blogs = document.querySelectorAll(".row-blog");
-
-      blogs.forEach((blog) => {
-        if (blog.classList.contains(slug)) {
-          blog.classList.add("active-blogs");
-          setElementHeight(blog);
-          window.onresize = function (event) {
-            setElementHeight(blog);
-          };
-        } else {
-          blog.classList.remove("active-blogs");
-        }
-      });
-
-      // Activate the first child of "active-blogs" after the toggle
-      const cardBlogs2 = document.querySelectorAll(".active-blogs .cart-blog");
-      activateFirstElement(cardBlogs2);
+  for (let i = 0; i < options.length; i++) {
+    mobileCategoryList.addEventListener('change',function (){
+      window.location = this.value;
     });
-  });
+  }
 }

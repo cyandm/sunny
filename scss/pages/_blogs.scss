@@ -1,76 +1,26 @@
 @use "../utils/index" as *;
 
 .blogs-overview-page {
-  .blog-page-slider {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    direction: ltr;
-    .blog-slide {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      direction: rtl;
-      .content {
-        .blog-hero-title {
-          @include flex(column, start, start);
-          gap: 1rem;
-          color: $white-1;
-          h1 {
-            @include font_style(t1);
-            @include text_overflow(1);
-          }
-          h4 {
-            @include font_style(h1);
-            @include text_overflow(1);
-          }
-          p.description-slide {
-            @include font_style(body_b);
-            @include text_overflow(1);
-          }
-          a {
-            @include btn();
-            @include font_style(body);
-          }
-          @media (width<=768px) {
-            gap: 0.25rem;
-            h1 {
-              @include font_style(h1);
-            }
-            h4 {
-              @include font_style(h2);
-            }
-            p.description-slide {
-              @include font_style(body);
-              @include text_overflow(2);
-            }
-          }
-        }
-        .image-box {
-          @include flex();
-          position: absolute;
-          bottom: 0;
-          img {
-            max-width: 28rem;
-            max-height: 31rem;
-          }
-          .blog-circle {
-            width: 27.25rem;
-            height: 27.25rem;
-            border-radius: 50%;
-          }
-        }
-      }
-    }
-  }
+
 
   .blog-section {
+    margin-block-start: 4.5rem;
+
     .overview-blog-content {
-      .blogs-row {
+      .blog-tab {
+        @include flex(row, space-between);
+        width: 100%;
+        @media (width<=768px) {
+          display: none;
+        }
+
+      }
+
+      article.blogs-row {
+
         .blog-page-row-blog {
-          @include flex(column, start, center);
+
+          @include flex(column, start, start);
           width: 100%;
           opacity: 0;
           visibility: hidden;
@@ -78,15 +28,13 @@
           top: 0;
           transition: all 0.3s ease-in-out;
 
-          .blog-row.active-blogs {
+          .row-blog.show-blog-page {
+            position: unset;
             opacity: 1 !important;
             visibility: visible !important;
-            .cart-blog.active,
-            .cart-blog {
-              flex: 1;
-              flex: 1 1 32%;
-            }
+
           }
+
           .pagination {
             direction: ltr;
             display: flex;
@@ -134,6 +82,7 @@
               width: 1rem;
             }
           }
+
           .empty-content {
             margin-top: 2rem;
 
@@ -142,11 +91,13 @@
               align-items: center;
               justify-content: center;
               width: 100%;
+
               .cloudy-circle {
               }
             }
           }
         }
+
         .blog-page-row-blog.active-blogs {
           opacity: 1;
           visibility: visible;
@@ -162,6 +113,7 @@
     .info-cart-blog {
       padding: unset;
     }
+
     div.description {
       p {
         @include text_overflow(1);

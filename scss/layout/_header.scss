@@ -45,6 +45,7 @@ header {
           > a {
             @include sudo_icon("after", "\e91e", $gray-1, $size: 1.5rem);
             display: flex;
+
             &:hover {
               &::after {
                 color: $blue-2;
@@ -117,9 +118,6 @@ header {
       align-items: center;
       gap: 0.5rem;
 
-      .sing-up-btn {
-        @include btn($icon: true);
-      }
 
       .profile-btn {
         @include flex();
@@ -142,7 +140,7 @@ header {
       }
     }
 
-    @media (width<=768px) {
+    @media (width<=992px) {
       display: none;
     }
   }
@@ -153,10 +151,17 @@ header {
     align-items: center;
 
     .hamburger-menu {
-      width: 2rem;
-      height: 2rem;
+
+      padding: 0.31rem;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: 0.625rem;
+      border: 0.5px solid $gray-2;
+      background: $white-1;
+
 
       i {
+
         top: 1rem;
         left: 2rem;
         height: 43px;
@@ -164,11 +169,13 @@ header {
         z-index: 998;
 
         &::before {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
       }
     }
-
+    .hamburger-menu.single-blog{
+      margin-inline-start: 3rem;
+    }
     .mobile-menu {
       visibility: hidden;
       opacity: 0;
@@ -199,6 +206,29 @@ header {
           justify-content: space-between;
           margin-bottom: 2.5rem;
 
+          .form-search.menu-mobile {
+            form {
+              width: 2.125rem;
+              padding: 0.25rem;
+              height: 2.125rem;
+              border-radius: 0.625rem;
+              transition: all 0.3s ease-in-out;
+
+              div {
+                input {
+                  opacity: 0;
+                }
+
+                i {
+                  &:before {
+                    color: $black-1;
+                    font-size: 1.5rem;
+                  }
+                }
+              }
+            }
+          }
+
           .icon-close-div {
             @include flex();
             align-items: center;
@@ -214,6 +244,7 @@ header {
               align-items: center;
               justify-content: center;
               padding: 0.62rem;
+
               &::before {
                 font-size: 1.5rem;
               }
@@ -235,7 +266,7 @@ header {
 
         .menu-contain {
           ul.menu {
-            @include flex(column);
+            @include flex(column, center, start);
             width: 100%;
             gap: 1rem;
             margin-bottom: 1.62rem;
@@ -289,13 +320,13 @@ header {
                   padding: 1rem 0;
                   position: relative;
 
-                  @include sudo('before',3.44rem,2px,$gray-2) {
+                  @include sudo('before', 3.44rem, 2px, $gray-2) {
                     display: block;
                     margin-left: 1rem;
                     position: absolute;
                   }
 
-                  @include sudo("after",2px,3.5rem,$gray-2) {
+                  @include sudo("after", 2px, 3.5rem, $gray-2) {
                     position: absolute;
                     right: 0;
                     top: -1.8rem;
@@ -308,7 +339,7 @@ header {
                     padding-right: 4.7rem;
                     position: relative;
 
-                    @include sudo("before",0.62rem,0.62rem,$gray-2) {
+                    @include sudo("before", 0.62rem, 0.62rem, $gray-2) {
                       border-radius: 50%;
                       position: absolute;
                       right: 3.4rem;
@@ -326,6 +357,7 @@ header {
 
             li.menu-item-has-children.active-menu {
               position: relative;
+
               &::before {
                 border: 1px solid $gray-2;
                 border-radius: 0.625rem;
@@ -334,7 +366,7 @@ header {
                 right: -5px;
               }
 
-              @include sudo('after',2px,1.5rem,#8c9094) {
+              @include sudo('after', 2px, 1.5rem, #8c9094) {
                 position: absolute;
                 top: 2.1rem;
                 right: 0.7rem;
@@ -349,37 +381,37 @@ header {
             li.home-menu {
               @include sudo_icon("before", "\e90e", $black-1, "1.5rem");
             }
+
             li.course-menu {
               @include sudo_icon("before", "\e90a", $black-1, "1.5rem");
             }
+
             li.blog-menu {
               @include sudo_icon("before", "\e905", $black-1, "1.5rem");
             }
+
             li.shop-menu {
               @include sudo_icon("before", "\e91a", $black-1, "1.5rem");
             }
+
             li.coach-menu {
               @include sudo_icon("before", "\e909", $black-1, "1.5rem");
             }
+
             li.faq-menu {
               @include sudo_icon("before", "\e90c", $black-1, "1.5rem");
             }
+
             li.about-menu {
               @include sudo_icon("before", "\e900", $black-1, "1.5rem");
             }
+
             li.contact-menu {
               @include sudo_icon("before", "\e908", $black-1, "1.5rem");
             }
           }
         }
 
-        .btn-contain {
-          width: 100%;
-
-          a {
-            width: 100%;
-          }
-        }
       }
     }
 
@@ -413,6 +445,7 @@ header {
       @include flex();
       justify-content: center;
       gap: 0.88rem;
+
       a {
         @include flex();
         width: 1.8rem;
@@ -422,6 +455,7 @@ header {
         box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
         align-items: center;
         justify-content: center;
+
         i {
           &::before {
             font-size: 1.2rem;
@@ -431,8 +465,15 @@ header {
       }
     }
 
-    @media (width<=768px) {
-      display: flex;
+    @media (width<=992px) {
+      @include flex(row, space-between, center);
+      width: 100%;
+
     }
   }
+}
+
+
+.sing-up-btn {
+  @include btn($icon: true);
 }

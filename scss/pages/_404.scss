@@ -1,0 +1,30 @@
+@use "../utils/index" as *;
+
+.unfind-row{
+  @include flex(column,center,center);
+
+  padding-block-start: 9rem;
+  width: 100%;
+
+  .unfind-content{
+    @include flex(column,center,center);
+    gap: 0.5rem;
+    width: fit-content;
+    img{
+      width: 100%;
+    }
+    h3{
+      @include font_style(h3);
+      color: $black-1;
+    }
+    .btn-row {
+   @include flex();
+
+      a {
+      @include btn();
+        color: $white-1;
+      }
+    }
+
+  }
+}

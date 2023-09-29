@@ -5,7 +5,7 @@ get_header()
 
     if (get_queried_object()->post_type == 'post') :
 
-        get_template_part('templates/pages/single-blog');
+        get_template_part('templates/single-blog');
 
 
     endif;

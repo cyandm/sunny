@@ -4,7 +4,7 @@
 
 
 <main class="front-page" id="front-page">
-    <div class="home-main-slider swiper">
+    <div class="home-main-slider swiper" >
         <div class="swiper-wrapper">
             <?php
             get_template_part('templates/pages/front/hero');
@@ -17,7 +17,8 @@
             get_template_part('templates/pages/front/shop');
             get_template_part('templates/pages/front/contacts');
             ?>
-
+        </div>
+    </div>
 </main>
 <!--</main>-->
 <?php get_footer(); ?>

@@ -1,0 +1,71 @@
+@use "../../utils/index" as *;
+
+.honors-slider {
+  .container {
+    @include flex(column, start, start);
+
+    gap: 0.75rem;
+    direction: rtl;
+    margin-block-start: 5rem;
+
+    .honors-title {
+      h2 {
+        @include font_style(h2);
+        @include text_overflow(1);
+      }
+
+
+    }
+
+    .contain {
+      @include flex();
+
+      gap: 1rem;
+      flex-wrap: wrap;
+
+
+      .honors-box {
+        @include flex(column);
+        flex: 1 1 32%;
+        gap: 0.5rem;
+        padding: 1rem;
+        border-radius: 2.5rem;
+        border: 1px solid $gray-2;
+        background: $white-1;
+
+        @media (width<=992px) {
+          flex: 1 1 46%;
+        }
+        @media (width<=768px) {
+          flex: 1 1 100%;
+        }
+
+        img {
+          width: 100%;
+          max-height: 14.875rem;
+          border-radius: 1.5rem;
+          object-fit: cover;
+        }
+
+        .info {
+          @include flex(column, start, start);
+
+          gap: 0.25rem;
+          width: 100%;
+
+          h3 {
+            @include font_style(h3);
+            @include text_overflow(1);
+          }
+
+          span {
+            @include font_style(h4);
+            @include text_overflow(1);
+            color: $gray-1;
+          }
+        }
+      }
+    }
+  }
+
+}

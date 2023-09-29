@@ -7,6 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head() ?>
+    <script type='text/javascript'>
+        var ajax_var = {
+            url: `<?php echo admin_url( 'admin-ajax.php' ) ?>`,
+            nonce: `<?php echo wp_create_nonce( 'ajax-nonce' ) ?>`
+        }
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -18,7 +25,7 @@
                 ?>
             </div>
             <div class="btn-column">
-                <?php get_template_part('templates/components/search-form'); ?>
+                <?php get_template_part('templates/components/search-form', null,['menu-mobile'=>false]); ?>
                 <a href="" class="sing-up-btn"><i class="icon-note-book"></i>ثبت نام آنلاین</a>
                 <a href="" class="profile-btn"><i class="icon-user"></i></a>
 
@@ -33,7 +40,7 @@
             <div class="mobile-menu">
                 <div class="mobile-menu-detail">
                     <div class="logo-close-btn">
-                        <?php get_template_part('templates/components/search-form'); ?>
+                        <?php get_template_part('templates/components/search-form', null,['menu-mobile'=>true]); ?>
                         <div class="mobile-logo-contain">
                             <?php the_custom_logo() ?>
                         </div>
@@ -49,9 +56,8 @@
                 </div>
             </div>
 
+                <a href="" class="sing-up-btn"><i class="icon-note-book"></i>ثبت نام آنلاین</a>
 
-            <div class="btn-contain">
-
-            </div>
         </div>
     </header>
+

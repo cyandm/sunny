@@ -8,7 +8,7 @@ $startSliders = get_field('slider_start_section', $frontId);
 
 <div class="swiper-slide start-section">
 
-    <div class="home-nested-slider swiper-container">
+    <div class="home-nested-slider swiper-container" dir="ltr">
         <div class="swiper-wrapper">
             <?php
             $num = 1;
@@ -37,17 +37,18 @@ $startSliders = get_field('slider_start_section', $frontId);
                                         <h2><?= $Slide['start_slider_title'] ?></h2>
                                     </div>
                                     <div class="panels-navigation">
-                                        <?php if ($num == 1) : ?>
-                                            <div class="nav-panel next" data-sign="plus"><a href="#start-<?= $num + 1 ?>" class="anchor"><i class="icon-arrow-single-big"></i>next</a>
-                                            </div>
-                                        <?php elseif ($num == count($startSliders)) : ?>
-                                            <div class="nav-panel prv" data-sign="minus"><a href="#start-<?= $num - 1 ?>" class="anchor"><i class="icon-arrow-single-big"></i>prv</a></div>
-                                        <?php else : ?>
-                                            <div class="nav-panel next" data-sign="plus"><a href="#start-<?= $num + 1 ?>" class="anchor"><i class="icon-arrow-single-big"></i>next</a>
-                                            </div>
-                                            <div class="nav-panel prv" data-sign="minus"><a href="#start-<?= $num - 1 ?>" class="anchor"><i class="icon-arrow-single-big"></i>prv</a></div>
+                                        <div class="panels-navigation ">
+                                            <?php if ($num == 1) : ?>
+                                            <div class="swiper-button-next next"><i class="icon-arrow-single-big"></i></div>
+                                            <?php elseif ($num == count($startSliders)) : ?>
 
-                                        <?php endif; ?>
+                                            <div class="swiper-button-prev prv"><i class="icon-arrow-single-big"></i></div>
+                                            <?php else : ?>
+                                                <div class="swiper-button-next next"><i class="icon-arrow-single-big"></i></div>
+                                                <div class="swiper-button-prev prv"><i class="icon-arrow-single-big"></i></div>
+                                            <?php endif; ?>
+                                        </div>
+
                                     </div>
 
                                     <div class="start-description">

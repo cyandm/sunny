@@ -1,40 +1,227 @@
 @use "../utils/index" as *;
 
-.all-course-overview {
-  .course-row {
-    @include flex(column, center, start);
-    gap: 2rem;
+//-------------- cloud animation
+@keyframes sway {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
 
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.course-overview-page {
+  padding-block-start: 7rem;
+
+  .course-hero {
+    @include flex();
+
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+
+    > * {
+      flex: 1;
+    }
+
+    .image-animate {
+      @include flex();
+
+      position: relative;
+
+      img {
+        position: relative;
+        z-index: 0;
+        bottom: 0;
+        max-width: 28.75rem;
+        max-height: 36.125rem;
+        right: 0.5rem;
+      }
+
+      .bg {
+        width: 27.5625rem;
+        height: 31.75rem;
+        background: $blue-1;
+        border-radius: 50% 50% 0 0;
+        z-index: -2;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+
+
+        @include sudo(before, 26rem, 17rem, none) {
+          content: url("http://sunny.local/wp-content/uploads/2023/09/cloau-before.svg");
+          bottom: 0;
+          left: -44%;
+          position: absolute;
+          animation: sway 4s ease-in-out infinite alternate;
+        }
+        @include sudo(after, 26rem, 17rem, none) {
+          content: url("http://sunny.local/wp-content/uploads/2023/09/cloaud-after.svg");
+          right: 0;
+          top: 0;
+          position: absolute;
+          animation: sway 3s ease-in-out infinite alternate;
+        }
+      }
+
+      span {
+        @include flex();
+        @include font_style(h4);
+
+        color: $white-1;
+        padding: 1rem 1.5rem;
+        background: $blue-2;
+        border-radius: 2.5rem;
+        position: absolute;
+        animation: bounce 2s infinite alternate;
+      }
+
+      span.img-title-1 {
+        left: 7%;
+        top: 35%;
+      }
+
+      span.img-title-2 {
+        right: 10%;
+      }
+
+      span.img-title-3 {
+        right: 13%;
+        bottom: 3rem;
+      }
+
+    }
+
+    .hero-content {
+
+      h1 {
+        @include font_style(h1);
+        @include text_overflow(2);
+        color: $black-1;
+
+        span {
+          color: $blue-2;
+        }
+      }
+
+      p {
+        @include font_style(body);
+        color: $gray-1;
+        margin-block-end: 0.75rem;
+      }
+
+      .hero-btn {
+        @include flex(row, start, center);
+
+        a {
+          @include btn($icon: true);
+
+          i {
+            transform: rotate(90deg);
+
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1300px) and (min-width: 992px) {
+      .image-animate {
+        span.img-title-1 {
+          left: -5%;
+          top: 35%;
+        }
+
+        span.img-title-2 {
+          right: -2%;
+        }
+
+        span.img-title-3 {
+          right: 0;
+          bottom: 3rem;
+        }
+      }
+    }
+    @media (width<=992px) {
+      flex-direction: column;
+      gap: 2.19rem;
+    }
     @media (width<=768px) {
-      gap: 1rem;
+      .hero-content > .hero-btn {
+        h1 {
+          @include font_style(h2);
+        }
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+
+    svg {
+      position: absolute;
+      left: 10%;
+      bottom: 0;
     }
   }
-  .ticker-section {
-    .section-title-sub {
-    }
-    .ticker {
-      ul {
-        @include flex;
 
-        gap: 2rem;
-        li {
+  .all-course-overview {
+    .course-row {
+      @include flex(column, center, start);
+      gap: 2rem;
+
+
+
+      @media (width<=768px) {
+        gap: 1rem;
+      }
+    }
+
+    .ticker-section {
+      .section-title-sub {
+      }
+
+      .ticker {
+        ul {
           @include flex;
-          gap: 0.37rem;
-          border-radius: 2.5rem;
-          background: #ff3d5a;
-          span {
-            @include font_style(body-b);
-            color: $white-1;
-          }
-          i {
+
+          gap: 2rem;
+
+          li {
             @include flex;
-            width: 3.4375rem;
-            height: 3.4375rem;
-            background: $white-1;
-            border-radius: 50%;
-            &::before {
-              font-size: 1.5rem;
-              color: $black-1;
+            gap: 0.37rem;
+            border-radius: 2.5rem;
+            background: #ff3d5a;
+
+            span {
+              @include font_style(body-b);
+              color: $white-1;
+            }
+
+            i {
+              @include flex;
+              width: 3.4375rem;
+              height: 3.4375rem;
+              background: $white-1;
+              border-radius: 50%;
+
+              &::before {
+                font-size: 1.5rem;
+                color: $black-1;
+              }
             }
           }
         }
@@ -42,3 +229,4 @@
     }
   }
 }
+

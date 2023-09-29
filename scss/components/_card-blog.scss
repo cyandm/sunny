@@ -28,8 +28,9 @@
 
       img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
+        border-radius: 1.5rem;
 
         transition: all 0.3s ease-in-out;
       }
@@ -38,13 +39,13 @@
 
   .content-cart-blog {
     padding: 0rem 0.625rem;
-    height: 8rem;
+
 
     h3 {
       @include font_style(h3);
       @include text_overflow(2);
       margin-bottom: 0.38rem;
-      max-height: 3.5rem;
+      height: 3.5rem;
       transition: all 0.3s ease-in-out;
 
       @media (width<=768px) {
@@ -54,6 +55,7 @@
     }
 
     div.description {
+      height: 2.5rem;
       p {
         @include font_style(body);
         @include text_overflow(1);
@@ -96,9 +98,9 @@ div.description {
   }
 }
 
-.cart-blog.active {
-  .content-cart-blog,
-  .info-cart-blog {
-    padding: 0rem 1.25rem;
-  }
-}
+//.cart-blog.active {
+//  .content-cart-blog,
+//  .info-cart-blog {
+//    padding: 0rem 1.25rem;
+//  }
+//}

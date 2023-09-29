@@ -7,7 +7,7 @@ $heroSliders = get_field('front_page_hero_section', $frontId);
 
 <div class="swiper-slide">
 
-    <div class="home-nested-slider swiper-container">
+    <div class="home-nested-slider swiper-container" dir="ltr">
         <div class="swiper-wrapper">
             <?php
             $num = 1;
