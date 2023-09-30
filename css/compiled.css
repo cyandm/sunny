@@ -2959,6 +2959,14 @@ header .header-mobile .sotioal-row a i::before {
     transform: translateY(-10px);
   }
 }
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
 .course-overview-page {
   padding-block-start: 7rem;
 }
@@ -3040,17 +3048,21 @@ header .header-mobile .sotioal-row a i::before {
   border-radius: 2.5rem;
   position: absolute;
   animation: bounce 2s infinite alternate;
+  animation-delay: 0s;
 }
 .course-overview-page .course-hero .image-animate span.img-title-1 {
   left: 7%;
   top: 35%;
+  animation-delay: 0s;
 }
 .course-overview-page .course-hero .image-animate span.img-title-2 {
   right: 10%;
+  animation-delay: 0.5s;
 }
 .course-overview-page .course-hero .image-animate span.img-title-3 {
   right: 13%;
   bottom: 3rem;
+  animation-delay: 1s;
 }
 .course-overview-page .course-hero .hero-content h1 {
   color: #1A212A;
@@ -3067,6 +3079,7 @@ header .header-mobile .sotioal-row a i::before {
   -webkit-line-clamp: 2;
   white-space: pre-wrap;
   color: #1A212A;
+  max-width: 25.5rem;
 }
 .course-overview-page .course-hero .hero-content h1 span {
   color: #0B68DF;
@@ -3083,6 +3096,7 @@ header .header-mobile .sotioal-row a i::before {
   line-height: 2.25rem;
   color: #8C9094;
   margin-block-end: 0.75rem;
+  max-width: 25.5rem;
 }
 .course-overview-page .course-hero .hero-content .hero-btn {
   display: flex;
@@ -3127,6 +3141,12 @@ header .header-mobile .sotioal-row a i::before {
 .course-overview-page .course-hero .hero-content .hero-btn a i {
   transform: rotate(90deg);
 }
+.course-overview-page .course-hero .hero-content .star-svg > svg {
+  position: absolute;
+  right: 60%;
+  top: 52%;
+  animation: blink 1s infinite alternate;
+}
 @media (max-width: 1300px) and (min-width: 992px) {
   .course-overview-page .course-hero .image-animate span.img-title-1 {
     left: -5%;
@@ -3156,11 +3176,14 @@ header .header-mobile .sotioal-row a i::before {
     line-height: normal;
     font-size: 1.5rem;
   }
+  .course-overview-page .course-hero .hero-content > .hero-btn h1, .course-overview-page .course-hero .hero-content > .hero-btn p {
+    max-width: 19rem;
+  }
   .course-overview-page .course-hero .hero-content > .hero-btn a {
     width: 100%;
   }
 }
-.course-overview-page .course-hero svg {
+.course-overview-page .course-hero .line-svg > svg {
   position: absolute;
   left: 10%;
   bottom: 0;
@@ -3171,6 +3194,7 @@ header .header-mobile .sotioal-row a i::before {
   justify-content: center;
   align-items: start;
   gap: 2rem;
+  overflow: hidden;
 }
 @media (width <= 768px) {
   .course-overview-page .all-course-overview .course-row {
@@ -3368,6 +3392,7 @@ header .header-mobile .sotioal-row a i::before {
 }
 .course-block .course-form-block {
   flex-basis: 5%;
+  max-width: 6rem;
   height: 25rem;
 }
 .course-block .course-form-block .show-form {
@@ -3393,9 +3418,14 @@ header .header-mobile .sotioal-row a i::before {
   padding-top: 2rem;
 }
 .course-block .course-form-block .course-form {
+  transform: translateX(-100%);
   opacity: 0;
-  visibility: hidden;
-  width: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.course-block .course-form-block .course-form.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 @media (width <= 768px) {
   .course-block .course-info .course-info-content {
@@ -3456,24 +3486,68 @@ header .header-mobile .sotioal-row a i::before {
   background: #67D6F9;
 }
 
-.course-form-block.active {
-  transform: translateX(100%);
+@keyframes moveCircle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
 }
-
 .course-form {
-  opacity: 0;
-  visibility: hidden;
-  width: 0;
-  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid #8C9094;
+  height: 100%;
+  background: #FEFFFF;
+  border-top: 1px solid #8C9094;
+  border-bottom: 1px solid #8C9094;
+}
+.course-form .details-course {
+  flex-basis: 5%;
+  max-width: 6rem;
+  min-width: 6rem;
+  height: 25rem;
+  border-radius: 2.5rem 0rem 0rem 2.5rem;
+}
+.course-form .details-course > diV {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1.25rem;
+  font-weight: 500;
+  height: 100%;
+  border-radius: 0rem 2.5rem 2.5rem 0rem;
+  padding: 1.5rem;
+  position: relative;
+}
+.course-form .details-course > diV span {
+  transform: rotate(90deg);
+  white-space: nowrap;
+  position: absolute;
+  bottom: 3.5rem;
+  left: -1rem;
+}
+.course-form .form {
+  flex-basis: 59%;
 }
 .course-form .form form {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
@@ -3493,6 +3567,19 @@ header .header-mobile .sotioal-row a i::before {
   font-weight: 400;
   line-height: 2.25rem;
   flex: 1 1 48%;
+  gap: 0.25rem;
+}
+.course-form .form form .form-wrapper lable {
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  color: #1A212A;
 }
 .course-form .form form .form-wrapper input {
   color: #1A212A;
@@ -3514,7 +3601,43 @@ header .header-mobile .sotioal-row a i::before {
 .course-form .form form .form-btn {
   margin-block-start: 1rem;
 }
+.course-form .form form .form-btn button {
+  transition: all 0.3s ease-in-out;
+  color: #1A212A;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  padding: 0.5rem 1.25rem 0.5rem 1.5rem;
+  border: 1px solid transparent;
+  background: #1A212A;
+  color: #FEFFFF;
+  box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.course-form .form form .form-btn button:hover {
+  border: 1px solid #1A212A;
+  background: #FEFFFF;
+  color: #1A212A;
+  border: 1px solid #1A212A;
+}
+.course-form .form form .form-btn button:hover i::before {
+  color: #1A212A;
+}
 .course-form .circle-content {
+  height: 100%;
+  flex-basis: 30%;
   border-radius: 0rem 2.5rem 2.5rem 0rem;
   position: relative;
 }
@@ -3523,29 +3646,33 @@ header .header-mobile .sotioal-row a i::before {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 23rem;
-  height: 23rem;
+  width: 27rem;
+  height: 27rem;
   background: none;
   border: 2.5rem solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   position: absolute;
-  left: -20%;
+  right: 30%;
+  top: -8px;
 }
 .course-form .circle-content .circle::before {
   content: " ";
-  width: 14rem;
-  height: 14rem;
+  width: 16rem;
+  height: 16rem;
   background: none;
   border: 2rem solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
+  position: absolute;
+  animation: moveCircle 2s linear infinite;
 }
 .course-form .circle-content .circle::after {
   content: " ";
-  width: 6rem;
-  height: 6rem;
+  width: 8rem;
+  height: 8rem;
   background: none;
   border: 1rem solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
+  animation: moveCircle 3s linear infinite;
 }
 @media (width <= 500px) {
   .course-form .circle-content .circle {
@@ -3569,21 +3696,21 @@ header .header-mobile .sotioal-row a i::before {
 .course-block.yellow .circle-content {
   background: #FFF48D;
 }
-.course-block.yellow .course-form {
+.course-block.yellow .details-course {
   background: #FFF48D;
 }
 
 .course-block.pink .circle-content {
   background: #FF6883;
 }
-.course-block.pink .course-form {
+.course-block.pink .details-course {
   background: #FF6883;
 }
 
 .course-block.blue .circle-content {
   background: #67D6F9;
 }
-.course-block.blue .course-form {
+.course-block.blue .details-course {
   background: #67D6F9;
 }
 

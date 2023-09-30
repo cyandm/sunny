@@ -1,30 +1,76 @@
 @use "../../utils/index" as *;
+@keyframes moveCircle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+
+
 .course-form {
-  opacity: 0;
-  visibility: hidden;
-  width: 0;
-  transition: width 0.3s ease-in-out;
+  @include flex(row, start);
+
+  flex-wrap: wrap;
+  gap: 1.25rem;
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid $gray-2;
+  height: 100%;
+  background: $white-1;
+  border-top: 1px solid $gray-2;
+  border-bottom: 1px solid $gray-2;
+
   .details-course {
+    flex-basis: 5%;
+    max-width: 6rem;
+    min-width: 6rem;
+    height: 25rem;
+    border-radius: 2.5rem 0rem 0rem 2.5rem;
+
     > diV {
+      @include flex(column, space-between, end);
+      @include font_style(h3);
+      //width: 6rem;
+      height: 100%;
+      border-radius: 0rem 2.5rem 2.5rem 0rem;
+      padding: 1.5rem;
+      position: relative;
+
       span {
+        transform: rotate(90deg);
+        white-space: nowrap;
+        position: absolute;
+        bottom: 3.5rem;
+        left: -1rem;
       }
     }
   }
+
   .form {
+    flex-basis: 59%;
+
     form {
-      @include flex();
+      @include flex(row, start);
+
       gap: 1rem;
       flex-wrap: wrap;
+
       .form-wrapper {
         @include flex(column, space-between, start);
         @include font_style(body);
+
         flex: 1 1 48%;
+        gap: 0.25rem;
+
         lable {
+          @include font_style(body);
+
+          color: $black-1;
         }
+
         input {
           @include font_style(body);
           padding: 0.5rem 1rem 0.5rem 1.25rem;
@@ -35,35 +81,47 @@
           color: $gray-1;
         }
       }
+
       .form-btn {
         margin-block-start: 1rem;
+
+        button {
+          @include btn($icon: true);
+        }
       }
     }
   }
 
   .circle-content {
+    height: 100%;
+    flex-basis: 30%;
     border-radius: 0rem 2.5rem 2.5rem 0rem;
-
     position: relative;
+
     .circle {
       @include flex();
-      @include sudo(before, 14rem, 14rem, none) {
+      @include sudo(before, 16rem, 16rem, none) {
         border: 2rem solid rgba(255, 255, 255, 0.5);
         border-radius: 50%;
+        position: absolute;
+        animation: moveCircle 2s linear infinite;
       }
 
-      @include sudo(after, 6rem, 6rem, none) {
+      @include sudo(after, 8rem, 8rem, none) {
         border: 1rem solid rgba(255, 255, 255, 0.5);
         border-radius: 50%;
+        animation: moveCircle 3s linear infinite;
       }
 
-      width: 23rem;
-      height: 23rem;
+      width: 27rem;
+      height: 27rem;
       background: none;
       border: 2.5rem solid rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       position: absolute;
-      left: -20%;
+      right: 30%;
+      top: -8px;
+
       @media (width<= 500px) {
         width: 19.5rem;
         height: 19.54rem;
@@ -78,15 +136,18 @@
   .circle-content {
     background: $yellow-1;
   }
-  .course-form {
+
+  .details-course {
     background: $yellow-1;
   }
 }
+
 .course-block.pink {
   .circle-content {
     background: $pink-1;
   }
-  .course-form {
+
+  .details-course {
     background: $pink-1;
   }
 }
@@ -95,12 +156,13 @@
   .circle-content {
     background: $blue-1;
   }
-  .course-form {
+
+  .details-course {
     background: $blue-1;
   }
 }
 
-.course-form.active{
+.course-form.active {
   width: 100%;
   opacity: 1;
   visibility: visible;

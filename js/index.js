@@ -6,3 +6,4 @@ import "./modules/quick-access";
 import "./modules/contact";
 import "./modules/single-blog";
 import "./modules/course-overview";
+import "./modules/date-picker";

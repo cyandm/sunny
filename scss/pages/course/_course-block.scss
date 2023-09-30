@@ -76,6 +76,7 @@ flex: 1;
   }
   .course-form-block {
     flex-basis: 5%;
+    max-width: 6rem;
     height: 25rem;
     .show-form {
       @include flex(column, space-between,start);
@@ -92,9 +93,16 @@ flex: 1;
 
     }
     .course-form {
-      opacity: 0;
-      visibility: hidden;
-      width: 0;
+
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    }
+    .course-form.active {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
   }
 
@@ -168,6 +176,3 @@ flex: 1;
   }
 }
 
-.course-form-block.active{
-  transform: translateX(100%);
-}
