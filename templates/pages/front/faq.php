@@ -1,6 +1,5 @@
 <?php
 $frontId = get_option('page_on_front');
-
 $faqTitle = get_field('title_faq_section', $frontId);
 $allFaqs = get_field('choose_faqs', $frontId);
 $faqImg = get_field('image_faq_section', $frontId);
@@ -19,10 +18,10 @@ $faqImg = get_field('image_faq_section', $frontId);
         <div class="faq-content">
             <div class="faq-drop-down">
                 <?php
-                $acardionNum = 1;
+                $accordionNum = 1;
                 foreach ($allFaqs as $faq) :
                     if (is_array($allFaqs) && count($allFaqs) > 0) : ?>
-                        <div class="accardion <?= ($acardionNum == 1) ? 'show' : '' ?>">
+                        <div class="accordion <?= ($accordionNum == 1) ? 'show' : '' ?>">
                             <div class="question">
                                 <span><?= $faq->post_title ?></span>
                                 <i class="icon-arrow-single-big"></i>
@@ -32,7 +31,7 @@ $faqImg = get_field('image_faq_section', $frontId);
                             </div>
                         </div>
                 <?php endif;
-                    $acardionNum++;
+                    $accordionNum++;
                 endforeach; ?>
             </div>
             <div class="faq-img">

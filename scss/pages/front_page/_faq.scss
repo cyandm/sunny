@@ -16,7 +16,7 @@
       border: 1px solid $gray-2;
       background: $white-1;
 
-      .accardion {
+      .accordion {
         @include flex(column, start, start);
         @include font_style(body);
 
@@ -56,7 +56,7 @@
           border-bottom: none;
         }
       }
-      .accardion.show {
+      .accordion.show {
         .question {
           i {
             background: $pink-1;

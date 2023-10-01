@@ -7,12 +7,8 @@ export const addActiveClassLoop = (target, objectName) => {
   });
 };
 
-export const addClass = (ifContent, target) => {
-  if (ifContent) {
-    target.classList.add("active");
-  } else {
-    target.classList.remove("active");
-  }
+export const toggleClass = (ifContent, target) => {
+  target.classList.toggle("active", ifContent);
 };
 
 // Function to set the height of an element based on its content

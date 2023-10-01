@@ -1,14 +1,13 @@
 @use "../../utils/index" as *;
 @keyframes moveCircle {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(20px);
   }
 }
-
-
 
 .course-form {
   @include flex(row, start);
@@ -22,18 +21,18 @@
   background: $white-1;
   border-top: 1px solid $gray-2;
   border-bottom: 1px solid $gray-2;
-
+  width: 100%;
   .details-course {
-    flex-basis: 5%;
-    max-width: 6rem;
-    min-width: 6rem;
+    flex-basis: 6%;
+    max-width: 5.7rem;
+
     height: 25rem;
     border-radius: 2.5rem 0rem 0rem 2.5rem;
 
     > diV {
       @include flex(column, space-between, end);
       @include font_style(h3);
-      //width: 6rem;
+
       height: 100%;
       border-radius: 0rem 2.5rem 2.5rem 0rem;
       padding: 1.5rem;
@@ -50,7 +49,7 @@
   }
 
   .form {
-    flex-basis: 59%;
+    flex-basis: 63%;
 
     form {
       @include flex(row, start);
@@ -104,13 +103,11 @@
         border: 2rem solid rgba(255, 255, 255, 0.5);
         border-radius: 50%;
         position: absolute;
-        animation: moveCircle 2s linear infinite;
       }
 
       @include sudo(after, 8rem, 8rem, none) {
         border: 1rem solid rgba(255, 255, 255, 0.5);
         border-radius: 50%;
-        animation: moveCircle 3s linear infinite;
       }
 
       width: 27rem;
@@ -160,10 +157,4 @@
   .details-course {
     background: $blue-1;
   }
-}
-
-.course-form.active {
-  width: 100%;
-  opacity: 1;
-  visibility: visible;
 }

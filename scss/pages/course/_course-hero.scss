@@ -1,0 +1,197 @@
+@use "../../utils/index" as *;
+
+//-------------- cloud animation
+@keyframes sway {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.course-overview-page {
+  padding-block-start: 7rem;
+
+  .course-hero {
+    @include flex();
+
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+
+    > * {
+      flex: 1;
+    }
+
+    .image-animate {
+      @include flex();
+
+      position: relative;
+
+      img {
+        position: relative;
+        z-index: 0;
+        bottom: 0;
+        max-width: 28.75rem;
+        max-height: 36.125rem;
+        right: 0.5rem;
+      }
+
+      .bg {
+        width: 27.5625rem;
+        height: 31.75rem;
+        background: $blue-1;
+        border-radius: 50% 50% 0 0;
+        z-index: -2;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+
+        @include sudo(before, 26rem, 17rem, none) {
+          content: url("http://sunny.local/wp-content/uploads/2023/10/cloaud-after.svg");
+          bottom: 0;
+          left: -44%;
+          position: absolute;
+          animation: sway 4s ease-in-out infinite alternate;
+        }
+        @include sudo(after, 26rem, 17rem, none) {
+          content: url("http://sunny.local/wp-content/uploads/2023/10/cloaud-before.svg");
+          right: 0;
+          top: 0;
+          position: absolute;
+          animation: sway 3s ease-in-out infinite alternate;
+        }
+      }
+
+      span {
+        @include flex();
+        @include font_style(h4);
+
+        color: $white-1;
+        padding: 1rem 1.5rem;
+        background: $blue-2;
+        border-radius: 2.5rem;
+        position: absolute;
+        animation: bounce 2s infinite alternate;
+        animation-delay: 0s;
+      }
+
+      span.img-title-1 {
+        left: 7%;
+        top: 35%;
+        animation-delay: 0s;
+      }
+
+      span.img-title-2 {
+        right: 10%;
+        animation-delay: 0.5s;
+      }
+
+      span.img-title-3 {
+        right: 13%;
+        bottom: 3rem;
+        animation-delay: 1s;
+      }
+    }
+
+    .hero-content {
+      h1 {
+        @include font_style(h1);
+        @include text_overflow(2);
+        color: $black-1;
+        max-width: 25.5rem;
+
+        span {
+          color: $blue-2;
+        }
+      }
+
+      p {
+        @include font_style(body);
+        color: $gray-1;
+        margin-block-end: 0.75rem;
+        max-width: 25.5rem;
+      }
+
+      .hero-btn {
+        @include flex(row, start, center);
+
+        a {
+          @include btn($icon: true);
+
+          i {
+            transform: rotate(90deg);
+          }
+        }
+      }
+      .star-svg > svg {
+        position: absolute;
+        right: 60%;
+        top: 52%;
+        animation: blink 1s infinite alternate;
+      }
+    }
+    .line-svg > svg {
+      position: absolute;
+      left: 10%;
+      bottom: 0;
+    }
+
+    @media (max-width: 1300px) and (min-width: 992px) {
+      .image-animate {
+        span.img-title-1 {
+          left: -5%;
+          top: 35%;
+        }
+
+        span.img-title-2 {
+          right: -2%;
+        }
+
+        span.img-title-3 {
+          right: 0;
+          bottom: 3rem;
+        }
+      }
+    }
+    @media (width<=992px) {
+      flex-direction: column;
+      gap: 2.19rem;
+    }
+    @media (width<=768px) {
+      .hero-content > .hero-btn {
+        h1 {
+          @include font_style(h2);
+        }
+        h1,
+        p {
+          max-width: 19rem;
+        }
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

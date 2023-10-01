@@ -16,6 +16,7 @@
   "dependencies": {
     "gsap": "^3.12.2",
     "jalali-react-datepicker": "^1.2.3",
+    "moment-jalaali": "^0.10.0",
     "persian-date": "^1.1.0",
     "persian-datepicker": "^1.2.0",
     "scrolltrigger": "^1.0.1",

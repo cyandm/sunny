@@ -1,9 +1,12 @@
+import gsap from "gsap";
+import { _ticker } from "gsap/gsap-core";
+
 console.clear();
-let speed = 50;
-let allTicker = document.querySelectorAll(".ticker-custom");
+const speed = 50;
+const allTicker = document.querySelectorAll(".ticker-custom");
 if (allTicker) {
   for (let i = 0; i < allTicker.length; i++) {
-    let target = allTicker[i];
+    const target = allTicker[i];
     const original_html = target.innerHTML;
     const new_html = "<div class='ticker-items'>" + original_html + "</div>";
     target.innerHTML = new_html;

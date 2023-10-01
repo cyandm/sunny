@@ -20,7 +20,7 @@ $courses = get_posts($args);
 <main class="course-overview-page" id="course-page">
 
     <?php get_template_part('templates/pages/course/course-hero'); ?>
-    <div class="all-course-overview container">
+    <div class="all-course-overview">
         <?Php if ($mainTitle) : ?>
             <div class="section-title">
                 <h2><?= $mainTitle ?></h2>
@@ -28,7 +28,7 @@ $courses = get_posts($args);
         <?php endif ?>
         <div class="course-row">
             <?php
-            foreach ($courses as $course):
+            foreach ($courses as $course) :
 
                 get_template_part(
                     'templates/pages/course/course-block',
@@ -42,22 +42,28 @@ $courses = get_posts($args);
         </div>
 
     </div>
-    <div class="ticker-section container">
+    <div class="ticker-section">
         <?Php if ($tickerTitle) : ?>
-            <div class="section-title-sub">
+            <div class="section-title-sub container">
                 <h2><?= $tickerTitle ?></h2>
                 <span><?= $tickerSubTitle ?></span>
             </div>
         <?php endif;
 
-        if ($tickers):?>
+        if ($tickers) : ?>
 
-            <div class="ticker">
-                <ul>
-                    <?php foreach ($tickers as $ticker):
-                        if ($ticker != ''): ?>
+            <div class="ticker ticker-container">
+                <ul class="ticker-custom">
+                    <?php foreach ($tickers as $ticker) :
+                        if ($ticker != '') : ?>
                             <li><span><?= $ticker ?></span><i class="icon-arrow-right"></i></li>
-                        <?php
+                    <?php
+                        endif;
+                    endforeach; ?>
+                    <?php foreach ($tickers as $ticker) :
+                        if ($ticker != '') : ?>
+                            <li><span><?= $ticker ?></span><i class="icon-arrow-right"></i></li>
+                    <?php
                         endif;
                     endforeach; ?>
                 </ul>
@@ -67,7 +73,3 @@ $courses = get_posts($args);
 </main>
 
 <?php get_footer(); ?>
-
-
-
-
