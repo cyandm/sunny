@@ -1,9 +1,15 @@
+<?php
+$post_id = '';
+if ($args['id']) {
+    $post_id = $args['id'];
+}
+?>
 <div class="course-form">
     <div class="details-course">
         <div><i class="icon-arrow-right"></i><span>جزئیات کلاس</span></div>
     </div>
     <div class="form">
-        <form action="">
+        <form action="" class="send-course-form" id="course-form-<?=$post_id ?>">
             <div class="form-wrapper">
                 <label for="name">نام</label>
                 <input type="text" id="name" name="name" value="">
@@ -15,8 +21,8 @@
             </div>
 
             <div class="form-wrapper">
-                <label for="tel">تلفن همراه</label>
-                <input type="text" id="tel" name="tel" value="">
+                <label for="phone">تلفن همراه</label>
+                <input type="text" id="phone" name="phone" value="">
             </div>
 
             <div class="form-wrapper">
@@ -26,16 +32,18 @@
                     <i class=""></i>
                 </div>
             </div>
+            <input type="hidden" name="course_id" value="<?= $post_id ?>">
 
             <div class="form-btn">
-                <button id="submit_form" type="submit">
+                <button id="course-submit-form" type="submit">
                     <i class="icon-note-book"></i>
                     ثبت عضویت
                 </button>
 
             </div>
-            <input type="hidden" value="">
         </form>
+        <div class="form-message success" id="success_message"></div>
+        <div class="form-message fail" id="fail_message"></div>
     </div>
     <div class="circle-content">
         <div class="circle" id="circle-animation"></div>

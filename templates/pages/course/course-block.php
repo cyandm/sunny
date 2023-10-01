@@ -51,7 +51,7 @@ $bgColor = get_field('course_color', $post_id);
         get_template_part(
             '/templates/pages/course/course-form',
             null,
-//         ['id' => get_the_ID()]
+        ['id' => $post_id ]
         );
         ?>
     </div>

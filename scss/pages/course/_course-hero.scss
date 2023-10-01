@@ -1,34 +1,7 @@
 @use "../../utils/index" as *;
 
 //-------------- cloud animation
-@keyframes sway {
-  0% {
-    transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-  100% {
-    transform: translateX(-5px);
-  }
-}
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
 .course-overview-page {
   padding-block-start: 7rem;
 
@@ -151,7 +124,7 @@
         animation: blink 1s infinite alternate;
       }
     }
-    .line-svg > svg {
+    .line-svg {
       position: absolute;
       left: 10%;
       bottom: 0;

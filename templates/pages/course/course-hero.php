@@ -44,8 +44,10 @@ $btnLink = get_field('course_hero_link_btn', $pageId);
             <a href="<?= $btnLink ?>"><i class="icon-arrow-right"></i><?= $btnTitle ?></a>
         </div>
     </div>
-    <span class="line-svg"> <svg xmlns="http://www.w3.org/2000/svg" width="158" height="228" viewBox="0 0 158 228" fill="none">
-        <path d="M58.0221 1.72915C-34.7128 46.1733 1.36423 148.947 58.0218 163.773C141.143 185.525 157.564 101.827 110.543 85.6128C70.239 71.715 14.5504 161.405 96.2143 205.102C118.179 216.855 156.693 226.063 156.693 226.063" stroke="#0B68DF" stroke-width="2" stroke-linecap="round"/>
-    </svg></span>
+    <span class="line-svg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="77" height="113" viewBox="0 0 77 113" fill="none">
+  <path d="M62.6121 105.689C66.685 103.598 70.8285 101.852 75.8942 102.438C71.4809 100.639 69.037 94.838 68.4728 92.0733" stroke="#0B68DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31.1391 4.63865C-8.95528 23.8543 6.64279 68.2888 31.1389 74.6992C67.0765 84.1035 74.1764 47.9163 53.8467 40.9061C36.4211 34.8973 12.3439 73.6754 47.6516 92.5678C57.1482 97.6492 73.7999 101.63 73.7999 101.63" stroke="#0B68DF" stroke-width="2" stroke-linecap="round"/>
+</svg></span>
 
 </div>

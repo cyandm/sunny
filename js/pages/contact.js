@@ -15,6 +15,35 @@ if (form) {
 
     let errors = [];
     Object.entries(allData).forEach(([key, value]) => {
+
+      const fieldName = (fieldName) => {
+        if (fieldName === "name") {
+          return "نام ";
+        }
+        if (fieldName === "email") {
+          return "ایمیل ";
+        }
+        if (fieldName === "message") {
+          return " متن پیام";
+        }
+      };
+
+      const sanitizeInput = (input) => {
+        const symbolsPattern =
+            /[\!\@\#\$\%\^\&\*\)\(\+\=\<\>\{\}\[\]\:\;\'\"\|\~\`\_\-]/;
+
+        if (input.match(symbolsPattern)) {
+          return "لطفا " + fieldName(key) + " مناسب وارد کنید ";
+        }
+      };
+
+      const emailValidate = (input) => {
+        let emailLetters = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!input.match(emailLetters)) {
+          return fieldName(key) + "  را به درستی وارد کنید.";
+        }
+      };
+
       // input is empty
       if (value === "") {
         let error = fieldName(key) + "  ضروری است ";
@@ -31,33 +60,6 @@ if (form) {
         errors.push(emailError);
       }
 
-      const sanitizeInput = (input) => {
-        const symbolsPattern =
-          /[\!\@\#\$\%\^\&\*\)\(\+\=\<\>\{\}\[\]\:\;\'\"\|\~\`\_\-]/;
-
-        if (input.match(symbolsPattern)) {
-          return "لطفا " + fieldName(key) + " مناسب وارد کنید ";
-        }
-      };
-
-      const emailValidate = (input) => {
-        let emailLetters = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!input.match(emailLetters)) {
-          return fieldName(key) + "  را به درستی وارد کنید.";
-        }
-      };
-
-      const fieldName = (fieldName) => {
-        if (fieldName === "name") {
-          return "نام ";
-        }
-        if (fieldName === "email") {
-          return "ایمیل ";
-        }
-        if (fieldName === "message") {
-          return " متن پیام";
-        }
-      };
     });
 
     const isArrayEmptyOrAllUndefined = (array) => {
@@ -67,10 +69,12 @@ if (form) {
 
       for (const element of array) {
         if (element !== undefined) {
-          return false; // If any element is defined, return false
+          // If any element is defined, return false
+          return false;
         }
       }
-      return true; // If no element is defined, return true
+      // If no element is defined, return true
+      return true;
     };
 
     if (isArrayEmptyOrAllUndefined(errors)) {

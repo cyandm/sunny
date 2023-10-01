@@ -1,13 +1,5 @@
 @use "../../utils/index" as *;
-@keyframes moveCircle {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-}
+
 
 .course-form {
   @include flex(row, start);
