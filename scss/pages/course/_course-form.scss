@@ -1,6 +1,5 @@
 @use "../../utils/index" as *;
 
-
 .course-form {
   @include flex(row, start);
 
@@ -14,11 +13,11 @@
   border-top: 1px solid $gray-2;
   border-bottom: 1px solid $gray-2;
   width: 100%;
+
   .details-course {
     flex-basis: 6%;
     max-width: 5.7rem;
-
-    height: 25rem;
+    height: 100%;
     border-radius: 2.5rem 0rem 0rem 2.5rem;
 
     > diV {

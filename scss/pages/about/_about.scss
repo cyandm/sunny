@@ -1,4 +1,4 @@
-@use "../utils/index" as *;
+@use "../../utils/index" as *;
 
 .about-page-slider {
   width: 100%;
@@ -9,8 +9,6 @@
   .swiper-slide {
     width: 100%;
     height: 100vh;
-
-
   }
 
   .manager-slide {
@@ -20,14 +18,13 @@
   .video-content {
     @include flex();
     @include sudo(before, 7.56756rem, 7.56756rem, none) {
-      border: 1rem solid rgba(255, 255, 255, 0.20);
+      border: 1rem solid rgba(255, 255, 255, 0.2);
 
       position: absolute;
       border-radius: 50%;
-
     }
     @include sudo(after, 8.75rem, 8.75rem, none) {
-      border: 1rem solid rgba(255, 255, 255, 0.10);
+      border: 1rem solid rgba(255, 255, 255, 0.1);
 
       position: absolute;
       border-radius: 50%;
@@ -42,9 +39,7 @@
     background: $pink-1;
 
     img {
-
       position: absolute;
-
     }
 
     i {
@@ -65,7 +60,6 @@
     }
     @media (width<=992px) {
       display: none;
-
     }
   }
 }
@@ -80,7 +74,6 @@
   direction: rtl;
   @media (width<=992px) {
     display: none;
-
   }
   @include sudo(before, 100%, 16rem, $pink-1) {
     position: absolute;
@@ -105,7 +98,7 @@
         border-radius: 1.5rem;
         border: 1px solid $gray-2;
         background: $white-1;
-        box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.20);
+        box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
         height: 100%;
         direction: rtl;
         transition: all 0.3s ease-in-out;
@@ -145,10 +138,8 @@
                 color: $blue-2;
               }
             }
-
           }
         }
-
       }
 
       .column.swiper-slide.remove-slide {
@@ -156,7 +147,4 @@
       }
     }
   }
-
-
 }
-

@@ -1,8 +1,6 @@
-@use "../utils/index" as *;
+@use "../../utils/index" as *;
 
 .blogs-overview-page {
-
-
   .blog-section {
     margin-block-start: 4.5rem;
 
@@ -13,13 +11,10 @@
         @media (width<=768px) {
           display: none;
         }
-
       }
 
       article.blogs-row {
-
         .blog-page-row-blog {
-
           @include flex(column, start, start);
           width: 100%;
           opacity: 0;
@@ -32,7 +27,6 @@
             position: unset;
             opacity: 1 !important;
             visibility: visible !important;
-
           }
 
           .pagination {

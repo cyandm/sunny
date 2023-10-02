@@ -7,8 +7,6 @@ if (!class_exists('cyn_general')) {
             add_filter('comment_form_default_fields', [$this, 'custom_remove_comment_url']);
             add_filter('comment_form_default_fields', [$this, 'custom_remove_comment_labels']);
             add_action('wp_enqueue_scripts', [$this, 'cyn_enqueue_comment_reply']);
-
-
         }
 
         // ****************************************** remove_comment_url comment
@@ -37,8 +35,5 @@ if (!class_exists('cyn_general')) {
                 wp_enqueue_script('comment-reply');
             }
         }
-
-
-
     }
 }

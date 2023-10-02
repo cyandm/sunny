@@ -67,6 +67,7 @@
         position: absolute;
         animation: bounce 2s infinite alternate;
         animation-delay: 0s;
+        z-index: 1;
       }
 
       span.img-title-1 {
@@ -108,7 +109,7 @@
 
       .hero-btn {
         @include flex(row, start, center);
-
+        width: 100%;
         a {
           @include btn($icon: true);
 
@@ -117,7 +118,7 @@
           }
         }
       }
-      .star-svg > svg {
+      .star-svg {
         position: absolute;
         right: 60%;
         top: 52%;
@@ -129,8 +130,9 @@
       left: 10%;
       bottom: 0;
     }
-
-    @media (max-width: 1300px) and (min-width: 992px) {
+  }
+  @media (max-width: 1300px) and (min-width: 992px) {
+    .course-hero {
       .image-animate {
         span.img-title-1 {
           left: -5%;
@@ -147,12 +149,88 @@
         }
       }
     }
-    @media (width<=992px) {
+  }
+  @media (width<=992px) {
+    padding-block-start: 5rem;
+
+    .course-hero {
       flex-direction: column;
       gap: 2.19rem;
+      .hero-content {
+        @include flex(column, start, start);
+        width: 100%;
+      }
+      .image-animate {
+        .bg {
+          &::before {
+            max-width: 16.6rem;
+            max-height: 8.6rem;
+            bottom: 6rem;
+            left: -10%;
+          }
+          &::after {
+            max-width: 16.6rem;
+            max-height: 8.6rem;
+          }
+        }
+
+        span.img-title-1 {
+          left: -5%;
+          top: 62%;
+        }
+        span.img-title-2 {
+          top: 12%;
+          right: 17%;
+        }
+        span.img-title-3 {
+          right: -2%;
+        }
+      }
+      .star-svg {
+        right: 35% !important;
+        top: 68% !important;
+      }
     }
-    @media (width<=768px) {
-      .hero-content > .hero-btn {
+  }
+  @media (width<=500px) {
+    .course-hero {
+      .image-animate {
+        img {
+          max-width: 100%;
+          width: 100%;
+          max-height: 23.0625rem;
+        }
+        .bg {
+          width: 17.59613rem;
+          height: 20.26944rem;
+
+          &::before {
+            max-width: 8.6rem;
+            max-height: 3.6rem;
+            bottom: 10rem;
+            left: 10%;
+          }
+          &::after {
+            max-width: 8.6rem;
+            max-height: 3.6rem;
+            right: -50%;
+            top: -20%;
+          }
+        }
+        span.img-title-1 {
+          left: -11%;
+          top: 66%;
+        }
+        span.img-title-2 {
+          top: 8%;
+          right: 0;
+        }
+        span.img-title-3 {
+          right: -10%;
+          bottom: 1.5rem;
+        }
+      }
+      .hero-content {
         h1 {
           @include font_style(h2);
         }
@@ -160,10 +238,16 @@
         p {
           max-width: 19rem;
         }
-
-        a {
+        .hero-btn > a {
           width: 100%;
         }
+      }
+      .star-svg {
+        right: 50% !important;
+        top: 45% !important;
+      }
+      .line-svg {
+        position: unset;
       }
     }
   }

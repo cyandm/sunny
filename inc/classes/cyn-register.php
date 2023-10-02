@@ -52,9 +52,9 @@ if (!class_exists('cyn_register')) {
         //************************************ register post type
         public function cyn_post_type_register()
         {
-            function func_register_post_type($name, $slug, $icon, $menu)
+            function cyn_register_post_type($name, $slug, $icon, $menu)
             {
-                $labels = array(
+                $labels = [
                     'name' => $name,
                     'singular_name' => $name,
                     'menu_name' => $name,
@@ -68,7 +68,7 @@ if (!class_exists('cyn_register')) {
                     'search_items' => 'جستجو ' . $name,
                     'not_found' => $name . ' پیدا نشد',
                     'not_found_in_trash' => $name . ' پیدا نشد'
-                );
+                ];
                 $args = [
                     'labels' => $labels,
                     'public' => true,
@@ -76,13 +76,13 @@ if (!class_exists('cyn_register')) {
                     'show_ui' => true,
                     'show_in_menu' => $menu,
                     'query_var' => true,
-                    'rewrite' => array('slug' => $slug),
+                    'rewrite' => ['slug' => $slug],
                     'exclude_from_search' => false,
                     'has_archive' => true,
                     'hierarchical' => false,
                     //                    'menu_position' = null,
                     'menu_icon' => $icon,
-                    'supports' => array('title', 'editor', 'thumbnail')
+                    'supports' => ['title', 'editor', 'thumbnail']
                 ];
 
                 register_post_type($slug, $args);
@@ -90,50 +90,25 @@ if (!class_exists('cyn_register')) {
 
 
             /***************************** register faq post type */
-            $faqName = "سوالات متداول";
-            $faqSlug = "faq";
-            $faqIcon = "dashicons-editor-help";
-            $menu = true;
-            func_register_post_type($faqName, $faqSlug, $faqIcon, $menu);
+            cyn_register_post_type("سوالات متداول", "faq", "dashicons-editor-help", true);
 
             /***************************** register Testimonial post type */
-            $testimonialName = "نظرهمراه";
-            $testimonialSlug = "testimonial";
-            $testimonialIcon = "dashicons-format-quote";
-            $menu = 'edit-comments.php';
-            func_register_post_type($testimonialName, $testimonialSlug, $testimonialIcon, $menu);
+            cyn_register_post_type("نظرهمراه", "testimonial", "dashicons-format-quote", 'edit-comments.php');
 
             /***************************** register Course post type */
-            $courseName = "دوره";
-            $courseSlug = "course";
-            $courseIcon = "dashicons-album";
-            $menu = 'custom_club_affairs_menu';
-            func_register_post_type($courseName, $courseSlug, $courseIcon, $menu);
+            cyn_register_post_type("دوره", "course", "dashicons-album", "custom_club_affairs_menu");
 
             // **************************************register Coach post type
-            $coachName = "مربی";
-            $coachSlug = "coach";
-            $coachIcon = "dashicons-businessman";
-            func_register_post_type($coachName, $coachSlug, $coachIcon, $menu);
+            cyn_register_post_type("مربی", "coach", "dashicons-businessman", "custom_club_affairs_menu");
 
             /***************************** register student post type */
-            $studentName = "هنرجو";
-            $studentSlug = "student";
-            $studentIcon = "dashicons-id";
-            func_register_post_type($studentName, $studentSlug, $studentIcon, $menu);
+            cyn_register_post_type("هنرجو", "student", "dashicons-id", "custom_club_affairs_menu");
 
             //***************************** register contact form post type
-            $contactFormName = 'فرم تماس با ما';
-            $contactFormSlug = "contact_form";
-            $contactFormIcon = "dashicons-email-alt";
-            $menu = 'custom_form_menu';
-            func_register_post_type($contactFormName, $contactFormSlug, $contactFormIcon, $menu);
+            cyn_register_post_type(" فرم تماس با ما", "contact_form", "dashicons-email-alt", "custom_form_menu");
 
             //***************************** register course form post type
-            $courseFormName = 'فرم ثبت نام ';
-            $courseFormSlug = "course_form";
-            $courseFormIcon = "dashicons-email-alt2";
-            func_register_post_type($courseFormName, $courseFormSlug, $courseFormIcon, $menu);
+            cyn_register_post_type("فرم ثبت نام ", "course_form", "dashicons-email-alt2", "custom_form_menu");
         }
     }
 }

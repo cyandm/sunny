@@ -44,7 +44,7 @@ $courses = get_posts($args);
     </div>
     <div class="ticker-section">
         <?Php if ($tickerTitle) : ?>
-            <div class="section-title-sub container">
+            <div class="section-title-sub">
                 <h2><?= $tickerTitle ?></h2>
                 <span><?= $tickerSubTitle ?></span>
             </div>

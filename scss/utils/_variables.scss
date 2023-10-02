@@ -1,31 +1,28 @@
-
-
 // ------------------------------------- colors
-$white-1: #FEFFFF;
+$white-1: #feffff;
 $white-2: rgba(255, 255, 255, 0.02);
-$black-1:#1A212A;
-$gray-1:#8C9094;
-$gray-2:#8C9094;
-$pink-1:#FF6883;
-$pink-2:#FFA3B3;
-$blue-1:#67D6F9;
-$blue-2:#0B68DF;
-$blue-3:#CFF4FF;
-$yellow-1:#FFF48D;
-$yellow-2:#FBFFF5;
+$black-1: #1a212a;
+$gray-1: #8c9094;
+$gray-2: #e8e9ea;
+$pink-1: #ff6883;
+$pink-2: #ffa3b3;
+$blue-1: #67d6f9;
+$blue-2: #0b68df;
+$blue-3: #cff4ff;
+$yellow-1: #fff48d;
+$yellow-2: #fbfff5;
 
 // ------------------------------------ font
-$font:"peyda";
+$font: "peyda";
 
 // ------------------------------------flex classes
-.flex-r{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.flex-r {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.flex-c{
-    display: flex;
-    flex-direction: column;
-    
+.flex-c {
+  display: flex;
+  flex-direction: column;
 }

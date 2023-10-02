@@ -9,7 +9,7 @@ if ($args['id']) {
         <div><i class="icon-arrow-right"></i><span>جزئیات کلاس</span></div>
     </div>
     <div class="form">
-        <form action="" class="send-course-form" id="course-form-<?=$post_id ?>">
+        <form action="" class="send-course-form" id="course-form-<?= $post_id ?>">
             <div class="form-wrapper">
                 <label for="name">نام</label>
                 <input type="text" id="name" name="name" value="">
@@ -32,7 +32,7 @@ if ($args['id']) {
                     <i class=""></i>
                 </div>
             </div>
-            <input type="hidden" name="course_id" value="<?= $post_id ?>">
+            <input type="hidden" name="course_id" value="<?= $post_id ?>" disabled>
 
             <div class="form-btn">
                 <button id="course-submit-form" type="submit">

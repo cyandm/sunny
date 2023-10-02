@@ -12,8 +12,6 @@ if (!class_exists('cyn_ajax')) {
 
             add_action('wp_ajax_course_form', [$this, 'course_form']);
             add_action('wp_ajax_nopriv_course_form', [$this, 'course_form']);
-
-
         }
 
         public function handle_contact_form()
@@ -42,7 +40,7 @@ if (!class_exists('cyn_ajax')) {
                 //                  check array
                 if (!empty($sanitized_array['name']) && !empty($sanitized_array['email']) && !empty($sanitized_array['message'])) {
 
-//----------------------------------------------------- contact page id
+                    //----------------------------------------------------- contact page id
 
                     $contact_page_id = get_posts([
                         'post_type' => 'page',
@@ -63,6 +61,8 @@ if (!class_exists('cyn_ajax')) {
                     $placedEmail = str_replace("{message}", $sanitized_array['message'], $placedEmail);
                     $placedEmail = str_replace("{website}", get_bloginfo('name'), $placedEmail);
 
+
+
                     wp_insert_post(array(
                         'post_title' => $sanitized_array['name'] . " - " . $sanitized_array['email'],
                         'post_content' => $placedEmail,
@@ -70,6 +70,10 @@ if (!class_exists('cyn_ajax')) {
                         'post_status' => 'private',
                         'post_author' => 1
                     ));
+
+                    // add info in meta
+                    update_post_meta(716, 'contact_form_info', $sanitized_array);
+
                     $headers[] = "Content-type: text/html; harset=iso-8859-1" . "\r\n";
                     $headers[] = "From: " . $emailFrom . " <no-reply@" . $_SERVER['SERVER_NAME'] . ">";
                     $headers[] = "MIME-Version: 1.0" . "\r\n";
@@ -118,7 +122,7 @@ if (!class_exists('cyn_ajax')) {
                 $sanitized_last_name = sanitize_text_field($lastName);
                 $sanitized_phone = sanitize_text_field($phone);
                 $sanitized_date = sanitize_text_field($date);
-                $sanitized_course_id = absint($courseId);//      Sanitizes as a positive integer
+                $sanitized_course_id = absint($courseId); //      Sanitizes as a positive integer
 
                 // Put the sanitized fields into an array
                 $sanitized_array = array(
@@ -155,13 +159,23 @@ if (!class_exists('cyn_ajax')) {
                     $placedEmail = str_replace("{course_name}", get_the_title($sanitized_array['course_id']), $placedEmail);
                     $placedEmail = str_replace("{website}", get_bloginfo('name'), $placedEmail);
 
+
+
+
+
                     wp_insert_post(array(
                         'post_title' => $sanitized_array['name'] . " - " . $sanitized_array['email'],
                         'post_content' => $placedEmail,
                         'post_type' => 'course_form',
                         'post_status' => 'private',
-                        'post_author' => 1
+                        'post_author' => 1,
+
                     ));
+
+                    // add info in meta
+                    update_post_meta($sanitized_array['course_id'], 'course_registration_info', $sanitized_array);
+
+                    // send email
                     $headers[] = "Content-type: text/html; harset=iso-8859-1" . "\r\n";
                     $headers[] = "From: " . $emailFrom . " <no-reply@" . $_SERVER['SERVER_NAME'] . ">";
                     $headers[] = "MIME-Version: 1.0" . "\r\n";
@@ -191,9 +205,6 @@ if (!class_exists('cyn_ajax')) {
 
                 ));
             }
-
         }
-
-
     }
 }

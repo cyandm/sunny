@@ -1,24 +1,24 @@
-@use "../utils/index" as *;
+@use "../../utils/index" as *;
 
 .course-overview-page {
   padding-block-start: 7rem;
 
   .all-course-overview {
+    .section-title {
+      padding-inline-start: 2.5rem;
+    }
     .course-row {
       @include flex(column, center, start);
       gap: 2rem;
 
       overflow: hidden;
-
-      @media (width<=768px) {
-        gap: 1rem;
-      }
     }
   }
   .ticker-section {
     margin-block-start: 2rem;
 
     .section-title-sub {
+      padding-inline-start: 2.5rem;
       h2 {
         @include font_style(h2);
         @include text_overflow(1);
@@ -73,6 +73,17 @@
           }
         }
       }
+    }
+  }
+
+  @media (width<=992px) {
+    .all-course-overview {
+      gap: 1rem;
+      .section-title {
+        padding-inline: 1rem;
+      }
+    }
+    .ticker-section {
     }
   }
 }
