@@ -1,5 +1,4 @@
 import gsap from "gsap";
-import { _ticker } from "gsap/gsap-core";
 
 const speed = 50;
 const allTicker = document.querySelectorAll(".ticker-custom");

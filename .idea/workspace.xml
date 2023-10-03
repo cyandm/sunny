@@ -5,29 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/pages/course/course-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/pages/course/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/utils/_animations.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modules/gsap-animation/course-animation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modules/gsap-animation/front-animation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modules/gsap-animation/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/classes/cyn-admin-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/classes/cyn-admin-form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/classes/cyn-ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/classes/cyn-ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/classes/cyn-register.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/classes/cyn-register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/date-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/date-picker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/ticker.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/ticker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/course-overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/course/course-overview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/course/course-overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/course/course-overview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/course/_course-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/course/_course-block.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/pages/course/_course-form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/course/_course-form.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/pages/course/_course-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/course/_course-hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/utils/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/utils/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/course/_course.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/course/_course.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/course/course-block.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/course/course-block.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/course/course-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/course/course-form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/course/course-hero.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/course/course-hero.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/hero.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/hero.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,8 @@
       <workItem from="1695935750825" duration="10538000" />
       <workItem from="1695974791943" duration="32571000" />
       <workItem from="1696094596767" duration="14308000" />
-      <workItem from="1696181521322" duration="18362000" />
+      <workItem from="1696181521322" duration="18453000" />
+      <workItem from="1696284142632" duration="37628000" />
     </task>
     <servers />
   </component>
@@ -152,7 +153,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/inc/classes/cyn-register.php</url>
-          <line>52</line>
+          <line>51</line>
           <properties>
             <option name="className" value="\cyn_register" />
             <option name="methodName" value="cyn_post_type_register" />

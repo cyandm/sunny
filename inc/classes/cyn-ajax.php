@@ -62,17 +62,16 @@ if (!class_exists('cyn_ajax')) {
                     $placedEmail = str_replace("{website}", get_bloginfo('name'), $placedEmail);
 
 
-
-                    wp_insert_post(array(
+                    wp_insert_post([
                         'post_title' => $sanitized_array['name'] . " - " . $sanitized_array['email'],
                         'post_content' => $placedEmail,
                         'post_type' => 'contact_form',
                         'post_status' => 'private',
-                        'post_author' => 1
-                    ));
-
-                    // add info in meta
-                    update_post_meta(716, 'contact_form_info', $sanitized_array);
+                        'post_author' => 1,
+                        'meta_input' => [
+                            'contact_form_info' => $sanitized_array,
+                        ],
+                    ]);
 
                     $headers[] = "Content-type: text/html; harset=iso-8859-1" . "\r\n";
                     $headers[] = "From: " . $emailFrom . " <no-reply@" . $_SERVER['SERVER_NAME'] . ">";
@@ -82,26 +81,26 @@ if (!class_exists('cyn_ajax')) {
                     //Customer email
                     /*  wp_mail($inputs['email'], $inputs['name'] . " - " . $inputs['email'], $placedEmail, $headers);*/
 
-                    wp_send_json(array(
+                    wp_send_json([
                         'success' => true,
                         'message' => 'پیام با موفقیت ارسال شد. '
-                    ));
+                    ]);
                 } else {
                     // Error: One of the fields is empty
 
-                    wp_send_json(array(
+                    wp_send_json([
                         'success' => false,
                         'message' => 'has error',
 
-                    ));
+                    ]);
                 }
             } else {
                 // Error: Data is not sent
-                wp_send_json(array(
+                wp_send_json([
                     'success' => false,
                     'message' => 'Data is not sent',
 
-                ));
+               ] );
             }
         }
 
@@ -125,14 +124,14 @@ if (!class_exists('cyn_ajax')) {
                 $sanitized_course_id = absint($courseId); //      Sanitizes as a positive integer
 
                 // Put the sanitized fields into an array
-                $sanitized_array = array(
+                $sanitized_array = [
                     'name' => $sanitized_name,
                     'last_name' => $sanitized_last_name,
                     'phone' => $sanitized_phone,
                     'date' => $sanitized_date,
                     'course_id' => $sanitized_course_id
 
-                );
+                ];
 
                 //                  check array
                 if (!empty($sanitized_array['name']) && !empty($sanitized_array['last_name']) && !empty($sanitized_array['phone']) && !empty($sanitized_array['date']) && !empty($sanitized_array['course_id'])) {
@@ -160,20 +159,18 @@ if (!class_exists('cyn_ajax')) {
                     $placedEmail = str_replace("{website}", get_bloginfo('name'), $placedEmail);
 
 
-
-
-
-                    wp_insert_post(array(
+                    wp_insert_post([
                         'post_title' => $sanitized_array['name'] . " - " . $sanitized_array['email'],
                         'post_content' => $placedEmail,
                         'post_type' => 'course_form',
                         'post_status' => 'private',
                         'post_author' => 1,
+                        'meta_input' => [
+                            'course_registration_info' => $sanitized_array,
+                        ],
 
-                    ));
+                    ]);
 
-                    // add info in meta
-                    update_post_meta($sanitized_array['course_id'], 'course_registration_info', $sanitized_array);
 
                     // send email
                     $headers[] = "Content-type: text/html; harset=iso-8859-1" . "\r\n";
@@ -184,26 +181,26 @@ if (!class_exists('cyn_ajax')) {
                     //Customer email
                     /*  wp_mail($inputs['email'], $inputs['name'] . " - " . $inputs['email'], $placedEmail, $headers);*/
 
-                    wp_send_json(array(
+                    wp_send_json([
                         'success' => true,
                         'message' => 'ثبت نام با موفقیت انجام شد. '
-                    ));
+                    ]);
                 } else {
                     // Error: One of the fields is empty
 
-                    wp_send_json(array(
+                    wp_send_json([
                         'success' => false,
                         'message' => 'has error',
 
-                    ));
+                    ]);
                 }
             } else {
                 // Error: Data is not sent
-                wp_send_json(array(
+                wp_send_json([
                     'success' => false,
                     'message' => 'Data is not sent',
 
-                ));
+                ]);
             }
         }
     }

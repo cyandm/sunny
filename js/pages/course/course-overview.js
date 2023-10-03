@@ -20,16 +20,3 @@ if (courseForms) {
 }
 
 
-import {gsap} from "gsap";
-
-gsap.fromTo("#circle-animation ", {
-    opacity: 0,
-    scale: 0,
-}, {
-    duration: 0.5,
-    opacity: 1,
-    scale: 1,
-    yoyo: true,
-    repeat: -1,
-    stagger: 0.5,
-});

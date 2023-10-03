@@ -18,3 +18,4 @@ $cyn_register = new cyn_register();
 $cyn_general = new cyn_general();
 $cyn_ajax = new cyn_ajax();
 $cyn_form = new cyn_form();
+

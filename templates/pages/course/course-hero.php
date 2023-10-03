@@ -9,14 +9,17 @@ $courseHeroDescription = get_field('course_hero_description', $pageId);
 $btnTitle = get_field('course_hero_title_btn', $pageId);
 $btnLink = get_field('course_hero_link_btn', $pageId);
 ?>
-
+<div class="overly first"></div>
+<div class="overly second"></div>
+<div class="overly third"></div>
 <div class="course-hero container">
-    <div class="image-animate">
-        <span class="img-title-1"><?= $imageTitle1 ?></span>
-        <span class="img-title-2"><?= $imageTitle2 ?></span>
-        <span class="img-title-3"><?= $imageTitle3 ?></span>
 
-        <div class="bg"></div>
+    <div class="image-animate">
+        <span class="img-title-animation img-title-1"><?= $imageTitle1 ?></span>
+        <span class="img-title-animation img-title-2"><?= $imageTitle2 ?></span>
+        <span class="img-title-animation img-title-3"><?= $imageTitle3 ?></span>
+
+        <div class="bg bg-top-radius"></div>
 
         <?= wp_get_attachment_image($image, 'full', false, []); ?>
     </div>

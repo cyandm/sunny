@@ -3,7 +3,6 @@
 //-------------- cloud animation
 
 .course-overview-page {
-  padding-block-start: 7rem;
 
   .course-hero {
     @include flex();
@@ -11,7 +10,7 @@
     gap: 1rem;
     flex-wrap: wrap;
     position: relative;
-
+    overflow: hidden;
     > * {
       flex: 1;
     }
@@ -129,6 +128,10 @@
       position: absolute;
       left: 10%;
       bottom: 0;
+      svg{
+        width: 7.9475rem;
+        height: 14.97088rem;
+      }
     }
   }
   @media (max-width: 1300px) and (min-width: 992px) {
@@ -248,7 +251,13 @@
       }
       .line-svg {
         position: unset;
+        svg{
+          width: 4.75rem;
+          height: 7.02913rem;
+        }
       }
     }
   }
 }
+
+

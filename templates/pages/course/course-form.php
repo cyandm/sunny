@@ -46,9 +46,11 @@ if ($args['id']) {
         <div class="form-message fail" id="fail_message"></div>
     </div>
     <div class="circle-content">
-        <div class="circle" id="circle-animation"></div>
-        <div class="circle2" id="circle-animation"></div>
-        <div class="circle3" id="circle-animation"></div>
+        <div class="circle">
+        <div class="circle-animate circle-1" ></div>
+        <div class="circle-animate circle-2"></div>
+        <div class="circle-animate circle-3" ></div>
+        </div>
     </div>
 
 </div>

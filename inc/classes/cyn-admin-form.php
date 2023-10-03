@@ -24,19 +24,18 @@ if (!class_exists('cyn_form')) {
             add_action('manage_course_form_posts_custom_column', 'course_course_form_column', 10, 2);
             function course_course_form_column($column, $post_id)
             {
-
-                $courseRegisterInfo = get_post_meta(667, 'course_registration_info', false);
+                $registrationData = get_post_meta($post_id, 'course_registration_info', true);
 
                 if ($column === 'name') {
-                    echo $courseRegisterInfo['name'];
+                    echo $registrationData['name'];
                 } elseif ($column === 'last_name') {
-                    echo $courseRegisterInfo['last_name'];
-                } elseif ($column === 'birth_day') {
-                    echo $courseRegisterInfo['phone'];
+                    echo $registrationData['last_name'];
                 } elseif ($column === 'tel') {
-                    echo $courseRegisterInfo['date'];
+                    echo $registrationData['phone'];
+                } elseif ($column === 'birth_day') {
+                    echo $registrationData['date'];
                 } elseif ($column === 'course_name') {
-                    get_the_title($courseRegisterInfo['date']);
+                    echo get_the_title($registrationData['course_id']);
                 }
             }
         }
@@ -55,7 +54,7 @@ if (!class_exists('cyn_form')) {
             add_action('manage_contact_form_posts_custom_column', 'callback_contact_form_column', 10, 2);
             function callback_contact_form_column($column, $post_id)
             {
-                $contactFormInfo = get_post_meta($post_id, 'contact_form_info', false);
+                $contactFormInfo = get_post_meta($post_id, 'contact_form_info', true);
 
                 if ($column === 'name') {
                     echo $contactFormInfo['name'];

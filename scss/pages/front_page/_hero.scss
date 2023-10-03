@@ -30,6 +30,8 @@
     color: #333;
     text-align: left;
 
+
+
     .row {
       width: 100%;
       display: flex;
@@ -143,4 +145,21 @@
   .slide.yellow {
     background: $yellow-1;
   }
+}
+
+
+
+.overly{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  background: $white-1;
+}
+.overly.second{
+  left: 33.3%;
+}
+.overly.third{
+  left: 66.6%;
 }

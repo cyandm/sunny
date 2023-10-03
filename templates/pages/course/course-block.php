@@ -17,12 +17,18 @@ $bgColor = get_field('course_color', $post_id);
                 <h3><?= get_the_title($post_id) ?></h3><span><?= get_field('course_level', $post_id) ?></span>
             </div>
             <div class="content">
-                <?php if ($description) : ?>
+                <?php if ($startTerm) : ?>
+                <div class="details-mobile"><span class="title-name">شروع ترم جدید:<i class=""></i></span>
+                    <span><?= $startTerm ?></span>
+                </div>
+                <?php endif;
+
+                 if ($description) : ?>
                     <div class="description"><?= $description ?></div>
                 <?php endif; ?>
                 <div class="detail">
                     <?php if ($startTerm) : ?>
-                        <div><span class="title-name">شروع ترم جدید:<i class=""></i></span>
+                        <div class="details-large-view"><span class="title-name">شروع ترم جدید:<i class=""></i></span>
                             <span><?= $startTerm ?></span>
                         </div>
                     <?php endif;

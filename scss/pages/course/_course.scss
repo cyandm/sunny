@@ -10,7 +10,6 @@
     .course-row {
       @include flex(column, center, start);
       gap: 2rem;
-
       overflow: hidden;
     }
   }
@@ -77,13 +76,34 @@
   }
 
   @media (width<=992px) {
+
     .all-course-overview {
       gap: 1rem;
       .section-title {
         padding-inline: 1rem;
       }
+      .course-row {
+        padding-inline: 1rem;
+        gap: 1rem;
+      }
     }
+
     .ticker-section {
+
+      .section-title-sub {
+        padding-inline: 1rem;
+
+        h2 {
+          @include text_overflow(2);
+        }
+        span {
+          @include text_overflow(2);
+        }
+      }
+
+      .ticker >ul{
+          margin-block-start: 1.25rem;
+      }
     }
   }
 }

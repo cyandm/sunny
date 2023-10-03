@@ -40,7 +40,7 @@
   }
 
   .form {
-    flex-basis: 63%;
+    flex-basis: 60%;
 
     form {
       @include flex(row, start);
@@ -69,12 +69,13 @@
           border: 1px solid $gray-2;
           background: $white-2;
           color: $gray-1;
+          max-height: 3.2rem;
         }
       }
 
       .form-btn {
         margin-block-start: 1rem;
-
+        max-height: 3.2rem;
         button {
           @include btn($icon: true);
         }
@@ -83,40 +84,56 @@
   }
 
   .circle-content {
+    @include flex();
     height: 100%;
-    flex-basis: 30%;
+    flex: 1;
     border-radius: 0rem 2.5rem 2.5rem 0rem;
     position: relative;
-
-    .circle {
+    .circle{
       @include flex();
-      @include sudo(before, 16rem, 16rem, none) {
-        border: 2rem solid rgba(255, 255, 255, 0.5);
+      height: 100%;
+      position: relative;
+      right: 30%;
+      .circle-1 {
+        width: 27rem;
+        height: 27rem;
+        background: none;
+        border: 2.5rem solid rgba(255, 255, 255, 0.5);
         border-radius: 50%;
         position: absolute;
-      }
+        top: -8px;
 
-      @include sudo(after, 8rem, 8rem, none) {
-        border: 1rem solid rgba(255, 255, 255, 0.5);
+
+        @media (width<= 500px) {
+          width: 19.5rem;
+          height: 19.54rem;
+          //@include sudo(before, 12rem, 12rem, none);
+          //@include sudo(after, 4.7rem, 4.7rem, none);
+        }
+      }
+      .circle-2{
+        width: 16rem;
+        height: 16rem;
+        background: none;
+        border: 2.5rem solid rgba(255, 255, 255, 0.5);
         border-radius: 50%;
+        position: absolute;
+
+
       }
 
-      width: 27rem;
-      height: 27rem;
-      background: none;
-      border: 2.5rem solid rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      position: absolute;
-      right: 30%;
-      top: -8px;
+      .circle-3{
+        width: 8rem;
+        height: 8rem;
+        background: none;
+        border-radius: 50%;
+        position: absolute;
+        border: 1.5rem solid rgba(255, 255, 255, 0.5);
 
-      @media (width<= 500px) {
-        width: 19.5rem;
-        height: 19.54rem;
-        @include sudo(before, 12rem, 12rem, none);
-        @include sudo(after, 4.7rem, 4.7rem, none);
       }
     }
+
+
   }
 }
 
@@ -147,5 +164,65 @@
 
   .details-course {
     background: $blue-1;
+  }
+}
+
+
+
+@media (width<=992px) {
+  .course-form {
+
+    gap: 0rem;
+    border: none;
+    .details-course {
+      flex-basis: 100%;
+      max-width: 100%;
+      height: 4.12rem;
+      border-radius: 1.75rem  1.75rem 0rem 0rem;
+      z-index: 0;
+      margin-block-end: -2px;
+      position: relative;
+
+      > diV {
+        flex-direction: row;
+        span {
+          transform:unset;
+          position: unset;
+          order: -1;
+        }
+      }
+    }
+
+    .form {
+      flex-basis: 100%;
+      border-radius:  0rem 0rem 1.75rem 1.75rem;
+      border: 1px solid $black-1;
+      padding: 0.5rem 1rem 1.25rem 1rem;
+
+      form {
+        flex-direction: column;
+        gap: 0.75rem;
+        .form-wrapper {
+          width: 100%;
+
+        }
+
+        .form-btn {
+          margin-block-start: 1rem;
+          width: 100%;
+
+          button {
+            width: 100%;
+            a{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .circle-content {
+display: none;
+    }
   }
 }
