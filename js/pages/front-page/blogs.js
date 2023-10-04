@@ -50,13 +50,8 @@ if (frontBlogSection || blogPage) {
         const slug = category.getAttribute("data-slug");
 
         // Toggle the "active-blogs" class based on the slug
-        let blogs;
-        if (blogPage) {
-          blogs = document.querySelectorAll(".blog-page-row-blog");
-        } else {
-          blogs = document.querySelectorAll(".row-blog");
-        }
 
+        blogs = document.querySelectorAll(".row-blog-front");
         blogs.forEach((blog) => {
           if (blog.classList.contains(slug)) {
             blog.classList.add("active-blogs");

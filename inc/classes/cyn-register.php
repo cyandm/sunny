@@ -69,46 +69,23 @@ if (!class_exists('cyn_register')) {
                     'not_found_in_trash' => $name . ' پیدا نشد'
                 ];
 
-                if ($slug == 'contact_form' || $slug == 'course_form') {
-                    $args = [
-                        'labels' => $labels,
-                        'public' => true,
-                        'publicly_queryable' => true,
-                        'show_ui' => true,
-                        'show_in_menu' => $menu,
-                        'query_var' => true,
-                        'rewrite' => ['slug' => $slug],
-                        'exclude_from_search' => false,
-                        'has_archive' => true,
-                        'hierarchical' => false,
-                        //                    'menu_position' = null,
-                        'menu_icon' => $icon,
-                        'supports' => ['title', 'editor', 'thumbnail'],
-                        'capabilities' => [
-                            'create_posts' => 'do_not_allow',
-                        ],
+                $args = [
+                    'labels' => $labels,
+                    'public' => true,
+                    'publicly_queryable' => true,
+                    'show_ui' => true,
+                    'show_in_menu' => $menu,
+                    'query_var' => true,
+                    'rewrite' => ['slug' => $slug],
+                    'exclude_from_search' => false,
+                    'has_archive' => true,
+                    'hierarchical' => false,
+                    //                    'menu_position' = null,
+                    'menu_icon' => $icon,
+                    'supports' => ['title', 'editor', 'thumbnail'],
 
-                    ];
-                } else {
+                ];
 
-
-                    $args = [
-                        'labels' => $labels,
-                        'public' => true,
-                        'publicly_queryable' => true,
-                        'show_ui' => true,
-                        'show_in_menu' => $menu,
-                        'query_var' => true,
-                        'rewrite' => ['slug' => $slug],
-                        'exclude_from_search' => false,
-                        'has_archive' => true,
-                        'hierarchical' => false,
-                        //                    'menu_position' = null,
-                        'menu_icon' => $icon,
-                        'supports' => ['title', 'editor', 'thumbnail'],
-
-                    ];
-                }
 
                 register_post_type($slug, $args);
             }

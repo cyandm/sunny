@@ -10,7 +10,7 @@
     .blog-slide {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 90vh;
       overflow: hidden;
 
       .content {
@@ -91,7 +91,8 @@
         }
       }
 
-      .next-slider, .prev-slider {
+      .next-slider,
+      .prev-slider {
         @include flex();
         position: absolute;
         left: 2.5rem;
@@ -129,7 +130,9 @@
       background: $pink-1;
 
       .blog-hero-title {
-        h1, h4, p.description-slide {
+        h1,
+        h4,
+        p.description-slide {
           color: $white-1;
         }
       }
@@ -159,7 +162,6 @@
           }
         }
       }
-
     }
 
     .blog-slide.second-slide {
@@ -186,16 +188,12 @@
             border-radius: 50%;
             z-index: -2;
             position: absolute;
-
-
           }
           @media (width<=768px) {
             width: 18.25rem;
             height: 18.25rem;
-            @include sudo(before, 22.125rem, 22.125rem, $blue-3)
+            @include sudo(before, 22.125rem, 22.125rem, $blue-3);
           }
-
-
         }
       }
     }

@@ -13,9 +13,7 @@ $heroSliders = get_field('front_page_hero_section', $frontId);
             $num = 1;
             foreach ($heroSliders as $heroSlide) : ?>
                 <div id="panel-<?= $num ?>" class="slide swiper-slide slide panel full-screen <?= $heroSlide['hero_slider_bg_color'] ?>">
-                    <div class="overly first"></div>
-                    <div class="overly second"></div>
-                    <div class="overly third"></div>
+
                     <div class="row">
                         <div class="container slide-container">
                             <div class="shape  <?= $heroSlide['hero_slider_shape'] ?>"></div>

@@ -14,9 +14,9 @@ $categories = get_terms(
 
 <main id="blogs-overview" class="blogs-overview-page">
 
-  <?php
-  get_template_part('templates/pages/blog/hero-blog');
-  ?>
+    <?php
+    get_template_part('templates/pages/blog/hero-blog');
+    ?>
 
     <div class="blog-section">
         <div class="container">
@@ -46,9 +46,8 @@ $categories = get_terms(
                                     'operator'  => 'IN'
                                 ]
                             ]
-                        ];
-                     ;
-                        $allBlogs = new WP_Query($Args);?>
+                        ];;
+                        $allBlogs = new WP_Query($Args); ?>
                         <div class="blog-page-row-blog <?= $cat->slug ?> <?= ($num == 1) ? 'active-blogs' : ''; ?>">
 
                             <?php

@@ -37,10 +37,10 @@ function menu($menuSlug)
         <div class="footer-menu">
             <?php wp_nav_menu(['theme_location' => $menuSlug]) ?>
         </div>
-    <?php endif;
+<?php endif;
 } ?>
 
-<footer class="container <?= (get_queried_object_id() == $frontId || get_queried_object_id() == $aboutPageId) ? 'footer-change' : '' ?>">
+<footer class="container <?= (get_queried_object_id() == $frontId || get_queried_object_id() == $aboutPageId[0]) ? 'footer-change' : '' ?>">
     <div class="footer-top">
         <div class="line">
         </div>

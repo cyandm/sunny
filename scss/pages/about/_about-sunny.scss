@@ -1,0 +1,84 @@
+@use "../../utils/index" as *;
+
+.sport-slider.swiper-slide {
+  width: 100vw;
+  height: 100vh;
+  .about-nested-slider {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .swiper-slide {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      text-align: left;
+      .contain {
+        @include flex();
+
+        width: 100vw;
+        height: 100vh;
+        gap: 1rem;
+        flex-wrap: wrap;
+        direction: rtl;
+
+        @media (width<=768px) {
+          flex-direction: column;
+          gap: 0;
+        }
+        .image-content {
+          @include flex();
+
+          position: relative;
+          flex: 1;
+          svg {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+          }
+          img {
+            max-width: 36.5625rem;
+            max-height: 31.6875rem;
+
+            @media (width<=1100px) {
+              max-width: 23.00481rem;
+              max-height: 19.9375rem;
+            }
+          }
+        }
+        .description-content {
+          @include flex(column, start, start);
+
+          flex: 2;
+          gap: 0.25rem;
+
+          h2 {
+            @include font_style(h1);
+            @include text_overflow(1);
+          }
+          h4 {
+            @include font_style(h2);
+            @include text_overflow(1);
+          }
+          .description > p {
+            @include font_style(body);
+            @include text_overflow(7);
+          }
+          @media (width<=768px) {
+            h2 {
+              @include font_style(h2);
+            }
+            h4 {
+              @include font_style(h3);
+            }
+            p {
+              @include text_overflow(14);
+            }
+          }
+        }
+      }
+    }
+  }
+}

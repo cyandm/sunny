@@ -2662,20 +2662,26 @@ header .header-mobile .sotioal-row a i::before {
   line-height: 2.25rem;
   padding: 0.75rem 1.625rem 0.5rem 1.625rem;
   pointer: curser;
-}
-.blog-tab ul li.active-cat {
+  transition: all 0.3s ease-in-out;
   position: relative;
 }
-.blog-tab ul li.active-cat::before {
+.blog-tab ul li::before {
   content: " ";
   width: 100%;
   height: 100%;
-  background: #fff48d;
+  background: #feffff;
   border-radius: 2.5rem 2.5rem 0rem 0rem;
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+.blog-tab ul li:hover::before {
+  background: #fff48d;
+}
+.blog-tab ul li.active-cat::before {
+  background: #fff48d;
 }
 @media (width <= 768px) {
   .blog-tab {
@@ -4146,7 +4152,7 @@ header .header-mobile .sotioal-row a i::before {
 .blogs-overview-page .blog-page-slider .blog-slide {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 .blogs-overview-page .blog-page-slider .blog-slide .content {
@@ -4328,7 +4334,8 @@ header .header-mobile .sotioal-row a i::before {
   z-index: -1;
   bottom: 0;
 }
-.blogs-overview-page .blog-page-slider .blog-slide .next-slider, .blogs-overview-page .blog-page-slider .blog-slide .prev-slider {
+.blogs-overview-page .blog-page-slider .blog-slide .next-slider,
+.blogs-overview-page .blog-page-slider .blog-slide .prev-slider {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4342,18 +4349,21 @@ header .header-mobile .sotioal-row a i::before {
   border: 1px solid #e8e9ea;
   background: #feffff;
 }
-.blogs-overview-page .blog-page-slider .blog-slide .next-slider img, .blogs-overview-page .blog-page-slider .blog-slide .prev-slider img {
+.blogs-overview-page .blog-page-slider .blog-slide .next-slider img,
+.blogs-overview-page .blog-page-slider .blog-slide .prev-slider img {
   max-width: 6.0625rem;
   max-height: 4.875rem;
 }
-.blogs-overview-page .blog-page-slider .blog-slide .next-slider div, .blogs-overview-page .blog-page-slider .blog-slide .prev-slider div {
+.blogs-overview-page .blog-page-slider .blog-slide .next-slider div,
+.blogs-overview-page .blog-page-slider .blog-slide .prev-slider div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1.25rem;
 }
-.blogs-overview-page .blog-page-slider .blog-slide .next-slider div h3, .blogs-overview-page .blog-page-slider .blog-slide .prev-slider div h3 {
+.blogs-overview-page .blog-page-slider .blog-slide .next-slider div h3,
+.blogs-overview-page .blog-page-slider .blog-slide .prev-slider div h3 {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -4364,7 +4374,8 @@ header .header-mobile .sotioal-row a i::before {
   font-weight: 500;
 }
 @media (width <= 992px) {
-  .blogs-overview-page .blog-page-slider .blog-slide .next-slider, .blogs-overview-page .blog-page-slider .blog-slide .prev-slider {
+  .blogs-overview-page .blog-page-slider .blog-slide .next-slider,
+  .blogs-overview-page .blog-page-slider .blog-slide .prev-slider {
     left: unset;
     bottom: -5rem;
     z-index: 98;
@@ -4374,7 +4385,9 @@ header .header-mobile .sotioal-row a i::before {
 .blogs-overview-page .blog-page-slider .blog-slide.first-slide {
   background: #ff6883;
 }
-.blogs-overview-page .blog-page-slider .blog-slide.first-slide .blog-hero-title h1, .blogs-overview-page .blog-page-slider .blog-slide.first-slide .blog-hero-title h4, .blogs-overview-page .blog-page-slider .blog-slide.first-slide .blog-hero-title p.description-slide {
+.blogs-overview-page .blog-page-slider .blog-slide.first-slide .blog-hero-title h1,
+.blogs-overview-page .blog-page-slider .blog-slide.first-slide .blog-hero-title h4,
+.blogs-overview-page .blog-page-slider .blog-slide.first-slide .blog-hero-title p.description-slide {
   color: #feffff;
 }
 .blogs-overview-page .blog-page-slider .blog-slide.first-slide .image-box {
@@ -4624,11 +4637,6 @@ header .header-mobile .sotioal-row a i::before {
   z-index: 96;
   direction: rtl;
 }
-@media (width <= 992px) {
-  .fixed-section {
-    display: none;
-  }
-}
 .fixed-section::before {
   content: " ";
   width: 100%;
@@ -4641,6 +4649,7 @@ header .header-mobile .sotioal-row a i::before {
 .fixed-section .about-thumbnail-slider {
   height: 8.62rem;
   bottom: 2.25rem;
+  width: 100%;
 }
 .fixed-section .about-thumbnail-slider .fixed-columns {
   display: flex;
@@ -4699,31 +4708,67 @@ header .header-mobile .sotioal-row a i::before {
 .fixed-section .about-thumbnail-slider .fixed-columns .column.swiper-slide:hover div i:before {
   color: #0b68df;
 }
-.fixed-section .about-thumbnail-slider .fixed-columns .column.swiper-slide.remove-slide {
-  display: none;
+@media (width <= 992px) {
+  .fixed-section {
+    display: none;
+  }
+}
+
+.about-page-slider {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.about-page-slider .about-nested-slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding: 0;
 }
 
 .sport-slider.swiper-slide {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
-.sport-slider.swiper-slide .contain {
+.sport-slider.swiper-slide .about-nested-slider {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-align: left;
+}
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-block-start: 5rem;
-  direction: rtl;
+  width: 100vw;
+  height: 100vh;
   gap: 1rem;
   flex-wrap: wrap;
+  direction: rtl;
 }
 @media (width <= 768px) {
-  .sport-slider.swiper-slide .contain {
+  .sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain {
     flex-direction: column;
     gap: 0;
   }
 }
-.sport-slider.swiper-slide .contain .image-content {
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .image-content {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4731,23 +4776,23 @@ header .header-mobile .sotioal-row a i::before {
   position: relative;
   flex: 1;
 }
-.sport-slider.swiper-slide .contain .image-content svg {
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .image-content svg {
   position: absolute;
   z-index: -1;
   top: 0;
   left: 0;
 }
-.sport-slider.swiper-slide .contain .image-content img {
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .image-content img {
   max-width: 36.5625rem;
   max-height: 31.6875rem;
 }
 @media (width <= 1100px) {
-  .sport-slider.swiper-slide .contain .image-content img {
+  .sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .image-content img {
     max-width: 23.00481rem;
     max-height: 19.9375rem;
   }
 }
-.sport-slider.swiper-slide .contain .description-content {
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .description-content {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -4755,7 +4800,7 @@ header .header-mobile .sotioal-row a i::before {
   flex: 2;
   gap: 0.25rem;
 }
-.sport-slider.swiper-slide .contain .description-content h2 {
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .description-content h2 {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -4770,7 +4815,7 @@ header .header-mobile .sotioal-row a i::before {
   -webkit-line-clamp: 1;
   white-space: pre-wrap;
 }
-.sport-slider.swiper-slide .contain .description-content h4 {
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .description-content h4 {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -4785,7 +4830,7 @@ header .header-mobile .sotioal-row a i::before {
   -webkit-line-clamp: 1;
   white-space: pre-wrap;
 }
-.sport-slider.swiper-slide .contain .description-content .description > p {
+.sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .description-content .description > p {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -4803,7 +4848,7 @@ header .header-mobile .sotioal-row a i::before {
   white-space: pre-wrap;
 }
 @media (width <= 768px) {
-  .sport-slider.swiper-slide .contain .description-content h2 {
+  .sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .description-content h2 {
     color: #1a212a;
     font-family: "peyda";
     font-size: 8.875rem;
@@ -4812,7 +4857,7 @@ header .header-mobile .sotioal-row a i::before {
     line-height: normal;
     font-size: 1.5rem;
   }
-  .sport-slider.swiper-slide .contain .description-content h4 {
+  .sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .description-content h4 {
     color: #1a212a;
     font-family: "peyda";
     font-size: 8.875rem;
@@ -4822,7 +4867,7 @@ header .header-mobile .sotioal-row a i::before {
     font-size: 1.25rem;
     font-weight: 500;
   }
-  .sport-slider.swiper-slide .contain .description-content p {
+  .sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .description-content p {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;

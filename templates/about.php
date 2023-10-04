@@ -7,17 +7,21 @@ $stickySlider = get_field('sticky_slider', $pageId);
 get_header(); ?>
 
 <main id="about-page" class="about-page">
+    <div class="overly first"></div>
+    <div class="overly second"></div>
+    <div class="overly third"></div>
 
     <div class="about-page-slider swiper" dir="ltr">
+
         <div class="swiper-wrapper">
             <?php
-            get_template_part('templates/pages/about/sport-slider-1-2');
+            get_template_part('templates/pages/about/about-sunny');
             get_template_part('templates/pages/about/honors');
             get_template_part('templates/pages/about/image-gallery');
             get_template_part('templates/pages/about/manager-slide');
-
             ?>
         </div>
+
         <div class="video-content" data-id=" ">
             <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
 
@@ -28,19 +32,21 @@ get_header(); ?>
                 </video>
             </div>
         </div>
+
         <!-- Fixed bottom section -->
         <div class="fixed-section">
 
             <div class="container">
-                <?php if (is_array($stickySlider) && count($stickySlider) > 0): ?>
+                <?php if (is_array($stickySlider) && count($stickySlider) > 0) : ?>
                     <div thumbsSlider="" class="swiper about-thumbnail-slider">
                         <div class="swiper-wrapper fixed-columns">
 
-                            <?php foreach ($stickySlider as $key => $slider): ?>
+                            <?php foreach ($stickySlider as $key => $slider) : ?>
                                 <div class="column swiper-slide <?= ($key == 'slider_thumbnail_2') ? 'remove-slide' : '' ?>">
                                     <?= wp_get_attachment_image($slider['about_slider_image'], 'thumbnail', false, []); ?>
-                                    <div><h4><?= $slider['about_slider_title'] ?></h4><i
-                                                class="icon-arrow-side-left"></i></div>
+                                    <div>
+                                        <h4><?= $slider['about_slider_title'] ?></h4><i class="icon-arrow-side-left"></i>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -55,6 +61,7 @@ get_header(); ?>
             <!-- Add a div for the animated line -->
 
         </div>
+
     </div>
 
 </main>

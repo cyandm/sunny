@@ -46,7 +46,7 @@ $categories = get_field('choose_category', $frontId);
                     $allBlogs = new WP_Query($Args);
 
                     if ($allBlogs->have_posts()) : ?>
-                        <div class="row-blog <?= $cat->slug ?> <?= ($num == 1) ? 'active-blogs' : ''; ?>">
+                        <div class="row-blog row-blog-front <?= $cat->slug ?> <?= ($num == 1) ? 'active-blogs' : ''; ?>">
                             <?php while ($allBlogs->have_posts()) {
                                 $allBlogs->the_post();
 

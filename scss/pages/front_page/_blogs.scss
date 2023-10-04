@@ -1,7 +1,6 @@
 @use "../../utils/index" as *;
 
 .blog-section {
-
   .front-blog-content {
     article {
       position: relative;
@@ -24,18 +23,14 @@
           flex: 1;
           transition: all 1s ease-in-out;
           @media (width<=1200px) {
-
             flex-basis: 32%;
           }
           @media (width<=992px) {
-
             flex-basis: 46%;
           }
           @media (width<=768px) {
-
             flex-basis: 100%;
           }
-
         }
       }
 
@@ -49,11 +44,9 @@
             flex-basis: 32%;
           }
           @media (width<=992px) {
-
             flex-basis: 46%;
           }
           @media (width<=768px) {
-
             flex-basis: 100%;
           }
         }
@@ -63,7 +56,6 @@
     @media (width<=1200px) {
       article > .row-blog {
         gap: 0.5rem;
-
       }
     }
 
@@ -80,27 +72,36 @@
   border-bottom: 1px solid $yellow-1;
   margin-block-end: 0.75rem;
 
-
   ul {
     @include flex();
 
     justify-content: start;
 
-
     li {
       @include font_style(body);
       padding: 0.75rem 1.625rem 0.5rem 1.625rem;
       pointer: curser;
-    }
-
-    li.active-cat {
+      transition: all 0.3s ease-in-out;
       position: relative;
-      @include sudo(before, 100%, 100%, $yellow-1) {
+
+      @include sudo(before, 100%, 100%, $white-1) {
         border-radius: 2.5rem 2.5rem 0rem 0rem;
         position: absolute;
         bottom: 0;
         left: 0;
         z-index: -1;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        &::before {
+          background: $yellow-1;
+        }
+      }
+    }
+
+    li.active-cat {
+      &::before {
+        background: $yellow-1;
       }
     }
   }
@@ -109,7 +110,6 @@
     display: none;
   }
 }
-
 .blog-tab-mobile {
   margin-block-end: 1.5rem;
   display: none;
@@ -125,8 +125,6 @@
   }
 
   select.cat-select-mobile {
-
-
     width: 100%;
     padding: 0.5rem 1.5rem;
     border-radius: 2.5rem;
@@ -134,10 +132,9 @@
     background: $white-2;
     height: 3.25rem;
 
-
-option{
-  margin-left: 25px;
-}
+    option {
+      margin-left: 25px;
+    }
   }
 
   @media (width<=768px) {

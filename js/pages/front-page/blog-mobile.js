@@ -10,12 +10,7 @@ if (frontBlogSection2 || blogPage2) {
     tabCategory.addEventListener("change", (event) => {
       const slugCat = event.target.value;
 
-      let blogs;
-      if (blogPage2) {
-        blogs = document.querySelectorAll(".blog-page-row-blog");
-      } else {
-        blogs = document.querySelectorAll(".row-blog");
-      }
+      blogs = document.querySelectorAll(".row-blog-front");
 
       blogs.forEach((blog) => {
         if (blog.classList.contains(slugCat)) {
