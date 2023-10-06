@@ -5,7 +5,8 @@ import {
 
 const frontBlogSection = document.querySelector("#blog-section");
 const blogPage = document.querySelector("#blogs-overview");
-if (frontBlogSection || blogPage) {
+if (frontBlogSection
+) {
   // Activate the first child of "active-blogs" after the toggle
   const cardBlogs = document.querySelectorAll(".active-blogs .cart-blog");
   activateFirstElement(cardBlogs);

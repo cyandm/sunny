@@ -1,3 +1,4 @@
+import {multiCircleAnimate} from "../../modules/functions";
 const courseForms = document.querySelectorAll(".course-form-block");
 if (courseForms) {
     courseForms.forEach(courseForm => {
@@ -9,6 +10,10 @@ if (courseForms) {
 
             formCode.classList.add("active");
             showForm.classList.add("active");
+            const circle=formCode.querySelectorAll(".multi-circle-animate");
+
+            //add animation
+            multiCircleAnimate(circle);
 
         });
         detailsCourse.addEventListener("click", () =>{
@@ -18,5 +23,4 @@ if (courseForms) {
     })
 
 }
-
 

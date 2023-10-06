@@ -42,9 +42,10 @@ $btnLink = get_field('course_hero_link_btn', $pageId);
         </div>
     </div>
     <span class="line-svg">
-        <svg xmlns="http://www.w3.org/2000/svg" width="77" height="113" viewBox="0 0 77 113" fill="none">
-            <path d="M62.6121 105.689C66.685 103.598 70.8285 101.852 75.8942 102.438C71.4809 100.639 69.037 94.838 68.4728 92.0733" stroke="#0B68DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M31.1391 4.63865C-8.95528 23.8543 6.64279 68.2888 31.1389 74.6992C67.0765 84.1035 74.1764 47.9163 53.8467 40.9061C36.4211 34.8973 12.3439 73.6754 47.6516 92.5678C57.1482 97.6492 73.7999 101.63 73.7999 101.63" stroke="#0B68DF" stroke-width="2" stroke-linecap="round" />
-        </svg></span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="77" height="113" viewBox="0 0 77 113" fill="none">
+    <path id="arrowPath" d="M31.1391 4.63865C-8.95528 23.8543 6.64279 68.2888 31.1389 74.6992C67.0765 84.1035 74.1764 47.9163 53.8467 40.9061C36.4211 34.8973 12.3439 73.6754 47.6516 92.5678C57.1482 97.6492 73.7999 101.63 73.7999 101.63" stroke="#0B68DF" stroke-width="2" stroke-linecap="round" />
+    <path id="arrowHead" d="M62.6121 105.689C66.685 103.598 70.8285 101.852 75.8942 102.438C71.4809 100.639 69.037 94.838 68.4728 92.0733" stroke="#0B68DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+    </span>
 
 </div>

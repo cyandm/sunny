@@ -51,20 +51,30 @@
           .video-content{
             @include flex();
             @include sudo(before,7.56756rem,7.56756rem,none){
-              border: 1rem solid rgba(255, 255, 255, 0.20);
 
+              border: 1rem solid rgba(255, 255, 255, 0.20);
               position: absolute;
               border-radius: 50%;
+              animation: sunRays 4s ease-in-out  infinite ;
+z-index: -1;
+
+
             }
             @include sudo(after,8.75rem,8.75rem,none){
-              border: 1rem solid rgba(255, 255, 255, 0.10);
 
+              border: 1rem solid rgba(255, 255, 255, 0.10);
               position: absolute;
               border-radius: 50%;
+              animation: sunRays 4s ease-in-out infinite;
+              z-index: -2;
+
             }
+
+            animation: pulseAnimation 4s ease-in-out infinite;
             position: absolute;
             left: 0;
             top:-7%;
+
             img{
 
               position: absolute;
@@ -113,5 +123,8 @@
     }
   }
 }
+
+
+
 
 

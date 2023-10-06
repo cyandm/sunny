@@ -30,12 +30,9 @@ if (coursePageAnimation) {
     stagger: 0.5,
   });
 
-  gsap.from(".line-svg", {
-    duration: 1.5,
-    delay: 1,
-    scale: 0,
-    ease: "expo.inOut",
-  });
+
+
+
 
   const courseBlocks = document.querySelectorAll(".course-block");
   courseBlocks.forEach((block, index) => {
@@ -67,3 +64,5 @@ if (coursePageAnimation) {
     });
   });
 }
+
+

@@ -1,13 +1,17 @@
 <?php
 $pageId = get_queried_object_id();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$args = array(
+
+$args = [
     'post_type' => 'post',
-    'paged' => $paged,
-    'posts_per_page' =>3,
-    'orderby' => 'date',
-    'order' => 'DESC',
-);
+    'posts_per_page' => 999,
+    'tax_query' => [
+        [
+            'taxonomy' => 'category',
+            'terms' => $pageId,
+        ],
+    ],
+];
 
 $allBlogs = new WP_Query($args);
 
@@ -28,6 +32,7 @@ $allBlogs = new WP_Query($args);
                         ?>
                         <article class="blogs-row">
                             <div class="blog-page-row-blog ">
+
                                 <div class="row-blog show-blog-page">
                                     <?php while ($allBlogs->have_posts()) {
                                         $allBlogs->the_post();
@@ -40,19 +45,7 @@ $allBlogs = new WP_Query($args);
                                     } ?>
 
                                 </div>
-                                <?php
-                                echo '<div class="pagination">';
-                                echo paginate_links(array(
-                                    'total' => $allBlogs->max_num_pages,
-                                    'current' => $paged,
-                                    'prev_text' => false,
-                                    'next_text' => false,
-                                    'end_size' => 1,
-                                    'mid_size' => 1,
-                                ));
-                                echo '</div>';
 
-                                ?>
                             </div>
 
                         </article>

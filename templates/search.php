@@ -14,7 +14,7 @@ foreach ($the_query->posts as $post) {
 <?php
 get_header()
 ?>
-<main class=" main blog-search">
+<main class=" main blog-search padding-top">
 
     <section>
         <div class="search-content container">
@@ -46,7 +46,7 @@ get_header()
         <div class="result-row">
             <?php if (have_posts()) :
                 while (have_posts()) : the_post();
-                    if (get_post_field('post_type', get_the_id()) == 'post' || get_post_field('post_type', get_the_id()) == 'course') :
+                    if (get_post_field('post_type', get_the_id()) == 'post') :
 
                         set_query_var('id', get_the_id());
                         get_template_part(

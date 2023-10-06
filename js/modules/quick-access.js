@@ -27,7 +27,8 @@ if (sectionHeadings && scrollList && scrollListMobile) {
     link.textContent = heading.textContent;
     link.href = "#" + randomId;
     link.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevent the default behavior of the link
+      event.preventDefault();
+
       // Scroll smoothly to the target section
       document.querySelector(link.getAttribute("href")).scrollIntoView({
         behavior: "smooth",
@@ -40,4 +41,9 @@ if (sectionHeadings && scrollList && scrollListMobile) {
     scrollList.appendChild(listItem);
     scrollListMobile.appendChild(listItem.cloneNode(true));
   });
+
+
+
+
+
 }

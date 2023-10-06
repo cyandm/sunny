@@ -12,6 +12,8 @@
     overflow: hidden;
     position: relative;
   }
-  .swiper-slide {
+
+  @media (width<=992px) {
+      height: auto;
   }
 }

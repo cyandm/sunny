@@ -1,3 +1,4 @@
 <?php
 
-get_template_part('templates/pages/search', null);
+
+get_template_part('templates/search', null);

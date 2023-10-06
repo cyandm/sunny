@@ -47,9 +47,9 @@ if ($args['id']) {
     </div>
     <div class="circle-content">
         <div class="circle">
-        <div class="circle-animate circle-1" ></div>
-        <div class="circle-animate circle-2"></div>
-        <div class="circle-animate circle-3" ></div>
+        <div class="multi-circle-animate circle-1" ></div>
+        <div class="multi-circle-animate circle-2"></div>
+        <div class="multi-circle-animate circle-3" ></div>
         </div>
     </div>
 

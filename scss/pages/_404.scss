@@ -10,9 +10,12 @@
     @include flex(column,center,center);
     gap: 0.5rem;
     width: fit-content;
-    img{
-      width: 100%;
+  svg{
+    path{
+      animation: fallingLeaves 2s linear infinite, swayLeaves 2s ease-in-out infinite;
+
     }
+  }
     h3{
       @include font_style(h3);
       color: $black-1;

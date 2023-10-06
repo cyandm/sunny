@@ -1,11 +1,8 @@
 let blogPageBlog = document.querySelector("#blogs-overview");
 
 if (blogPageBlog) {
-  // *********************************swiper slider
-  // blogMainSlider.on("reachEnd", () => {
-  //   document.body.style.overflowY = "scroll";
-  // });
-}
+
+
 
 // ********************************* add class to humberger menu in single blog
 const backBtn = document.querySelector("#back-btn");
@@ -23,4 +20,5 @@ if (mobileCategoryList) {
       window.location = this.value;
     });
   }
+}
 }

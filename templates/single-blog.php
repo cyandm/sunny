@@ -17,6 +17,8 @@ $post = get_post($post_id);
                     null,
                 );
                 ?>
+
+
                 <div class="all-content">
                     <h1><?= get_the_title($post_id) ?></h1>
                     <div class="blog-img-single">

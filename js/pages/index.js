@@ -1,6 +1,7 @@
 import "./front-page/index";
 import "./course/index";
-import "./blog";
+import "./blogs-overview";
 import "./contact";
-import "./single-blog";
+import  "./single-blog";
+
 
