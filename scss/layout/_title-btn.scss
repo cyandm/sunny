@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: space-between;
   margin-block-start: 1.5rem;
-  a {
+  > * {
     @include btn($icon: true, $side: true) {
       color: $black-1;
     }

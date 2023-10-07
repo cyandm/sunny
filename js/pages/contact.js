@@ -15,7 +15,6 @@ if (form) {
 
     let errors = [];
     Object.entries(allData).forEach(([key, value]) => {
-
       const fieldName = (fieldName) => {
         if (fieldName === "name") {
           return "نام ";
@@ -30,7 +29,7 @@ if (form) {
 
       const sanitizeInput = (input) => {
         const symbolsPattern =
-            /[\!\@\#\$\%\^\&\*\)\(\+\=\<\>\{\}\[\]\:\;\'\"\|\~\`\_\-]/;
+          /[\!\@\#\$\%\^\&\*\)\(\+\=\<\>\{\}\[\]\:\;\'\"\|\~\`\_\-]/;
 
         if (input.match(symbolsPattern)) {
           return "لطفا " + fieldName(key) + " مناسب وارد کنید ";
@@ -59,7 +58,6 @@ if (form) {
         let emailError = emailValidate(value);
         errors.push(emailError);
       }
-
     });
 
     const isArrayEmptyOrAllUndefined = (array) => {

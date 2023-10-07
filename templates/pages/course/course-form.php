@@ -29,7 +29,7 @@ if ($args['id']) {
                 <label for="date">تاریخ تولد</label>
                 <div class="input">
                     <input type="text" id="date" name="date" value="" class="date-picker-custom">
-                    <i class=""></i>
+                    <i class="icon-date"></i>
                 </div>
             </div>
             <input type="hidden" name="course_id" value="<?= $post_id ?>" disabled>
@@ -47,9 +47,9 @@ if ($args['id']) {
     </div>
     <div class="circle-content">
         <div class="circle">
-        <div class="multi-circle-animate circle-1" ></div>
-        <div class="multi-circle-animate circle-2"></div>
-        <div class="multi-circle-animate circle-3" ></div>
+            <div class="multi-circle-animate circle-1"></div>
+            <div class="multi-circle-animate circle-2"></div>
+            <div class="multi-circle-animate circle-3"></div>
         </div>
     </div>
 

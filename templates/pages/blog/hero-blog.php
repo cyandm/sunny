@@ -41,32 +41,32 @@ if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
                             <div class="blog-circle circle-animation"></div>
                             <div class="img image-animate">
 
-                            <?= wp_get_attachment_image($slide['hero_slider_image'], 'full', false, []); ?>
+                                <?= wp_get_attachment_image($slide['hero_slider_image'], 'full', false, []); ?>
 
                             </div>
                         </div>
                         <?php if ($key == 'hero_slider_1') : ?>
-                        <div class="translate-animation">
-                            <div class="next-slider swiper-button-next">
-                                <i class="icon-arrow-side-right"></i>
-                                <div>
-                                    <h3><?= $blogSliders['hero_slider_2']['hero_slider_title'] ?></h3>
-                                    <?= wp_get_attachment_image($blogSliders['hero_slider_2']['hero_slider_image'], 'thumbnail', false, []); ?>
-                                </div>
+                            <div class="translate-animation">
+                                <div class="next-slider swiper-button-next">
+                                    <i class="icon-arrow-side-right"></i>
+                                    <div>
+                                        <h3><?= $blogSliders['hero_slider_2']['hero_slider_title'] ?></h3>
+                                        <?= wp_get_attachment_image($blogSliders['hero_slider_2']['hero_slider_image'], 'thumbnail', false, []); ?>
+                                    </div>
 
-                            </div>
+                                </div>
                             </div>
 
                         <?php else : ?>
-                        <div class="translate-animation">
-                            <div class="prev-slider swiper-button-prev ">
-                                <?= wp_get_attachment_image($blogSliders['hero_slider_1']['hero_slider_image'], 'thumbnail', false, []); ?>
-                                <div>
-                                    <h3><?= $blogSliders['hero_slider_1']['hero_slider_title'] ?></h3>
-                                    <i class="icon-arrow-side-left"></i>
-                                </div>
+                            <div class="translate-animation">
+                                <div class="prev-slider swiper-button-prev ">
+                                    <?= wp_get_attachment_image($blogSliders['hero_slider_1']['hero_slider_image'], 'thumbnail', false, []); ?>
+                                    <div>
+                                        <h3><?= $blogSliders['hero_slider_1']['hero_slider_title'] ?></h3>
+                                        <i class="icon-arrow-side-left"></i>
+                                    </div>
 
-                            </div>
+                                </div>
                             </div>
                         <?php endif; ?>
                     </div>

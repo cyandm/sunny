@@ -1,46 +1,36 @@
 import { gsap } from "gsap";
 
-import {pullUpAnimation,circleAnimation,imageAnimation} from "./functions";
+import { pullUpAnimation, circleAnimation, imageAnimation } from "./functions";
 
 pullUpAnimation();
 circleAnimation();
 imageAnimation();
 
-
-
-
-
 // draw arrow
-const arrowPath = document.getElementById('arrowPath');
-const arrowHead = document.getElementById('arrowHead');
+const arrowPath = document.getElementById("arrowPath");
+const arrowHead = document.getElementById("arrowHead");
+if (arrowPath && arrowHead) {
+  const pathLength = arrowPath.getTotalLength();
 
-const pathLength = arrowPath.getTotalLength();
+  arrowPath.style.strokeDasharray = pathLength;
+  arrowPath.style.strokeDashoffset = pathLength;
 
+  arrowHead.style.strokeDasharray = pathLength;
+  arrowHead.style.strokeDashoffset = pathLength;
 
-arrowPath.style.strokeDasharray = pathLength;
-arrowPath.style.strokeDashoffset = pathLength;
-
-arrowHead.style.strokeDasharray = pathLength;
-arrowHead.style.strokeDashoffset = pathLength;
-
-function startAnimation() {
-
-    arrowPath.style.transition = 'stroke-dashoffset 2s ease-in-out';
-    arrowHead.style.transition = 'stroke-dashoffset 2s ease-in-out';
-
+  function startAnimation() {
+    arrowPath.style.transition = "stroke-dashoffset 2s ease-in-out";
+    arrowHead.style.transition = "stroke-dashoffset 2s ease-in-out";
 
     arrowPath.getBoundingClientRect();
-    arrowPath.style.strokeDashoffset = '0';
+    arrowPath.style.strokeDashoffset = "0";
 
     arrowHead.getBoundingClientRect();
-    arrowHead.style.strokeDashoffset = '0';
+    arrowHead.style.strokeDashoffset = "0";
+  }
 
+  window.addEventListener("load", startAnimation);
 }
-
-window.addEventListener('load', startAnimation);
-
-
-
 
 // const leaves = document.querySelectorAll("#not-fond-animation svg path");
 // console.log(leaves);

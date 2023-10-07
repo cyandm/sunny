@@ -39,10 +39,10 @@ $startSliders = get_field('slider_start_section', $frontId);
                                     <div class="panels-navigation">
                                         <div class="panels-navigation ">
                                             <?php if ($num == 1) : ?>
-                                            <div class="swiper-button-next next"><i class="icon-arrow-single-big"></i></div>
+                                                <div class="swiper-button-next next"><i class="icon-arrow-single-big"></i></div>
                                             <?php elseif ($num == count($startSliders)) : ?>
 
-                                            <div class="swiper-button-prev prv"><i class="icon-arrow-single-big"></i></div>
+                                                <div class="swiper-button-prev prv"><i class="icon-arrow-single-big"></i></div>
                                             <?php else : ?>
                                                 <div class="swiper-button-next next"><i class="icon-arrow-single-big"></i></div>
                                                 <div class="swiper-button-prev prv"><i class="icon-arrow-single-big"></i></div>
@@ -59,8 +59,13 @@ $startSliders = get_field('slider_start_section', $frontId);
                             </div>
 
                             <div class="breadcrumb-btn">
-                                <a href="#start-<?= ($num == count($startSliders)) ? $num - 1 : $num + 1 ?>" class="btn-right"><i class="icon-arrow-side-right"></i>مربی ها و هنرجوها</a>
-                                <a href="#panel-3" class="btn-left">اسلایدر<i class="icon-arrow-side-left"></i></a>
+                                <div class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i>مربی ها و هنرجوها
+                                </div>
+                                <div class="home-main-slider-prev btn-left">اسلایدر<i class="icon-arrow-side-left"></i>
+                                </div>
+
+                                <!-- <a href="#start-<?= ($num == count($startSliders)) ? $num - 1 : $num + 1 ?>" class="btn-right"><i class="icon-arrow-side-right"></i>مربی ها و هنرجوها</a>
+                                <a href="#panel-3" class="btn-left">اسلایدر<i class="icon-arrow-side-left"></i></a> -->
                             </div>
                         </div>
                     </div>
