@@ -1,112 +1,143 @@
 @use "../../utils/index" as *;
 
 .start-section {
-  .slide {
-    .row {
-      align-items: center;
-      .container {
-        @include flex(column, center, end);
-        direction: rtl;
-        text-align: right;
+  .home-nested-slider.swiper-container {
 
-        .start-content {
-          @include flex();
-          gap: 1.25rem;
-          flex-wrap: wrap;
+    .slide {
+      .row {
+        align-items: center;
 
-          > div {
-            flex: 1;
-          }
-          .start-img {
-            position: relative;
-            @include flex();
-            .circle {
-              @include sudo(before, 34rem, 34rem, none) {
-                position: absolute;
-                bottom: 2%;
-                border: 1px solid $blue-1;
-                border-radius: 50%;
-              }
-              width: 34rem;
-              height: 34rem;
-              border-radius: 50%;
-              background: $blue-1;
-              position: absolute;
-              top: -8%;
-              z-index: -1;
-            }
-            .diamond {
-              width: 28rem;
-              height: 28rem;
-              transform: rotate(45deg);
-              background: $pink-1;
-              position: absolute;
-              z-index: -1;
+        .container {
+          @include flex(column, space-between, start);
+          direction: rtl;
+          text-align: right;
+          height: 100%;
+          padding: 5rem 0 1.5rem 0;
 
-              @include sudo(before, 28rem, 28rem, none) {
-                position: absolute;
-                border: 1px solid $pink-1;
-                transform: rotate(4deg);
-              }
-            }
-            .video-content {
-              @include flex();
-              @include sudo(before, 7.56756rem, 7.56756rem, none) {
-                border: 1rem solid rgba(255, 255, 255, 0.2);
-                position: absolute;
-                border-radius: 50%;
-                animation: sunRays 4s ease-in-out infinite;
-                z-index: -1;
-              }
-              @include sudo(after, 8.75rem, 8.75rem, none) {
-                border: 1rem solid rgba(255, 255, 255, 0.1);
-                position: absolute;
-                border-radius: 50%;
-                animation: sunRays 4s ease-in-out infinite;
-                z-index: -2;
-              }
-
-              animation: pulseAnimation 4s ease-in-out infinite;
+          .arrow-svg {
+            svg {
               position: absolute;
               left: 0;
-              top: -7%;
-
-              img {
-                position: absolute;
-              }
-              i {
-                position: absolute;
-                &:before {
-                  font-size: 1.5rem;
-                }
-              }
-              .video-popup {
-                visibility: hidden;
-                opacity: 0;
-              }
             }
           }
-          .start-text {
-            @include flex(column, start, start);
 
-            .start-text-title {
-              @include font_style(h1);
-              margin-block-end: 0.5rem;
+          .start-content {
+            @include flex();
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            padding-block-start: 5rem;
+
+            > div {
+              flex: 1;
             }
 
-            .start-description {
-              margin-block-end: 0.62rem;
-            }
-            .start-text-btn {
-              @include font_style(h4);
+            .start-img {
+              position: relative;
               @include flex();
-              color: $blue-2;
-              i {
-                &::before {
-                  transform: rotate(90deg);
-                  font-size: 1.5rem;
-                  color: $blue-2;
-                  margin-inline-start: 0.25rem;
+
+              .circle {
+                @include sudo(before, 34rem, 34rem, none) {
+                  position: absolute;
+                  bottom: 2%;
+                  border: 1px solid $blue-1;
+                  border-radius: 50%;
+                }
+                width: 34rem;
+                height: 34rem;
+                border-radius: 50%;
+                background: $blue-1;
+                position: absolute;
+                top: -8%;
+                z-index: -1;
+              }
+
+              .diamond {
+                width: 28rem;
+                height: 28rem;
+                transform: rotate(45deg);
+                background: $pink-1;
+                position: absolute;
+                z-index: -1;
+
+                @include sudo(before, 28rem, 28rem, none) {
+                  position: absolute;
+                  border: 1px solid $pink-1;
+                  transform: rotate(4deg);
+                }
+              }
+
+              .video-content {
+                @include flex();
+                @include sudo(before, 7.56756rem, 7.56756rem, none) {
+                  border: 1rem solid rgba(255, 255, 255, 0.2);
+                  position: absolute;
+                  border-radius: 50%;
+                  animation: sunRays 4s ease-in-out infinite;
+                  z-index: -1;
+                }
+                @include sudo(after, 8.75rem, 8.75rem, none) {
+                  border: 1rem solid rgba(255, 255, 255, 0.1);
+                  position: absolute;
+                  border-radius: 50%;
+                  animation: sunRays 4s ease-in-out infinite;
+                  z-index: -2;
+                }
+
+                animation: pulseAnimation 4s ease-in-out infinite;
+                position: absolute;
+                left: 0;
+                top: -7%;
+
+                img {
+                  position: absolute;
+                }
+
+                i {
+                  position: absolute;
+
+                  &:before {
+                    font-size: 1.5rem;
+                  }
+                }
+
+                .video-popup {
+                  visibility: hidden;
+                  opacity: 0;
+                }
+              }
+            }
+
+            .start-text {
+              @include flex(column, start, start);
+              height: 100%;
+
+              .start-text-title {
+                @include font_style(h1);
+                margin-block-end: 0.5rem;
+              }
+
+              .start-description {
+                margin-block-end: 0.62rem;
+
+                h3 {
+                  @include font_style(h2);
+                  margin-block-end: 0.62rem;
+                }
+              }
+
+              .start-text-btn {
+                @include font_style(h4);
+                @include flex();
+                color: $blue-2;
+
+                i {
+                  transform: rotate(180deg);
+
+                  &::before {
+
+                    color: $blue-2;
+                    margin-inline-end: 0.25rem;
+                  }
                 }
               }
             }
@@ -114,5 +145,31 @@
         }
       }
     }
+  }
+
+  @media (width<=992px) {
+    .home-nested-slider.swiper-container {
+      overflow: auto;
+      height: auto;
+
+      .start-wrapper {
+        @include flex(column);
+        gap: 1rem;
+        .slide{
+          height: auto;
+          .container{
+            .start-content{
+              flex-direction: column;
+
+              .panels-navigation{
+                display: none;
+              }
+
+            }
+          }
+        }
+      }
+    }
+
   }
 }

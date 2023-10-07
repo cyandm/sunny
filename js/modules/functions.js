@@ -77,7 +77,7 @@ export const activateFirstElement = (elements) => {
 
 export const initSwiper = (slider) => {
   if (window.innerWidth <= 992) {
-    console.log(window.innerHeight + "test");
+    console.log(slider);
     slider.destroy();
     window.addEventListener("resize", slider.destroy());
   }

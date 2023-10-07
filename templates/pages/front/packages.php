@@ -9,7 +9,7 @@ $courses = get_field('choose_pakages', $frontId);
 ?>
 
 <div id="package" class="swiper-slide package-content">
-    <div class="container">
+    <div class="container  padding-top">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>
@@ -34,9 +34,15 @@ $courses = get_field('choose_pakages', $frontId);
 
             </div>
         <?php endif; ?>
+
         <div class="breadcrumb-btn">
-            <a href="" class="btn-right"><i class="icon-arrow-side-right"></i></a>
-            <a href="" class="btn-left"><i class="icon-arrow-side-left"></i></a>
+            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> فروشگاه سانی</a>
+            <a href="" class="btn-left home-main-slider-prev">نظر همراهان<i class="icon-arrow-side-left"></i></a>
         </div>
+        <?Php if ($btnTitle) : ?>
+            <div class="section-btn">
+                <a href="<?= $btnLink ?>"><?= $btnTitle ?></a>
+            </div>
+        <?php endif ?>
     </div>
 </div>

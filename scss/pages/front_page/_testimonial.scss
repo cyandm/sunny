@@ -113,4 +113,17 @@
       }
     }
   }
+
+
+  @media (width<=992px) {
+    .front-testimonial-content{
+      @include flex(column);
+      > div {
+        max-width: 100%;
+      }
+
+
+
+    }
+  }
 }

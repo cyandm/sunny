@@ -5,7 +5,7 @@ $testimonials = get_field('testimonial_choose', $frontId); ?>
 
 <div class="swiper-slide testimonial-section" id="testimonial-section">
 
-    <div class="container">
+    <div class="container  padding-top">
         <?php if ($title) : ?>
             <div class="section-title">
                 <h2><?= esc_html($title) ?></h2>
@@ -74,10 +74,12 @@ $testimonials = get_field('testimonial_choose', $frontId); ?>
             </div>
         </div>
 
+
         <div class="breadcrumb-btn">
-            <a href="" class="btn-right"><i class="icon-arrow-side-right"></i></a>
-            <a href="" class="btn-left"><i class="icon-arrow-side-left"></i></a>
+            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i>  کلاس ها</a>
+            <a href="" class="btn-left home-main-slider-prev"> مقالات<i class="icon-arrow-side-left"></i></a>
         </div>
+
     </div>
 
 </div>

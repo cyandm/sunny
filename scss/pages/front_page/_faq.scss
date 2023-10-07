@@ -1,6 +1,7 @@
 @use "../../utils/index" as *;
 
 .faq-section {
+
   .faq-content {
     @include flex();
     align-items: start;
@@ -97,6 +98,18 @@
           max-width: 18.625rem;
           max-height: 18.625rem;
         }
+      }
+    }
+  }
+
+  @media (width<=992px) {
+    .faq-content{
+     @include flex(column,center,center);
+      .faq-drop-down{
+
+      }
+      .faq-img{
+        order: -1;
       }
     }
   }

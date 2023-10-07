@@ -71,6 +71,7 @@ window.addEventListener("load", () => {
 const horizontalSliders = document.querySelectorAll(".home-nested-slider");
 
 horizontalSliders.forEach((slider, index) => {
+
   const horizontalSwiper = new Swiper(slider, {
     ...defaultSwiper,
     speed: 1000,
@@ -80,12 +81,7 @@ horizontalSliders.forEach((slider, index) => {
       nextEl: ".home-nested-next",
       prevEl: ".home-nested-prev",
     },
-    breakpoints: {
-      992: {
-        mousewheel: false,
-        slidesPerView: 1,
-      },
-    },
+
   });
 
   if (index == 0) {
@@ -136,10 +132,12 @@ export const blogMainSlider = new Swiper(".blog-page-slider", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+
   // autoplay: {
   //   delay: 3000,
   //   disableOnInteraction: false,
   // },
+
   on: {
     slideChange: () => {
       pullUpAnimation();

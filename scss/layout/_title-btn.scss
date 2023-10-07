@@ -21,10 +21,24 @@
       @include font_style(h2);
     }
     a {
-      width: 100%;
+    display: none;
     }
   }
 }
+.section-btn{
+  display: none;
+  @media (width<=768px) {
+    @include flex();
+    margin-block-start: 0.75rem;
+
+    a{
+      @include btn($red: true);
+      width: 100%;
+    }
+
+  }
+}
+
 
 .breadcrumb-btn {
   @include flex();
@@ -36,5 +50,9 @@
     @include btn($icon: true, $side: true) {
       color: $black-1;
     }
+  }
+
+  @media (width<=992px) {
+    display: none;
   }
 }

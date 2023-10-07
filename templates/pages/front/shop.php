@@ -8,7 +8,7 @@ $btnLink = get_field('shop__section_btn_link', $frontId);
 
 ?>
 <div id="shop" class="swiper-slide shop-section">
-    <div class="container">
+    <div class="container  padding-top">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>
@@ -22,8 +22,8 @@ $btnLink = get_field('shop__section_btn_link', $frontId);
 
         </div>
         <div class="breadcrumb-btn">
-            <a href="" class="btn-right"><i class="icon-arrow-side-right"></i></a>
-            <a href="" class="btn-left"><i class="icon-arrow-side-left"></i></a>
+            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> راه های ارتباطی</a>
+            <a href="" class="btn-left home-main-slider-prev"> کلاس ها <i class="icon-arrow-side-left"></i></a>
         </div>
     </div>
 </div>

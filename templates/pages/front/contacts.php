@@ -27,7 +27,7 @@ $mapLinks = get_field('contact_map_repeater', $frontId);
 
 ?>
 <div id="front-contact" class="swiper-slide front-contact-section">
-    <div class="container">
+    <div class="container  padding-top">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>
@@ -127,8 +127,9 @@ $mapLinks = get_field('contact_map_repeater', $frontId);
             </div>
         </div>
         <div class="breadcrumb-btn">
-            <a href="" class="btn-right"><i class="icon-arrow-side-right"></i></a>
-            <a href="" class="btn-left"><i class="icon-arrow-side-left"></i></a>
+            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> بازگشت به اول</a>
+            <a href="" class="btn-left home-main-slider-prev">فروشگاه<i class="icon-arrow-side-left"></i></a>
         </div>
+
     </div>
 </div>

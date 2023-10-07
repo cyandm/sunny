@@ -10,7 +10,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
 
 ?>
 <div class="swiper-slide classes-slide">
-    <div class="container">
+    <div class="container padding-top">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>
@@ -70,8 +70,14 @@ $topStudentTitle = get_field('top_student_title', $frontId);
         </div>
 
         <div class="breadcrumb-btn">
-            <a href="" class="btn-right"><i class="icon-arrow-side-right"></i>سوالات متداول</a>
-            <a href="" class="btn-left">چرا ریتمیک<i class="icon-arrow-side-left"></i></a>
+            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i>سوالات متداول</a>
+            <a href="" class="btn-left home-main-slider-prev">چرا ریتمیک<i class="icon-arrow-side-left"></i></a>
         </div>
+
+        <?Php if ($btnTitle) : ?>
+            <div class="section-btn">
+                <a href="<?= $btnLink ?>"><?= $btnTitle ?></a>
+            </div>
+        <?php endif ?>
     </div>
 </div>

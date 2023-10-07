@@ -62,9 +62,9 @@ button {
   outline: 0;
 }
 .padding-top{
-  padding-block-start: 7rem;
-  @media (width<=768px) {
-    padding-block-start: 5rem;
+  padding-block-start: 5rem;
+  @media (width<=992px) {
+    padding-block-start: 1rem;
   }
 }
 // ---------------------------------------- default style

@@ -5,7 +5,7 @@
 
 <main class="front-page" id="front-page">
     <div class="home-main-slider swiper" >
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper home-wrapper">
             <?php
             get_template_part('templates/pages/front/hero');
             get_template_part('templates/pages/front/start');
