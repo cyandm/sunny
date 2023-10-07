@@ -23,7 +23,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
             <div class="swiper-wrapper">
                 <?php if (is_array($coaches) && count($coaches) > 0) :
                     foreach ($coaches as $coach) : ?>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide classes-content">
                             <div class="front-coach-img">
                                 <div class="img-content">
                                     <?= wp_get_attachment_image(get_post_thumbnail_id($coach->ID), 'full', false, []);

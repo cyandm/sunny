@@ -1,0 +1,17 @@
+@use "../utils/index" as *;
+
+.coaches-overview {
+  padding-block-start: 5rem;
+  .coaches {
+
+    .coaches-blocks {
+      @include flex(column);
+margin-block-start: 0.75rem;
+      gap: 2rem;
+      .classes-content {
+        width: 100%;
+
+      }
+    }
+  }
+}

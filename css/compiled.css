@@ -2394,7 +2394,7 @@ header .header-mobile .sotioal-row a i::before {
   margin-inline-start: 0.25rem;
 }
 
-.classes-slide .coach-slider .swiper-slide {
+.classes-content {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -2404,16 +2404,16 @@ header .header-mobile .sotioal-row a i::before {
   gap: 1.25rem;
   flex-wrap: wrap;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-img {
+.classes-content .front-coach-img {
   flex: 1 1 43%;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-img .img-content {
+.classes-content .front-coach-img .img-content {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-img .img-content::before {
+.classes-content .front-coach-img .img-content::before {
   content: " ";
   width: 32.35rem;
   height: 100%;
@@ -2423,13 +2423,13 @@ header .header-mobile .sotioal-row a i::before {
   bottom: 0;
   z-index: -1;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-img .img-content img {
+.classes-content .front-coach-img .img-content img {
   max-width: 32rem;
   max-height: 33.3rem;
   position: absolute;
   bottom: -10%;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content {
+.classes-content .front-coach-content {
   flex: 1 1 55%;
   display: flex;
   flex-direction: column;
@@ -2438,7 +2438,7 @@ header .header-mobile .sotioal-row a i::before {
   align-items: start;
   gap: 0.62rem;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content h3 {
+.classes-content .front-coach-content h3 {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -2453,11 +2453,11 @@ header .header-mobile .sotioal-row a i::before {
   -webkit-line-clamp: 1;
   white-space: pre-wrap;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content .nav-btn {
+.classes-content .front-coach-content .nav-btn {
   position: relative;
   height: 2.8rem;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content .description {
+.classes-content .front-coach-content .description {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -2470,7 +2470,7 @@ header .header-mobile .sotioal-row a i::before {
   color: #1a212a;
   height: 9rem;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content .description p {
+.classes-content .front-coach-content .description p {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -2478,7 +2478,7 @@ header .header-mobile .sotioal-row a i::before {
   -webkit-line-clamp: 4;
   white-space: pre-wrap;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content h4 {
+.classes-content .front-coach-content h4 {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -2488,7 +2488,7 @@ header .header-mobile .sotioal-row a i::before {
   font-size: 1.25rem;
   font-weight: 500;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content .students-row {
+.classes-content .front-coach-content .students-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -2498,10 +2498,10 @@ header .header-mobile .sotioal-row a i::before {
   width: 100%;
   margin-block-start: -0.3rem;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content .students-row .student-info {
+.classes-content .front-coach-content .students-row .student-info {
   flex: 1;
 }
-.classes-slide .coach-slider .swiper-slide .front-coach-content .students-row .student-info img {
+.classes-content .front-coach-content .students-row .student-info img {
   height: 14.25rem;
   border-radius: 1.5rem;
   width: 100%;
@@ -5972,6 +5972,21 @@ main.single-blog .blog-content .all-content .content-single img {
   height: 30px;
   line-height: 30px;
   text-align: center;
+}
+
+.coaches-overview {
+  padding-block-start: 5rem;
+}
+.coaches-overview .coaches .coaches-blocks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 0.75rem;
+  gap: 2rem;
+}
+.coaches-overview .coaches .coaches-blocks .classes-content {
+  width: 100%;
 }
 
 /*# sourceMappingURL=compiled.css.map */
