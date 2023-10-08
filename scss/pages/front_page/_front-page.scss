@@ -14,12 +14,10 @@
   }
 
   @media (width<=992px) {
-      height: auto;
+    height: auto;
     overflow: auto;
-    .home-wrapper{
-      @include flex(column,start,start);
+    .home-wrapper {
+      @include flex(column, start, start);
     }
-
-
   }
 }

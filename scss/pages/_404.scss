@@ -1,33 +1,32 @@
 @use "../utils/index" as *;
 
-.unfind-row{
-  @include flex(column,center,center);
+.unfind-row {
+  @include flex(column, center, center);
 
   padding-block-start: 9rem;
   width: 100%;
 
-  .unfind-content{
-    @include flex(column,center,center);
+  .unfind-content {
+    @include flex(column, center, center);
     gap: 0.5rem;
     width: fit-content;
-  svg{
-    path{
-      animation: fallingLeaves 2s linear infinite, swayLeaves 2s ease-in-out infinite;
-
+    svg {
+      path {
+        animation: fallingLeaves 2s linear infinite,
+          swayLeaves 2s ease-in-out infinite;
+      }
     }
-  }
-    h3{
+    h3 {
       @include font_style(h3);
       color: $black-1;
     }
     .btn-row {
-   @include flex();
+      @include flex();
 
       a {
-      @include btn();
+        @include btn();
         color: $white-1;
       }
     }
-
   }
 }

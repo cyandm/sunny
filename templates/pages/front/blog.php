@@ -1,14 +1,10 @@
 <?php
 $frontId = get_option('page_on_front');
-
 $title = get_field('blog_section_title', $frontId);
 $btnTitle = get_field('blog_section_btn_title', $frontId);
 $btnLink = get_field('blog_section_link_btn', $frontId);
-
 $categories = get_field('choose_category', $frontId);
 ?>
-
-
 
 <div id="blog-section" class="swiper-slide blog-section">
     <div class="container  padding-top">
@@ -70,9 +66,9 @@ $categories = get_field('choose_category', $frontId);
 
 
         <?Php if ($btnTitle) : ?>
-        <div class="section-btn">
-            <a href="<?= $btnLink ?>"><?= $btnTitle ?></a>
-        </div>
+            <div class="section-btn">
+                <a href="<?= $btnLink ?>"><?= $btnTitle ?></a>
+            </div>
         <?php endif ?>
 
         </article>

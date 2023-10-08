@@ -5,12 +5,6 @@ playIcons.forEach(function (playIcon) {
     // create popup
     const videoPopup = document.createElement("div");
     videoPopup.classList.add("video-popup");
-    videoPopup.innerHTML =
-      '<video controls autoplay>\
-                <source src="video.mp4" type="video/mp4">\
-                مرورگر شما از ویدیو پشتیبانی نمی‌کند.\
-                </video>\
-                <button class="close-popup">&#10006;</button>';
 
     document.body.appendChild(videoPopup);
 

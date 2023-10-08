@@ -30,16 +30,14 @@
           @include sudo(before, 17.56rem, 17.56rem, $pink-2) {
             border-radius: 50%;
             position: absolute;
-
           }
         }
-
       }
 
       .info {
         @include flex(column, start, start);
         gap: 1rem;
-        max-width:70% ;
+        max-width: 70%;
       }
 
       a {
@@ -78,8 +76,6 @@
           }
         }
       }
-
-
     }
 
     .contact-box-left {
@@ -108,7 +104,6 @@
           height: 13.5rem;
         }
       }
-
     }
     @media (width <= 992px) {
       .contact-box-wide > .images {
@@ -123,7 +118,7 @@
       }
     }
     @media (width <= 768px) {
-      >div >.info{
+      > div > .info {
         gap: 0.5rem;
       }
       .contact-box-left > .images {
@@ -138,5 +133,4 @@
       }
     }
   }
-
 }

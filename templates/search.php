@@ -33,10 +33,6 @@ get_header()
                         <h3>متاسفانه چیزی یافت نشد</h3>
                 </div>
                 <div class="not-found-img">
-                    <div class="cloudy-circle">
-                        <div class="dark"></div>
-                        <div class="light"></div>
-                    </div>
                     <img src="<?= get_stylesheet_directory_uri() ?>/imgs/not-found.png" alt="not-found">
                 </div>
             <?php else : ?>

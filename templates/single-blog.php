@@ -26,7 +26,7 @@ $post = get_post($post_id);
                         <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
                     </div>
 
-<!--                    mobile quick access-->
+                    <!--                    mobile quick access-->
                     <?php if ($post->post_content) : ?>
                         <div class="quick-access">
                             <h4>در این مقاله خواهید خواند</h4>

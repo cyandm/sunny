@@ -1,10 +1,8 @@
 <?php
 $frontId = get_option('page_on_front');
-
 $title = get_field('coach_section_title', $frontId);
 $btnTitle = get_field('coach_section_btn_title', $frontId);
 $btnLink = get_field('coach_section_btn_link', $frontId);
-
 $coaches = get_field('choose_coaches', $frontId);
 $topStudentTitle = get_field('top_student_title', $frontId);
 
@@ -25,11 +23,10 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                     foreach ($coaches as $coach) : ?>
                         <div class="swiper-slide classes-content">
                             <div class="front-coach-img">
-                                <div class="img-content">
+                                <div class="img-content <?= get_field('bg_image_color', get_the_ID()) ?>">
                                     <?= wp_get_attachment_image(get_post_thumbnail_id($coach->ID), 'full', false, []);
                                     ?>
                                 </div>
-
                             </div>
 
                             <div class="front-coach-content">
@@ -46,23 +43,30 @@ $topStudentTitle = get_field('top_student_title', $frontId);
 
                                 if (is_array($topStudents) && count($topStudents) > 0) : ?>
 
-                                    <div class="students-row">
-                                        <?php foreach ($topStudents as $student) : ?>
-                                            <div class="student-info">
-                                                <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []);
-                                                ?>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
 
+                                    <div class="students-row">
+                                        <div class="students-slider swiper">
+                                            <div class="swiper-wrapper sliders-wrapper">
+                                                <?php foreach ($topStudents as $student) : ?>
+                                                    <div class="student-info swiper-slide">
+
+                                                        <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []); ?>
+
+                                                        <div class="achievement-description">
+                                                            <h6><?= get_the_title($student->ID) ?></h6>
+                                                            <span><?= get_field('achievement_description', $student->ID) ?></span>
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         </div>
 
                 <?php endforeach;
                 endif; ?>
-
-
 
             </div>
             <div class="swiper-button-next"></div>

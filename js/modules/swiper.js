@@ -31,6 +31,14 @@ export const coachSlider = new Swiper(".coach-slider", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+
+export const studentSlider = new Swiper(".students-slider", {
+  ...defaultSwiper,
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  nested: true,
+  loop: true,
 
   //   autoplay: {
   //     delay: 3000,
@@ -71,7 +79,6 @@ window.addEventListener("load", () => {
 const horizontalSliders = document.querySelectorAll(".home-nested-slider");
 
 horizontalSliders.forEach((slider, index) => {
-
   const horizontalSwiper = new Swiper(slider, {
     ...defaultSwiper,
     speed: 1000,
@@ -81,7 +88,6 @@ horizontalSliders.forEach((slider, index) => {
       nextEl: ".home-nested-next",
       prevEl: ".home-nested-prev",
     },
-
   });
 
   if (index == 0) {

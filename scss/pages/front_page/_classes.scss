@@ -13,7 +13,7 @@
 
     .img-content {
       @include flex();
-      @include sudo(before, 32.35rem, 100%, $yellow-1) {
+      @include sudo(before, 40%, 100%, $yellow-1) {
         border-radius: 50% 50% 0 0;
         position: absolute;
         bottom: 0;
@@ -27,6 +27,16 @@
         bottom: -10%;
       }
     }
+    .img-content.pink {
+      &::before {
+        background: $pink-1;
+      }
+    }
+    .img-content.blue {
+      &::before {
+        background: $blue-1;
+      }
+    }
   }
 
   .front-coach-content {
@@ -34,6 +44,7 @@
     @include flex(column);
     align-items: start;
     gap: 0.62rem;
+    max-width: 55%;
 
     h3 {
       @include font_style(h2);
@@ -49,6 +60,7 @@
       @include font_style(body);
       color: $black-1;
       height: 9rem;
+      overflow: hidden;
 
       p {
         @include text_overflow(4);
@@ -57,24 +69,125 @@
 
     h4 {
       @include font_style(h3);
+      margin-block: 0.5rem;
     }
 
     .students-row {
-      @include flex();
-      gap: 1rem;
-      flex-wrap: wrap;
       width: 100%;
-      margin-block-start: -0.3rem;
+      .students-slider {
+        width: 100%;
 
-      .student-info {
-        flex: 1;
+        .sliders-wrapper {
+          @include flex();
+
+          width: 100%;
+          margin-block-start: -0.3rem;
+
+          .student-info {
+            position: relative;
+            height: 14.25rem;
+            flex-basis: 32%;
+            img {
+              height: 100%;
+              width: 100%;
+              border-radius: 1.5rem;
+              object-fit: cover;
+            }
+            .achievement-description {
+              @include flex(column, end, start);
+              @include font_style(h4);
+
+              gap: 0.25rem;
+              color: $white-1;
+              padding: 0.88rem;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              border-radius: 1.5rem;
+              background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0.6) 100%
+              );
+              transform: translateY(-110%);
+              transition: transform 0.3s ease-in-out;
+            }
+            &:hover {
+              .achievement-description {
+                transform: translateY(0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (width<=992px) {
+    flex-direction: column;
+    .front-coach-img {
+      @include flex();
+      width: 100%;
+      position: relative;
+
+      flex: 1 1 100%;
+
+      .img-content {
+        &::before {
+          width: 50%;
+        }
 
         img {
-          height: 14.25rem;
-          border-radius: 1.5rem;
-          width: 100%;
-          object-fit: cover;
+          max-width: 18.5rem;
+          max-height: 19.5rem;
+          position: unset;
         }
+      }
+    }
+
+    .front-coach-content {
+      flex: 1 1 100%;
+      max-width: 100%;
+
+      h3 {
+        @include font_style(h3);
+      }
+
+      .nav-btn {
+        position: relative;
+        height: 2.8rem;
+      }
+
+      .description {
+      }
+
+      h4 {
+      }
+
+      .students-row {
+        flex-direction: column;
+        margin-block-start: 0;
+      }
+    }
+  }
+
+  @media (width<=500px) {
+    flex-direction: column;
+    .front-coach-img {
+      .img-content {
+        &::before {
+          width: 80%;
+        }
+      }
+    }
+
+    .students-row {
+      flex-direction: column;
+      margin-block-start: 0;
+
+      .students-slider > .sliders-wrapper > .student-info {
+        flex-basis: 80% !important;
       }
     }
   }
