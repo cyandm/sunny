@@ -95,14 +95,14 @@ export const drawSvg = (arrowPath, arrowHead) => {
 
 export const toggleClassToBodyForSwiper = () => {
   const firstSlide = document.querySelector("#first-slide");
-  if (firstSlide.classList.contains("swiper-slide-active")) {
+  if (firstSlide && firstSlide.classList.contains("swiper-slide-active")) {
     document.body.classList.toggle("first-slide");
   }
 };
 
-export const mousewheelBehavier=(slider)=>{
+export const mousewheelBehavier = (slider) => {
   if (window.innerWidth <= 992) {
     slider.mousewheel.disable();
     window.addEventListener("resize", slider.mousewheel.disable());
   }
-}
+};

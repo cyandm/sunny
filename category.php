@@ -20,46 +20,47 @@ $allBlogs = new WP_Query($args);
 
 <?php get_header(); ?>
 
-    <main id="blogs-overview" class="blogs-overview-page">
+<main id="blogs-overview" class="blogs-overview-page">
 
-        <?php get_template_part('templates/pages/blog/hero-blog'); ?>
-        <div class="blog-section">
-            <div class="container">
-                <div class="front-blog-content overview-blog-content">
-                    <?php
-                    get_template_part('./templates/components/blog-tab');
-                    if ($allBlogs->have_posts()) :
-                        ?>
-                        <article class="blogs-row">
-                            <div class="blog-page-row-blog ">
+    <?php get_template_part('templates/pages/blog/hero-blog'); ?>
+    <div class="blog-section">
+        <div class="container">
+            <div class="front-blog-content overview-blog-content">
+                <?php
+                get_template_part('./templates/components/blog-tab');
+                if ($allBlogs->have_posts()) :
+                ?>
+                    <article class="blogs-row">
+                        <div class="blog-page-row-blog ">
 
-                                <div class="row-blog show-blog-page">
-                                    <?php while ($allBlogs->have_posts()) {
-                                        $allBlogs->the_post();
+                            <div class="row-blog show-blog-page">
+                                <?php while ($allBlogs->have_posts()) {
+                                    $allBlogs->the_post();
 
-                                        get_template_part(
-                                            '/templates/components/card-blog',
-                                            null,
-                                            ['id' => get_the_ID()]
-                                        );
-                                    } ?>
-
-                                </div>
+                                    get_template_part(
+                                        '/templates/components/card-blog',
+                                        null,
+                                        ['id' => get_the_ID()]
+                                    );
+                                } ?>
 
                             </div>
 
-                        </article>
-                    <?php
-                    else :
-                        get_template_part(
-                            'templates/components/empty-overview',
-                            null,
-                        );
-                    endif;
-                    wp_reset_query();
-                    ?>
-                </div>
+                        </div>
+
+                    </article>
+                <?php
+                else :
+                    get_template_part(
+                        'templates/components/empty-overview',
+                        null,
+                    );
+                endif;
+                wp_reset_query();
+                ?>
             </div>
         </div>
-    </main>
+    </div>
+</main>
+
 <?php get_footer(); ?>
