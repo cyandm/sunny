@@ -1,0 +1,100 @@
+@use "../../utils/index" as *;
+
+.custom-archive-product {
+  h2 {
+    @include font_style(h2);
+    margin-block-end: 0.75rem;
+  }
+  ul.products {
+    justify-content: start;
+  }
+  .shop-hero {
+    @include flex();
+    flex-wrap: wrap;
+    margin-block-start: 3rem;
+    margin-block-end: 2rem;
+    position: relative;
+    > * {
+      flex: 1;
+    }
+    .content-text {
+      h1 {
+        @include font_style(h1);
+        @include text_overflow(1);
+        margin-block-end: 0.5rem;
+      }
+
+      .text {
+        @include font_style(body);
+        margin-block-end: 1.5rem;
+      }
+
+      .shop-btn {
+        @include flex(row, start, start);
+        gap: 1rem;
+        width: 100%;
+        a {
+          height: 3.25rem;
+        }
+
+        a.right-btn {
+          @include btn(true, true, false);
+          border-color: $pink-1;
+          color: $black-1;
+        }
+
+        a.left-btn {
+          @include btn(true, true, true);
+          i {
+            @include flex();
+            width: 2.3125rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            background: $white-1;
+            color: $pink-1;
+          }
+        }
+      }
+    }
+
+    .content-img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @media (width<=768px) {
+    .shop-hero {
+      flex-direction: column;
+      gap: 1.25rem;
+      .content-text {
+        h1 {
+          @include font_style(h3);
+        }
+
+        .text {
+          @include font_style(body_b);
+          margin-block-end: 0;
+        }
+
+        .shop-btn {
+          order: -1;
+          flex-direction: column;
+          gap: 0.75rem;
+
+          a {
+            width: 100%;
+          }
+
+          a.left-btn {
+            order: -1;
+          }
+        }
+      }
+      .content-img {
+        position: relative;
+        order: -1;
+      }
+    }
+  }
+}

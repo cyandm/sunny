@@ -57,7 +57,7 @@ header {
             opacity: 0;
             visibility: hidden;
             position: absolute;
-            z-index: 999;
+            z-index: 9999;
             border-radius: 1.25rem;
             border: 1px solid $gray-2;
             background: $white-1;
@@ -67,7 +67,6 @@ header {
             gap: 0.5rem;
 
             > li {
-
               width: 100%;
 
               a {
@@ -89,7 +88,6 @@ header {
               opacity: 1;
               visibility: visible;
               display: block;
-
             }
           }
 
@@ -175,7 +173,7 @@ header {
       }
     }
 
-    .hamburger-menu.single-blog {
+    .hamburger-menu.with-back-btn {
       margin-inline-start: 3rem;
     }
 
@@ -189,7 +187,7 @@ header {
       width: 100%;
       background: rgba(26, 33, 42, 0.7);
       position: fixed;
-      z-index: 9999;
+      z-index: 99;
       transition: all 0.5s ease-in-out;
       padding: 1rem;
 
@@ -201,7 +199,7 @@ header {
         -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
         -webkit-transition: -webkit-transform 0.4s ease-in-out,
-        visibility 0s 0.4s;
+          visibility 0s 0.4s;
         transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
 
         .logo-close-btn {
@@ -271,13 +269,11 @@ header {
             margin-bottom: 1.62rem;
             position: relative;
 
-
             > li {
               @include font_style(body-small);
               @include flex();
               gap: 0.88rem;
               margin-inline-start: 0.63rem;
-
 
               &::before {
                 font-size: 1.5rem;
@@ -305,7 +301,6 @@ header {
               }
 
               ul {
-
                 width: auto;
                 height: 0;
                 transition: height 0.3s ease-in-out;
@@ -317,7 +312,6 @@ header {
                   width: 100%;
                   padding: 1rem 0;
                   position: relative;
-
 
                   @include sudo("before", 4rem, 2px, $gray-2) {
                     display: block;
@@ -411,7 +405,7 @@ header {
       }
     }
 
-    .mobile-menu.disply-menu {
+    .mobile-menu.display-menu {
       visibility: visible;
       opacity: 1;
 
@@ -465,7 +459,9 @@ header {
     }
   }
 }
-
+header.custom-z-index {
+  z-index: 999;
+}
 .sing-up-btn {
   @include btn($icon: true);
 }

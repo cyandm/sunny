@@ -1591,7 +1591,7 @@ header .header-large-view .menu-column ul.menu li.menu-item-has-children ul.sub-
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  z-index: 999;
+  z-index: 9999;
   border-radius: 1.25rem;
   border: 1px solid #e8e9ea;
   background: #feffff;
@@ -1696,7 +1696,7 @@ header .header-mobile .hamburger-menu i {
 header .header-mobile .hamburger-menu i::before {
   font-size: 1.5rem;
 }
-header .header-mobile .hamburger-menu.single-blog {
+header .header-mobile .hamburger-menu.with-back-btn {
   margin-inline-start: 3rem;
 }
 header .header-mobile .mobile-menu {
@@ -1709,7 +1709,7 @@ header .header-mobile .mobile-menu {
   width: 100%;
   background: rgba(26, 33, 42, 0.7);
   position: fixed;
-  z-index: 9999;
+  z-index: 99;
   transition: all 0.5s ease-in-out;
   padding: 1rem;
 }
@@ -1958,11 +1958,11 @@ header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.
   font-size: "1.5rem";
   transition: all 0.3s ease-in-out;
 }
-header .header-mobile .mobile-menu.disply-menu {
+header .header-mobile .mobile-menu.display-menu {
   visibility: visible;
   opacity: 1;
 }
-header .header-mobile .mobile-menu.disply-menu .mobile-menu-detail.active {
+header .header-mobile .mobile-menu.display-menu .mobile-menu-detail.active {
   visibility: visible;
   -webkit-transform: translateY(0%);
   transform: translateY(0%);
@@ -1971,7 +1971,7 @@ header .header-mobile .mobile-menu.disply-menu .mobile-menu-detail.active {
   max-height: 90%;
   overflow-y: auto;
 }
-header .header-mobile .mobile-menu.disply-menu .mobile-menu-detail.active .menu-contain ul.menu li.active-2 > a:after {
+header .header-mobile .mobile-menu.display-menu .mobile-menu-detail.active .menu-contain ul.menu li.active-2 > a:after {
   transform: rotate(180deg);
   transition: all 0.3s ease-in-out;
   content: "\e91e";
@@ -2011,6 +2011,10 @@ header .header-mobile .sotioal-row a i::before {
     align-items: center;
     width: 100%;
   }
+}
+
+header.custom-z-index {
+  z-index: 999;
 }
 
 .sing-up-btn {
@@ -3628,17 +3632,6 @@ ul.products > * {
   .shop-section {
     flex: 1 1 100%;
   }
-}
-
-.custom-archive-product h1 {
-  color: #1a212a;
-  font-family: "peyda";
-  font-size: 8.875rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  font-size: 1.5rem;
-  margin-block-end: 0.75rem;
 }
 
 .course-overview-page {
@@ -6551,18 +6544,44 @@ main.single-blog .blog-content .all-content .content-single img {
   width: 100%;
 }
 
-.shop-hero {
+.empty-cart-page {
+  padding-block-start: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.empty-cart-page .wc-empty-cart-message {
+  width: 100%;
+}
+
+.custom-archive-product h2 {
+  color: #1a212a;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1.5rem;
+  margin-block-end: 0.75rem;
+}
+.custom-archive-product ul.products {
+  justify-content: start;
+}
+.custom-archive-product .shop-hero {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-block-start: 3rem;
   margin-block-end: 2rem;
+  position: relative;
 }
-.shop-hero > * {
+.custom-archive-product .shop-hero > * {
   flex: 1;
 }
-.shop-hero .content-text h1 {
+.custom-archive-product .shop-hero .content-text h1 {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -6578,7 +6597,7 @@ main.single-blog .blog-content .all-content .content-single img {
   white-space: pre-wrap;
   margin-block-end: 0.5rem;
 }
-.shop-hero .content-text .text {
+.custom-archive-product .shop-hero .content-text .text {
   color: #1a212a;
   font-family: "peyda";
   font-size: 8.875rem;
@@ -6590,7 +6609,7 @@ main.single-blog .blog-content .all-content .content-single img {
   line-height: 2.25rem;
   margin-block-end: 1.5rem;
 }
-.shop-hero .content-text .shop-btn {
+.custom-archive-product .shop-hero .content-text .shop-btn {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -6598,10 +6617,10 @@ main.single-blog .blog-content .all-content .content-single img {
   gap: 1rem;
   width: 100%;
 }
-.shop-hero .content-text .shop-btn a {
+.custom-archive-product .shop-hero .content-text .shop-btn a {
   height: 3.25rem;
 }
-.shop-hero .content-text .shop-btn a.right-btn {
+.custom-archive-product .shop-hero .content-text .shop-btn a.right-btn {
   transition: all 0.3s ease-in-out;
   color: #1a212a;
   font-family: "peyda";
@@ -6625,17 +6644,19 @@ main.single-blog .blog-content .all-content .content-single img {
   border-radius: 2.5rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  border-color: #ff6883;
+  color: #1a212a;
 }
-.shop-hero .content-text .shop-btn a.right-btn:hover {
+.custom-archive-product .shop-hero .content-text .shop-btn a.right-btn:hover {
   border: 1px solid #1a212a;
   background: #feffff;
   color: #1a212a;
   border: 1px solid #1a212a;
 }
-.shop-hero .content-text .shop-btn a.right-btn:hover i::before {
+.custom-archive-product .shop-hero .content-text .shop-btn a.right-btn:hover i::before {
   color: #1a212a;
 }
-.shop-hero .content-text .shop-btn a.left-btn {
+.custom-archive-product .shop-hero .content-text .shop-btn a.left-btn {
   transition: all 0.3s ease-in-out;
   color: #1a212a;
   font-family: "peyda";
@@ -6663,12 +6684,12 @@ main.single-blog .blog-content .all-content .content-single img {
   background: #ff6883;
   color: #feffff;
 }
-.shop-hero .content-text .shop-btn a.left-btn:hover {
+.custom-archive-product .shop-hero .content-text .shop-btn a.left-btn:hover {
   border: 1px solid #ff6883;
   background: #feffff;
   color: #ff6883;
 }
-.shop-hero .content-text .shop-btn a.left-btn i {
+.custom-archive-product .shop-hero .content-text .shop-btn a.left-btn i {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6677,21 +6698,17 @@ main.single-blog .blog-content .all-content .content-single img {
   height: 2.25rem;
   border-radius: 50%;
   background: #feffff;
+  color: #ff6883;
 }
-.shop-hero .content-img {
-  position: relative;
-}
-.shop-hero .content-img img {
+.custom-archive-product .shop-hero .content-img img {
   width: 100%;
-  position: absolute;
-  left: 3rem;
 }
 @media (width <= 768px) {
-  .shop-hero {
+  .custom-archive-product .shop-hero {
     flex-direction: column;
     gap: 1.25rem;
   }
-  .shop-hero .content-text h1 {
+  .custom-archive-product .shop-hero .content-text h1 {
     color: #1a212a;
     font-family: "peyda";
     font-size: 8.875rem;
@@ -6701,7 +6718,7 @@ main.single-blog .blog-content .all-content .content-single img {
     font-size: 1.25rem;
     font-weight: 500;
   }
-  .shop-hero .content-text .text {
+  .custom-archive-product .shop-hero .content-text .text {
     color: #1a212a;
     font-family: "peyda";
     font-size: 8.875rem;
@@ -6713,22 +6730,68 @@ main.single-blog .blog-content .all-content .content-single img {
     line-height: 2.25rem;
     margin-block-end: 0;
   }
-  .shop-hero .content-text .shop-btn {
+  .custom-archive-product .shop-hero .content-text .shop-btn {
     order: -1;
     flex-direction: column;
     gap: 0.75rem;
   }
-  .shop-hero .content-text .shop-btn a {
+  .custom-archive-product .shop-hero .content-text .shop-btn a {
     width: 100%;
   }
-  .shop-hero .content-text .shop-btn a.left-btn {
+  .custom-archive-product .shop-hero .content-text .shop-btn a.left-btn {
     order: -1;
   }
-  .shop-hero .content-img {
+  .custom-archive-product .shop-hero .content-img {
     position: relative;
+    order: -1;
   }
-  .shop-hero .content-img img {
-    position: unset;
+}
+
+.top-back-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1rem;
+  width: 100%;
+}
+.top-back-btn a.back-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.25rem;
+  border: 1px solid #e8e9ea;
+  background: #feffff;
+}
+@media (width <= 992px) {
+  .top-back-btn {
+    height: 2.12rem;
+  }
+  .top-back-btn a.back-btn {
+    width: 2.125rem;
+    height: 2.125rem;
+    padding: 0.31rem;
+    border-radius: 0.625rem;
+    margin-block-end: 0.75rem;
+    position: fixed;
+    top: 2.1rem;
+  }
+}
+
+@media (width <= 992px) {
+  .custom-cart-page {
+    padding-block-start: 3rem;
+  }
+}
+
+@media (width <= 992px) {
+  .custom-checkout {
+    padding-block-start: 3rem;
   }
 }
 

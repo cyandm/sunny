@@ -1,0 +1,7 @@
+@use "../../utils//index" as *;
+
+.custom-cart-page {
+  @media (width<=992px) {
+    padding-block-start: 3rem;
+  }
+}

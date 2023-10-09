@@ -6,14 +6,16 @@ const close_mobile = document.getElementById("close-menu");
 if (mobile) {
   (function () {
     mobile.addEventListener("click", function () {
-      document.querySelector(".mobile-menu").classList.toggle("disply-menu");
+      document.querySelector(".mobile-menu").classList.toggle("display-menu");
+      document.querySelector("header").classList.toggle("custom-z-index");
       document.querySelector(".mobile-menu-detail").classList.toggle("active");
       document.body.style.overflow = "hidden";
       return false;
     });
     close_mobile.addEventListener("click", function () {
       document.querySelector(".mobile-menu-detail").classList.remove("active");
-      document.querySelector(".mobile-menu").classList.remove("disply-menu");
+      document.querySelector(".mobile-menu").classList.remove("display-menu");
+      document.querySelector("header").classList.remove("custom-z-index");
       document.body.style.overflow = "auto";
     });
   })();
@@ -38,10 +40,14 @@ if (mobile) {
   });
 }
 
-
-
 // *****************************mobile menu search box
-const searchMenuMobile=document.querySelector('.form-search.menu-mobile');
-searchMenuMobile.addEventListener('click',()=>{
-  searchMenuMobile.classList.remove('menu-mobile');
-})
+const searchMenuMobile = document.querySelector(".form-search.menu-mobile");
+searchMenuMobile.addEventListener("click", () => {
+  searchMenuMobile.classList.remove("menu-mobile");
+});
+
+//********************** add class to hamburger-menu /
+$backBtn = document.querySelector("#back-btn");
+if ($backBtn && window.innerWidth <= 992) {
+  document.querySelector(".hamburger-menu").classList.toggle("with-back-btn");
+}

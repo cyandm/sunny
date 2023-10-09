@@ -1,0 +1,10 @@
+@use "../../utils/index" as *;
+
+.empty-cart-page {
+  padding-block-start: 6rem;
+  @include flex(column);
+
+  .wc-empty-cart-message {
+    width: 100%;
+  }
+}
