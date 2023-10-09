@@ -7,8 +7,11 @@
 ?>
 
 <main class="contact-page" id="contact-page">
-<div class="contact-row container">
-    <div class="contact-img"></div>
+<div class="contact-row container padding-top">
+    <div class="contact-img">
+        <?php
+        get_template_part('imgs/svg/contact-svg');?>
+    </div>
     <div class="contact-page-form">
         <h2>تماس با ما</h2>
         <span>برای ارتباط با پشتیبانی  پیام بفرستید</span>

@@ -1,7 +1,6 @@
 @use "../utils/index" as *;
 
 .contact-page {
-  padding-block-start: 9rem;
 
   .contact-row {
     @include flex();
@@ -13,15 +12,15 @@
   }
     .contact-img {
       @include flex();
+      width: 100%;
 
-      img {
-        width: 100%;
-      }
+
     }
 
     .contact-page-form {
       @include flex(column, start, start);
       gap: 0.25rem;
+      width: 100%;
 
 
       h2 {
@@ -89,7 +88,10 @@
         }
       }
     }
-
+    @media (width<=992px) {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
 
     @media (width<=768px) {
       flex-direction: column;

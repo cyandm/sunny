@@ -4,6 +4,7 @@ import {
   imageAnimation,
   initSwiper,
   toggleClassToBodyForSwiper,
+  mousewheelBehavier
 } from "./functions";
 
 import { Swiper } from "swiper";
@@ -94,6 +95,7 @@ horizontalSliders.forEach((slider, index) => {
     horizontalSwiper.on("slideChange", () => {
       toggleClassToBodyForSwiper();
     });
+    mousewheelBehavier(horizontalSwiper);
   }
   if (index == 1) {
     initSwiper(horizontalSwiper);

@@ -17,7 +17,7 @@ get_header()
 <main class=" main blog-search padding-top">
 
     <section>
-        <div class="search-content container">
+        <div class="search-content container padding-top">
             <?php
             get_template_part(
                 'templates/components/blog-sidebar',
@@ -33,7 +33,7 @@ get_header()
                         <h3>متاسفانه چیزی یافت نشد</h3>
                 </div>
                 <div class="not-found-img">
-                    <img src="<?= get_stylesheet_directory_uri() ?>/imgs/not-found.png" alt="not-found">
+              <?php    get_template_part('imgs/svg/empty-blog'); ?>
                 </div>
             <?php else : ?>
             </div>

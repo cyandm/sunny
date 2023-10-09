@@ -58,10 +58,9 @@ $allBlogs = new WP_Query($args);
                         </article>
                     <?php
                     else :
-                        get_template_part(
-                            'templates/components/empty-overview',
-                            null,
-                        );
+
+                        get_template_part('imgs/svg/empty-blog');
+                
                     endif;
                     wp_reset_query();
                     ?>

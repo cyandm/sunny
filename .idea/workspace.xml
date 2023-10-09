@@ -5,27 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/imgs/svg/404.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/svg/contact-svg.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/svg/empty-blog.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/svg/empty-cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/pages/_archive-product.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/swiper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/layout/_title-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_title-btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_front-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_front-page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/utils/_roots.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/utils/_roots.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/classes.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/classes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/contacts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/faq.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/packages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/start.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/start.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/testimonial.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/testimonial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/_404.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_404.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blogs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact-us.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact-us.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/woocommerce/archive-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/woocommerce/archive-product.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +124,9 @@
       <workItem from="1696536020417" duration="40385000" />
       <workItem from="1696627709093" duration="1993000" />
       <workItem from="1696636634076" duration="3724000" />
-      <workItem from="1696704537184" duration="7416000" />
+      <workItem from="1696704537184" duration="7589000" />
+      <workItem from="1696787714781" duration="1274000" />
+      <workItem from="1696819252979" duration="8320000" />
     </task>
     <servers />
   </component>
@@ -163,6 +164,12 @@
             <option name="methodName" value="cyn_post_type_register" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/modules/functions.js</url>
+          <line>77</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

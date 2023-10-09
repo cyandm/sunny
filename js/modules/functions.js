@@ -77,7 +77,6 @@ export const activateFirstElement = (elements) => {
 
 export const initSwiper = (slider) => {
   if (window.innerWidth <= 992) {
-    console.log(slider);
     slider.destroy();
     window.addEventListener("resize", slider.destroy());
   }
@@ -100,3 +99,10 @@ export const toggleClassToBodyForSwiper = () => {
     document.body.classList.toggle("first-slide");
   }
 };
+
+export const mousewheelBehavier=(slider)=>{
+  if (window.innerWidth <= 992) {
+    slider.mousewheel.disable();
+    window.addEventListener("resize", slider.mousewheel.disable());
+  }
+}
