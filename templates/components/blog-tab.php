@@ -66,17 +66,21 @@ if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonom
                                 endif; ?>
 
 
-    <select name="" id="cat-select-mobile" class="cat-select-mobile">
+    <select name="" id="cat-select-mobile" class="cat-select-mobile mobile-category-list">
         <?php if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') { ?>
-            <option <?= ($pageId == $blog_page_id[0]) ? 'selected' : '' ?> value="<?= the_permalink($blog_page_id[0]); ?>" همه</option>
-
-            <?php } ?>
-
+            <option <?= ($pageId == $blog_page_id[0]) ? 'selected' : '' ?> value="<?= the_permalink($blog_page_id[0]); ?>"> همه</option>
+            <?php $key = 1;
+            foreach ($terms as $term) : ?>
+                <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= the_permalink($term->term_id) ?>"><?= $term->name ?></option>
             <?php
+                $key++;
+            endforeach;
+        } else {
             $key = 1;
             foreach ($terms as $term) : ?>
-            <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= $term->slug ?>"><?= $term->name ?></option>
-        <?php $key++;
+                <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= $term->slug ?>"><?= $term->name ?></option>
+            <?php $key++;
             endforeach; ?>
     </select>
+<?php } ?>
 </div>
