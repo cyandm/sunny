@@ -63,7 +63,7 @@
       }
     }
   }
-  @media (width<=768px) {
+  @media (max-width: 768px) {
     .shop-hero {
       flex-direction: column;
       gap: 1.25rem;

@@ -55,10 +55,10 @@
       opacity: 0;
     }
 
-    @media (width <=1200px) {
+    @media (max-width: 1200px) {
       right: 9rem;
     }
-    @media (width<=992px) {
+    @media (max-width: 992px) {
       display: none;
     }
   }
@@ -143,9 +143,9 @@
     }
   }
 
-  @media (width<=1300px) {
+  @media (max-width: 1300px) {
   }
-  @media (width<=992px) {
+  @media (max-width: 992px) {
     display: none;
   }
 }

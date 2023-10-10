@@ -124,8 +124,10 @@
     }
   }
 
-  @media (width<=992px) {
+  @media (max-width: 992px) {
     flex-direction: column;
+    position: relative;
+
     .front-coach-img {
       @include flex();
       width: 100%;
@@ -155,8 +157,18 @@
       }
 
       .nav-btn {
-        position: relative;
+        position: absolute;
+        width: 100%;
+        top: 20%;
         height: 2.8rem;
+        .panels-navigation {
+          width: 100%;
+
+          .coach-slider-prev.prv {
+            left: 0;
+            position: absolute;
+          }
+        }
       }
 
       .description {
@@ -172,7 +184,7 @@
     }
   }
 
-  @media (width<=500px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     .front-coach-img {
       .img-content {

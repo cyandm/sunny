@@ -3,7 +3,6 @@
 //-------------- cloud animation
 
 .course-overview-page {
-
   .course-hero {
     @include flex();
 
@@ -128,10 +127,9 @@
       position: absolute;
       left: 10%;
       bottom: 0;
-      svg{
+      svg {
         width: 7.9475rem;
         height: 14.97088rem;
-
       }
     }
   }
@@ -154,7 +152,7 @@
       }
     }
   }
-  @media (width<=992px) {
+  @media (max-width: 992px) {
     padding-block-start: 5rem;
 
     .course-hero {
@@ -196,7 +194,7 @@
       }
     }
   }
-  @media (width<=500px) {
+  @media (max-width: 500px) {
     .course-hero {
       .image-animate {
         img {
@@ -252,7 +250,7 @@
       }
       .line-svg {
         position: unset;
-        svg{
+        svg {
           width: 4.75rem;
           height: 7.02913rem;
         }
@@ -260,5 +258,3 @@
     }
   }
 }
-
-

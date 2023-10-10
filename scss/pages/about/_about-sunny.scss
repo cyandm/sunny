@@ -23,7 +23,7 @@
         flex-wrap: wrap;
         direction: rtl;
 
-        @media (width<=768px) {
+        @media (max-width: 768px) {
           flex-direction: column;
           gap: 0;
         }
@@ -42,7 +42,7 @@
             max-width: 36.5625rem;
             max-height: 31.6875rem;
 
-            @media (width<=1100px) {
+            @media (max-width: 1100px) {
               max-width: 23.00481rem;
               max-height: 19.9375rem;
             }
@@ -53,6 +53,7 @@
 
           flex: 2;
           gap: 0.25rem;
+          text-align: right;
 
           h2 {
             @include font_style(h1);
@@ -66,7 +67,7 @@
             @include font_style(body);
             @include text_overflow(7);
           }
-          @media (width<=768px) {
+          @media (max-width: 768px) {
             h2 {
               @include font_style(h2);
             }

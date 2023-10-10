@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { Swiper } from "swiper";
 import { frontMainSlider } from "./swiper";
 
 export const pullUpAnimation = () => {
@@ -97,12 +98,5 @@ export const toggleClassToBodyForSwiper = () => {
   const firstSlide = document.querySelector("#first-slide");
   if (firstSlide && firstSlide.classList.contains("swiper-slide-active")) {
     document.body.classList.toggle("first-slide");
-  }
-};
-
-export const mousewheelBehavier = (slider) => {
-  if (window.innerWidth <= 992) {
-    slider.mousewheel.disable();
-    window.addEventListener("resize", slider.mousewheel.disable());
   }
 };

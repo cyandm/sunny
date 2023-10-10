@@ -6226,7 +6226,7 @@
 					if ( method == 'element' ) {
 						var elementWidth = $element.outerWidth( false );
 
-						if ( elementWidth <= 0 ) {
+						if ( elementmax-width: 0 ) {
 							return 'auto';
 						}
 

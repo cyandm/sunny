@@ -75,8 +75,7 @@
     }
   }
 
-  @media (width<=992px) {
-
+  @media (max-width: 992px) {
     .all-course-overview {
       gap: 1rem;
       .section-title {
@@ -89,7 +88,6 @@
     }
 
     .ticker-section {
-
       .section-title-sub {
         padding-inline: 1rem;
 
@@ -101,8 +99,8 @@
         }
       }
 
-      .ticker >ul{
-          margin-block-start: 1.25rem;
+      .ticker > ul {
+        margin-block-start: 1.25rem;
       }
     }
   }

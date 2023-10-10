@@ -13,32 +13,31 @@
   a {
     @include btn($red: true);
   }
-  @media (width<=768px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: start;
+    margin-block-end: 1.5rem;
 
     h2 {
       @include font_style(h2);
     }
     a {
-    display: none;
+      display: none;
     }
   }
 }
-.section-btn{
+.section-btn {
   display: none;
-  @media (width<=768px) {
+  @media (max-width: 768px) {
     @include flex();
     margin-block-start: 0.75rem;
 
-    a{
+    a {
       @include btn($red: true);
       width: 100%;
     }
-
   }
 }
-
 
 .breadcrumb-btn {
   @include flex();
@@ -52,7 +51,7 @@
     }
   }
 
-  @media (width<=992px) {
+  @media (max-width: 992px) {
     display: none;
   }
 }

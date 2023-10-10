@@ -2404,7 +2404,7 @@ the specific language governing permissions and limitations under the Apache Lic
 					offset.top - dropHeight >= $window.scrollTop(),
 				dropWidth = $dropdown.outerWidth( false ),
 				enoughRoomOnRight = function () {
-					return dropLeft + dropWidth <= viewPortRight;
+					return dropLeft + dropmax-width: viewPortRight;
 				},
 				enoughRoomOnLeft = function () {
 					return (
@@ -4967,7 +4967,7 @@ the specific language governing permissions and limitations under the Apache Lic
 				searchWidth = maxWidth - sideBorderPadding;
 			}
 
-			if ( searchWidth <= 0 ) {
+			if ( searchmax-width: 0 ) {
 				searchWidth = minimumWidth;
 			}
 

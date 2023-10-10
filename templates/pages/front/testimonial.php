@@ -64,6 +64,14 @@ $testimonials = get_field('testimonial_choose', $frontId); ?>
                                         <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
                                     </div>
                                 <?php
+                                endforeach;
+                                foreach ($testimonials as $key => $person) : ?>
+                                    <div class="swiper-slide person-img  <?= ($key == 0) ? 'active' : '' ?>" data-id="<?= $person->ID ?>">
+
+                                        <?php $thumbnail_id = get_post_thumbnail_id($person->ID); ?>
+                                        <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
+                                    </div>
+                                <?php
                                 endforeach; ?>
                             </div>
                         </div>

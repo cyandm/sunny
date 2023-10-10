@@ -53,7 +53,7 @@
           height: 9rem;
           @include text_overflow(4);
         }
-        .details-mobile{
+        .details-mobile {
           display: none;
         }
         .detail {
@@ -61,7 +61,6 @@
           width: 100%;
 
           div {
-
             @include flex(row, start, center);
 
             gap: 0.25rem;
@@ -120,8 +119,7 @@
     }
   }
 
-
-  @media (width<=768px) {
+  @media (max-width: 768px) {
     .course-info {
       .course-info-content {
         .title {
@@ -143,10 +141,8 @@
         display: block;
       }
     }
-
   }
-  @media (width<=992px) {
-
+  @media (max-width: 992px) {
     flex-direction: column;
     .course-info {
       flex-direction: column;
@@ -159,18 +155,17 @@
         gap: 0.75rem;
 
         .content {
-          .details-mobile{
-         @include flex(row,start);
+          .details-mobile {
+            @include flex(row, start);
             width: 100%;
           }
           .description {
             height: 18rem;
             @include text_overflow(8);
           }
-          .detail> .details-large-view{
+          .detail > .details-large-view {
             display: none;
           }
-
         }
 
         .btn {
@@ -219,7 +214,6 @@
     }
   }
 }
-
 
 .course-block.yellow {
   .course-info {

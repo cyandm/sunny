@@ -13,7 +13,7 @@ ul.products {
   }
 }
 .shop-section {
-  @media (width<=768px) {
+  @media (max-width: 768px) {
     flex: 1 1 100%;
   }
 }

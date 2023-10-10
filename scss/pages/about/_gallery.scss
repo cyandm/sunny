@@ -13,8 +13,6 @@
         @include font_style(h2);
         @include text_overflow(1);
       }
-
-
     }
 
     .contain {
@@ -22,24 +20,24 @@
 
       gap: 1rem;
       flex-wrap: wrap;
-
-      .gallery-box{
+      overflow-y: scroll;
+      height: 65vh;
+      .gallery-box {
         @include flex(column);
         flex: 1 1 46%;
 
         border-radius: 2.5rem;
-        @media (width<=768px) {
+        @media (max-width: 768px) {
           flex: 1 1 100%;
         }
 
         img {
           width: 100%;
-          height:25.0625rem;
+          height: 25.0625rem;
           border-radius: 2.5rem;
           object-fit: cover;
         }
       }
     }
   }
-
 }

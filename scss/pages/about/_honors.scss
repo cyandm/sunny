@@ -13,8 +13,6 @@
         @include font_style(h2);
         @include text_overflow(1);
       }
-
-
     }
 
     .contain {
@@ -22,7 +20,8 @@
 
       gap: 1rem;
       flex-wrap: wrap;
-
+      overflow-y: scroll;
+      height: 65vh;
 
       .honors-box {
         @include flex(column);
@@ -33,10 +32,10 @@
         border: 1px solid $gray-2;
         background: $white-1;
 
-        @media (width<=992px) {
+        @media (max-width: 992px) {
           flex: 1 1 46%;
         }
-        @media (width<=768px) {
+        @media (max-width: 768px) {
           flex: 1 1 100%;
         }
 
@@ -67,5 +66,4 @@
       }
     }
   }
-
 }

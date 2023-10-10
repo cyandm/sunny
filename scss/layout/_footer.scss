@@ -57,24 +57,24 @@ footer {
         gap: 0.62rem;
       }
       .numbers {
-        @include flex(column);
+        @include flex(column, center, start);
         gap: 0.25rem;
         color: $blue-2;
       }
 
-      @media (width<=992px) {
+      @media (max-width: 992px) {
         flex-basis: 33%;
       }
-      @media (width<=768px) {
+      @media (max-width: 768px) {
         flex-basis: 50%;
       }
     }
     .address-column {
-      @media (width<=768px) {
+      @media (max-width: 768px) {
         flex-basis: 100%;
       }
     }
-    @media (width<=992px) {
+    @media (max-width: 992px) {
       row-gap: 1.75rem;
     }
   }
@@ -93,7 +93,7 @@ footer {
         color: $white-1;
       }
     }
-    @media (width<=768px) {
+    @media (max-width: 768px) {
       width: 100%;
       justify-content: start;
     }
@@ -101,7 +101,7 @@ footer {
 }
 .footer-change {
   display: none;
-  @media (width<=768px) {
+  @media (max-width: 768px) {
     display: flex;
     gap: 1rem;
   }

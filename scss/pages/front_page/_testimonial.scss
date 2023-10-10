@@ -75,6 +75,8 @@
           transition: all 0.3s ease-in-out;
           position: absolute;
           top: 0;
+          height: 11rem;
+          overflow: hidden;
         }
 
         .person_info.active {
@@ -89,6 +91,7 @@
 
         h3 {
           @include font_style(h3);
+          margin-block-end: 0.88rem;
         }
 
         .slider {
@@ -99,7 +102,7 @@
 
             .swiper-slide {
               height: 100%;
-
+              flex-basis: 32%;
               img {
                 width: 100%;
                 height: 100%;
@@ -113,11 +116,25 @@
     }
   }
 
-  @media (width<=992px) {
+  @media (max-width: 992px) {
     .front-testimonial-content {
-      @include flex(column);
+      margin-block-end: 0.5rem;
+      overflow: hidden;
+      display: block;
       > div {
         max-width: 100%;
+      }
+      .video-container {
+        margin-block-end: 1.5rem;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .front-testimonial-content {
+      .testimonial-slider {
+        .swiper-slide {
+          flex-basis: 55%;
+        }
       }
     }
   }

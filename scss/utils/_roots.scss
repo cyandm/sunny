@@ -63,7 +63,7 @@ button {
 }
 .padding-top {
   padding-block-start: 5rem;
-  @media (width<=992px) {
+  @media (max-width: 992px) {
     padding-block-start: 1rem;
   }
 }

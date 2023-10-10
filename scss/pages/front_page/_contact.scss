@@ -45,7 +45,7 @@
         direction: ltr;
       }
 
-      @media (width <= 768px) {
+      @media (max-width: 768px) {
         flex: 1 1 100%;
       }
     }
@@ -91,7 +91,7 @@
       }
     }
 
-    @media (width <= 1100px) {
+    @media (max-width: 1100px) {
       .contact-box-right > .images {
         left: -10.5rem;
       }
@@ -105,7 +105,7 @@
         }
       }
     }
-    @media (width <= 992px) {
+    @media (max-width: 992px) {
       .contact-box-wide > .images {
         left: -3.12rem;
         bottom: 0.62rem;
@@ -117,7 +117,7 @@
         }
       }
     }
-    @media (width <= 768px) {
+    @media (max-width: 768px) {
       > div > .info {
         gap: 0.5rem;
       }

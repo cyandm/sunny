@@ -15,7 +15,7 @@
     border: 1px solid $gray-2;
     background: $white-1;
   }
-  @media (width<=992px) {
+  @media (max-width: 992px) {
     height: 2.12rem;
     a.back-btn {
       width: 2.125rem;

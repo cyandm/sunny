@@ -25,7 +25,7 @@
           position: absolute;
           top: 8rem;
           right: 10%;
-          @media (width<=1200px) {
+          @media (max-width: 1200px) {
             right: 1rem;
           }
 
@@ -50,7 +50,7 @@
             color: $white_1;
           }
 
-          @media (width<=992px) {
+          @media (max-width: 992px) {
             gap: 0.25rem;
             h1 {
               @include font_style(h1);
@@ -79,7 +79,7 @@
               max-height: 31rem;
               bottom: 0;
               position: absolute;
-              @media (width<=768px) {
+              @media (max-width: 768px) {
                 max-width: 22.8125rem;
                 max-height: 19.1875rem;
               }
@@ -121,7 +121,7 @@
           }
         }
 
-        @media (width <=992px) {
+        @media (max-width: 992px) {
           left: unset;
           bottom: -5rem;
           z-index: 98;
@@ -143,7 +143,7 @@
 
       .image-box {
         top: 46%;
-        @media (width<=992px) {
+        @media (max-width: 992px) {
           top: 36%;
         }
 
@@ -160,7 +160,7 @@
             position: absolute;
             bottom: 0;
           }
-          @media (width<=768px) {
+          @media (max-width: 768px) {
             width: 26.875rem;
             height: 12.0625rem;
             @include sudo(before, 36rem, 17rem, $pink-2);
@@ -174,7 +174,7 @@
 
       .image-box {
         top: 57%;
-        @media (width<=768px) {
+        @media (max-width: 768px) {
           top: 47%;
         }
 
@@ -195,7 +195,7 @@
             z-index: -2;
             position: absolute;
           }
-          @media (width<=768px) {
+          @media (max-width: 768px) {
             width: 18.25rem;
             height: 18.25rem;
             @include sudo(before, 22.125rem, 22.125rem, $blue-3);
@@ -206,10 +206,7 @@
   }
 }
 
-
-
 .translate-animation,
-.image-animate{
+.image-animate {
   overflow: hidden;
 }
-

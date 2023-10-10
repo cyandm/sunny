@@ -3,7 +3,7 @@
 .search-content {
   @include flex(column, start, start);
 
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     margin-top: 1.5rem;
     flex-direction: column;
   }
@@ -23,7 +23,7 @@
       flex-wrap: wrap;
       gap: 1rem;
 
-      @media (width <= 768px) {
+      @media (max-width: 768px) {
         flex-direction: column;
       }
       .search-title {

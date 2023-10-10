@@ -142,7 +142,7 @@ header {
       }
     }
 
-    @media (width<=992px) {
+    @media (max-width: 992px) {
       display: none;
     }
   }
@@ -453,7 +453,7 @@ header {
       }
     }
 
-    @media (width<=992px) {
+    @media (max-width: 992px) {
       @include flex(row, space-between, center);
       width: 100%;
     }

@@ -5,7 +5,7 @@ $heroSliders = get_field('front_page_hero_section', $frontId);
 
 <div class="swiper-slide">
 
-    <div class="home-nested-slider swiper-container" dir="ltr">
+    <div class="home-nested-slider swiper-container hero-section" dir="ltr">
         <div class="swiper-wrapper">
             <?php
             $num = 1;
@@ -59,6 +59,9 @@ $heroSliders = get_field('front_page_hero_section', $frontId);
                             </div>
 
                         </div>
+                    </div>
+                    <div class="mobile-next-bg gradiant-<?= $num ?>">
+
                     </div>
                 </div>
             <?php $num++;

@@ -10,7 +10,7 @@
   transition: all 0.3s ease-in-out;
   background: $white-1;
   transition: all 0.3s ease-in-out;
-  @media (width<= 768px) {
+  @media (max-width: 768px) {
     gap: 1.25rem;
   }
 
@@ -40,7 +40,6 @@
   .content-cart-blog {
     padding: 0rem 0.625rem;
 
-
     h3 {
       @include font_style(h3);
       @include text_overflow(2);
@@ -48,7 +47,7 @@
       height: 3.5rem;
       transition: all 0.3s ease-in-out;
 
-      @media (width<=768px) {
+      @media (max-width: 768px) {
         max-height: 2rem;
         @include text_overflow(1);
       }
@@ -56,11 +55,12 @@
 
     div.description {
       height: 2.5rem;
-       >p:first-child {
+      overflow: hidden;
+      > p:first-child {
         @include font_style(body);
         @include text_overflow(1);
 
-        @media (width<=768px) {
+        @media (max-width: 768px) {
           @include text_overflow(3);
         }
       }

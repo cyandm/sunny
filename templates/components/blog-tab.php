@@ -28,18 +28,17 @@ if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonom
     if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') : ?>
         <ul>
             <li class="category-tab  <?= ($pageId == $blog_page_id[0]) ? 'active-cat' : ''; ?>">
-                <a href="<?= the_permalink( $blog_page_id[0]); ?>" >همه</a>
+                <a href="<?= the_permalink($blog_page_id[0]); ?>">همه</a>
             </li>
 
             <?php foreach ($terms as $cat) : ?>
-                <li class="category-tab <?= ($pageId == $cat->term_id) ? 'active-cat' : ''; ?>"
-                    data-slug="<?= $cat->slug ?>">
+                <li class="category-tab <?= ($pageId == $cat->term_id) ? 'active-cat' : ''; ?>" data-slug="<?= $cat->slug ?>">
                     <a href="<?= get_term_link($cat->term_id) ?>"><?= $cat->name ?></a>
                 </li>
             <?php
             endforeach; ?>
         </ul>
-        <?php
+    <?php
         get_template_part('templates/components/search-form', null, ['menu-mobile' => false]);
 
     else : ?>
@@ -50,7 +49,7 @@ if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonom
                 <li class="category-tab <?= ($key == 1) ? 'active-cat' : ''; ?>" data-slug="<?= $cat->slug ?>">
                     <?= $cat->name ?>
                 </li>
-                <?php $key++;
+            <?php $key++;
             endforeach; ?>
         </ul>
     <?php
@@ -62,22 +61,22 @@ if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonom
 <!-- ---------------------------------------mobile tab -->
 
 <div class="blog-tab-mobile"> <?php
-    if (get_queried_object_id() == $blog_page_id[0]) :
-        get_template_part('templates/components/search-form', null, ['menu-mobile' => false]);
-    endif; ?>
+                                if (get_queried_object_id() == $blog_page_id[0]) :
+                                    get_template_part('templates/components/search-form', null, ['menu-mobile' => false]);
+                                endif; ?>
 
 
     <select name="" id="cat-select-mobile" class="cat-select-mobile">
-        <?php if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') {?>
-            <option <?= ($pageId == $blog_page_id[0]) ? 'selected' : '' ?> value="<?= the_permalink( $blog_page_id[0]); ?>"همه</option>
+        <?php if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') { ?>
+            <option <?= ($pageId == $blog_page_id[0]) ? 'selected' : '' ?> value="<?= the_permalink($blog_page_id[0]); ?>" همه</option>
 
-     <?php } ?>
+            <?php } ?>
 
-        <?php
-        $key = 1;
-        foreach ($terms as $term) : ?>
-            <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= $cat->slug ?>"><?= $cat->name ?></option>
-            <?php $key++;
-        endforeach; ?>
+            <?php
+            $key = 1;
+            foreach ($terms as $term) : ?>
+            <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= $term->slug ?>"><?= $term->name ?></option>
+        <?php $key++;
+            endforeach; ?>
     </select>
 </div>

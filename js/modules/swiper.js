@@ -4,7 +4,6 @@ import {
   imageAnimation,
   initSwiper,
   toggleClassToBodyForSwiper,
-  mousewheelBehavier
 } from "./functions";
 
 import { Swiper } from "swiper";
@@ -25,12 +24,12 @@ const defaultSwiper = {
 
 // ****************************** front page swiper slider
 export const coachSlider = new Swiper(".coach-slider", {
-  slidesPerView: 1,
-  spaceBetween: 20,
+  ...defaultSwiper,
   loop: true,
+  speed: 1000,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".coach-slider-next",
+    prevEl: ".coach-slider-prev",
   },
 });
 
@@ -49,7 +48,7 @@ export const studentSlider = new Swiper(".students-slider", {
 
 // ****************************** testimonial swiper slider
 export const testimonialSlider = new Swiper(".testimonial-slider", {
-  slidesPerView: 3.2,
+  slidesPerView: "auto",
   spaceBetween: 16,
   loop: true,
 
@@ -95,7 +94,10 @@ horizontalSliders.forEach((slider, index) => {
     horizontalSwiper.on("slideChange", () => {
       toggleClassToBodyForSwiper();
     });
-    mousewheelBehavier(horizontalSwiper);
+
+    if (window.innerWidth <= 992) {
+      horizontalSwiper.mousewheel.disable();
+    }
   }
   if (index == 1) {
     initSwiper(horizontalSwiper);

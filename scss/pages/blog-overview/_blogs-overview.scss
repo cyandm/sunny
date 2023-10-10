@@ -8,7 +8,7 @@
       .blog-tab {
         @include flex(row, space-between);
         width: 100%;
-        @media (width<=768px) {
+        @media (max-width: 768px) {
           display: none;
         }
       }
@@ -29,7 +29,7 @@
 
             .cart-blog {
               flex: 1 1 32%;
-              @media (width<=768px) {
+              @media (max-width: 768px) {
                 flex: 1 1 100%;
               }
             }
@@ -56,7 +56,6 @@
               padding: 0.25rem 1.25rem 0rem 1.25rem;
               gap: 0.625rem;
               border: 1px solid $gray-2;
-
             }
 
             .next,
@@ -78,7 +77,6 @@
             }
           }
         }
-
       }
 
       .empty-content {
@@ -107,8 +105,8 @@
         }
       }
     }
-    @media (width<=992px) {
-      margin-block-start:0;
+    @media (max-width: 992px) {
+      margin-block-start: 0;
     }
   }
 }

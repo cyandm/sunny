@@ -5,6 +5,7 @@ const testimonialSection = document.querySelector("#testimonial-section");
 
 if (testimonialSection) {
   const testimonial = document.querySelectorAll(".person-img");
+
   // first video play
   const firstVideo = document.querySelector(".video-content.active");
   const firstPlay = firstVideo.querySelector("i");
@@ -22,7 +23,6 @@ if (testimonialSection) {
   testimonial.forEach((person) => {
     person.addEventListener("click", () => {
       // add class to element
-
       addActiveClassLoop(person, testimonial);
 
       // add class to video section

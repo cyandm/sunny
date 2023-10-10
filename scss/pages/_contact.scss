@@ -1,27 +1,23 @@
 @use "../utils/index" as *;
 
 .contact-page {
-
   .contact-row {
     @include flex();
 
     flex-wrap: wrap;
     gap: 1.25rem;
->*{
-    flex: 1;
-  }
+    > * {
+      flex: 1;
+    }
     .contact-img {
       @include flex();
       width: 100%;
-
-
     }
 
     .contact-page-form {
       @include flex(column, start, start);
       gap: 0.25rem;
       width: 100%;
-
 
       h2 {
         @include font_style(h2);
@@ -60,15 +56,14 @@
             }
           }
 
-          input, textarea {
+          input,
+          textarea {
             @include font_style(body);
 
             color: $gray-1;
             background: $white-2;
             width: 100%;
           }
-
-
         }
 
         .form-textarea {
@@ -82,26 +77,22 @@
         .form-btn {
           @include flex(row, end, end);
           width: 100%;
-          button{
-             @include btn($icon: true);
+          button {
+            @include btn($icon: true);
           }
         }
       }
     }
-    @media (width<=992px) {
+    @media (max-width: 992px) {
       flex-direction: column;
       gap: 1.25rem;
     }
 
-    @media (width<=768px) {
+    @media (max-width: 768px) {
       flex-direction: column;
     }
   }
-
 }
-
-
-
 
 // ------------------------------------form-message styles
 .form-message {
@@ -117,7 +108,7 @@
   border: 1px solid #ccc;
   color: #fff;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
-  0 6px 6px rgba(0, 0, 0, 0.23);
+    0 6px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;

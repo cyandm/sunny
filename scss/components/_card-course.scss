@@ -54,7 +54,7 @@
       border: 2.5rem solid rgba(255, 255, 255, 0.5);
       border-radius: 50%;
 
-      @media (width<= 500px) {
+      @media (max-width: 500px) {
         width: 19.5rem;
         height: 19.54rem;
         @include sudo(before, 12rem, 12rem, none);

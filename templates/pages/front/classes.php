@@ -31,7 +31,16 @@ $topStudentTitle = get_field('top_student_title', $frontId);
 
                             <div class="front-coach-content">
                                 <h3><?= $coach->post_title ?></h3>
-                                <div class="nav-btn"></div>
+                                <div class="nav-btn">
+
+                                    <div class="panels-navigation ">
+                                        <div class="coach-slider-next next"><i class="icon-arrow-single-big"></i>
+                                        </div>
+                                        <div class="coach-slider-prev prv"><i class="icon-arrow-single-big"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
                                 <div class="description">
                                     <?= get_field('description_text', $coach->ID) ?>
                                 </div>
@@ -40,9 +49,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                     <h4><?= $topStudentTitle ?></h4>
                                 <?php endif;
                                 $topStudents = get_field('choose_students', $coach->ID);
-
                                 if (is_array($topStudents) && count($topStudents) > 0) : ?>
-
 
                                     <div class="students-row">
                                         <div class="students-slider swiper">
@@ -64,7 +71,6 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                 <?php endif; ?>
                             </div>
                         </div>
-
                 <?php endforeach;
                 endif; ?>
 
