@@ -85,10 +85,6 @@
     width: 100%;
 
     .fixed-columns {
-      @include flex();
-
-      flex-wrap: wrap;
-
       .column.swiper-slide {
         @include flex(row, space-between, center);
 
@@ -100,7 +96,6 @@
         box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
         height: 100%;
         direction: rtl;
-        transition: all 0.3s ease-in-out;
 
         img {
           max-width: 6rem;
