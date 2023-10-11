@@ -14,6 +14,7 @@ import {
   Scrollbar,
   Autoplay,
   Thumbs,
+  Grid,
 } from "swiper/modules";
 
 const defaultSwiper = {
@@ -40,28 +41,50 @@ export const studentSlider = new Swiper(".students-slider", {
   nested: true,
   loop: true,
 
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
 });
 
-//******************************* shop slider in mobile view
-export const shopSlider = new Swiper(".shop-slider", {
+//****************************** package slider */
+const packageSliderElement = document.querySelector(".package-slider");
+export const packageSlider = new Swiper(packageSliderElement, {
   slidesPerView: "auto",
   spaceBetween: 16,
   loop: true,
-
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
 });
-if (window.innerWidth >= 768) {
-  shopSlider.destroy();
-  window.addEventListener("resize", shopSlider.destroy());
+
+if (packageSliderElement && window.innerWidth >= 1400) {
+  packageSlider.destroy();
 }
 
+//******************************* shop slider in mobile view
+const shopSliderElement = document.querySelector(".shop-slider");
+export const shopSlider = new Swiper(shopSliderElement, {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  loop: true,
+  // Responsive breakpoints
+  breakpoints: {
+    768: {
+      modules: [Grid],
+      slidesPerColumn: 2,
+      grid: {
+        rows: 2,
+      },
+    },
+  },
+
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
+});
+
+if (shopSliderElement && window.innerWidth >= 1400) {
+  shopSlider.destroy();
+}
 
 // ****************************** testimonial swiper slider
 export const testimonialSlider = new Swiper(".testimonial-slider", {
@@ -69,14 +92,15 @@ export const testimonialSlider = new Swiper(".testimonial-slider", {
   spaceBetween: 16,
   loop: true,
 
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
 });
 
 // ********************************* front page main slider
-export const frontMainSlider = new Swiper(".home-main-slider", {
+const homeMainSlider = document.querySelector(".home-main-slider");
+export const frontMainSlider = new Swiper(homeMainSlider, {
   ...defaultSwiper,
   direction: "vertical",
   mousewheel: true,
@@ -86,12 +110,13 @@ export const frontMainSlider = new Swiper(".home-main-slider", {
     prevEl: ".home-main-slider-prev",
   },
 });
+if (homeMainSlider) {
+  initSwiper(frontMainSlider);
 
-initSwiper(frontMainSlider);
-
-window.addEventListener("load", () => {
-  toggleClassToBodyForSwiper();
-});
+  window.addEventListener("load", () => {
+    toggleClassToBodyForSwiper();
+  });
+}
 
 const horizontalSliders = document.querySelectorAll(".home-nested-slider");
 
@@ -122,19 +147,29 @@ horizontalSliders.forEach((slider, index) => {
 });
 
 // ********************************* about page main slider
-export const aboutThumbnailSlider = new Swiper(".about-thumbnail-slider", {
+const aboutThumbnailSlideElement = document.querySelector(
+  ".about-thumbnail-slider"
+);
+export const aboutThumbnailSlider = new Swiper(aboutThumbnailSlideElement, {
   spaceBetween: 10,
   slidesPerView: 4,
   freeMode: true,
 });
+if (aboutThumbnailSlideElement) {
+  initSwiper(aboutThumbnailSlider);
+}
 
-export const aboutMainSlider = new Swiper(".about-page-slider", {
+const aboutMainSliderElement = document.querySelector(".about-page-slider");
+export const aboutMainSlider = new Swiper(aboutMainSliderElement, {
   ...defaultSwiper,
   speed: 1000,
   thumbs: {
     swiper: aboutThumbnailSlider,
   },
 });
+if (aboutMainSliderElement) {
+  initSwiper(aboutMainSlider);
+}
 
 const aboutNestedSlider = document.querySelectorAll(".about-nested-slider");
 
@@ -166,11 +201,11 @@ export const blogMainSlider = new Swiper(".blog-page-slider", {
   //   disableOnInteraction: false,
   // },
 
-  // on: {
-  //   slideChange: () => {
-  //     pullUpAnimation();
-  //     circleAnimation();
-  //     imageAnimation();
-  //   },
-  // },
+  on: {
+    slideChange: () => {
+      pullUpAnimation();
+      circleAnimation();
+      imageAnimation();
+    },
+  },
 });

@@ -9,7 +9,7 @@ $courses = get_field('choose_pakages', $frontId);
 ?>
 
 <div id="package" class="swiper-slide package-content">
-    <div class="container  padding-top">
+    <div class="container padding-top height-slide">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>
@@ -19,19 +19,26 @@ $courses = get_field('choose_pakages', $frontId);
             </div>
         <?php endif ?>
         <?php if (is_array($courses) && count($courses) > 0) : ?>
-            <div class="package-content">
+            <div class="package-slider swiper-container">
+                <div class="package-content swiper-wrapper">
 
-                <?php
-                foreach ($courses as $course) :
-                    get_template_part(
-                        '/templates/components/card-course',
-                        null,
-                        ['id' => $course->ID]
+                    <?php
+                    foreach ($courses as $course) : ?>
+                        <div class="swiper-slide">
+                            <?php
+                            get_template_part(
+                                '/templates/components/card-course',
+                                null,
+                                ['id' => $course->ID]
 
-                    );
-                endforeach;
-                ?>
+                            );
+                            ?>
+                        </div>
+                    <?php
+                    endforeach;
+                    ?>
 
+                </div>
             </div>
         <?php endif; ?>
 

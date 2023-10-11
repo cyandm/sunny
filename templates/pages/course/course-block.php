@@ -18,12 +18,12 @@ $bgColor = get_field('course_color', $post_id);
             </div>
             <div class="content">
                 <?php if ($startTerm) : ?>
-                <div class="details-mobile"><span class="title-name">شروع ترم جدید:<i class=""></i></span>
-                    <span><?= $startTerm ?></span>
-                </div>
+                    <div class="details-mobile"><span class="title-name">شروع ترم جدید:<i class=""></i></span>
+                        <span><?= $startTerm ?></span>
+                    </div>
                 <?php endif;
 
-                 if ($description) : ?>
+                if ($description) : ?>
                     <div class="description"><?= $description ?></div>
                 <?php endif; ?>
                 <div class="detail">
@@ -51,7 +51,7 @@ $bgColor = get_field('course_color', $post_id);
 
     <div class="course-form-block <?= $bgColor ?>">
 
-        <span class="show-form"><span>ثبت نام</span><i class="icon-arrow-right"></i></span>
+        <span class="show-form"><span>ثبت نام</span><i class="icon-arrow-side-right"></i></span>
         <?php
         get_template_part(
             '/templates/pages/course/course-form',

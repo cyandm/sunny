@@ -1,20 +1,39 @@
 @use "../../utils/index" as *;
 
-.shop-content,
-
-ul.products {
-  @include flex();
-  gap: 1rem;
-  flex-wrap: wrap;
-  > * {
-    flex: 1 1 24%;
-    border-radius: 2.5rem;
-    border: 1px solid $gray-2;
-    background: $white-1;
-  }
-}
 .shop-section {
   @media (max-width: 768px) {
-    flex: 1 1 100%;
+    // flex: 1 1 100%;
+  }
+}
+.shop-slider {
+  overflow: hidden;
+  .shop-content {
+    @include flex();
+    gap: 1rem;
+    flex-wrap: wrap;
+    > * {
+      flex: 1 1 24%;
+      border-radius: 2.5rem;
+      border: 1px solid $gray-2;
+      background: $white-1;
+    }
+    .swiper-slide {
+      height: fit-content;
+    }
+  }
+  @media (max-width: 1400px) {
+    height: 40rem;
+    .shop-content {
+      flex-wrap: nowrap;
+      height: calc((100% - 30px) / 2);
+    }
+  }
+  @media (max-width: 768px) {
+    height: 19.12rem;
+
+    .shop-content {
+      flex-wrap: nowrap;
+      height: 100%;
+    }
   }
 }

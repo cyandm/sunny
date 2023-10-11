@@ -7,9 +7,9 @@ $stickySlider = get_field('sticky_slider', $pageId);
 get_header(); ?>
 
 <main id="about-page" class="about-page">
-    <div class="overly first"></div>
+    <!-- <div class="overly first"></div>
     <div class="overly second"></div>
-    <div class="overly third"></div>
+    <div class="overly third"></div> -->
 
     <div class="about-page-slider swiper" dir="ltr">
 
@@ -22,7 +22,7 @@ get_header(); ?>
             ?>
         </div>
 
-        <div class="video-content" data-id="video-popup">
+        <div class="video-content" id="video-popup">
             <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
 
             <i class="icon-play play-video" id="play-video"></i>

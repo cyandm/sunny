@@ -1,6 +1,5 @@
 import { gsap } from "gsap";
 import { Swiper } from "swiper";
-import { frontMainSlider } from "./swiper";
 
 export const pullUpAnimation = () => {
   gsap.from(".translate-animation > * ", {
@@ -101,34 +100,30 @@ export const toggleClassToBodyForSwiper = () => {
   }
 };
 
-
 // video popup
-export const createVideoPopup=(videoUrl)=> {
-
+export const createVideoPopup = (videoUrl) => {
   const videoPopup = document.createElement("div");
   videoPopup.classList.add("show-video");
-
 
   const video = document.createElement("video");
   video.controls = true;
   video.autoplay = true;
 
-
   const source = document.createElement("source");
   source.src = videoUrl;
   source.type = "video/mp4";
 
-
-  const unsupportedMessage = document.createTextNode("مرورگر شما از ویدیو پشتیبانی نمی‌کند.");
-
+  const unsupportedMessage = document.createTextNode(
+    "مرورگر شما از ویدیو پشتیبانی نمی‌کند."
+  );
 
   const closePopupButton = document.createElement("button");
   closePopupButton.classList.add("close-popup");
-  closePopupButton.innerHTML ='<i class="icon-close"> </i>';
-  closePopupButton.addEventListener("click", function () {
-    videoPopup.remove();
-  });
+  closePopupButton.innerHTML = '<i class="icon-close"> </i>';
 
+  closePopupButton.addEventListener("click", function () {
+    videoPopup.classList.add("close");
+  });
 
   video.appendChild(source);
   video.appendChild(unsupportedMessage);
@@ -136,6 +131,6 @@ export const createVideoPopup=(videoUrl)=> {
   videoPopup.appendChild(closePopupButton);
 
   document.body.appendChild(videoPopup);
-}
+};
 
-
+export const sliderPopup = () => {};

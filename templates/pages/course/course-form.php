@@ -6,7 +6,7 @@ if ($args['id']) {
 ?>
 <div class="course-form">
     <div class="details-course">
-        <div><i class="icon-arrow-right"></i><span>جزئیات کلاس</span></div>
+        <div><i class="icon-arrow-side-left"></i><span>جزئیات کلاس</span></div>
     </div>
     <div class="form">
         <form action="" class="send-course-form" id="course-form-<?= $post_id ?>">

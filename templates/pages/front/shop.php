@@ -13,7 +13,7 @@ $newQueryArgs = array(
 $allProducts = new WP_Query($newQueryArgs);
 ?>
 <div id="shop" class="swiper-slide shop-section">
-    <div class="container  padding-top">
+    <div class="container padding-top height-slide">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>
@@ -25,24 +25,26 @@ $allProducts = new WP_Query($newQueryArgs);
 
         ?>
         <div class="shop-slider swiper-container">
-            <div class="swiper-wrapper start-wrapper">
-        <div class="shop-content">
-            <?php
-            if ($allProducts->have_posts()) :
-                while ($allProducts->have_posts()) :
-                    $allProducts->the_post();?>
-                <div class="swiper-slide">
+            <div class="swiper-wrapper shop-content">
 
-                    <?php       wc_get_template_part('content', 'product');?>
-                </div>
-                    <?php
+                <?php
+                if ($allProducts->have_posts()) :
+                    while ($allProducts->have_posts()) :
+                        $allProducts->the_post(); ?>
+                        <div class="swiper-slide">
 
-                endwhile;
-            endif;
+                            <?php
+                            wc_get_template_part('content', 'product');
+                            ?>
+                        </div>
+                <?php
 
-            wp_reset_postdata(); ?>
+                    endwhile;
+                endif;
 
-        </div>
+                wp_reset_postdata(); ?>
+
+
             </div>
         </div>
         <div class="breadcrumb-btn">

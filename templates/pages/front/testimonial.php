@@ -4,7 +4,7 @@ $title = get_field('testimonial_section_title', $frontId);
 $testimonials = get_field('testimonial_choose', $frontId); ?>
 
 <div class="swiper-slide testimonial-section" id="testimonial-section">
-    <div class="container  padding-top">
+    <div class="container padding-top height-slide">
         <?php if ($title) : ?>
             <div class="section-title">
                 <h2><?= esc_html($title) ?></h2>

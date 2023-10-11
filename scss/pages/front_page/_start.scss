@@ -85,7 +85,7 @@
 
                 animation: pulseAnimation 4s ease-in-out infinite;
                 position: absolute;
-                left: 0;
+                left: 30%;
                 top: -7%;
 
                 img {
@@ -101,7 +101,7 @@
                 }
 
                 .video-popup {
-               display: none;
+                  display: none;
                 }
               }
             }
@@ -284,6 +284,3 @@
     }
   }
 }
-
-
-

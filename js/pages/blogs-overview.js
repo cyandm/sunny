@@ -6,17 +6,15 @@ if (blogPageBlog) {
   if (backBtn) {
     document.querySelector(".hamburger-menu").classList.add("single-blog");
   }
+}
 
-  // **************************************page load category for single blog page
-  let mobileCategoryList = document.querySelector(".mobile-category-list");
+// **************************************page load category for single blog page
+let mobileCategoryList = document.querySelector(".mobile-category-list");
 
-  if (mobileCategoryList) {
-    let options = mobileCategoryList.querySelectorAll("option");
-
-    for (let i = 0; i < options.length; i++) {
-      mobileCategoryList.addEventListener("change", () => {
-        window.location = this.value;
-      });
-    }
+if (mobileCategoryList) {
+  for (let i = 0; i < mobileCategoryList.length; i++) {
+    mobileCategoryList.addEventListener("change", () => {
+      window.location = mobileCategoryList[i].value;
+    });
   }
 }

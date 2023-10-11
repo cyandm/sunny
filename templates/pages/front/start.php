@@ -14,7 +14,7 @@ $startSliders = get_field('slider_start_section', $frontId);
             ?>
                     <div id="start-<?= $num ?>" class=" swiper-slide slide panel2 full-screen <?= ($Slide['start_slider_shape'] == 'diamond') ? 'diamond' : '' ?>">
                         <div class="row">
-                            <div class="container">
+                            <div class="container height-slide">
                                 <div class="arrow-svg arrow-large-view">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="110" height="340" viewBox="0 0 110 340" fill="none">
                                         <g id="Group 19">

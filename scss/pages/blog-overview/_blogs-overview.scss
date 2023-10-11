@@ -8,7 +8,7 @@
       .blog-tab {
         @include flex(row, space-between);
         width: 100%;
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
           display: none;
         }
       }

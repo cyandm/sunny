@@ -1,9 +1,19 @@
 @use "../../utils/index" as *;
-
-.package-content {
+.package-slider {
+  overflow: hidden;
+  height: 100%;
   .package-content {
     @include flex();
     gap: 1rem;
     flex-wrap: wrap;
+    .swiper-slide {
+      max-width: 35rem;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .package-content {
+      flex-wrap: nowrap;
+    }
   }
 }

@@ -10,17 +10,13 @@
     @include flex(column, center, center);
     gap: 0.5rem;
     width: 100%;
-.img{
-  width: fit-content;
-  //svg {
-  //  #Plants > g > path {
-  //    animation: fallingLeaves 2s linear infinite,
-  //    swayLeaves 2s ease-in-out infinite;
-  //  }
-  //}
+    .img {
+      width: fit-content;
 
-}
-
+      svg {
+        width: 100%;
+      }
+    }
 
     h3 {
       @include font_style(h3);

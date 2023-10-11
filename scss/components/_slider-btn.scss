@@ -22,3 +22,14 @@
     }
   }
 }
+.height-slide {
+  @include flex(column, space-around, start);
+  height: 100vh !important;
+  > * {
+    width: 100%;
+  }
+
+  @media (max-width: 992px) {
+    height: 100% !important;
+  }
+}

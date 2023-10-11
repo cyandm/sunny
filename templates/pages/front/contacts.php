@@ -27,7 +27,7 @@ $mapLinks = get_field('contact_map_repeater', $frontId);
 
 ?>
 <div id="front-contact" class="swiper-slide front-contact-section">
-    <div class="container  padding-top">
+    <div class="container  padding-top height-slide">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>

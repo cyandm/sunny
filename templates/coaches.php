@@ -31,7 +31,7 @@ $coaches = new WP_Query($args);
                 while ($coaches->have_posts()) {
 
                     $coaches->the_post(); ?>
-                    <div class="classes-content container">
+                    <div class="classes-content container coaches-content-slide">
                         <div class="front-coach-img">
                             <div class="img-content <?= get_field('bg_image_color', get_the_ID()) ?>">
                                 <?= wp_get_attachment_image(get_post_thumbnail_id(get_the_ID()), 'full', false, []);
@@ -58,7 +58,7 @@ $coaches = new WP_Query($args);
                                     <div class="students-slider swiper">
                                         <div class="swiper-wrapper sliders-wrapper">
                                             <?php foreach ($topStudents as $student) : ?>
-                                                <div class="student-info swiper-slide">
+                                                <div class="student-info swiper-slide student-image">
 
                                                     <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []); ?>
 
@@ -71,7 +71,16 @@ $coaches = new WP_Query($args);
                                         </div>
                                     </div>
                                 </div>
-                            <?php endif; ?>
+
+                                <!-- slider popup  -->
+                            <?php
+                                get_template_part(
+                                    '/templates/components/student-row-popup',
+                                    null,
+                                    ['id' => get_the_ID()]
+                                );
+
+                            endif; ?>
 
 
                         </div>

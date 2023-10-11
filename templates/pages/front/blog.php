@@ -7,7 +7,7 @@ $categories = get_field('choose_category', $frontId);
 ?>
 
 <div id="blog-section" class="swiper-slide blog-section">
-    <div class="container  padding-top">
+    <div class="container  padding-top height-slide">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>

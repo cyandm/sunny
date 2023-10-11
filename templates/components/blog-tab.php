@@ -60,27 +60,28 @@ if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonom
 
 <!-- ---------------------------------------mobile tab -->
 
-<div class="blog-tab-mobile"> <?php
-                                if (get_queried_object_id() == $blog_page_id[0]) :
-                                    get_template_part('templates/components/search-form', null, ['menu-mobile' => false]);
-                                endif; ?>
+<div class="blog-tab-mobile">
 
-
-    <select name="" id="cat-select-mobile" class="cat-select-mobile mobile-category-list">
-        <?php if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') { ?>
+    <?php if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') :
+        get_template_part('templates/components/search-form', null, ['menu-mobile' => false]);
+    ?>
+        <select name="" id="cat-select-mobile" class="cat-select-mobile mobile-category-list">
             <option <?= ($pageId == $blog_page_id[0]) ? 'selected' : '' ?> value="<?= the_permalink($blog_page_id[0]); ?>"> همه</option>
             <?php $key = 1;
             foreach ($terms as $term) : ?>
-                <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= the_permalink($term->term_id) ?>"><?= $term->name ?></option>
+                <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= get_term_link($cat->term_id) ?>"><?= $term->name ?></option>
             <?php
                 $key++;
-            endforeach;
-        } else {
-            $key = 1;
+            endforeach; ?>
+
+        </select>
+    <?php else : ?>
+        <select name="" id="cat-select-mobile" class="cat-select-mobile mobile-category-list">
+            <?php $key = 1;
             foreach ($terms as $term) : ?>
                 <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= $term->slug ?>"><?= $term->name ?></option>
             <?php $key++;
             endforeach; ?>
-    </select>
-<?php } ?>
+        </select>
+    <?php endif; ?>
 </div>

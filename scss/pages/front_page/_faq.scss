@@ -100,7 +100,28 @@
       }
     }
   }
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .faq-content {
+      .faq-drop-down {
+        flex: 2;
+      }
+      .faq-img {
+        &::before {
+          width: 28rem;
+          height: 28rem;
+        }
+        &::after {
+          width: 28rem;
+          height: 28rem;
+        }
 
+        img {
+          max-width: 28rem;
+          max-height: 28rem;
+        }
+      }
+    }
+  }
   @media (max-width: 992px) {
     .faq-content {
       @include flex(column, center, center);

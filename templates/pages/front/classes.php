@@ -8,7 +8,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
 
 ?>
 <div class="swiper-slide classes-slide">
-    <div class="container padding-top">
+    <div class="container padding-top height-slide">
         <?Php if ($title) : ?>
             <div class="section-title">
                 <h2><?= $title ?></h2>

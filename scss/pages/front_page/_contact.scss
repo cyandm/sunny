@@ -68,11 +68,9 @@
           align-items: center;
           justify-content: center;
 
-          i {
-            &::before {
-              font-size: 1.2rem;
-              color: $white-1;
-            }
+          &::before {
+            font-size: 1.2rem;
+            color: $white-1;
           }
         }
       }

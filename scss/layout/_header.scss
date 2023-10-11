@@ -6,7 +6,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  z-index: 9999;
+  z-index: 98;
   left: 0;
   right: 0;
 
@@ -282,7 +282,7 @@ header {
               }
 
               > a {
-                @include flex(row, center, start);
+                @include flex(row, start, start);
                 color: $black-1;
                 gap: 0.25rem;
                 white-space: nowrap;
@@ -304,6 +304,12 @@ header {
               }
 
               ul {
+                @include sudo(before, 2px, 85%, $gray-2) {
+                  position: absolute;
+                  right: 0.6rem;
+                  top: 0.5rem;
+                }
+
                 width: auto;
                 height: 0;
                 transition: height 0.3s ease-in-out;
@@ -363,7 +369,6 @@ header {
 
               ul {
                 transform: translateY(0);
-
               }
             }
 
