@@ -24,13 +24,18 @@ $allProducts = new WP_Query($newQueryArgs);
         <?php endif;
 
         ?>
-
+        <div class="shop-slider swiper-container">
+            <div class="swiper-wrapper start-wrapper">
         <div class="shop-content">
             <?php
             if ($allProducts->have_posts()) :
                 while ($allProducts->have_posts()) :
-                    $allProducts->the_post();
-                    wc_get_template_part('content', 'product');
+                    $allProducts->the_post();?>
+                <div class="swiper-slide">
+
+                    <?php       wc_get_template_part('content', 'product');?>
+                </div>
+                    <?php
 
                 endwhile;
             endif;
@@ -38,8 +43,8 @@ $allProducts = new WP_Query($newQueryArgs);
             wp_reset_postdata(); ?>
 
         </div>
-
-
+            </div>
+        </div>
         <div class="breadcrumb-btn">
             <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> راه های ارتباطی</a>
             <a href="" class="btn-left home-main-slider-prev"> کلاس ها <i class="icon-arrow-side-left"></i></a>

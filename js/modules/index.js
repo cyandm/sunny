@@ -4,3 +4,4 @@ import "./quick-access";
 import "./ticker";
 // import "./date-picker";
 import "./animation";
+import "./video-popup";

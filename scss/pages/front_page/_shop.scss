@@ -1,6 +1,7 @@
 @use "../../utils/index" as *;
 
 .shop-content,
+
 ul.products {
   @include flex();
   gap: 1rem;

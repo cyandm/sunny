@@ -40,11 +40,28 @@ export const studentSlider = new Swiper(".students-slider", {
   nested: true,
   loop: true,
 
-  //   autoplay: {
-  //     delay: 3000,
-  //     disableOnInteraction: false,
-  //   },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
 });
+
+//******************************* shop slider in mobile view
+export const shopSlider = new Swiper(".shop-slider", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  loop: true,
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+});
+if (window.innerWidth >= 768) {
+  shopSlider.destroy();
+  window.addEventListener("resize", shopSlider.destroy());
+}
+
 
 // ****************************** testimonial swiper slider
 export const testimonialSlider = new Swiper(".testimonial-slider", {
@@ -52,10 +69,10 @@ export const testimonialSlider = new Swiper(".testimonial-slider", {
   spaceBetween: 16,
   loop: true,
 
-  //   autoplay: {
-  //     delay: 3000,
-  //     disableOnInteraction: false,
-  //   },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
 });
 
 // ********************************* front page main slider
@@ -136,7 +153,8 @@ aboutNestedSlider.forEach((aboutSlider) => {
 // ********************************* blog page swiper slider
 
 export const blogMainSlider = new Swiper(".blog-page-slider", {
-  ...defaultSwiper,
+  slidesPerView: 1,
+  spaceBetween: 0,
   speed: 1000,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -148,11 +166,11 @@ export const blogMainSlider = new Swiper(".blog-page-slider", {
   //   disableOnInteraction: false,
   // },
 
-  on: {
-    slideChange: () => {
-      pullUpAnimation();
-      circleAnimation();
-      imageAnimation();
-    },
-  },
+  // on: {
+  //   slideChange: () => {
+  //     pullUpAnimation();
+  //     circleAnimation();
+  //     imageAnimation();
+  //   },
+  // },
 });

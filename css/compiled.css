@@ -1373,6 +1373,37 @@ div.description p {
   white-space: nowrap;
 }
 
+.show-video {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  transition: all 0.3s ease-in-out;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  background: rgba(26, 33, 42, 0.7);
+  position: fixed;
+  z-index: 99;
+  padding-block-start: 8rem;
+  gap: 0.5rem;
+}
+.show-video video {
+  width: 60%;
+}
+.show-video i {
+  display: flex;
+  border: 1px splid #e8e9ea;
+  border-radius: 0.25rem;
+}
+@media (max-width: 768px) {
+  .show-video {
+    padding: 1rem;
+  }
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -1808,14 +1839,17 @@ header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu > l
 }
 header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu > li::before {
   font-size: 1.5rem;
+  border: 1px transparent;
+  padding: 0.25rem;
 }
 header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu > li > a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   color: #1a212a;
   gap: 0.25rem;
+  white-space: nowrap;
 }
 header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu > li > a:hover::before {
   transition: all 0.3s ease-in-out;
@@ -1885,7 +1919,6 @@ header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.
   border: 1px solid #e8e9ea;
   border-radius: 0.625rem;
   position: absolute;
-  padding: 0.25rem;
   right: -5px;
 }
 header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.menu-item-has-children.active-menu > a {
@@ -1893,15 +1926,6 @@ header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.
 }
 header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.menu-item-has-children.active-menu ul {
   transform: translateY(0);
-}
-header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.menu-item-has-children.active-menu ul::before {
-  content: " ";
-  width: 2px;
-  height: 84.5%;
-  background: #e8e9ea;
-  position: absolute;
-  right: 0.6rem;
-  top: 0.5rem;
 }
 header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.home-menu::before {
   content: "\e90e";
@@ -2302,7 +2326,7 @@ body.first-slide header .form-search > form div > input {
   border-radius: 50%;
   position: absolute;
   z-index: -1;
-  top: 29%;
+  top: 13%;
 }
 .home-nested-slider.hero-section .slide .row .slide-container .content-hero-slide {
   display: flex;
@@ -2688,6 +2712,7 @@ body.first-slide header .form-search > form div > input {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   animation: pulseAnimation 4s ease-in-out infinite;
   position: absolute;
   left: 0;
@@ -2725,8 +2750,7 @@ body.first-slide header .form-search > form div > input {
   font-size: 1.5rem;
 }
 .start-section .home-nested-slider.swiper-container .slide .row .container .start-content .start-img .video-content .video-popup {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 .start-section .home-nested-slider.swiper-container .slide .row .container .start-content .arrow-mobile {
   display: none;
@@ -3573,7 +3597,7 @@ body.first-slide header .form-search > form div > input {
 }
 @media (max-width: 768px) {
   .testimonial-section .front-testimonial-content .testimonial-slider .swiper-slide {
-    flex-basis: 55%;
+    flex-basis: 55% !important;
   }
   .testimonial-section .front-testimonial-content .video-container {
     max-height: 19rem;
@@ -5288,6 +5312,7 @@ ul.products > * {
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  padding-block-start: 3rem;
   gap: 1rem;
   width: 100%;
 }
@@ -5366,6 +5391,7 @@ ul.products > * {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   position: absolute;
   bottom: 11rem;
   right: 12rem;

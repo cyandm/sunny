@@ -277,12 +277,15 @@ header {
 
               &::before {
                 font-size: 1.5rem;
+                border: 1px transparent;
+                padding: 0.25rem;
               }
 
               > a {
-                @include flex(row, center, center);
+                @include flex(row, center, start);
                 color: $black-1;
                 gap: 0.25rem;
+                white-space: nowrap;
 
                 &:hover {
                   &::before {
@@ -350,7 +353,7 @@ header {
                 border: 1px solid $gray-2;
                 border-radius: 0.625rem;
                 position: absolute;
-                padding: 0.25rem;
+
                 right: -5px;
               }
 
@@ -359,12 +362,8 @@ header {
               }
 
               ul {
-                @include sudo("before", 2px, 84.5%, $gray-2) {
-                  position: absolute;
-                  right: 0.6rem;
-                  top: 0.5rem;
-                }
                 transform: translateY(0);
+
               }
             }
 

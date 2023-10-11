@@ -12,7 +12,7 @@ $blogSliders = get_field('blog_overview_hero_section', $blog_page_id[0]);
 
 if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
 
-    <div class="blog-page-slider swiper-container" dir="ltr">
+    <div class="blog-page-slider swiper-container">
         <div class="swiper-wrapper">
 
             <div class="overly first"></div>

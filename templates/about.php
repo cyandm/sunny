@@ -22,12 +22,12 @@ get_header(); ?>
             ?>
         </div>
 
-        <div class="video-content" data-id=" ">
+        <div class="video-content" data-id="video-popup">
             <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
 
             <i class="icon-play play-video" id="play-video"></i>
             <div class="video-popup">
-                <video id="mainVideo" controls>
+                <video controls>
                     <source src="<?= get_field('video_about', $pageId) ?>" type="video/mp4">
                 </video>
             </div>

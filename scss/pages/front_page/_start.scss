@@ -67,6 +67,7 @@
 
               .video-content {
                 @include flex();
+                cursor: pointer;
                 @include sudo(before, 7.56756rem, 7.56756rem, none) {
                   border: 1rem solid rgba(255, 255, 255, 0.2);
                   position: absolute;
@@ -100,8 +101,7 @@
                 }
 
                 .video-popup {
-                  visibility: hidden;
-                  opacity: 0;
+               display: none;
                 }
               }
             }
@@ -284,3 +284,6 @@
     }
   }
 }
+
+
+

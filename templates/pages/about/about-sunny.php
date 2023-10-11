@@ -1,6 +1,7 @@
 <?php
 $pageId = get_queried_object_id();
 $aboutSliders = get_field('about_slider_1', $pageId);
+print_r($aboutSliders);
 ?>
 
 <div class="swiper-slide sport-slider">

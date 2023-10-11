@@ -28,11 +28,12 @@ $startSliders = get_field('slider_start_section', $frontId);
                                         <div class="shape <?= $Slide['start_slider_shape'] ?>"></div>
                                         <?= wp_get_attachment_image($Slide['start_slider_image'], 'full', false, []); ?>
 
-                                        <div class="video-content" data-id=" ">
+                                        <div class="video-content popup-play-video" id="play-video">
                                             <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
 
-                                            <i class="icon-play play-video" id="play-video"></i>
+                                            <i class="icon-play play-video"></i>
                                             <div class="video-popup">
+
                                                 <video id="mainVideo" controls>
                                                     <source src="<?= $Slide['start_slider_video'] ?>" type="video/mp4">
                                                 </video>

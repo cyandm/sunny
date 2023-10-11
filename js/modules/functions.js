@@ -100,3 +100,42 @@ export const toggleClassToBodyForSwiper = () => {
     document.body.classList.toggle("first-slide");
   }
 };
+
+
+// video popup
+export const createVideoPopup=(videoUrl)=> {
+
+  const videoPopup = document.createElement("div");
+  videoPopup.classList.add("show-video");
+
+
+  const video = document.createElement("video");
+  video.controls = true;
+  video.autoplay = true;
+
+
+  const source = document.createElement("source");
+  source.src = videoUrl;
+  source.type = "video/mp4";
+
+
+  const unsupportedMessage = document.createTextNode("مرورگر شما از ویدیو پشتیبانی نمی‌کند.");
+
+
+  const closePopupButton = document.createElement("button");
+  closePopupButton.classList.add("close-popup");
+  closePopupButton.innerHTML ='<i class="icon-close"> </i>';
+  closePopupButton.addEventListener("click", function () {
+    videoPopup.remove();
+  });
+
+
+  video.appendChild(source);
+  video.appendChild(unsupportedMessage);
+  videoPopup.appendChild(video);
+  videoPopup.appendChild(closePopupButton);
+
+  document.body.appendChild(videoPopup);
+}
+
+

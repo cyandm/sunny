@@ -5,26 +5,184 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/imgs/svg/404.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/svg/contact-svg.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/svg/empty-blog.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgs/svg/empty-cart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scss/pages/_archive-product.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modules/video-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/components/_video-popup.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/front-page/start.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/.jshintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/.markdown-doctest-setup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/Gruntfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/dist/persian-date.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/dist/persian-date.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/doc/document.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/doc/leapyear.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/algorithms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/astro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/duration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/helpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/on.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/pDate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/type-checking.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/src/validator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/test/gregorian.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/test/leap-year.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/test/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/typings/persian-date.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-date/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/.jshintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/.sass-lint.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/Gruntfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/IRANSans.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/WebFonts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/css/fontiran.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/eot/IRANSansWeb.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/eot/IRANSansWeb_Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/eot/IRANSansWeb_Light.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/eot/IRANSansWeb_Medium.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/eot/IRANSansWeb_UltraLight.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/ttf/IRANSansWeb.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/ttf/IRANSansWeb_Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/ttf/IRANSansWeb_Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/ttf/IRANSansWeb_Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/ttf/IRANSansWeb_UltraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff/IRANSansWeb.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff/IRANSansWeb_Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff/IRANSansWeb_Light.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff/IRANSansWeb_Medium.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff/IRANSansWeb_UltraLight.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff2/IRANSansWeb.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff2/IRANSansWeb_Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff2/IRANSansWeb_Light.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff2/IRANSansWeb_Medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/fonts/woff2/IRANSansWeb_UltraLight.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/assets/persian-date.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/persian-datepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/persian-datepicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/persian-datepicker.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/theme/persian-datepicker-blue.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/theme/persian-datepicker-blue.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/theme/persian-datepicker-cheerup.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/theme/persian-datepicker-cheerup.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/theme/persian-datepicker-dark.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/theme/persian-datepicker-dark.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/theme/persian-datepicker-redblack.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/css/theme/persian-datepicker-redblack.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/doc/API.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/doc/OPTIONS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/initial-value.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/js/persian-datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/js/persian-datepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/mobile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/range.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/dist/single.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/doc/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/doc/CONTRIB.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/doc/EXAMPLE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/jslint.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/date.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/navigator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/parser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/persian-date-wrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/template.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/toolbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/es6/view.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/base/config.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/base/helper.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/layout/default.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/module/daypicker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/module/mobile.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/module/month-year-picker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/module/navigator.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/module/plot-area.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/module/timepicker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/module/toolbox.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/persian-datepicker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/theme/persian-datepicker-blue.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/theme/persian-datepicker-cheerup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/theme/persian-datepicker-dark.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/src/sass/theme/persian-datepicker-redblack.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/webpack.config.dev.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/persian-datepicker/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/GOVERNANCE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/errors-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/errors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/experimentalWarning.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_duplex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_passthrough.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_transform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_writable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/async_iterator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/buffer_list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/destroy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/end-of-stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/from-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/from.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/pipeline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/stream-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/internal/streams/stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/readable-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/readable-stream/readable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/restore-cursor/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/restore-cursor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/restore-cursor/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/restore-cursor/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/restore-cursor/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_inedx.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_inedx.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/_404.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_404.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_contact.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blogs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact-us.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact-us.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/woocommerce/archive-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/woocommerce/archive-product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_search.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/about/_about.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_about.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_shop.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/about/about-sunny.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/about/about-sunny.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/blog/hero-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/blog/hero-blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/shop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/start.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/start.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +284,9 @@
       <workItem from="1696636634076" duration="3724000" />
       <workItem from="1696704537184" duration="7589000" />
       <workItem from="1696787714781" duration="1274000" />
-      <workItem from="1696819252979" duration="8320000" />
+      <workItem from="1696819252979" duration="8400000" />
+      <workItem from="1696870406732" duration="1310000" />
+      <workItem from="1696990587740" duration="10622000" />
     </task>
     <servers />
   </component>
@@ -167,8 +327,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/modules/functions.js</url>
-          <line>77</line>
-          <properties lambdaOrdinal="-1" />
+          <line>78</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
