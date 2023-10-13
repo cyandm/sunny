@@ -44,31 +44,35 @@
           gap: 2rem;
 
           li {
-            @include flex;
-            gap: 0.37rem;
-            border-radius: 2.5rem;
-            background: #ff3d5a;
-            padding: 0.5rem 1.25rem 0.5rem 0.75rem;
+
             direction: rtl;
-            span {
-              @include font_style(body_b);
-              color: $white-1;
-              white-space: nowrap;
-            }
-
-            i {
+            a{
               @include flex;
-              width: 3.4375rem;
-              height: 3.4375rem;
-              background: $white-1;
-              border-radius: 50%;
-              transform: rotate(180deg);
+              gap: 0.37rem;
+              border-radius: 2.5rem;
+              background: #ff3d5a;
+              padding: 0.5rem 1.25rem 0.5rem 0.75rem;
+              span {
+                @include font_style(body_b);
+                color: $white-1;
+                white-space: nowrap;
+              }
 
-              &::before {
-                font-size: 1.5rem;
-                color: $black-1;
+              i {
+                @include flex;
+                width: 3.4375rem;
+                height: 3.4375rem;
+                background: $white-1;
+                border-radius: 50%;
+                transform: rotate(180deg);
+
+                &::before {
+                  font-size: 1.5rem;
+                  color: $black-1;
+                }
               }
             }
+
           }
         }
       }

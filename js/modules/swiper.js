@@ -18,7 +18,7 @@ import {
 } from "swiper/modules";
 
 const defaultSwiper = {
-  modules: [Mousewheel, Navigation, Pagination, Scrollbar, Autoplay, Thumbs],
+  modules: [Mousewheel, Navigation, Pagination, Scrollbar, Autoplay, Thumbs,Grid],
   slidesPerView: 1,
   spaceBetween: 0,
 };
@@ -49,7 +49,7 @@ export const studentSlider = new Swiper(".students-slider", {
 
 //****************************** package slider */
 const packageSliderElement = document.querySelector(".package-slider");
-export const packageSlider = new Swiper(packageSliderElement, {
+export const packageSlider = new Swiper( packageSliderElement , {
   slidesPerView: "auto",
   spaceBetween: 16,
   loop: true,
@@ -68,7 +68,7 @@ export const shopSlider = new Swiper(shopSliderElement, {
   // Responsive breakpoints
   breakpoints: {
     768: {
-      modules: [Grid],
+      ...defaultSwiper,
       slidesPerColumn: 2,
       grid: {
         rows: 2,
@@ -152,12 +152,10 @@ const aboutThumbnailSlideElement = document.querySelector(
 );
 export const aboutThumbnailSlider = new Swiper(aboutThumbnailSlideElement, {
   spaceBetween: 10,
-  slidesPerView: 4,
+  slidesPerView:"auto",
   freeMode: true,
 });
-if (aboutThumbnailSlideElement) {
-  initSwiper(aboutThumbnailSlider);
-}
+
 
 const aboutMainSliderElement = document.querySelector(".about-page-slider");
 export const aboutMainSlider = new Swiper(aboutMainSliderElement, {
@@ -182,7 +180,9 @@ aboutNestedSlider.forEach((aboutSlider) => {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+
   });
+
 });
 
 // ********************************* blog page swiper slider

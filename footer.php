@@ -106,10 +106,15 @@ function menu($menuSlug)
             <?php endif; ?>
         </div>
     </div>
-    <?php get_template_part('templates/components/footer-social'); ?>
+    <div class="footer-social-media">
+        <h4>شبکه های اجتماعی</h4>
+        <?php get_template_part('templates/components/footer-social'); ?>
+    </div>
+
 </footer>
 
 <div class="wp-scripts">
+
     <?php wp_footer() ?>
 </div>
 

@@ -11,7 +11,7 @@
       position: relative;
       width: 100%;
       height: 90vh;
-      overflow: inherit;
+      overflow: hidden;
 
       .content {
         @include flex();
@@ -209,4 +209,8 @@
 .translate-animation,
 .image-animate {
   overflow: hidden;
+}
+.flex-div{
+  @include flex();
+  width: 100%;
 }

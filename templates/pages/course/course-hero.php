@@ -7,7 +7,7 @@ $imageTitle3 = get_field('image_title_3', $pageId);
 $courseHeroTitle = get_field('course_hero_title', $pageId);
 $courseHeroDescription = get_field('course_hero_description', $pageId);
 $btnTitle = get_field('course_hero_title_btn', $pageId);
-$btnLink = get_field('course_hero_link_btn', $pageId);
+//$btnLink = get_field('course_hero_link_btn', $pageId);
 ?>
 <div class="overly first"></div>
 <div class="overly second"></div>
@@ -38,7 +38,7 @@ $btnLink = get_field('course_hero_link_btn', $pageId);
                 <path d="M44.5734 17.6549C45.6434 17.3451 46.9902 17.1345 49.3566 14.8053C51.0624 13.1264 51.628 8.2354 51.7323 4.15044C51.7699 7.96637 52.2517 10.469 52.4406 11.2743C52.6755 12.2763 53.2839 14.5823 54.6434 15.6726C56.3427 17.0354 57.8531 17.469 59.993 17.9027C61.7049 18.2496 67.3776 18.5428 70 18.646C68.8881 18.6667 65.9343 18.7327 63.014 18.8319C60.0937 18.931 57.7692 19.6165 56.972 19.9469C56.1538 20.3186 54.2406 21.5204 53.1329 23.354C52.0252 25.1876 51.6224 31.882 51.5594 35C51.4965 33.1003 51.2448 29.4248 51.2448 29.2389C51.2448 29.0531 51.6853 24.5929 49.2308 22.0531C46.7762 19.5133 45.2028 19.5133 43.5664 19.2035C42.3098 18.9657 36.8987 18.5405 34.1719 18.4065C34.0977 18.4037 34.0406 18.4009 34 18.3982C34.056 18.4008 34.1134 18.4036 34.1719 18.4065C34.6725 18.425 35.9559 18.4414 38.2797 18.3982C40.9483 18.3487 43.5874 17.882 44.5734 17.6549Z" fill="#FFF48D" />
             </svg></span>
         <div class="hero-btn">
-            <a href="<?= $btnLink ?>"><i class="icon-arrow-right"></i><?= $btnTitle ?></a>
+            <a href="#courses"><i class="icon-arrow-right"></i><?= $btnTitle ?></a>
         </div>
     </div>
     <span class="line-svg">

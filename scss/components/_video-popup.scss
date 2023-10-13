@@ -1,7 +1,7 @@
 @use "../utils/index" as *;
 
 .show-video {
-  @include flex(row, center, start);
+  @include flex();
 
   animation: showPopup 0.5s ease-in-out;
   top: 0;
@@ -12,21 +12,29 @@
   background: rgba(26, 33, 42, 0.7);
   position: fixed;
   z-index: 99;
-  padding-block-start: 8rem;
-  gap: 0.5rem;
 
-  video {
-    width: 60%;
+
+  .video-container {
+    @include flex(row, center, start);
+    gap: 0.5rem;
+    width: 100%;
+
+    video {
+      width: 60%;
+    }
+
+    i {
+      display: flex;
+      border: 1px splid $gray-2;
+      border-radius: 0.25rem;
+    }
   }
-  i {
-    display: flex;
-    border: 1px splid $gray-2;
-    border-radius: 0.25rem;
-  }
+
   @media (max-width: 768px) {
     padding: 1rem;
   }
 }
+
 .show-video.close {
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;

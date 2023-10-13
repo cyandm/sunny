@@ -1,5 +1,96 @@
+@use "../utils/index" as *;
+
 .students-row-popup {
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
+  @include flex();
+
+  padding-inline: 1rem;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  background: rgba(26, 33, 42, 0.7);
+  position: fixed;
+  z-index: 99;
+  padding-block-start: 8rem;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+
+  .students-slider {
+    width: 100%;
+    position: relative;
+    i {
+      @include flex();
+
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: 0.625rem;
+      border: 0.5px $gray-2;
+      background: $white-1;
+      z-index: 2;
+
+      &:before {
+        color: #cd1313;
+        font-size: 1.5rem;
+      }
+    }
+
+    .sliders-wrapper {
+
+      width: 100%;
+
+
+      .student-info {
+        @include flex(column);
+        position: relative;
+        width: 100%;
+        height: 30rem;
+        background: $white-1;
+        border-radius: 1.5rem;
+        gap: 1.5rem;
+        padding-block-end: 1rem;
+max-width: 21rem;
+        img {
+          height: 19rem;
+          width: 100%;
+          border-radius: 1.5rem;
+          object-fit: cover;
+        }
+
+        .achievement-description {
+          @include flex(column, end, start);
+          @include font_style(h4);
+
+          gap: 0.5rem;
+          color: $black-1;
+          padding-inline: 1rem;
+
+          width: 100%;
+          height: 100%;
+
+
+        }
+      }
+    }
+  }
+
+  @media (max-height: 992px) {
+    align-items: start;
+    .students-slider {
+      .sliders-wrapper {
+        .student-info {
+          height: 25rem !important;
+
+        }
+      }
+
+    }
+  }
+}
+
+.students-row-popup.show {
+  transform: translateY(0);
 }
