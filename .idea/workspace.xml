@@ -8,30 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/swiper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/coach-overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/coach-overview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/components/_product-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_product-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_slider-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_slider-btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_student-popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_student-popup.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_video-popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_video-popup.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/layout/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/about/_about-sunny.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_about-sunny.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/about/_about.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_about.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/about/_gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_gallery.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/about/_honors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_honors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/blog-overview/_blog-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/blog-overview/_blog-hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/course/_course.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/course/_course.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/shop/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/shop/_cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/shop/_empty-cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/shop/_empty-cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/components/student-row-popup.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/student-row-popup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/blog/hero-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/blog/hero-blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/course/course-hero.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/course/course-hero.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/woocommerce/cart/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/woocommerce/cart/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/woocommerce/content-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/woocommerce/content-product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +118,7 @@
       <workItem from="1697133333833" duration="71000" />
       <workItem from="1697135743831" duration="52000" />
       <workItem from="1697141718601" duration="8483000" />
-      <workItem from="1697181807523" duration="22367000" />
+      <workItem from="1697181807523" duration="23637000" />
     </task>
     <servers />
   </component>
