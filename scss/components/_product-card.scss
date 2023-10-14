@@ -8,9 +8,7 @@
   border: 1px solid $gray-2;
   background: $white-1;
   gap: 0.62rem;
-  > a.woocommerce-LoopProduct-link {
-    @include flex(column);
-    gap: 0.62rem;
+  width: 100%;
     h2 {
       @include font_style(h3);
       @include text_overflow(1);
@@ -20,7 +18,7 @@
       height: 7.9375rem;
       width: auto;
     }
-  }
+
   .btn-cart-custom {
     @include btn();
     @include font_style(body);

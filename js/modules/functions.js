@@ -100,21 +100,24 @@ export const toggleClassToBodyForSwiper = () => {
   }
 };
 
-// video popup
+
+// ********************************* video popup
 export const createVideoPopup = (videoUrl) => {
   const videoPopup = document.createElement("div");
   videoPopup.classList.add("show-video");
 
+  const videoContainer = document.createElement("div");
+  videoContainer.classList.add("video-container");
+
   const video = document.createElement("video");
   video.controls = true;
-  video.autoplay = true;
 
   const source = document.createElement("source");
   source.src = videoUrl;
   source.type = "video/mp4";
 
   const unsupportedMessage = document.createTextNode(
-    "مرورگر شما از ویدیو پشتیبانی نمی‌کند."
+      "مرورگر شما از ویدیو پشتیبانی نمی‌کند."
   );
 
   const closePopupButton = document.createElement("button");
@@ -127,10 +130,13 @@ export const createVideoPopup = (videoUrl) => {
 
   video.appendChild(source);
   video.appendChild(unsupportedMessage);
-  videoPopup.appendChild(video);
-  videoPopup.appendChild(closePopupButton);
+  videoContainer.appendChild(video);
+  videoContainer.appendChild(closePopupButton);
+
+  videoPopup.appendChild(videoContainer);
 
   document.body.appendChild(videoPopup);
 };
+
 
 export const sliderPopup = () => {};

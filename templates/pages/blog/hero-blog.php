@@ -12,7 +12,7 @@ $blogSliders = get_field('blog_overview_hero_section', $blog_page_id[0]);
 
 if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
 
-    <div class="blog-page-slider swiper-container" dir="rtl">
+    <div class="blog-page-slider swiper-container" dir="ltr">
         <div class="swiper-wrapper">
 
             <div class="overly first"></div>
@@ -46,7 +46,7 @@ if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
                             </div>
                         </div>
                         <?php if ($key == 'hero_slider_1') : ?>
-                            <div class="translate-animation">
+                            <div class="translate-animation flex-div">
                                 <div class="next-slider swiper-button-next">
                                     <i class="icon-arrow-side-right"></i>
                                     <div>
@@ -58,7 +58,7 @@ if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
                             </div>
 
                         <?php else : ?>
-                            <div class="translate-animation">
+                            <div class="translate-animation flex-div">
                                 <div class="prev-slider swiper-button-prev ">
                                     <?= wp_get_attachment_image($blogSliders['hero_slider_1']['hero_slider_image'], 'thumbnail', false, []); ?>
                                     <div>

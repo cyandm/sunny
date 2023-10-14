@@ -7,6 +7,7 @@ require_once(__DIR__ . '/inc/classes/cyn-register.php');
 require_once(__DIR__ . '/inc/classes/cyn-ajax.php');
 require_once(__DIR__ . '/inc/classes/cyn-general.php');
 require_once(__DIR__ . '/inc/classes/cyn-admin-form.php');
+require_once(__DIR__ . '/inc/classes/cyn-woocommerce.php');
 
 
 
@@ -18,4 +19,4 @@ $cyn_register = new cyn_register();
 $cyn_general = new cyn_general();
 $cyn_ajax = new cyn_ajax();
 $cyn_form = new cyn_form();
-
+$cyn_woocommerce = new cyn_woocommerce();

@@ -20,7 +20,7 @@ $courses = get_posts($args);
 <main class="course-overview-page" id="course-page">
 
     <?php get_template_part('templates/pages/course/course-hero'); ?>
-    <div class="all-course-overview">
+    <div class="all-course-overview" id="courses">
         <?Php if ($mainTitle) : ?>
             <div class="section-title">
                 <h2><?= $mainTitle ?></h2>
@@ -55,14 +55,16 @@ $courses = get_posts($args);
             <div class="ticker ticker-container">
                 <ul class="ticker-custom">
                     <?php foreach ($tickers as $ticker) :
-                        if ($ticker != '') : ?>
-                            <li><span><?= $ticker ?></span><i class="icon-arrow-right"></i></li>
+                        if ($ticker['label'] != '') : ?>
+                            <li>
+                            <a href="<?= $ticker['link']?>"><span><?= $ticker['label']  ?></span><i class="icon-arrow-right"></i></a></li>
                     <?php
                         endif;
                     endforeach; ?>
                     <?php foreach ($tickers as $ticker) :
-                        if ($ticker != '') : ?>
-                            <li><span><?= $ticker ?></span><i class="icon-arrow-right"></i></li>
+                        if ($ticker['label'] != '') : ?>
+                            <li>
+                                <a href="<?= $ticker['link']?>"><span><?= $ticker['label'] ?></span><i class="icon-arrow-right"></i></a></li>
                     <?php
                         endif;
                     endforeach; ?>

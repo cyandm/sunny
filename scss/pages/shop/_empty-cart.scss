@@ -3,6 +3,7 @@
 .empty-cart-page {
   padding-block-start: 6rem;
   @include flex(column);
+  width: 100%;
 
   .wc-empty-cart-message {
     width: 100%;

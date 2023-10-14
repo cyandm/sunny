@@ -126,7 +126,9 @@
       color: $pink-1;
     }
   }
-
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
   @content;
 }
 
