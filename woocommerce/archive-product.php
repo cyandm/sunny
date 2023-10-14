@@ -48,7 +48,7 @@ $img = get_field('shop_page_img', $pageId);
 				<?php endif;
 				if ($leftBtnLink) :
 				?>
-					<a class="left-btn" href="<?= $leftBtnLink ?>"><i class="icon-arrow-right"></i><?= $leftBtnTitle ?></a>
+					<a class="left-btn" href="<?= $leftBtnLink ?>"><i class="icon-login1"></i><?= $leftBtnTitle ?></a>
 				<?php endif; ?>
 			</div>
 

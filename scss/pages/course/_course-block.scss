@@ -64,6 +64,10 @@
             @include flex(row, start, center);
 
             gap: 0.25rem;
+            .title-name {
+              @include flex();
+              gap: 0.25rem;
+            }
           }
         }
       }

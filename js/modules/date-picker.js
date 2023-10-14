@@ -1,3 +1,17 @@
-import moment from "moment-jalaali";
+const formsDates = document.querySelectorAll(".send-course-form");
 
-const m = moment("1360/5/26", "jYYYY/jM/jD"); // Parse a Jalaali date
+if (formsDates) {
+  formsDates.forEach((form) => {
+    const date = form.querySelector(".date-picker-custom");
+    jalaliDatepicker.startWatch({
+      minDate: "attr",
+      maxDate: "attr",
+    });
+
+    date.addEventListener("click", () => {
+      date.focus();
+      jalaliDatepicker.hide();
+      jalaliDatepicker.show(date);
+    });
+  });
+}

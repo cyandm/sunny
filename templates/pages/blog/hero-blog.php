@@ -45,9 +45,10 @@ if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
 
                             </div>
                         </div>
+
                         <?php if ($key == 'hero_slider_1') : ?>
                             <div class="translate-animation flex-div">
-                                <div class="next-slider swiper-button-next">
+                                <div class="next-slider blog-swiper-button-next">
                                     <i class="icon-arrow-side-right"></i>
                                     <div>
                                         <h3><?= $blogSliders['hero_slider_2']['hero_slider_title'] ?></h3>
@@ -59,7 +60,7 @@ if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
 
                         <?php else : ?>
                             <div class="translate-animation flex-div">
-                                <div class="prev-slider swiper-button-prev ">
+                                <div class="prev-slider blog-swiper-button-prev">
                                     <?= wp_get_attachment_image($blogSliders['hero_slider_1']['hero_slider_image'], 'thumbnail', false, []); ?>
                                     <div>
                                         <h3><?= $blogSliders['hero_slider_1']['hero_slider_title'] ?></h3>
@@ -71,6 +72,7 @@ if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
                         <?php endif; ?>
                     </div>
                 </div>
+
             <?php endforeach; ?>
 
         </div>

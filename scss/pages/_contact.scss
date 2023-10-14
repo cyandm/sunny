@@ -12,6 +12,20 @@
     .contact-img {
       @include flex();
       width: 100%;
+      svg {
+        g:nth-child(4n + 1) {
+          animation: upDown 3s ease-in-out infinite;
+        }
+        g:nth-child(4n + 2) {
+          animation: upDown 4s ease-in-out infinite;
+        }
+        g:nth-child(4n + 3) {
+          animation: upDown 2s ease-in-out infinite;
+        }
+        g:nth-child(4n + 4) {
+          animation: sway 2.5s ease-in-out infinite;
+        }
+      }
     }
 
     .contact-page-form {

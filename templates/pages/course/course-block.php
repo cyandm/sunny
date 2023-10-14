@@ -18,7 +18,7 @@ $bgColor = get_field('course_color', $post_id);
             </div>
             <div class="content">
                 <?php if ($startTerm) : ?>
-                    <div class="details-mobile"><span class="title-name">شروع ترم جدید:<i class=""></i></span>
+                    <div class="details-mobile"><span class="title-name"><i class="icon-timer"></i>شروع ترم جدید:</span>
                         <span><?= $startTerm ?></span>
                     </div>
                 <?php endif;
@@ -28,12 +28,12 @@ $bgColor = get_field('course_color', $post_id);
                 <?php endif; ?>
                 <div class="detail">
                     <?php if ($startTerm) : ?>
-                        <div class="details-large-view"><span class="title-name">شروع ترم جدید:<i class=""></i></span>
+                        <div class="details-large-view"><span class="title-name"><i class="icon-timer"></i>شروع ترم جدید:</span>
                             <span><?= $startTerm ?></span>
                         </div>
                     <?php endif;
                     if ($classCapacity) : ?>
-                        <div><span class="title-name">ظرفیت کلاس:<i class=""></i></span><span><?= $classCapacity ?></span></div>
+                        <div><span class="title-name"><i class="icon-profile-tick1"></i>ظرفیت کلاس:<?= $classCapacity ?></span></div>
                     <?php endif; ?>
                 </div>
 

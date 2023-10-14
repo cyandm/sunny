@@ -19,11 +19,10 @@ if (!class_exists('cyn-theme-init')) {
 
 		public function cyn_enqueue_files()
 		{
-
 			wp_enqueue_style('cyn-compiled', get_stylesheet_directory_uri() . '/css/compiled.css'); //When @build must change to final.css
+
 			wp_enqueue_style('cyn-style', get_stylesheet_directory_uri());
 			wp_dequeue_style('wp-block-library');
-
 
 
 			wp_enqueue_script('cyn-script', get_stylesheet_directory_uri() . '/js/dist/scripts.bundle.min.js', [], null, true);
