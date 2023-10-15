@@ -7,16 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head() ?>
-    <script type='text/javascript'>
-        var ajax_var = {
-            url: `<?php echo admin_url('admin-ajax.php') ?>`,
-            nonce: `<?php echo wp_create_nonce('ajax-nonce') ?>`
-        }
-    </script>
 
 </head>
 
 <body>
+    <?php wp_body_open(); ?>
+
     <header class="<?= (is_front_page() || is_category('category')) ? 'header-white' : '' ?>">
         <div class="container header-large-view">
             <div class="menu-column">

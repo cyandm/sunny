@@ -1,5 +1,3 @@
-import { gsap } from "gsap";
-
 import { pullUpAnimation, circleAnimation, imageAnimation } from "./functions";
 
 pullUpAnimation();
@@ -31,19 +29,3 @@ if (arrowPath && arrowHead) {
 
   window.addEventListener("load", startAnimation);
 }
-
-// const leaves = document.querySelectorAll("#not-fond-animation svg path");
-// console.log(leaves);
-//
-// leaves.forEach((leaf, index) => {
-//     gsap.to(leaf, {
-//         duration: Math.random() * 2 + 1,
-//         y: '100px',
-//         rotation: '360',
-//         ease: 'power4.out',
-//         repeat: -1,
-//         repeatDelay: Math.random() * 2,
-//         delay: Math.random() * 3,
-//
-//     });
-// });

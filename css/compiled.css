@@ -2536,7 +2536,7 @@ header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.
   color: #8c9094;
   font-size: 1rem;
   width: 100%;
-  padding-right: 5rem;
+  padding-right: 5.5rem;
   position: relative;
 }
 header .header-mobile .mobile-menu .mobile-menu-detail .menu-contain ul.menu li.menu-item-has-children ul > li a::before {
@@ -3885,10 +3885,14 @@ body.first-slide header .form-search > form div > input {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 0.25rem;
   cursor: pointer;
   color: #1a212a;
   justify-content: space-between;
   width: 100%;
+}
+.faq-section .faq-content .faq-drop-down .accordion .question span {
+  width: 90%;
 }
 .faq-section .faq-content .faq-drop-down .accordion .question i {
   display: flex;
@@ -3989,6 +3993,11 @@ body.first-slide header .form-search > form div > input {
   }
   .faq-section .faq-content .faq-img {
     order: -1;
+  }
+}
+@media (max-width: 768px) {
+  .faq-section .faq-drop-down {
+    padding: 1rem;
   }
 }
 
@@ -7281,6 +7290,11 @@ main.single-blog .blog-content .all-content .content-single img {
     font-size: 0.75rem;
   }
 }
+@media (max-width: 768px) {
+  .unfind-row {
+    padding-block-start: 1rem;
+  }
+}
 
 .contact-page .contact-row {
   display: flex;
@@ -7300,16 +7314,16 @@ main.single-blog .blog-content .all-content .content-single img {
   align-items: center;
   width: 100%;
 }
-.contact-page .contact-row .contact-img svg g:nth-child(4n+1) {
-  animation: upDown 3s ease-in-out infinite;
+.contact-page .contact-row .contact-img svg #XMLID_25_ {
+  animation: sway 3s ease-in-out infinite;
 }
-.contact-page .contact-row .contact-img svg g:nth-child(4n+2) {
-  animation: upDown 4s ease-in-out infinite;
+.contact-page .contact-row .contact-img svg #XMLID_159_ {
+  animation: sway 4s ease-in-out infinite;
 }
-.contact-page .contact-row .contact-img svg g:nth-child(4n+3) {
-  animation: upDown 2s ease-in-out infinite;
+.contact-page .contact-row .contact-img svg #XMLID_29_ {
+  animation: sway 2s ease-in-out infinite;
 }
-.contact-page .contact-row .contact-img svg g:nth-child(4n+4) {
+.contact-page .contact-row .contact-img svg #XMLID_34_ {
   animation: sway 2.5s ease-in-out infinite;
 }
 .contact-page .contact-row .contact-page-form {

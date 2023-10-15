@@ -3,14 +3,14 @@ $frontId = get_option('page_on_front');
 $heroSliders = get_field('front_page_hero_section', $frontId);
 ?>
 
-<div class="swiper-slide">
+<div class="swiper-slide" id="start-home">
 
     <div class="home-nested-slider swiper-container hero-section" dir="ltr">
         <div class="swiper-wrapper">
             <?php
             $num = 1;
             foreach ($heroSliders as $heroSlide) : ?>
-                <div id="<?= ($num == 1) ? 'first-slide' : '' ?>" class="slide swiper-slide slide panel full-screen <?= $heroSlide['hero_slider_bg_color'] ?>" data-slide-id="<?= $num?>">
+                <div id="<?= ($num == 1) ? 'first-slide' : '' ?>" class="slide swiper-slide slide panel full-screen <?= $heroSlide['hero_slider_bg_color'] ?>" data-slide-id="<?= $num ?>">
 
                     <div class="row">
                         <div class="container slide-container">

@@ -100,7 +100,6 @@ export const toggleClassToBodyForSwiper = () => {
   }
 };
 
-
 // ********************************* video popup
 export const createVideoPopup = (videoUrl) => {
   const videoPopup = document.createElement("div");
@@ -117,7 +116,7 @@ export const createVideoPopup = (videoUrl) => {
   source.type = "video/mp4";
 
   const unsupportedMessage = document.createTextNode(
-      "مرورگر شما از ویدیو پشتیبانی نمی‌کند."
+    "مرورگر شما از ویدیو پشتیبانی نمی‌کند."
   );
 
   const closePopupButton = document.createElement("button");
@@ -138,27 +137,17 @@ export const createVideoPopup = (videoUrl) => {
   document.body.appendChild(videoPopup);
 };
 
-
 export const sliderPopup = () => {};
-
-
-
-
 
 ////////////////////////////////////////////
 
-function changeHeaderColor(color) {
-  gsap.to('header', {
+export const changeHeaderColor = (color) => {
+  gsap.to("header", {
     backgroundColor: color,
-    duration: 0.5
+    duration: 0.5,
   });
-}
+};
 
-function changeBodyClass(className) {
+export const changeBodyClass = (className) => {
   document.body.className = className;
-}
-
-
-
-
-
+};

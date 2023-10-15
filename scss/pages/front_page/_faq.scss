@@ -25,11 +25,14 @@
 
         .question {
           @include flex();
-
+          gap: 0.25rem;
           cursor: pointer;
           color: $black-1;
           justify-content: space-between;
           width: 100%;
+          span {
+            width: 90%;
+          }
           i {
             @include flex();
             width: 2rem;
@@ -130,6 +133,11 @@
       .faq-img {
         order: -1;
       }
+    }
+  }
+  @media (max-width: 768px) {
+    .faq-drop-down {
+      padding: 1rem;
     }
   }
 }

@@ -127,7 +127,7 @@ $mapLinks = get_field('contact_map_repeater', $frontId);
             </div>
         </div>
         <div class="breadcrumb-btn">
-            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> بازگشت به اول</a>
+            <a href="" home-main-slider-next btn-right" id="scroll-to-top"><i class="icon-arrow-side-right"></i> بازگشت به اول</a>
             <a href="" class="btn-left home-main-slider-prev">فروشگاه<i class="icon-arrow-side-left"></i></a>
         </div>
 

@@ -5,7 +5,7 @@ import {
   initSwiper,
   toggleClassToBodyForSwiper,
   changeHeaderColor,
-  changeBodyClass
+  changeBodyClass,
 } from "./functions";
 
 import { Swiper } from "swiper";
@@ -51,28 +51,26 @@ export const studentSlider = new Swiper(".students-slider", {
   nested: true,
   loop: true,
 
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
-});
-
-export const studentSliderPopup = new Swiper(".students-slider-popup", {
-
-  slidesPerView: "auto",
-  spaceBetween: 20,
-  loop: true,
-
-  breakpoints: {
-
-    992: {
-      slidesPerView: 3,
-    },
-
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
   },
 });
 
-
+export const studentSliderPopup = new Swiper(".students-slider-popup", {
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 3,
+    },
+  },
+});
 
 //****************************** package slider */
 const packageSliderElement = document.querySelector(".package-slider");
@@ -103,10 +101,10 @@ export const shopSlider = new Swiper(shopSliderElement, {
     },
   },
 
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
 
 if (shopSliderElement && window.innerWidth >= 1400) {
@@ -119,10 +117,10 @@ export const testimonialSlider = new Swiper(".testimonial-slider", {
   spaceBetween: 16,
   loop: true,
 
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
 
 // ********************************* front page main slider
@@ -136,18 +134,33 @@ export const frontMainSlider = new Swiper(homeMainSlider, {
     nextEl: ".home-main-slider-next",
     prevEl: ".home-main-slider-prev",
   },
-
 });
+
 if (homeMainSlider) {
   initSwiper(frontMainSlider);
 
   window.addEventListener("load", () => {
     toggleClassToBodyForSwiper();
   });
+
+  const scrollTop = document.querySelector("#scroll-to-top");
+  scrollTop.addEventListener("click", () => {
+    frontMainSlider.slideTo(0);
+    frontMainSlider.speed(3000);
+  });
 }
 
-const horizontalSliders = document.querySelectorAll(".home-nested-slider");
+frontMainSlider.on("slideChange", () => {
+  if (frontMainSlider.realIndex == 0) {
+    if (!document.body.classList.contains("first-slide")) {
+      document.body.classList.add("first-slide");
+    }
+  } else {
+    document.body.classList.remove("first-slide");
+  }
+});
 
+const horizontalSliders = document.querySelectorAll(".home-nested-slider");
 horizontalSliders.forEach((slider, index) => {
   const horizontalSwiper = new Swiper(slider, {
     ...defaultSwiper,
@@ -162,14 +175,12 @@ horizontalSliders.forEach((slider, index) => {
 
   if (index == 0) {
     horizontalSwiper.on("slideChange", () => {
-      toggleClassToBodyForSwiper();
-
-      const activeSlide = horizontalSwiper.slides[horizontalSwiper.activeIndex];
-      const slideId = activeSlide.getAttribute('data-slide-id');
-      console.log(slideId);
-      if (slideId === "1") {
-
-        changeHeaderColor("#ff0000");
+      if (horizontalSwiper.realIndex == 0) {
+        if (!document.body.classList.contains("first-slide")) {
+          document.body.classList.add("first-slide");
+        }
+      } else {
+        document.body.classList.remove("first-slide");
       }
     });
 
@@ -240,6 +251,3 @@ export const blogMainSlider = new Swiper(".blog-page-slider", {
     },
   },
 });
-
-
-

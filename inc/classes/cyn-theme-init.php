@@ -14,11 +14,18 @@ if (!class_exists('cyn-theme-init')) {
 			add_action('after_setup_theme', [$this, 'cyn_theme_setup']);
 			add_filter('wp_check_filetype_and_ext', [$this, 'cyn_allow_svg'], 10, 4);
 			add_filter('upload_mimes', [$this, 'cyn_mime_types']);
+			add_action('wp_head', [$this, 'cyn_script_head']);
+			add_action('wp_body_open',  [$this, 'cyn_script_body']);
 		}
 
 
 		public function cyn_enqueue_files()
 		{
+			wp_localize_script('scripts', 'ajax_var', array(
+				'url'   => admin_url('admin-ajax.php'),
+				'nonce' => wp_create_nonce('ajax-nonce')
+			));
+
 			wp_enqueue_style('cyn-compiled', get_stylesheet_directory_uri() . '/css/compiled.css'); //When @build must change to final.css
 
 			wp_enqueue_style('cyn-style', get_stylesheet_directory_uri());
@@ -29,6 +36,17 @@ if (!class_exists('cyn-theme-init')) {
 			wp_dequeue_script('global-styles');
 		}
 
+		// ********************************************add script to head
+		public function cyn_script_head()
+		{
+			echo get_field('header_script', get_option('page_on_front'));
+		}
+
+		// ********************************************add script to body
+		public function cyn_script_body()
+		{
+			echo get_field('body_script', get_option('page_on_front'));
+		}
 		public function cyn_remove_unneccesaries()
 		{
 			// REMOVE WP EMOJI
