@@ -38,7 +38,18 @@ if (mobile) {
         menuItem.classList.add("active-menu");
         subMenu.style.height = subMenu.scrollHeight + "px";
         const beforeHeight = subMenu.scrollHeight - 19 + "px";
-        document.documentElement.style.setProperty('--mobile-before-height', beforeHeight);
+        subMenu.style.setProperty("--mobile-before-height", beforeHeight);
+        const subMenuLi = subMenu.querySelectorAll("li");
+        const tl = gsap.timeline();
+
+        subMenuLi.forEach((subMenu, index) => {
+          tl.from(subMenu, {
+            opacity: 0,
+            duration: 0.3,
+            delay: index * 0.2,
+            y: -100,
+          });
+        });
       }
     });
   });
@@ -55,30 +66,3 @@ const backBtn = document.querySelector("#back-btn");
 if (backBtn && window.innerWidth <= 992) {
   document.querySelector(".hamburger-menu").classList.toggle("with-back-btn");
 }
-
-
-
-
-
-
-
-// const tl = gsap.timeline();
-//
-// subMenus.forEach((subMenu, index) => {
-//   tl.to(subMenu, { display: "block", duration: 0.4, delay: index * 0.2 });
-// });
-//
-// tl.pause();
-//   document.querySelector(".menu").addEventListener("mouseenter", () => {
-//     tl.play();
-//   });
-//
-//   document.querySelector(".menu").addEventListener("mouseleave", () => {
-//     tl.reverse();
-//
-// });
-
-
-
-
-

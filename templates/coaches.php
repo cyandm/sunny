@@ -74,11 +74,11 @@ $coaches = new WP_Query($args);
 
                                 <!-- slider popup  -->
                             <?php
-                                get_template_part(
-                                    '/templates/components/student-row-popup',
-                                    null,
-                                    ['id' => get_the_ID()]
-                                );
+                            // get_template_part(
+                            //     '/templates/components/student-row-popup',
+                            //     null,
+                            //     ['id' => get_the_ID()]
+                            // );
 
                             endif; ?>
 

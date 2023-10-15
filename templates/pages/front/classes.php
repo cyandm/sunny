@@ -52,7 +52,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                 if (is_array($topStudents) && count($topStudents) > 0) : ?>
 
                                     <div class="students-row">
-                                        <div class="students-slider swiper">
+                                        <div class="students-slider swiper" dir="ltr">
                                             <div class="swiper-wrapper sliders-wrapper">
                                                 <?php foreach ($topStudents as $student) : ?>
                                                     <div class="student-info swiper-slide">
@@ -68,7 +68,15 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                             </div>
                                         </div>
                                     </div>
-                                <?php endif; ?>
+                                    <!-- slider popup  -->
+                                <?php
+                                    get_template_part(
+                                        '/templates/components/student-row-popup',
+                                        null,
+                                        ['id' => $student->ID]
+                                    );
+
+                                endif; ?>
                             </div>
                         </div>
                 <?php endforeach;

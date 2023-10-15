@@ -4,8 +4,6 @@ import {
   imageAnimation,
   initSwiper,
   toggleClassToBodyForSwiper,
-  changeHeaderColor,
-  changeBodyClass,
 } from "./functions";
 
 import { Swiper } from "swiper";

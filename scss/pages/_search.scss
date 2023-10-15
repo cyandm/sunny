@@ -3,7 +3,6 @@
 .search-content {
   @include flex(column, start, start);
 
-
   @media (max-width: 768px) {
     margin-top: 1.5rem;
     flex-direction: column;
