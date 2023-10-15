@@ -140,3 +140,25 @@ export const createVideoPopup = (videoUrl) => {
 
 
 export const sliderPopup = () => {};
+
+
+
+
+
+////////////////////////////////////////////
+
+function changeHeaderColor(color) {
+  gsap.to('header', {
+    backgroundColor: color,
+    duration: 0.5
+  });
+}
+
+function changeBodyClass(className) {
+  document.body.className = className;
+}
+
+
+
+
+

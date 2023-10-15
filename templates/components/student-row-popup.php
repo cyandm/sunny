@@ -7,7 +7,7 @@ $topStudents = get_field('choose_students', $coachId);
 ?>
 <div class="students-row-popup">
 
-    <div class="students-slider swiper">
+    <div class="students-slider-popup swiper">
         <i class="icon-close close-student-popup"></i>
         <div class="swiper-wrapper sliders-wrapper">
 

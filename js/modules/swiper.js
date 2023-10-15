@@ -4,6 +4,8 @@ import {
   imageAnimation,
   initSwiper,
   toggleClassToBodyForSwiper,
+  changeHeaderColor,
+  changeBodyClass
 } from "./functions";
 
 import { Swiper } from "swiper";
@@ -54,6 +56,23 @@ export const studentSlider = new Swiper(".students-slider", {
   //   disableOnInteraction: false,
   // },
 });
+
+export const studentSliderPopup = new Swiper(".students-slider-popup", {
+
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  loop: true,
+
+  breakpoints: {
+
+    992: {
+      slidesPerView: 3,
+    },
+
+  },
+});
+
+
 
 //****************************** package slider */
 const packageSliderElement = document.querySelector(".package-slider");
@@ -117,6 +136,7 @@ export const frontMainSlider = new Swiper(homeMainSlider, {
     nextEl: ".home-main-slider-next",
     prevEl: ".home-main-slider-prev",
   },
+
 });
 if (homeMainSlider) {
   initSwiper(frontMainSlider);
@@ -143,6 +163,14 @@ horizontalSliders.forEach((slider, index) => {
   if (index == 0) {
     horizontalSwiper.on("slideChange", () => {
       toggleClassToBodyForSwiper();
+
+      const activeSlide = horizontalSwiper.slides[horizontalSwiper.activeIndex];
+      const slideId = activeSlide.getAttribute('data-slide-id');
+      console.log(slideId);
+      if (slideId === "1") {
+
+        changeHeaderColor("#ff0000");
+      }
     });
 
     if (window.innerWidth <= 992) {
@@ -212,3 +240,6 @@ export const blogMainSlider = new Swiper(".blog-page-slider", {
     },
   },
 });
+
+
+

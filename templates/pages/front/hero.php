@@ -10,7 +10,7 @@ $heroSliders = get_field('front_page_hero_section', $frontId);
             <?php
             $num = 1;
             foreach ($heroSliders as $heroSlide) : ?>
-                <div id="<?= ($num == 1) ? 'first-slide' : '' ?>" class="slide swiper-slide slide panel full-screen <?= $heroSlide['hero_slider_bg_color'] ?>">
+                <div id="<?= ($num == 1) ? 'first-slide' : '' ?>" class="slide swiper-slide slide panel full-screen <?= $heroSlide['hero_slider_bg_color'] ?>" data-slide-id="<?= $num?>">
 
                     <div class="row">
                         <div class="container slide-container">

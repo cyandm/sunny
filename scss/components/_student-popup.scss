@@ -16,9 +16,11 @@
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
 
-  .students-slider {
+  .students-slider-popup {
     width: 100%;
     position: relative;
+
+
     i {
       @include flex();
 
@@ -39,9 +41,7 @@
     }
 
     .sliders-wrapper {
-
-      width: 100%;
-
+      width: 80%;
 
       .student-info {
         @include flex(column);
@@ -52,7 +52,8 @@
         border-radius: 1.5rem;
         gap: 1.5rem;
         padding-block-end: 1rem;
-max-width: 21rem;
+        //max-width: 21rem;
+
         img {
           height: 19rem;
           width: 100%;

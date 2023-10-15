@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 // ************************************************ mobile menu
 const mobile = document.querySelector(".hamburger-menu");
 
@@ -35,13 +37,8 @@ if (mobile) {
       } else {
         menuItem.classList.add("active-menu");
         subMenu.style.height = subMenu.scrollHeight + "px";
-        const beforeHeight = subMenu.scrollHeight - 26 + "px";
-
-        const before = menuItem.querySelector("ul ::before");
-        // let styles = window.getComputedStyle(subMenu, "::before");
-
-        // styles.height = 0;
-        console.log(before);
+        const beforeHeight = subMenu.scrollHeight - 19 + "px";
+        document.documentElement.style.setProperty('--mobile-before-height', beforeHeight);
       }
     });
   });
@@ -54,7 +51,34 @@ searchMenuMobile.addEventListener("click", () => {
 });
 
 //********************** add class to hamburger-menu /
-$backBtn = document.querySelector("#back-btn");
-if ($backBtn && window.innerWidth <= 992) {
+const backBtn = document.querySelector("#back-btn");
+if (backBtn && window.innerWidth <= 992) {
   document.querySelector(".hamburger-menu").classList.toggle("with-back-btn");
 }
+
+
+
+
+
+
+
+// const tl = gsap.timeline();
+//
+// subMenus.forEach((subMenu, index) => {
+//   tl.to(subMenu, { display: "block", duration: 0.4, delay: index * 0.2 });
+// });
+//
+// tl.pause();
+//   document.querySelector(".menu").addEventListener("mouseenter", () => {
+//     tl.play();
+//   });
+//
+//   document.querySelector(".menu").addEventListener("mouseleave", () => {
+//     tl.reverse();
+//
+// });
+
+
+
+
+

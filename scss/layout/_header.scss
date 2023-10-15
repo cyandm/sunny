@@ -304,7 +304,7 @@ header {
               }
 
               ul {
-                @include sudo(before, 2px, 85%, $gray-2) {
+                @include sudo(before, 2px, $heightMenu, $gray-2) {
                   position: absolute;
                   right: 0.6rem;
                   top: 0.5rem;
@@ -359,8 +359,6 @@ header {
                 border: 1px solid $gray-2;
                 border-radius: 0.625rem;
                 position: absolute;
-
-                right: -5px;
               }
 
               > a {
