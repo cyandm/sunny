@@ -68,6 +68,19 @@ $coaches = new WP_Query($args);
                                                     </div>
                                                 </div>
                                             <?php endforeach; ?>
+                                            <!-- repeat slider -->
+                                            <?php foreach ($topStudents as $student) : ?>
+                                                <div class="student-info swiper-slide student-image">
+
+                                                    <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []); ?>
+
+                                                    <div class="achievement-description">
+                                                        <h6><?= get_the_title($student->ID) ?></h6>
+                                                        <span><?= get_field('achievement_description', $student->ID) ?></span>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+
                                         </div>
                                     </div>
                                 </div>

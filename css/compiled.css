@@ -8447,6 +8447,7 @@ main.single-blog .blog-content .all-content .content-single blockquote > p {
   gap: 0.5rem;
   width: 11rem;
   padding: 0.62rem;
+  max-width: 11rem;
 }
 .custom-checkout form.woocommerce-checkout .woocommerce-checkout-review-order .shop_table .product-blocks .cart_item img {
   width: 6.0625rem;
