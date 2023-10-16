@@ -1,3 +1,9 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import { toggleClass } from "../modules/functions";
+// gsap.registerPlugin(ScrollTrigger);
+
 let blogPageBlog = document.querySelector("#blogs-overview");
 
 if (blogPageBlog) {
@@ -6,6 +12,8 @@ if (blogPageBlog) {
   if (backBtn) {
     document.querySelector(".hamburger-menu").classList.add("single-blog");
   }
+
+  // ******************************** add class to header
 }
 
 // **************************************page load category for single blog page

@@ -64,6 +64,16 @@ main.single-blog {
           border-radius: 2.5rem;
           margin-block-end: 0.5rem;
         }
+        blockquote {
+          @include font_style(body_b);
+          background: $blue-3;
+          padding: 1.25rem;
+          margin-block: 1rem;
+          color: $black-1;
+          > p {
+            @include font_style(body);
+          }
+        }
       }
     }
 
@@ -151,8 +161,6 @@ main.single-blog {
     gap: 1rem;
     padding: 0.75rem 0rem 0.75rem 2.5rem;
     flex-wrap: wrap;
-    position: sticky;
-    top: 20%;
     background: $white-1;
     .access-box {
       flex: 1;

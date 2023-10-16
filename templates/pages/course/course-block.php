@@ -39,7 +39,7 @@ $bgColor = get_field('course_color', $post_id);
 
             </div>
             <div class="btn">
-                <a href="<?= get_field('call_to _us_btn', $post_id) ?>">تماس با ما </a>
+                <a href="tel:<?= get_field('call_to _us_btn', $post_id) ?>">تماس با ما </a>
             </div>
         </div>
         <div class="course-img">

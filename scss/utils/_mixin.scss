@@ -99,7 +99,7 @@
   border-radius: 2.5rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-
+  height: 3.2rem;
   @if ($red== false) {
     &:hover {
       border: 1px solid $black-1;
@@ -143,6 +143,7 @@
     background: $white-2;
     gap: 0;
     transition: all 0.3s ease-in-out;
+    height: 3.2rem;
 
     > div {
       @include flex(row, start);
@@ -163,19 +164,20 @@
       }
       align-items: center;
       width: 100%;
-      color: $gray-1;
 
       i {
         @include flex();
 
         &::before {
           font-size: 1.5rem;
+          color: $gray-1;
         }
       }
 
       input {
         background: $white-2;
         @include font_style(body);
+        color: $gray-1;
       }
     }
 

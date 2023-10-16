@@ -11,9 +11,18 @@
 </head>
 
 <body>
-    <?php wp_body_open(); ?>
+    <?php wp_body_open();
 
-    <header class="<?= (is_front_page() || is_category('category')) ? 'header-white' : '' ?>">
+    $blog_page_id = get_posts([
+        'post_type' => 'page',
+        'fields' => 'ids',
+        'nopaging' => true,
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'templates/blogs.php'
+    ]);
+    ?>
+
+    <header class="<?= (is_front_page() || get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') ? '' : 'header-white' ?>">
         <div class="container header-large-view">
             <div class="menu-column">
                 <?php the_custom_logo() ?>

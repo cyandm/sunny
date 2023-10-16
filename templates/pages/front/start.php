@@ -53,25 +53,20 @@ $startSliders = get_field('slider_start_section', $frontId);
                                             <h2><?= $Slide['start_slider_title'] ?></h2>
                                         </div>
                                         <div class="panels-navigation ">
-                                            <?php if ($num == 1) : ?>
-                                                <div class="home-nested-next next"><i class="icon-arrow-single-big"></i>
-                                                </div>
-                                            <?php elseif ($num == count($startSliders)) : ?>
 
-                                                <div class="home-nested-prev prv"><i class="icon-arrow-single-big"></i>
-                                                </div>
-                                            <?php else : ?>
-                                                <div class="home-nested-next next"><i class="icon-arrow-single-big"></i>
-                                                </div>
-                                                <div class="home-nested-prev prv"><i class="icon-arrow-single-big"></i>
-                                                </div>
-                                            <?php endif; ?>
-                                        </div>
+                                            <div class="home-nested-next next"><i class="icon-arrow-single-big"></i>
+                                            </div>
+                                            <div class="home-nested-prev prv"><i class="icon-arrow-single-big"></i>
+                                            </div>
 
-                                        <div class="start-description">
-                                            <?= $Slide['start_slider_description'] ?>
                                         </div>
-                                        <a href="" class="start-text-btn"> ادامه مطلب<i class="icon-arrow-right"></i></a>
+                                        <div class="slide-text-block">
+                                            <div class="start-description">
+                                                <?= $Slide['start_slider_description'] ?>
+                                            </div>
+                                            <div class="start-text-btn more-content"> ادامه مطلب<i class="icon-arrow-right"></i></div>
+                                            <div class="start-text-btn less-content">مشاهده کمتر <i class="icon-close"></i></div>
+                                        </div>
                                     </div>
                                 </div>
 

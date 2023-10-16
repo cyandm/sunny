@@ -5,7 +5,7 @@ pullUpAnimation();
 circleAnimation();
 imageAnimation();
 
-// draw arrow
+// **************************************************** draw svg arrow
 const arrowPath = document.getElementById("arrowPath");
 const arrowHead = document.getElementById("arrowHead");
 if (arrowPath && arrowHead) {

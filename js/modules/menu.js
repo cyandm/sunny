@@ -23,7 +23,7 @@ if (mobile) {
   })();
 
   const menuItemsHasChildren = document.querySelectorAll(
-    "li.menu-item-has-children"
+    ".header-mobile li.menu-item-has-children"
   );
 
   menuItemsHasChildren.forEach((menuItem) => {
@@ -66,3 +66,5 @@ const backBtn = document.querySelector("#back-btn");
 if (backBtn && window.innerWidth <= 992) {
   document.querySelector(".hamburger-menu").classList.toggle("with-back-btn");
 }
+
+// *********************** add class to header

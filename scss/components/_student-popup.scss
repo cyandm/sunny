@@ -13,13 +13,12 @@
   position: fixed;
   z-index: 99;
   padding-block-start: 8rem;
-  transform: translateY(-100%);
+  transform: translateY(-110%);
   transition: transform 0.5s ease-in-out;
 
   .students-slider-popup {
     width: 100%;
     position: relative;
-
 
     i {
       @include flex();
@@ -71,8 +70,6 @@
 
           width: 100%;
           height: 100%;
-
-
         }
       }
     }
@@ -84,10 +81,8 @@
       .sliders-wrapper {
         .student-info {
           height: 25rem !important;
-
         }
       }
-
     }
   }
 }

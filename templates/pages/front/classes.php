@@ -21,7 +21,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
             <div class="swiper-wrapper">
                 <?php if (is_array($coaches) && count($coaches) > 0) :
                     foreach ($coaches as $coach) : ?>
-                        <div class="swiper-slide classes-content">
+                        <div class="swiper-slide classes-content coaches-content-slide">
                             <div class="front-coach-img">
                                 <div class="img-content <?= get_field('bg_image_color', get_the_ID()) ?>">
                                     <?= wp_get_attachment_image(get_post_thumbnail_id($coach->ID), 'full', false, []);
@@ -55,7 +55,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                         <div class="students-slider swiper" dir="ltr">
                                             <div class="swiper-wrapper sliders-wrapper">
                                                 <?php foreach ($topStudents as $student) : ?>
-                                                    <div class="student-info swiper-slide">
+                                                    <div class="student-info swiper-slide student-image">
 
                                                         <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []); ?>
 
@@ -67,16 +67,10 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                                 <?php endforeach; ?>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- slider popup  -->
-                                <?php
-                                    get_template_part(
-                                        '/templates/components/student-row-popup',
-                                        null,
-                                        ['id' => $student->ID]
-                                    );
+                                    </div> <?php
 
-                                endif; ?>
+
+                                        endif; ?>
                             </div>
                         </div>
                 <?php endforeach;

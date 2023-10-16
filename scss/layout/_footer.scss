@@ -53,13 +53,14 @@ footer {
         }
       }
       .map-widget {
-        @include flex(row,start);
+        @include flex(row, start);
         gap: 0.62rem;
       }
       .numbers {
-        @include flex(column, center, start);
+        @include flex(column, center, end);
         gap: 0.25rem;
         color: $blue-2;
+        direction: ltr;
       }
 
       @media (max-width: 992px) {
@@ -78,11 +79,11 @@ footer {
       row-gap: 1.75rem;
     }
   }
-  .footer-social-media{
-    @include flex(column,center,start);
+  .footer-social-media {
+    @include flex(column, center, start);
     width: 100%;
     gap: 1rem;
-    h4{
+    h4 {
       @include font_style(h4);
       display: none;
     }
@@ -108,14 +109,12 @@ footer {
     }
   }
   @media (max-width: 992px) {
-    .footer-social-media{
-      h4{
+    .footer-social-media {
+      h4 {
         display: block;
       }
     }
-
   }
-
 }
 .footer-change {
   display: none;

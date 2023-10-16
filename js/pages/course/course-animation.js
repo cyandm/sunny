@@ -30,10 +30,6 @@ if (coursePageAnimation) {
     stagger: 0.5,
   });
 
-
-
-
-
   const courseBlocks = document.querySelectorAll(".course-block");
   courseBlocks.forEach((block, index) => {
     gsap.from(block, {
@@ -64,5 +60,3 @@ if (coursePageAnimation) {
     });
   });
 }
-
-

@@ -12,6 +12,9 @@
       border: 1px solid $gray-2;
       background: $white-1;
     }
+    .woocommerce-NoticeGroup {
+      flex: 1 1 100%;
+    }
     .col2-set {
       @include flex(column);
 
@@ -205,5 +208,19 @@ form.checkout_coupon {
   .form-row {
     padding: 0;
     margin: 0;
+  }
+}
+
+.woocommerce {
+  .woocommerce-order {
+    padding-block-start: 2rem;
+    h2 {
+      margin-bottom: 1rem;
+      .woocommerce-customer-details > address,
+      table.shop_table {
+        border-radius: 1.5rem;
+        padding: 1rem;
+      }
+    }
   }
 }
