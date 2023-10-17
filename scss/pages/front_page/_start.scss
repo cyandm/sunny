@@ -104,6 +104,10 @@
                   display: none;
                 }
               }
+              img.back-img {
+                max-width: 100%;
+                max-height: 100%;
+              }
             }
             .arrow-mobile {
               display: none;
@@ -203,6 +207,7 @@
             .start-content {
               flex-direction: column;
               padding-block-start: 0;
+              gap: 2.5rem;
               .start-img {
                 width: 100%;
 
@@ -230,8 +235,9 @@
                   max-height: 19rem;
                 }
                 .video-content {
-                  left: 35%;
-                  top: 100%;
+                  left: 50%;
+                  bottom: -1.5rem;
+                  top: unset;
                   img {
                     max-width: 3.5rem;
                     max-height: 3.5rem;
@@ -250,7 +256,7 @@
                 display: flex;
                 svg {
                   position: absolute;
-                  left: 1rem;
+                  left: 0.5rem;
                   top: 30%;
                 }
               }
@@ -325,10 +331,16 @@
         height: 15rem;
       }
     }
-
+    #start-3 {
+      .arrow-mobile {
+        svg {
+          top: 40% !important;
+        }
+      }
+    }
     .arrow-mobile {
       svg {
-        top: 37% !important;
+        top: 30% !important;
       }
     }
   }

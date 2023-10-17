@@ -61,9 +61,8 @@
       color: $black-1;
       height: 9rem;
       overflow: hidden;
-
-      p {
-        @include text_overflow(4);
+      h3 {
+        margin-bottom: 0.5rem;
       }
     }
 
@@ -86,7 +85,7 @@
           .student-info {
             position: relative;
             height: 14.25rem;
-            flex-basis: 32%;
+            width: 13rem;
             img {
               height: 100%;
               width: 100%;
@@ -96,7 +95,7 @@
             .achievement-description {
               @include flex(column, end, start);
               @include font_style(h4);
-
+              direction: rtl;
               gap: 0.25rem;
               color: $white-1;
               padding: 0.88rem;
@@ -144,6 +143,7 @@
           max-width: 18.5rem;
           max-height: 19.5rem;
           position: unset;
+          object-fit: contain;
         }
       }
     }
@@ -188,8 +188,9 @@
     flex-direction: column;
     .front-coach-img {
       .img-content {
+        width: 100%;
         &::before {
-          width: 80%;
+          width: 95%;
         }
       }
     }

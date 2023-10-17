@@ -62,19 +62,20 @@ if (empty($product) || !$product->is_visible()) {
      * @hooked woocommerce_template_loop_product_link_close - 5
      * @hooked woocommerce_template_loop_add_to_cart - 10
      */
-    ?>
-    <div class="btn-cart-custom">
-        <?php
-        if ($product->is_purchasable()):
-            ?>
-            <a href="?add-to-cart=<?= $product->get_id() ?>">خرید</a>
-            <?php
-//        do_action('woocommerce_after_shop_loop_item');
-            do_action('woocommerce_after_shop_loop_item_title');
-        else: ?>
-            <p>این محصول قابل سفارش نیست
-            </p>
-        <?php endif; ?>
-    </div>
 
+    if ($product->is_purchasable()) : ?>
+
+        <div class="btn-cart-custom">
+            <a href="?add-to-cart=<?= $product->get_id() ?>">
+                <span>خرید</span>
+                <?php
+                do_action('woocommerce_after_shop_loop_item_title');
+                ?>
+            </a>
+        </div>
+    <?php
+    else : ?>
+        <p class="not-purchasable">این محصول قابل سفارش نیست
+        </p>
+    <?php endif; ?>
 </li>

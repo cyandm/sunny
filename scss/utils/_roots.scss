@@ -63,9 +63,9 @@ button {
   outline: 0;
 }
 .padding-top {
-  padding-block-start: 5rem;
+  padding-block-start: 7rem;
   @media (max-width: 992px) {
-    padding-block-start: 1rem;
+    padding-block-start: 2rem;
   }
 }
 // ---------------------------------------- default style
@@ -93,4 +93,4 @@ select {
   --mobile-before-height: 100%;
 }
 
-$heightMenu:var(--mobile-before-height);
+$heightMenu: var(--mobile-before-height);

@@ -48,3 +48,22 @@ if (frontBlogSection2 || blogPage2) {
     });
   }
 }
+
+const frontPage = document.querySelector("#front-page");
+if (frontPage && window.innerWidth <= 992) {
+  document.body.addEventListener("mousewheel", () => {
+    const header = document.querySelector("header");
+
+    var scrollHeight = window.scrollY;
+
+    if (scrollHeight >= window.innerHeight - 0.3 * window.innerHeight) {
+      header.classList.add("header-white");
+    } else {
+      header.classList.remove("header-white");
+    }
+
+    if (scrollHeight < window.innerHeight - 0.3 * window.innerHeight) {
+      header.classList.remove("header-white");
+    }
+  });
+}

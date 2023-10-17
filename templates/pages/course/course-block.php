@@ -9,7 +9,7 @@ $classCapacity = get_field('class_capacity', $post_id);
 $bgColor = get_field('course_color', $post_id);
 ?>
 
-<div class="course-block <?= $bgColor ?>">
+<div class="course-block <?= $bgColor ?>" id="<?= $post_id ?>">
     <div class="course-info">
 
         <div class="course-info-content">

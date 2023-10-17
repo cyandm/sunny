@@ -9,15 +9,15 @@
   background: $white-1;
   gap: 0.62rem;
   width: 100%;
-    h2 {
-      @include font_style(h3);
-      @include text_overflow(1);
-      order: -1;
-    }
-    img {
-      height: 7.9375rem;
-      width: auto;
-    }
+  h2 {
+    @include font_style(h3);
+    @include text_overflow(1);
+    order: -1;
+  }
+  img {
+    height: 7.9375rem;
+    width: auto;
+  }
 
   .btn-cart-custom {
     @include btn();
@@ -26,7 +26,16 @@
     justify-content: space-between;
     width: 100%;
     a {
+      @include flex(row, space-between);
+      width: 100%;
+
       white-space: nowrap;
     }
+  }
+  .not-purchasable {
+    background: $gray-2;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 1.5rem;
   }
 }

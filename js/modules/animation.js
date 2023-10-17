@@ -1,10 +1,6 @@
 import { gsap } from "gsap";
 import { pullUpAnimation, circleAnimation, imageAnimation } from "./functions";
 
-pullUpAnimation();
-circleAnimation();
-imageAnimation();
-
 // **************************************************** draw svg arrow
 const arrowPath = document.getElementById("arrowPath");
 const arrowHead = document.getElementById("arrowHead");

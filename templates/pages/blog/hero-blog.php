@@ -20,7 +20,7 @@ if ($blogSliders && $blogSliders['hero_slider_1']['hero_slider_image']) : ?>
             <div class="overly third"></div>
 
             <?php foreach ($blogSliders as $key => $slide) : ?>
-                <div class="swiper-slide blog-slide <?= ($key == 'hero_slider_1') ? 'first-slide' : 'second-slide' ?>">
+                <div class="swiper-slide blog-slide <?= ($key == 'hero_slider_1') ? 'first-slide' : 'second-slide' ?>" id="<?= ($key == 'hero_slider_1') ? 'first-slide' : '' ?>">
                     <div class="content container">
                         <div class="blog-hero-title">
                             <div class="translate-animation">

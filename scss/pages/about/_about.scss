@@ -64,7 +64,6 @@
     }
   }
 
-
   .fixed-section {
     @include flex();
     position: sticky;
@@ -146,7 +145,6 @@
     }
   }
 
-
   .about-nested-slider {
     width: 100%;
     overflow: hidden;
@@ -166,16 +164,14 @@
     > .swiper-wrapper {
       @include flex(column);
       gap: 2rem;
-      margin-block-start: 5rem;
+      margin-block-start: 6rem;
 
       .swiper-slide {
-
         height: auto;
       }
     }
     .about-nested-slider {
       height: auto;
     }
-
   }
 }

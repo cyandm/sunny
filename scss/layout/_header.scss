@@ -9,7 +9,13 @@ header {
   z-index: 98;
   left: 0;
   right: 0;
-
+  @include sudo(before, 100%, 100%, $white-1) {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
   .header-large-view {
     @include flex(row, space-between);
     width: 100%;
@@ -17,6 +23,7 @@ header {
 
     > * {
       @include flex(row, center, center);
+      gap: 0.75rem;
     }
 
     .menu-column {
@@ -461,9 +468,10 @@ header {
   }
 }
 header.header-white {
-  background-color: $white-1;
   padding-block-end: 1rem;
-  transition: background-color 1s ease-in-out;
+  &:before {
+    transform: translateY(0);
+  }
 }
 
 header.custom-z-index {

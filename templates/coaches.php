@@ -41,7 +41,6 @@ $coaches = new WP_Query($args);
                         </div>
                         <div class="front-coach-content">
                             <h3><?= get_the_title() ?></h3>
-                            <div class="nav-btn"></div>
                             <div class="description">
                                 <?= get_field('description_text', get_the_ID()) ?>
                             </div>
@@ -55,7 +54,7 @@ $coaches = new WP_Query($args);
 
 
                                 <div class="students-row">
-                                    <div class="students-slider swiper">
+                                    <div class="students-slider swiper" dir="ltr">
                                         <div class="swiper-wrapper sliders-wrapper">
                                             <?php foreach ($topStudents as $student) : ?>
                                                 <div class="student-info swiper-slide student-image">
@@ -68,7 +67,6 @@ $coaches = new WP_Query($args);
                                                     </div>
                                                 </div>
                                             <?php endforeach; ?>
-                                            <!-- repeat slider -->
                                             <?php foreach ($topStudents as $student) : ?>
                                                 <div class="student-info swiper-slide student-image">
 

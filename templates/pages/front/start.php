@@ -26,7 +26,7 @@ $startSliders = get_field('slider_start_section', $frontId);
                                 <div class="start-content">
                                     <div class="start-img">
                                         <div class="shape <?= $Slide['start_slider_shape'] ?>"></div>
-                                        <?= wp_get_attachment_image($Slide['start_slider_image'], 'full', false, []); ?>
+                                        <?= wp_get_attachment_image($Slide['start_slider_image'], 'full', false, ["class" => "back-img"]); ?>
 
                                         <div class="video-content popup-play-video" id="play-video">
                                             <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">

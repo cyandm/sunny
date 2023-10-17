@@ -86,8 +86,9 @@
       flex: 1;
 
       img {
-        max-width: 22.22256rem;
-        max-height: 25.74163rem;
+        max-width: 22.5rem;
+        max-height: 26rem;
+        object-fit: contain;
       }
     }
   }
@@ -204,7 +205,7 @@
           padding-top: 0;
         }
         i {
-          // transform: rotate(90deg);
+          transform: rotate(90deg);
         }
       }
 
