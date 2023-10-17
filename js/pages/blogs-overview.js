@@ -1,8 +1,4 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { toggleClass } from "../modules/functions";
-// gsap.registerPlugin(ScrollTrigger);
 
 let blogPageBlog = document.querySelector("#blogs-overview");
 
@@ -14,6 +10,28 @@ if (blogPageBlog) {
   }
 
   // ******************************** add class to header
+  blogPageBlog.addEventListener('scroll', ()=> {
+    const header = document.querySelector('header');
+    console.log(header);
+    var scrollHeight = window.scrollY;
+    console.log(scrollHeight);
+    if (scrollHeight >= window.innerHeight) {
+      console.log('scrolled');
+      header.classList.add('scrolled');
+    } else {
+
+      header.classList.remove('scrolled');
+    }
+
+    if (scrollHeight < window.innerHeight - 0.1 * window.innerHeight) {
+      header.classList.remove('scrolled');
+    }
+  });
+
+
+
+
+
 }
 
 // **************************************page load category for single blog page
