@@ -7,8 +7,23 @@
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/blogs-overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/blogs-overview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/404-contact-animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/404-contact-animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/coach-overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/coach-overview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/about/_gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_gallery.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/about/_honors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_honors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/course/_course-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/course/_course-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_shop.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/utils/_animations.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/utils/_animations.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/faq.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/testimonial.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/testimonial.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +134,7 @@
       <workItem from="1697141718601" duration="8483000" />
       <workItem from="1697181807523" duration="27033000" />
       <workItem from="1697337940915" duration="6422000" />
-      <workItem from="1697516087125" duration="1370000" />
+      <workItem from="1697516087125" duration="12078000" />
     </task>
     <servers />
   </component>

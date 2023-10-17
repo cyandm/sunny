@@ -13,9 +13,12 @@ if (coaches) {
       });
     });
     const closePopup = coach.querySelector(".close-student-popup");
-    closePopup.addEventListener("click", () => {
-      coach.querySelector(".students-row-popup.show").classList.remove("show");
-      document.body.style.overflow = "auto";
-    });
+    if(closePopup){
+      closePopup.addEventListener("click", () => {
+        coach.querySelector(".students-row-popup.show").classList.remove("show");
+        document.body.style.overflow = "auto";
+      });
+    }
+
   });
 }

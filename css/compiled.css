@@ -903,6 +903,20 @@ select:focus {
     transform: translateY(0);
   }
 }
+@keyframes moveAnimation {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
 /**
  * Swiper 10.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -3403,7 +3417,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   width: 34rem;
   height: 34rem;
   border-radius: 50%;
-  background: #67d6f9;
+  background: #fff48d;
   position: absolute;
   top: -8%;
   z-index: -1;
@@ -3415,7 +3429,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   background: none;
   position: absolute;
   bottom: 2%;
-  border: 1px solid #67d6f9;
+  border: 1px solid #fff48d;
   border-radius: 50%;
 }
 .start-section .home-nested-slider.swiper-container .slide .row .container .start-content .start-img .diamond {
@@ -3434,6 +3448,11 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   position: absolute;
   border: 1px solid #ff6883;
   transform: rotate(4deg);
+}
+.start-section .home-nested-slider.swiper-container .slide .row .container .start-content .start-img img.back-img {
+  max-width: 36rem;
+  max-height: 38rem;
+  object-fit: contain;
 }
 .start-section .home-nested-slider.swiper-container .slide .row .container .start-content .start-img .video-content {
   display: flex;
@@ -3479,10 +3498,6 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
 }
 .start-section .home-nested-slider.swiper-container .slide .row .container .start-content .start-img .video-content .video-popup {
   display: none;
-}
-.start-section .home-nested-slider.swiper-container .slide .row .container .start-content .start-img img.back-img {
-  max-width: 100%;
-  max-height: 100%;
 }
 .start-section .home-nested-slider.swiper-container .slide .row .container .start-content .arrow-mobile {
   display: none;
@@ -3585,6 +3600,9 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   margin-top: -0.7rem;
 }
 @media (max-width: 992px) {
+  .start-section {
+    margin-block-start: 2rem;
+  }
   .start-section .home-nested-slider.swiper-container {
     overflow: auto;
     height: auto;
@@ -3631,9 +3649,9 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
     width: 20rem;
     height: 20rem;
   }
-  .start-section .home-nested-slider.swiper-container .start-wrapper .slide .container .start-content .start-img img {
-    max-width: 17rem;
-    max-height: 19rem;
+  .start-section .home-nested-slider.swiper-container .start-wrapper .slide .container .start-content .start-img img.back-img {
+    max-width: 18rem;
+    max-height: 20rem;
   }
   .start-section .home-nested-slider.swiper-container .start-wrapper .slide .container .start-content .start-img .video-content {
     left: 50%;
@@ -3698,11 +3716,6 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   .start-section .home-nested-slider.swiper-container .start-wrapper .slide.diamond .start-content > .start-img img {
     max-width: 17rem;
     max-height: 24rem;
-  }
-}
-@media (max-width: 992px) {
-  .start-section {
-    margin-block-start: 2rem;
   }
 }
 @media (max-width: 768px) {
@@ -3837,10 +3850,6 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   width: 100%;
 }
 .classes-content .front-coach-content .students-row .students-slider .sliders-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   margin-block-start: -0.3rem;
 }
@@ -4623,6 +4632,11 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
     height: calc((100% - 30px) / 2);
   }
 }
+@media (max-width: 992px) {
+  .shop-slider .shop-content > * {
+    width: 18rem;
+  }
+}
 @media (max-width: 768px) {
   .shop-slider {
     height: 19.12rem;
@@ -4630,6 +4644,9 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   .shop-slider .shop-content {
     flex-wrap: nowrap;
     height: 100%;
+  }
+  .shop-slider .shop-content > * {
+    width: 18rem;
   }
 }
 
@@ -5287,11 +5304,15 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   height: 100%;
   border-radius: 0rem 2.5rem 2.5rem 0rem;
   padding: 1.5rem;
+  opacity: 1;
 }
 .course-block .course-form-block .show-form span {
   transform: rotate(270deg);
   white-space: nowrap;
   padding-top: 2rem;
+}
+.course-block .course-form-block .show-form.active {
+  opacity: 0;
 }
 .course-block .course-form-block .course-form {
   transform: translateX(-100%);
@@ -6676,6 +6697,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   overflow-y: scroll;
   height: 65vh;
   width: 100%;
+  padding-block-end: 7rem;
 }
 .honors-slider .container .contain .honors-box {
   display: flex;
@@ -6790,6 +6812,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   overflow-y: scroll;
   height: 65vh;
   width: 100%;
+  padding-block-end: 8rem;
 }
 .gallery-slider .container .contain .gallery-box {
   display: flex;
@@ -6823,6 +6846,10 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   .gallery-slider .container .contain {
     height: auto;
     overflow: unset;
+    padding-block-end: 0;
+  }
+  .gallery-slider .container .contain .gallery-box img {
+    height: 18rem;
   }
 }
 
@@ -7484,18 +7511,6 @@ main.single-blog .blog-content .all-content .content-single blockquote > p {
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-.contact-page .contact-row .contact-img svg #XMLID_25_ {
-  animation: sway 3s ease-in-out infinite;
-}
-.contact-page .contact-row .contact-img svg #XMLID_159_ {
-  animation: sway 4s ease-in-out infinite;
-}
-.contact-page .contact-row .contact-img svg #XMLID_29_ {
-  animation: sway 2s ease-in-out infinite;
-}
-.contact-page .contact-row .contact-img svg #XMLID_34_ {
-  animation: sway 2.5s ease-in-out infinite;
 }
 .contact-page .contact-row .contact-page-form {
   display: flex;

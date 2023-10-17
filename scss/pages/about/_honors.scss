@@ -23,7 +23,7 @@
       overflow-y: scroll;
       height: 65vh;
       width: 100%;
-
+padding-block-end: 7rem;
       .honors-box {
         @include flex(column);
         flex: 1 1 32%;

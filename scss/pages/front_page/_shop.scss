@@ -28,12 +28,22 @@
       height: calc((100% - 30px) / 2);
     }
   }
+  @media (max-width: 992px) {
+    .shop-content {
+      > * {
+        width: 18rem;
+      }
+    }
+  }
   @media (max-width: 768px) {
     height: 19.12rem;
 
     .shop-content {
       flex-wrap: nowrap;
       height: 100%;
+      >*{
+        width: 18rem;
+      }
     }
   }
 }

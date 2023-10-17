@@ -104,14 +104,16 @@
       height: 100%;
       border-radius: 0rem 2.5rem 2.5rem 0rem;
       padding: 1.5rem;
-
+opacity: 1;
       span {
         transform: rotate(270deg);
         white-space: nowrap;
         padding-top: 2rem;
       }
     }
-
+    .show-form.active{
+      opacity: 0;
+    }
     .course-form {
       transform: translateX(-100%);
       transition: transform 0.5s ease-in-out;
