@@ -107,7 +107,7 @@ export const createVideoPopup = (videoUrl) => {
 
   const videoContainer = document.createElement("div");
   videoContainer.classList.add("video-container");
-
+  videoContainer.classList.add("container");
   const video = document.createElement("video");
   video.controls = true;
 

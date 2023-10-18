@@ -9,7 +9,7 @@
   max-width: 100%;
   height: 100%;
   width: 100%;
-  background: rgba(26, 33, 42, 0.7);
+  background: rgba(26, 33, 42, 0.8);
   position: fixed;
   z-index: 99;
 
@@ -19,7 +19,11 @@
     width: 100%;
 
     video {
-      width: 60%;
+      width: 100%;
+      height: 40rem;
+      object-fit: cover;
+      border-radius: 1.5rem;
+      background: #474d54;
     }
 
     i {
@@ -28,14 +32,26 @@
       border-radius: 0.25rem;
     }
   }
-
+  @media (max-width: 1200px) {
+    .video-container {
+      video {
+        height: 30rem;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .video-container {
+      video {
+        height: 25rem;
+      }
+    }
+  }
   @media (max-width: 768px) {
-    padding: 1rem;
     .video-container {
       flex-direction: column;
       align-items: end;
       video {
-        width: 100%;
+        height: 19rem;
       }
       button {
         order: -1;

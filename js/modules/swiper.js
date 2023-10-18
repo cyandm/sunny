@@ -212,7 +212,6 @@ horizontalSliders.forEach((slider, index) => {
 
         const moreContent = startSlide.querySelector(".more-content");
         moreContent.addEventListener("click", () => {
-          console.log(moreContent);
           moreContent.parentElement.classList.add("active");
         });
         const lessContent = startSlide.querySelector(".less-content");
@@ -289,3 +288,12 @@ if (blogMainSlider) {
 pullUpAnimation();
 circleAnimation();
 imageAnimation();
+
+// ********************************* Video overview page swiper slider
+export const videoOverviewSlider = new Swiper(".video-overview-slider", {
+  slidesPerView: "auto",
+  speed: 1000,
+  spaceBetween: 16,
+  loop: true,
+  centeredSlides: true,
+});

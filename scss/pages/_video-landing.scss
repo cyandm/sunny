@@ -1,0 +1,137 @@
+@use "../utils/index" as *;
+
+.video-page {
+  .slider-video-section {
+    .video-overview-slider {
+      width: 100%;
+      height: 35rem;
+      .swiper-wrapper {
+        width: 100%;
+        .swiper-slide {
+          width: 85%;
+
+          .video-part-content {
+            height: 35rem;
+          }
+        }
+      }
+    }
+  }
+
+  .testimonial-video-section,
+  .coaches-video-section {
+    margin-block-start: 2rem;
+    .video-row {
+      @include flex();
+      gap: 1rem;
+      flex-wrap: wrap;
+      > * {
+        flex: 1 1 32%;
+        border-radius: 1.875rem;
+        height: 24.5rem;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .video-part-content {
+    @include sudo(before, 100%, 100%, $black-1) {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 75.74%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+      position: absolute;
+
+      border-radius: 1.875rem;
+    }
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    img {
+      position: absolute;
+      border-radius: 1.875rem;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+    .text-content {
+      @include flex(column, start, start);
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      gap: 0.25rem;
+      color: $white-1;
+      width: 90%;
+      h3 {
+        @include font_style(h3);
+        @include text_overflow(1);
+        color: $white-1;
+      }
+      span {
+        @include font_style(body);
+        @include text_overflow(1);
+        color: $white-1;
+      }
+    }
+    video {
+      display: none;
+    }
+    &:hover {
+      &::before {
+        background: linear-gradient(
+            179deg,
+            rgba(0, 0, 0, 0) 13.41%,
+            rgb(0 0 0) 98.21%
+          ),
+          url(<path-to-image>), #d3d3d300 50% / cover no-repeat;
+      }
+      svg {
+        fill: none;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .slider-video-section {
+      .video-overview-slider {
+        height: 22rem;
+        .swiper-wrapper {
+          .swiper-slide {
+            .video-part-content {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    .testimonial-video-section,
+    .coaches-video-section {
+      .video-row {
+        > * {
+          flex: 1 1 46%;
+          height: 18.5rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .testimonial-video-section,
+    .coaches-video-section {
+      .video-row {
+        > * {
+          flex: 1 1 100%;
+        }
+      }
+    }
+  }
+}
