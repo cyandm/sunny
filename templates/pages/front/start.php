@@ -30,8 +30,8 @@ $startSliders = get_field('slider_start_section', $frontId);
 
                                         <?php if ($Slide['start_slider_video']) : ?>
                                             <div class="video-content popup-play-video" id="play-video">
-                                                <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
-
+                                                <!-- <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video"> -->
+                                                <div class="bg-icon-color"></div>
                                                 <i class="icon-play play-video"></i>
                                                 <div class="video-popup">
 

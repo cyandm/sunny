@@ -16,6 +16,7 @@
       height: 17rem;
       flex: 1 1 48%;
       overflow: hidden;
+      z-index: 0;
 
       h4 {
         @include font_style(h4);
@@ -50,6 +51,7 @@
         position: absolute;
         left: 12%;
         top: 3rem;
+        z-index: -1;
       }
       color: $white-1;
       background: $pink-1;
@@ -86,6 +88,7 @@
         border-radius: 50%;
         left: -8%;
         top: 4rem;
+        z-index: -1;
       }
       img {
         max-height: 17rem;
@@ -105,6 +108,7 @@
         border-radius: 50%;
         left: 8%;
         top: 0;
+        z-index: -1;
       }
       img {
         max-height: 17rem;
@@ -151,6 +155,32 @@
         img {
           width: 9.7rem;
           height: 13.5rem;
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      .contact-box-right {
+        &::before {
+          left: unset;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      .contact-box-left {
+        &::before {
+          left: unset;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      .contact-box-wide {
+        &::before {
+          left: unset;
+          right: 0;
+          top: 0;
         }
       }
     }

@@ -61,8 +61,12 @@
       right: 36%;
       top: 15%;
 
-      img {
+      .bg-icon-color {
         position: absolute;
+        width: 6.5rem;
+        height: 6.5rem;
+        border-radius: 50%;
+        background-color: $yellow-1;
       }
 
       i {
@@ -70,6 +74,8 @@
 
         &:before {
           font-size: 1.5rem;
+          color: $black-1;
+          font-weight: 700;
         }
       }
 
@@ -186,9 +192,9 @@
       }
       .video-content {
         right: 70%;
-        img {
-          max-width: 3.5rem;
-          max-height: 3.5rem;
+        .bg-icon-color {
+          width: 3.5rem;
+          height: 3.5rem;
         }
         &::before {
           width: 4.2rem;

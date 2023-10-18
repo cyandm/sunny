@@ -22,12 +22,14 @@
       border: 1rem solid rgba(255, 255, 255, 0.2);
       position: absolute;
       border-radius: 50%;
+      animation: sunRays 4s ease-in-out infinite;
     }
 
     @include sudo(after, 8.75rem, 8.75rem, none) {
       border: 1rem solid rgba(255, 255, 255, 0.1);
       position: absolute;
       border-radius: 50%;
+      animation: sunRays 4s ease-in-out infinite;
     }
 
     position: absolute;
@@ -39,8 +41,13 @@
     border-radius: 50%;
     background: $pink-1;
 
-    img {
+    .bg-icon-color {
       position: absolute;
+      width: 6.5rem;
+      height: 6.5rem;
+      border-radius: 50%;
+      background-color: $yellow-1;
+      animation: pulseAnimation 4s ease-in-out infinite;
     }
 
     i {
@@ -48,6 +55,8 @@
 
       &:before {
         font-size: 1.5rem;
+        color: $black-1;
+        font-weight: 700;
       }
     }
 

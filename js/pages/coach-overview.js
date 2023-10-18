@@ -26,8 +26,10 @@ if (coaches) {
   });
 
   // ********************** video popup
-  const coachPopupVideos = document.querySelectorAll(".popup-play-video");
-
+  const coachPopupVideos = document.querySelectorAll(
+    ".popup-play-video-classes"
+  );
+  console.log(coachPopupVideos);
   coachPopupVideos.forEach((video) => {
     video.addEventListener("click", () => {
       const coachSource = video

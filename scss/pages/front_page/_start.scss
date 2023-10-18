@@ -38,13 +38,13 @@
                 @include sudo(before, 34rem, 34rem, none) {
                   position: absolute;
                   bottom: 2%;
-                  border: 1px solid $yellow-1;
+                  border: 1px solid $blue-1;
                   border-radius: 50%;
                 }
                 width: 34rem;
                 height: 34rem;
                 border-radius: 50%;
-                background: $yellow-1;
+                background: $blue-1;
                 position: absolute;
                 top: -8%;
                 z-index: -1;
@@ -92,7 +92,12 @@
                 left: 30%;
                 top: -7%;
 
-                img {
+                .bg-icon-color {
+                  width: 6.5rem;
+                  height: 6.5rem;
+                  border-radius: 50%;
+                  background-color: $yellow-1;
+
                   position: absolute;
                 }
 
@@ -101,6 +106,8 @@
 
                   &:before {
                     font-size: 1.5rem;
+                    color: $black-1;
+                    font-weight: 700;
                   }
                 }
 
@@ -108,7 +115,6 @@
                   display: none;
                 }
               }
-
             }
             .arrow-mobile {
               display: none;
@@ -240,9 +246,9 @@
                   left: 50%;
                   bottom: -1.5rem;
                   top: unset;
-                  img {
-                    max-width: 3.5rem;
-                    max-height: 3.5rem;
+                  .bg-icon-color {
+                    width: 3.5rem;
+                    height: 3.5rem;
                   }
                   &::before {
                     width: 4.2rem;

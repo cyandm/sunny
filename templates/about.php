@@ -23,7 +23,8 @@ get_header(); ?>
         </div>
 
         <div class="video-content" id="video-popup">
-            <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
+            <!-- <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video"> -->
+            <div class="bg-icon-color"></div>
 
             <i class="icon-play play-video" id="play-video"></i>
             <div class="video-popup">
