@@ -6,7 +6,7 @@ $faqImg = get_field('image_faq_section', $frontId);
 
 ?>
 
-<div class="swiper-slide faq-section">
+<div class="swiper-slide faq-section" id="faq-section">
     <div class="container  padding-top height-slide">
         <?Php if ($faqTitle) : ?>
             <div class="section-title">

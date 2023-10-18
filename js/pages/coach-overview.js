@@ -1,3 +1,5 @@
+import { createVideoPopup } from "../modules/functions";
+
 const coaches = document.querySelectorAll(".coaches-content-slide");
 
 if (coaches) {
@@ -21,5 +23,18 @@ if (coaches) {
         document.body.style.overflow = "auto";
       });
     }
+  });
+
+  // ********************** video popup
+  const coachPopupVideos = document.querySelectorAll(".popup-play-video");
+
+  coachPopupVideos.forEach((video) => {
+    video.addEventListener("click", () => {
+      const coachSource = video
+        .querySelector(".video-popup video source")
+        .getAttribute("src");
+
+      createVideoPopup(coachSource);
+    });
   });
 }

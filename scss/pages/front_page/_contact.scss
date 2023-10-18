@@ -25,13 +25,6 @@
         position: absolute;
         left: 0;
         top: 0;
-
-        img {
-          @include sudo(before, 17.56rem, 17.56rem, $pink-2) {
-            border-radius: 50%;
-            position: absolute;
-          }
-        }
       }
 
       .info {
@@ -52,6 +45,12 @@
 
     .contact-box-right {
       @include font_style(body);
+      @include sudo(before, 16rem, 16rem, #ff9eac) {
+        border-radius: 50%;
+        position: absolute;
+        left: 12%;
+        top: 3rem;
+      }
       color: $white-1;
       background: $pink-1;
 
@@ -74,10 +73,24 @@
           }
         }
       }
+      img {
+        max-height: 17rem;
+        max-width: 20rem;
+      }
     }
 
     .contact-box-left {
       background: $yellow-1;
+      @include sudo(before, 16rem, 16rem, #fcf5b3) {
+        position: absolute;
+        border-radius: 50%;
+        left: -8%;
+        top: 4rem;
+      }
+      img {
+        max-height: 17rem;
+        max-width: 14rem;
+      }
     }
 
     .contact-box-wide {
@@ -86,6 +99,16 @@
       .maps-link {
         @include flex();
         gap: 0.62rem;
+      }
+      @include sudo(before, 17rem, 17rem, #a9dbf2) {
+        position: absolute;
+        border-radius: 50%;
+        left: 8%;
+        top: 0;
+      }
+      img {
+        max-height: 17rem;
+        max-width: 22rem;
       }
     }
 

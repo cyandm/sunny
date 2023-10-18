@@ -2,7 +2,7 @@
 $frontId = get_option('page_on_front');
 $startSliders = get_field('slider_start_section', $frontId);
 ?>
-<div class="swiper-slide start-section">
+<div class="swiper-slide start-section" id="start-section">
 
     <div class="home-nested-slider swiper-container" dir="ltr">
         <div class="swiper-wrapper start-wrapper">
@@ -28,17 +28,19 @@ $startSliders = get_field('slider_start_section', $frontId);
                                         <div class="shape <?= $Slide['start_slider_shape'] ?>"></div>
                                         <?= wp_get_attachment_image($Slide['start_slider_image'], 'full', false, ["class" => "back-img"]); ?>
 
-                                        <div class="video-content popup-play-video" id="play-video">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
+                                        <?php if ($Slide['start_slider_video']) : ?>
+                                            <div class="video-content popup-play-video" id="play-video">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
 
-                                            <i class="icon-play play-video"></i>
-                                            <div class="video-popup">
+                                                <i class="icon-play play-video"></i>
+                                                <div class="video-popup">
 
-                                                <video id="mainVideo" controls>
-                                                    <source src="<?= $Slide['start_slider_video'] ?>" type="video/mp4">
-                                                </video>
+                                                    <video id="mainVideo" controls>
+                                                        <source src="<?= $Slide['start_slider_video'] ?>" type="video/mp4">
+                                                    </video>
+                                                </div>
                                             </div>
-                                        </div>
+                                        <?php endif ?>
                                     </div>
                                     <div class="arrow-svg arrow-mobile">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="144" viewBox="0 0 64 144" fill="none">

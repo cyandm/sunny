@@ -23,6 +23,7 @@
       overflow-y: scroll;
       height: 65vh;
       width: 100%;
+padding-block-end: 8rem;
       .gallery-box {
         @include flex(column);
         flex: 1 1 45%;
@@ -61,6 +62,12 @@
         .contain{
           height:auto;
           overflow: unset;
+          padding-block-end:0;
+          .gallery-box {
+          img{
+            height: 18rem;
+          }
+          }
 
         }
 

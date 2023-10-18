@@ -125,6 +125,7 @@ export const createVideoPopup = (videoUrl) => {
 
   closePopupButton.addEventListener("click", function () {
     videoPopup.classList.add("close");
+    video.pause();
   });
 
   video.appendChild(source);
@@ -137,4 +138,16 @@ export const createVideoPopup = (videoUrl) => {
   document.body.appendChild(videoPopup);
 };
 
-export const sliderPopup = () => {};
+// ********************************* move Element animation
+export const moveElement = (element, time, movePX) => {
+  let direction = 1;
+  let position = 0;
+
+  const animation = setInterval(() => {
+    position += direction;
+    if (position >= movePX || position <= 0) {
+      direction *= -1;
+    }
+    element.style.transform = "translateX(" + position + "px)";
+  }, time);
+};

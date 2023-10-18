@@ -38,6 +38,23 @@ $coaches = new WP_Query($args);
                                 ?>
                             </div>
 
+                            <?php
+                            $coachVideo = get_field('attach_coach_video', get_the_ID());
+
+                            if ($coachVideo) : ?>
+                                <div class="video-content popup-play-video " id="play-video">
+                                    <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video">
+
+                                    <i class="icon-play play-video"></i>
+                                    <div class="video-popup">
+
+                                        <video id="mainVideo" controls>
+                                            <source src="<?= $coachVideo ?>" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            <?php endif ?>
+
                         </div>
                         <div class="front-coach-content">
                             <h3><?= get_the_title() ?></h3>

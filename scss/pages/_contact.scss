@@ -12,20 +12,7 @@
     .contact-img {
       @include flex();
       width: 100%;
-      svg {
-        #XMLID_25_ {
-          animation: sway 3s ease-in-out infinite;
-        }
-        #XMLID_159_ {
-          animation: sway 4s ease-in-out infinite;
-        }
-        #XMLID_29_ {
-          animation: sway 2s ease-in-out infinite;
-        }
-        #XMLID_34_ {
-          animation: sway 2.5s ease-in-out infinite;
-        }
-      }
+
     }
 
     .contact-page-form {

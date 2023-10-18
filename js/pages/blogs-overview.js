@@ -1,3 +1,4 @@
+import { toggleClassToBodyForSwiper } from "../modules/functions";
 let blogPageBlog = document.querySelector("#blogs-overview");
 
 if (blogPageBlog) {
@@ -8,7 +9,7 @@ if (blogPageBlog) {
   }
 
   // ******************************** add class to header
-
+  toggleClassToBodyForSwiper();
   document.body.addEventListener("mousewheel", () => {
     const header = document.querySelector("header");
 

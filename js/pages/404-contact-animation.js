@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { moveElement } from "../modules/functions";
 
 // ******************************404 page svg animation
 const leaves = document.querySelectorAll("#not-fond-animation svg #Plants > g");
@@ -67,6 +68,22 @@ if (contactSvg) {
     }
   );
 
+
+
+
+
   const contactTl = gsap.timeline();
   contactTl.from(contactLineSvg, { opacity: 0, y: 200 });
+
+    const startAnimation=() =>{
+
+        circleContact1.style.animation = ' moveAnimation 4s ease-in-out infinite';
+        circleContact2.style.animation = 'moveAnimation 2s ease-in-out infinite';
+        circleContact3.style.animation = 'moveAnimation 2.5s ease-in-out infinite';
+        circleContact4.style.animation = 'moveAnimation 3s ease-in-out infinite';
+    }
+
+
+    setTimeout(startAnimation, 3000);
+
 }

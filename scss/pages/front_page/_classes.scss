@@ -25,6 +25,7 @@
         max-height: 33.3rem;
         position: absolute;
         bottom: -10%;
+        object-fit: contain;
       }
     }
     .img-content.pink {
@@ -35,6 +36,45 @@
     .img-content.blue {
       &::before {
         background: $blue-1;
+      }
+    }
+    .video-content {
+      @include flex();
+      cursor: pointer;
+      @include sudo(before, 7.56756rem, 7.56756rem, none) {
+        border: 1rem solid rgba(255, 255, 255, 0.2);
+        position: absolute;
+        border-radius: 50%;
+        animation: sunRays 4s ease-in-out infinite;
+        z-index: -1;
+      }
+      @include sudo(after, 8.75rem, 8.75rem, none) {
+        border: 1rem solid rgba(255, 255, 255, 0.1);
+        position: absolute;
+        border-radius: 50%;
+        animation: sunRays 4s ease-in-out infinite;
+        z-index: -2;
+      }
+
+      animation: pulseAnimation 4s ease-in-out infinite;
+      position: absolute;
+      right: 36%;
+      top: 15%;
+
+      img {
+        position: absolute;
+      }
+
+      i {
+        position: absolute;
+
+        &:before {
+          font-size: 1.5rem;
+        }
+      }
+
+      .video-popup {
+        display: none;
       }
     }
   }
@@ -77,8 +117,6 @@
         width: 100%;
 
         .sliders-wrapper {
-          @include flex();
-
           width: 100%;
           margin-block-start: -0.3rem;
 
@@ -146,6 +184,21 @@
           object-fit: contain;
         }
       }
+      .video-content {
+        right: 70%;
+        img {
+          max-width: 3.5rem;
+          max-height: 3.5rem;
+        }
+        &::before {
+          width: 4.2rem;
+          height: 4.2rem;
+        }
+        &::after {
+          width: 5rem;
+          height: 5rem;
+        }
+      }
     }
 
     .front-coach-content {
@@ -192,6 +245,9 @@
         &::before {
           width: 95%;
         }
+      }
+      .video-content {
+        right: 80%;
       }
     }
 

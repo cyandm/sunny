@@ -48,6 +48,15 @@ export const studentSlider = new Swiper(".students-slider", {
   spaceBetween: 16,
   nested: true,
   loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 3,
+    },
+  },
 });
 
 export const studentSliderPopup = new Swiper(".students-slider-popup", {
@@ -71,6 +80,10 @@ export const packageSlider = new Swiper(packageSliderElement, {
   slidesPerView: "auto",
   spaceBetween: 16,
   loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
 
 if (packageSliderElement && window.innerWidth >= 1400) {
@@ -262,7 +275,6 @@ export const blogMainSlider = new Swiper(".blog-page-slider", {
   // },
 });
 if (blogMainSlider) {
-  toggleClassToBodyForSwiper();
   blogMainSlider.on("slideChange", () => {
     if (blogMainSlider.realIndex == 0) {
       if (!document.body.classList.contains("first-slide")) {
