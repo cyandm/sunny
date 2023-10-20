@@ -5,7 +5,7 @@ $videoSliders = get_field("video-sliders", $pageId);
 $TitlePart2 = get_field("video_title_part_2", $pageId);
 $testimonialVideos = get_field("choose_testimonial_videos", $pageId);
 $TitlePart3 = get_field("video_title_part_3", $pageId);
-$coachesVideos = get_field("choose_coach_videos", $pageId);
+//$coachesVideos = get_field("choose_coach_videos", $pageId);
 
 
 /* Template Name: Video overview Page */
