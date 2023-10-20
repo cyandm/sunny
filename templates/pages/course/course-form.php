@@ -3,13 +3,18 @@ $post_id = '';
 if ($args['id']) {
     $post_id = $args['id'];
 }
+$key='';
+if ($args['key-form'] ) {
+    $key = $args['key-form'];
+}
+
 ?>
 <div class="course-form">
     <div class="details-course">
         <div><i class="icon-arrow-side-left"></i><span>جزئیات کلاس</span></div>
     </div>
     <div class="form">
-        <form action="" class="send-course-form" id="course-form-<?= $post_id ?>">
+        <form action="" class="send-course-form" id="course-form-<?= $post_id ?>" data-key="<?= $key?>">
             <div class="form-wrapper">
                 <label for="name">نام</label>
                 <input type="text" id="name" name="name" value="" placeholder="نام">

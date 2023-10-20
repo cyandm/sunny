@@ -36,6 +36,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
 
                                         <div class="bg-icon-color"></div>
                                         <i class="icon-play play-video"></i>
+                                        <div class="tooltip-text">مشاهده ویدیو</div>
                                         <div class="video-popup">
 
                                             <video id="mainVideo" controls>

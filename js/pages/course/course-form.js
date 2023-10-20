@@ -1,7 +1,12 @@
 const courseForms = document.querySelectorAll(".send-course-form");
 
 if (courseForms) {
-  courseForms.forEach((courseForm) => {
+  courseForms.forEach((courseForm,index) => {
+    const key=courseForm.getAttribute('data-key') ;
+
+    if(index==key){
+
+
     const id =
       "course-form-" +
       courseForm.querySelector('input[name="course_id"]').value;
@@ -206,5 +211,7 @@ if (courseForms) {
         };
       }
     });
+    }
   });
+
 }

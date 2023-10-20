@@ -8,8 +8,34 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_blog-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_blog-sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/classes/cyn-ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/classes/cyn-ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/classes/cyn-theme-init.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/classes/cyn-theme-init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/course/course-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/course/course-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_slider-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_slider-btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_student-popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_student-popup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/_video-landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_video-landing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/about/_about.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_about.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coaches.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coaches.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/student-row-popup.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/student-row-popup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/about/honors.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/about/honors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/about/image-gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/about/image-gallery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/about/manager-slide.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/about/manager-slide.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/course/course-block.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/course/course-block.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/course/course-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/course/course-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/classes.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/classes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/start.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/start.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/video-landing.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/video-landing.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/maryam/Local Sites/sunny/app/public/wp-content/themes/sunny",
+    "last_opened_file_path": "C:/Users/maryam/Local Sites/faradecor/app/public/wp-content/themes/faradecor",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -121,6 +147,8 @@
       <workItem from="1697181807523" duration="27033000" />
       <workItem from="1697337940915" duration="6422000" />
       <workItem from="1697516087125" duration="12820000" />
+      <workItem from="1697784464730" duration="5674000" />
+      <workItem from="1697810453788" duration="19573000" />
     </task>
     <servers />
   </component>

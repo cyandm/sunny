@@ -63,6 +63,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       cursor: pointer;
+      transition: all 0.5s ease-in-out;
     }
     .text-content {
       @include flex(column, start, start);
@@ -92,11 +93,20 @@
             179deg,
             rgba(0, 0, 0, 0) 13.41%,
             rgb(0 0 0) 98.21%
-          ),
-          url(<path-to-image>), #d3d3d300 50% / cover no-repeat;
+          );
       }
       svg {
-        fill: none;
+        circle{
+          fill: none;
+          stroke:$white-1;
+          stroke-width: 1px;
+
+        }
+        path{
+          fill: $white-1;
+        }
+
+
       }
     }
   }

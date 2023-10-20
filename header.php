@@ -1,4 +1,22 @@
-<?php $frontId = get_option('page_on_front'); ?>
+<?php $frontId = get_option('page_on_front');
+$courses_page_id = get_posts([
+    'post_type' => 'page',
+    'fields' => 'ids',
+    'nopaging' => true,
+    'meta_key' => '_wp_page_template',
+    'meta_value' => 'templates/course.php'
+]);
+
+$video_page_id = get_posts([
+    'post_type' => 'page',
+    'fields' => 'ids',
+    'nopaging' => true,
+    'meta_key' => '_wp_page_template',
+    'meta_value' => 'templates/video-landing.php'
+]);
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +25,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head() ?>
-
+    <script type='text/javascript'>
+        var ajax_var = {
+            url: `<?php echo admin_url('admin-ajax.php') ?>`,
+            nonce: `<?php echo wp_create_nonce('ajax-nonce') ?>`
+        }
+    </script>
 </head>
 
 <body>
@@ -31,8 +54,8 @@
             </div>
             <div class="btn-column">
                 <?php get_template_part('templates/components/search-form', null, ['menu-mobile' => false]); ?>
-                <a href="" class="sing-up-btn"><i class="icon-note-book"></i>ثبت نام آنلاین</a>
-                <a href="" class="profile-btn"><i class="icon-user"></i></a>
+                <a href="<?= the_permalink($video_page_id[0]);?>" class="sing-up-btn"><i class="icon-play"></i>مشاهده ویدیوها</a>
+                <a href="<?= the_permalink($courses_page_id[0]);?>#courses" class="profile-btn"><i class="icon-note-book"></i></a>
 
             </div>
         </div>

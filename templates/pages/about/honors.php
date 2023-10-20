@@ -4,7 +4,7 @@ $honorTitle = get_field('honor_title_section', $pageId);
 $honorSlider = get_field('about_slider_2', $pageId);
 ?>
 
-<div class="swiper-slide honors-slider">
+<div class="swiper-slide honors-slider" id="about-honors">
     <div class="container ">
         <div class="honors-title">
             <h2><?= $honorTitle ?></h2>

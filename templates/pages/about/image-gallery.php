@@ -4,7 +4,7 @@ $galleryTitle = get_field('honor_title_section', $pageId);
 $imagesGallery = get_field('about_slider_3', $pageId);
 ?>
 
-<div class="swiper-slide gallery-slider">
+<div class="swiper-slide gallery-slider" id="about-gallery">
 
     <div class="container ">
         <div class="gallery-title">

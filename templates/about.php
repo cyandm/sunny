@@ -27,6 +27,7 @@ get_header(); ?>
             <div class="bg-icon-color"></div>
 
             <i class="icon-play play-video" id="play-video"></i>
+            <div class="tooltip-text">مشاهده ویدیو</div>
             <div class="video-popup">
                 <video controls>
                     <source src="<?= get_field('video_about', $pageId) ?>" type="video/mp4">

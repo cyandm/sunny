@@ -64,11 +64,13 @@
                   transform: rotate(4deg);
                 }
               }
+
               img.back-img {
                 max-width: 36rem;
                 max-height: 38rem;
                 object-fit: contain;
               }
+
               .video-content {
                 @include flex();
                 cursor: pointer;
@@ -86,7 +88,7 @@
                   animation: sunRays 4s ease-in-out infinite;
                   z-index: -2;
                 }
-
+                transition: opacity 0.3s ease-in-out;
                 animation: pulseAnimation 4s ease-in-out infinite;
                 position: absolute;
                 left: 30%;
@@ -99,6 +101,21 @@
                   background-color: $yellow-1;
 
                   position: absolute;
+
+                }
+
+                .tooltip-text {
+                  visibility: hidden;
+                  width: auto;
+                  color: $black-1;
+                  position: absolute;
+                  z-index: 1;
+                  right: -50%;
+                  transform: translate(-50%, 1rem);
+                  opacity: 0;
+                  font-size: 1rem;
+
+                  white-space: nowrap;
                 }
 
                 i {
@@ -114,11 +131,19 @@
                 .video-popup {
                   display: none;
                 }
+                &:hover{
+                  .tooltip-text{
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                }
               }
             }
+
             .arrow-mobile {
               display: none;
             }
+
             .start-text {
               @include flex(column, start, start);
               height: 100%;
@@ -128,6 +153,7 @@
                 @include text_overflow(1);
                 margin-block-end: 0.5rem;
               }
+
               .slide-text-block {
                 @include flex(column, start, start);
                 gap: 0.62rem;
@@ -158,12 +184,14 @@
                     }
                   }
                 }
+
                 .start-text-btn.more-content {
                   opacity: 1;
                   visibility: visible;
                   transform: translateY(0);
                   height: auto;
                 }
+
                 .start-text-btn.less-content {
                   opacity: 0;
                   visibility: hidden;
@@ -171,15 +199,18 @@
                   height: 0;
                 }
               }
+
               .slide-text-block.active {
                 overflow-y: auto;
                 height: 70%;
+
                 .start-text-btn.more-content {
                   opacity: 0;
                   visibility: hidden;
                   transform: translateY(-100%);
                   height: 0;
                 }
+
                 .start-text-btn.less-content {
                   opacity: 1;
                   visibility: visible;
@@ -204,18 +235,23 @@
       .start-wrapper {
         @include flex(column);
         gap: 1rem;
+
         .slide {
           height: auto;
           padding-block-start: 2rem;
+
           .container {
             padding: 0;
+
             .arrow-large-view {
               display: none;
             }
+
             .start-content {
               flex-direction: column;
               padding-block-start: 0;
               gap: 2.5rem;
+
               .start-img {
                 width: 100%;
 
@@ -224,6 +260,7 @@
                     width: 20rem;
                     height: 20rem;
                   }
+
                   top: 0;
                   width: 20rem;
                   height: 20rem;
@@ -238,36 +275,44 @@
                     height: 20rem;
                   }
                 }
+
                 img.back-img {
                   max-width: 18rem;
                   max-height: 20rem;
                 }
+
                 .video-content {
                   left: 50%;
                   bottom: -1.5rem;
                   top: unset;
+
                   .bg-icon-color {
                     width: 3.5rem;
                     height: 3.5rem;
                   }
+
                   &::before {
                     width: 4.2rem;
                     height: 4.2rem;
                   }
+
                   &::after {
                     width: 5rem;
                     height: 5rem;
                   }
                 }
               }
+
               .arrow-mobile {
                 display: flex;
+
                 svg {
                   position: absolute;
                   left: 0.5rem;
                   top: 30%;
                 }
               }
+
               .start-text {
                 padding-block-start: 1rem;
                 padding-inline: 1rem;
@@ -275,15 +320,18 @@
                 .start-text-title > h2 {
                   @include font_style(h2);
                 }
+
                 .panels-navigation {
                   display: none;
                 }
+
                 .slide-text-block {
                   .start-description {
                     h3 {
                       @include font_style(h3);
                     }
                   }
+
                   .start-text-btn {
                   }
                 }
@@ -291,17 +339,21 @@
             }
           }
         }
+
         #start-1.slide {
           padding-block-start: 0rem;
+
           .start-img {
             .circle {
               display: none;
             }
           }
         }
+
         .slide.diamond {
           .start-content > .start-img {
             padding-block-start: 2rem;
+
             img {
               max-width: 17rem;
               max-height: 24rem;
@@ -324,14 +376,15 @@
   }
   @media (max-width: 500px) {
     .home-nested-slider.swiper-container
-      .start-wrapper
-      .slide
-      .container
-      .start-content
-      .start-img
-      .diamond {
+    .start-wrapper
+    .slide
+    .container
+    .start-content
+    .start-img
+    .diamond {
       width: 15rem !important;
       height: 15rem;
+
       &::before {
         width: 15rem;
         height: 15rem;

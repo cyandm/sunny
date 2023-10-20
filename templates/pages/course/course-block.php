@@ -1,8 +1,14 @@
 <?php
 $post_id = '';
-if ($args['id']) {
+$key='';
+if ($args['id'] ) {
     $post_id = $args['id'];
 }
+if ($args['key'] ) {
+    $key = $args['key'];
+}
+
+
 $description = get_field('course_excerpt', $post_id);
 $startTerm = get_field('start_new_term', $post_id);
 $classCapacity = get_field('class_capacity', $post_id);
@@ -56,7 +62,8 @@ $bgColor = get_field('course_color', $post_id);
         get_template_part(
             '/templates/pages/course/course-form',
             null,
-            ['id' => $post_id]
+            ['id' => $post_id,
+                'key-form'=> $key]
         );
         ?>
     </div>

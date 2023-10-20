@@ -5,7 +5,7 @@ $managerSliders = get_field('about_slider_4', $pageId);
 
 <div class="swiper-slide sport-slider ">
 
-    <div class="about-nested-slider swiper">
+    <div class="about-nested-slider swiper" id="about-manager-sunny">
         <div class="swiper-wrapper">
             <?php foreach ($managerSliders as $slide) :
                 if ($slide['about_slider_image'] != "") : ?>

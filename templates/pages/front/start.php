@@ -9,9 +9,7 @@ $startSliders = get_field('slider_start_section', $frontId);
             <?php
             $num = 1;
             foreach ($startSliders as $Slide) :
-                if ($Slide['start_slider_image'] != "" && $Slide['start_slider_title'] != "") :
-
-            ?>
+                if ($Slide['start_slider_image'] != "" && $Slide['start_slider_title'] != "") : ?>
                     <div id="start-<?= $num ?>" class=" swiper-slide slide panel2 full-screen <?= ($Slide['start_slider_shape'] == 'diamond') ? 'diamond' : '' ?>">
                         <div class="row">
                             <div class="container height-slide">
@@ -33,6 +31,7 @@ $startSliders = get_field('slider_start_section', $frontId);
                                                 <!-- <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video"> -->
                                                 <div class="bg-icon-color"></div>
                                                 <i class="icon-play play-video"></i>
+                                                <div class="tooltip-text">مشاهده ویدیو</div>
                                                 <div class="video-popup">
 
                                                     <video id="mainVideo" controls>

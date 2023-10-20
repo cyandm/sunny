@@ -4,24 +4,40 @@ if ($args['id']) {
     $coachId = $args['id'];
 }
 
-$topStudents = get_field('choose_students', $coachId);
+$imagesFilms = get_field('add_film_or_images', $coachId);
+
 
 ?>
 <div class="students-row-popup">
 
-    <div class="students-slider-popup swiper">
+    <div class="students-slider-popup swiper container">
         <i class="icon-close close-student-popup"></i>
         <div class="swiper-wrapper sliders-wrapper">
 
-            <?php foreach ($topStudents as $student) : ?>
+            <?php foreach ($imagesFilms as $content) : ?>
                 <div class="student-info swiper-slide">
 
-                    <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []); ?>
+                    <?php if ($content['film_or_img'] == 'film') { ?>
+                        <div class="add-video-content">
+                            <video class="video" controls>
+                                <source src="<?= $content['add_film'] ?>" type="video/mp4">
+                            </video>
 
-                    <div class="achievement-description">
-                        <h6><?= get_the_title($student->ID) ?></h6>
-                        <span><?= get_field('achievement_description', $student->ID) ?></span>
-                    </div>
+                        <div class="achievement-description">
+                            <span><?= $content['description_attachment_content'] ?></span>
+                        </div>
+                        </div>
+                    <?php }
+                    if ($content['film_or_img'] == 'img') { ?>
+                        <div class="add-image-content">
+                            <?php echo wp_get_attachment_image($content['add_image'], 'full', false, []); ?>
+                            <div class="achievement-description">
+                                <span><?= $content['description_attachment_content'] ?></span>
+                            </div>
+                        </div>
+                    <?php } ?>
+
+
                 </div>
             <?php endforeach; ?>
         </div>

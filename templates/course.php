@@ -28,12 +28,13 @@ $courses = get_posts($args);
         <?php endif ?>
         <div class="course-row">
             <?php
-            foreach ($courses as $course) :
+            foreach ($courses as $key=>$course) :
 
                 get_template_part(
                     'templates/pages/course/course-block',
                     null,
-                    ['id' => $course->ID]
+                    ['id' => $course->ID,
+                        'key'=>$key]
                 );
 
             endforeach;

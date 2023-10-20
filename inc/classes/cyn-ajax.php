@@ -100,7 +100,7 @@ if (!class_exists('cyn_ajax')) {
                     'success' => false,
                     'message' => 'Data is not sent',
 
-               ] );
+                ]);
             }
         }
 
@@ -159,17 +159,17 @@ if (!class_exists('cyn_ajax')) {
                     $placedEmail = str_replace("{website}", get_bloginfo('name'), $placedEmail);
 
 
-                    wp_insert_post([
-                        'post_title' => $sanitized_array['name'] . " - " . $sanitized_array['email'],
-                        'post_content' => $placedEmail,
-                        'post_type' => 'course_form',
-                        'post_status' => 'private',
-                        'post_author' => 1,
-                        'meta_input' => [
-                            'course_registration_info' => $sanitized_array,
-                        ],
+                        wp_insert_post([
+                            'post_title' => $sanitized_array['name'] . " - " . $sanitized_array['email'],
+                            'post_content' => $placedEmail,
+                            'post_type' => 'course_form',
+                            'post_status' => 'private',
+                            'post_author' => 1,
+                            'meta_input' => [
+                                'course_registration_info' => $sanitized_array,
+                            ],
 
-                    ]);
+                        ]);
 
 
                     // send email

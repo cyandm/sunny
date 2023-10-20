@@ -21,10 +21,10 @@ if (!class_exists('cyn-theme-init')) {
 
 		public function cyn_enqueue_files()
 		{
-			wp_localize_script('scripts', 'ajax_var', array(
-				'url'   => admin_url('admin-ajax.php'),
-				'nonce' => wp_create_nonce('ajax-nonce')
-			));
+//			wp_localize_script('scripts', 'ajax_var', array(
+//				'url'   => admin_url('admin-ajax.php'),
+//				'nonce' => wp_create_nonce('ajax-nonce')
+//			));
 
 			wp_enqueue_style('cyn-compiled', get_stylesheet_directory_uri() . '/css/compiled.css'); //When @build must change to final.css
 
