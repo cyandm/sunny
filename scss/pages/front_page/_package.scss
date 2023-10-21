@@ -3,9 +3,6 @@
   overflow: hidden;
   height: 100%;
   .package-content {
-    @include flex();
-    gap: 1rem;
-    flex-wrap: wrap;
     .swiper-slide {
       max-width: 25rem;
       max-height: 34rem;

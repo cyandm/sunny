@@ -401,7 +401,7 @@
 }
 .slide-hero-3 {
   .row {
-    .content-hero-slide {
+    .slide-container {
       .hero-img {
         img {
           max-width: 55rem;
@@ -416,3 +416,10 @@
     }
   }
 }
+.slide-hero-3 {
+  .title{
+    top:-50%;
+  }
+}
+
+

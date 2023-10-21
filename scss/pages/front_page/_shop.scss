@@ -8,11 +8,9 @@
 .shop-slider {
   overflow: hidden;
   .shop-content {
-    @include flex();
-    gap: 1rem;
-    flex-wrap: wrap;
+
     > * {
-      flex: 1 1 24%;
+      width: 18rem;
       border-radius: 2.5rem;
       border: 1px solid $gray-2;
       background: $white-1;
@@ -31,7 +29,8 @@
   @media (max-width: 992px) {
     .shop-content {
       > * {
-        width: 18rem;
+        min-width: 18rem;
+        max-width: 18rem;
       }
     }
   }

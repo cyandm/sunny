@@ -95,6 +95,7 @@ export const shopSlider = new Swiper(shopSliderElement, {
   breakpoints: {
     768: {
       ...defaultSwiper,
+      spaceBetween: 16,
       slidesPerColumn: 2,
       grid: {
         rows: 2,

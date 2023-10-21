@@ -8,19 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/about-popup-images.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/about-popup-images.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/front-page/testimonial.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/front-page/testimonial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_card-blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-blog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_student-popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_student-popup.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/about/_gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_gallery.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/about/_honors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/about/_honors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/components/student-row-popup.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/student-row-popup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/about/honors.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/about/honors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_shop.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +127,7 @@
       <workItem from="1697516087125" duration="12820000" />
       <workItem from="1697784464730" duration="5674000" />
       <workItem from="1697810453788" duration="20486000" />
-      <workItem from="1697905300198" duration="10894000" />
+      <workItem from="1697905300198" duration="12020000" />
     </task>
     <servers />
   </component>
