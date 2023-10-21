@@ -260,6 +260,7 @@
           .hero-img > img {
             max-width: 21rem;
             max-height: 21rem !important;
+            object-fit: contain;
           }
           .content-hero-slide {
           }
@@ -399,7 +400,11 @@
     }
   }
 }
+
+
+
 .slide-hero-3 {
+  @media (min-width: 992px) {
   .row {
     .slide-container {
       .hero-img {
@@ -410,16 +415,13 @@
       }
       .content-hero-slide{
         .title{
-          top:-50%;
+          top:-50% !important;
         }
       }
     }
   }
 }
-.slide-hero-3 {
-  .title{
-    top:-50%;
-  }
 }
+
 
 

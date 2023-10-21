@@ -45,4 +45,13 @@
       }
     }
   }
+  @media (min-width: 1400px) {
+
+    .shop-content {
+      @include flex();
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+
 }

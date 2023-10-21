@@ -3,15 +3,18 @@
   overflow: hidden;
   height: 100%;
   .package-content {
+
     .swiper-slide {
       max-width: 25rem;
       max-height: 34rem;
     }
   }
 
-  @media (max-width: 1400px) {
+  @media (min-width: 1400px) {
     .package-content {
-      flex-wrap: nowrap;
+      @include flex();
+      gap: 1rem;
+
     }
   }
 }
