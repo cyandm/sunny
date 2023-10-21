@@ -33,6 +33,7 @@
           height: 100%;
           object-fit: cover;
           border-radius: 2.5rem;
+          z-index: 1;
         }
 
         .icon-play {
@@ -40,11 +41,23 @@
           position: absolute;
           width: 4.25rem;
           height: 4.31981rem;
-          background: wheat;
+          background: $white-1;
           border-radius: 50%;
+          cursor: pointer;
+          z-index: 2;
+          transition: all 0.3s ease-in-out;
+          border: 1px transparent;
 
           &::before {
             font-size: 1.5rem;
+            font-weight: 700;
+          }
+          &:hover{
+            background: none;
+            border: 1px solid $white-1;
+            &::before {
+              color: $white-1;
+            }
           }
         }
 
@@ -54,6 +67,7 @@
           border-radius: 2.5rem;
           object-fit: cover;
         }
+
       }
 
       .video-content.active {
@@ -104,6 +118,7 @@
             .swiper-slide {
               height: 100%;
               flex-basis: 32%;
+
               img {
                 width: 100%;
                 height: 100%;
@@ -122,9 +137,11 @@
       margin-block-end: 0.5rem;
       overflow: hidden;
       display: block;
+
       > div {
         max-width: 100%;
       }
+
       .video-container {
         margin-block-end: 1.5rem;
       }
@@ -137,6 +154,7 @@
           flex-basis: 55% !important;
         }
       }
+
       .video-container {
         max-height: 19rem;
       }

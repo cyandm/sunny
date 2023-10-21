@@ -123,6 +123,9 @@
       }
     }
   }
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
 .gallery-images-popup.show {
   transform: translateY(0);

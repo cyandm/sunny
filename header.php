@@ -84,7 +84,7 @@ $video_page_id = get_posts([
                 </div>
             </div>
 
-            <a href="" class="sing-up-btn"><i class="icon-note-book"></i>ثبت نام آنلاین</a>
+            <a href="<?= the_permalink($video_page_id[0]);?>" class="sing-up-btn"><i class="icon-play"></i>مشاهده ویدیوها</a>
 
         </div>
     </header>

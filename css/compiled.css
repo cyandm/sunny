@@ -1343,15 +1343,6 @@ select:focus {
   color: #0b68df;
 }
 
-div.description p {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 5;
-  -webkit-line-clamp: 2;
-  white-space: pre-wrap;
-}
-
 .course-card {
   display: flex;
   flex-direction: column;
@@ -2032,7 +2023,6 @@ div.description p {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 30rem;
   background: #feffff;
   border-radius: 1.5rem;
   gap: 1.5rem;
@@ -2081,9 +2071,9 @@ div.description p {
   -webkit-line-clamp: 1;
   white-space: pre-wrap;
 }
-@media (max-height: 992px) {
-  .students-row-popup .students-slider .sliders-wrapper .student-info {
-    height: 25rem !important;
+@media (max-height: 768px) {
+  .students-row-popup .students-slider .sliders-wrapper .student-info video {
+    height: 21rem;
   }
 }
 
@@ -4498,6 +4488,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   height: 100%;
   object-fit: cover;
   border-radius: 2.5rem;
+  z-index: 1;
 }
 .testimonial-section .front-testimonial-content .video-container .video-content .icon-play {
   display: flex;
@@ -4507,11 +4498,23 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   position: absolute;
   width: 4.25rem;
   height: 4.31981rem;
-  background: wheat;
+  background: #feffff;
   border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+  border: 1px transparent;
 }
 .testimonial-section .front-testimonial-content .video-container .video-content .icon-play::before {
   font-size: 1.5rem;
+  font-weight: 700;
+}
+.testimonial-section .front-testimonial-content .video-container .video-content .icon-play:hover {
+  background: none;
+  border: 1px solid #feffff;
+}
+.testimonial-section .front-testimonial-content .video-container .video-content .icon-play:hover::before {
+  color: #feffff;
 }
 .testimonial-section .front-testimonial-content .video-container .video-content video {
   width: 100%;
@@ -7040,6 +7043,68 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   }
 }
 
+.honors-images-popup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1rem;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  background: rgba(26, 33, 42, 0.7);
+  position: fixed;
+  z-index: 99;
+  padding-block-start: 8rem;
+  transform: translateY(-110%);
+  transition: transform 0.5s ease-in-out;
+}
+.honors-images-popup .honors-slider {
+  width: 100%;
+  position: relative;
+  height: 70%;
+}
+.honors-images-popup .honors-slider i {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 0.625rem;
+  border: 0.5px #e8e9ea;
+  background: #feffff;
+  z-index: 2;
+  cursor: pointer;
+}
+.honors-images-popup .honors-slider i:before {
+  color: #cd1313;
+  font-size: 1.5rem;
+}
+.honors-images-popup .honors-slider .swiper-wrapper {
+  width: 100%;
+}
+.honors-images-popup .honors-slider .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+@media (max-width: 992px) {
+  .honors-images-popup {
+    display: none;
+  }
+}
+
+.honors-images-popup.show {
+  transform: translateY(0);
+}
+
 .gallery-slider .container {
   display: flex;
   flex-direction: column;
@@ -7166,6 +7231,11 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   height: 100%;
   object-fit: cover;
   border-radius: 1.5rem;
+}
+@media (max-width: 992px) {
+  .gallery-images-popup {
+    display: none;
+  }
 }
 
 .gallery-images-popup.show {

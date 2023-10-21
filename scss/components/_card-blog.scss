@@ -92,11 +92,7 @@
   }
 }
 
-div.description {
-  p {
-    @include text_overflow(2);
-  }
-}
+
 
 //.cart-blog.active {
 //  .content-cart-blog,

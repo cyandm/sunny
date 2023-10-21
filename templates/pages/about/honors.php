@@ -10,12 +10,13 @@ $honorSlider = get_field('about_slider_2', $pageId);
             <h2><?= $honorTitle ?></h2>
         </div>
         <div class="contain">
-            <?php foreach ($honorSlider as $honorSlider) :
-                if ($honorSlider['image_box'] != "") : ?>
+            <?php foreach ($honorSlider as $honorSlide) :
+                if ($honorSlide['image_box'] != "") : ?>
                     <div class="honors-box">
+                        <?= wp_get_attachment_image($honorSlide['image_box'], 'full', false, []); ?>
                         <div class="info">
-                            <h3><?= $honorSlider['image_title'] ?></h3>
-                            <span><?= $honorSlider['image_date'] ?></span>
+                            <h3><?= $honorSlide['image_title'] ?></h3>
+                            <span><?= $honorSlide['image_date'] ?></span>
                         </div>
                     </div>
 
@@ -23,6 +24,22 @@ $honorSlider = get_field('about_slider_2', $pageId);
             <?php
                 endif;
             endforeach; ?>
+            <div class="honors-images-popup">
+
+                <div class="honors-slider swiper container">
+                    <i class="icon-close close-honors-popup"></i>
+                    <div class="swiper-wrapper">
+                        <?php foreach ($honorSlider as $item) :
+                            if($item['image_box'] != "") : ?>
+                                <div class="swiper-slide">
+                                    <?= wp_get_attachment_image($item['image_box'], 'full', false, []); ?>
+                                </div>
+                            <?php endif;
+                        endforeach; ?>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 

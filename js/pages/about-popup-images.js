@@ -1,7 +1,7 @@
 import { Swiper } from "swiper";
 
 const about = document.querySelector("#about-page");
-if (about) {
+if (about && window.innerWidth>992) {
   const galleryBoxes = document.querySelectorAll(".gallery-box");
 
   galleryBoxes.forEach((image) => {
@@ -34,6 +34,48 @@ if (about) {
       );
       closeGalleryPopup.addEventListener("click", () => {
         cloneGallery.classList.remove("show");
+
+        document.body.style.overflow = "auto";
+
+        setTimeout(() => {
+          document.body.querySelector(".body-popup").remove();
+        }, 500);
+      });
+    });
+  });
+
+
+  const honorsBoxes = document.querySelectorAll(".honors-box");
+  honorsBoxes.forEach((image) => {
+    image.addEventListener("click", (e) => {
+      const honorPopup = document.querySelector(".honors-images-popup");
+      const cloneHonor = honorPopup.cloneNode(true);
+
+      document.body.appendChild(cloneHonor);
+      setTimeout(() => {
+        cloneHonor.classList.add("show");
+      }, 100);
+
+      cloneHonor.classList.add("body-popup");
+
+      document.body.style.overflow = "hidden";
+
+      const swiper = new Swiper(".body-popup .honors-slider", {
+        slidesPerView: "auto",
+        loop: true,
+        spaceBetween: 20,
+        breakpoints: {
+          992: {
+            slidesPerView: 2,
+          },
+        },
+      });
+
+      const closeHonorPopup = cloneHonor.querySelector(
+          ".close-honors-popup"
+      );
+      closeHonorPopup.addEventListener("click", () => {
+        cloneHonor.classList.remove("show");
 
         document.body.style.overflow = "auto";
 

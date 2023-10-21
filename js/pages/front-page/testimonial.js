@@ -6,11 +6,14 @@ const testimonialSection = document.querySelector("#testimonial-section");
 if (testimonialSection) {
   const testimonial = document.querySelectorAll(".person-img");
 
+
   // first video play
   const firstVideo = document.querySelector(".video-content.active");
+
   const firstPlay = firstVideo.querySelector("i");
 
   firstPlay.addEventListener("click", () => {
+    console.log( firstVideo.querySelector("img"));
     firstVideo.querySelector("img").remove();
     firstPlay.remove();
     firstVideo.querySelector("video").play();
@@ -29,6 +32,7 @@ if (testimonialSection) {
       const videoContainer = document.querySelectorAll(".video-content");
 
       videoContainer.forEach((video) => {
+
         const ifContent =
           video.getAttribute("data-id") == person.getAttribute("data-id");
         toggleClass(ifContent, video);
@@ -42,11 +46,16 @@ if (testimonialSection) {
         // play video
         if (video.classList.contains("active")) {
           const play = video.querySelector("i");
+          if(play){
+
           play.addEventListener("click", () => {
             video.querySelector("img").remove();
             play.remove();
             video.querySelector("video").play();
           });
+          }
+        }else{
+          video.querySelector("video").pause();
         }
       });
 
