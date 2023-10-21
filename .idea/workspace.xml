@@ -6,12 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_shop.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/classes.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/classes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/faq.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/shop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/start.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/start.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/testimonial.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/testimonial.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +126,7 @@
       <workItem from="1697516087125" duration="12820000" />
       <workItem from="1697784464730" duration="5674000" />
       <workItem from="1697810453788" duration="20486000" />
-      <workItem from="1697905300198" duration="13835000" />
+      <workItem from="1697905300198" duration="14507000" />
     </task>
     <servers />
   </component>

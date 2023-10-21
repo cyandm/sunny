@@ -44,7 +44,7 @@ $courses = get_field('choose_pakages', $frontId);
 
         <div class="breadcrumb-btn">
             <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> فروشگاه سانی</a>
-            <a href="" class="btn-left home-main-slider-prev">نظر همراهان<i class="icon-arrow-side-left"></i></a>
+            <a href="" class="btn-left home-main-slider-prev">سوالات متداول<i class="icon-arrow-side-left"></i></a>
         </div>
         <?Php if ($btnTitle) : ?>
             <div class="section-btn">

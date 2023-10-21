@@ -41,8 +41,8 @@ $faqImg = get_field('image_faq_section', $frontId);
 
         </div>
         <div class="breadcrumb-btn">
-            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> مقالات</a>
-            <a href="" class="btn-left home-main-slider-prev">مربی ها و هنرجوها<i class="icon-arrow-side-left"></i></a>
+            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> کلاس ها</a>
+            <a href="" class="btn-left home-main-slider-prev">مربی های برجسته<i class="icon-arrow-side-left"></i></a>
         </div>
     </div>
 </div>

@@ -60,8 +60,8 @@ $categories = get_field('choose_category', $frontId);
                 endforeach; ?>
         </div>
         <div class="breadcrumb-btn">
-            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> نظر همراهان</a>
-            <a href="" class="btn-left home-main-slider-prev"> <i class="icon-arrow-side-left"></i>سوالات متداول</a>
+            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i>  راه های ارتباطی</a>
+            <a href="" class="btn-left home-main-slider-prev"> <i class="icon-arrow-side-left"></i>فروشگاه سانی</a>
         </div>
 
 

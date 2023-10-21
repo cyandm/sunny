@@ -72,8 +72,7 @@ $startSliders = get_field('slider_start_section', $frontId);
                                 </div>
 
                                 <div class="breadcrumb-btn">
-                                    <div class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i>مربی
-                                        ها و هنرجوها
+                                    <div class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i>نظرات همراهان
                                     </div>
                                     <div class="home-main-slider-prev btn-left">اسلایدر<i class="icon-arrow-side-left"></i>
                                     </div>

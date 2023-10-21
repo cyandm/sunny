@@ -48,7 +48,7 @@ $allProducts = new WP_Query($newQueryArgs);
             </div>
         </div>
         <div class="breadcrumb-btn">
-            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i> راه های ارتباطی</a>
+            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i>مقالات</a>
             <a href="" class="btn-left home-main-slider-prev"> کلاس ها <i class="icon-arrow-side-left"></i></a>
         </div>
     </div>
