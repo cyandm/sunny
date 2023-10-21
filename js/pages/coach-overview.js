@@ -9,7 +9,7 @@ if (coaches) {
     students.forEach((student) => {
       student.addEventListener("click", () => {
         const sliderPopup = coach.querySelector(".students-row-popup");
-        console.log(sliderPopup);
+
         sliderPopup.classList.add("show");
         document.body.style.overflow = "hidden";
       });
@@ -21,6 +21,10 @@ if (coaches) {
           .querySelector(".students-row-popup.show")
           .classList.remove("show");
         document.body.style.overflow = "auto";
+        const popVideos = coach.querySelectorAll(".add-video-content video");
+        popVideos.forEach((video) => {
+          video.pause();
+        });
       });
     }
   });
@@ -29,7 +33,7 @@ if (coaches) {
   const coachPopupVideos = document.querySelectorAll(
     ".popup-play-video-classes"
   );
-  console.log(coachPopupVideos);
+
   coachPopupVideos.forEach((video) => {
     video.addEventListener("click", () => {
       const coachSource = video

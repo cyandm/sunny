@@ -4,7 +4,7 @@ $title = get_field('main_title', $pageId);
 $topStudentTitle = get_field('slider_content_title', $pageId);
 
 $args = array(
-    'post_type' => 'coach',
+    'post_type' => 'student',
     'posts_per_page' => 999,
     'orderby' => 'date',
     'order' => 'DESC',
@@ -12,7 +12,7 @@ $args = array(
 $coaches = new WP_Query($args);
 
 
-/* Template Name: Coaches overview Page */ ?>
+/* Template Name: Students overview Page */ ?>
 
 <?php get_header(); ?>
 

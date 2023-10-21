@@ -93,8 +93,8 @@
       .video-popup {
         display: none;
       }
-      &:hover{
-        .tooltip-text{
+      &:hover {
+        .tooltip-text {
           visibility: visible;
           opacity: 1;
         }
@@ -104,6 +104,7 @@
 
   .front-coach-content {
     flex: 1 1 55%;
+    height: 30rem;
     @include flex(column);
     align-items: start;
     gap: 0.62rem;
@@ -136,6 +137,7 @@
 
     .students-row {
       width: 100%;
+
       .students-slider {
         width: 100%;
 
@@ -147,6 +149,7 @@
             position: relative;
             height: 14.25rem;
             width: 13rem;
+            cursor: pointer;
 
             img {
               height: 100%;
@@ -154,7 +157,7 @@
               border-radius: 1.5rem;
               object-fit: cover;
             }
-            .add-video-content{
+            .add-video-content {
               height: 100%;
               width: 100%;
               position: relative;
@@ -201,16 +204,14 @@
             //}
             &:hover {
               svg {
-                circle{
+                circle {
                   fill: none;
-                  stroke:$white-1;
+                  stroke: $white-1;
                   stroke-width: 1px;
-
                 }
-                path{
+                path {
                   fill: $white-1;
                 }
-
               }
             }
           }

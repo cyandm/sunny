@@ -62,14 +62,9 @@ export const studentSlider = new Swiper(".students-slider", {
 export const studentSliderPopup = new Swiper(".students-slider-popup", {
   slidesPerView: "auto",
   spaceBetween: 20,
-  loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
   breakpoints: {
     992: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
   },
 });
