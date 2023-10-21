@@ -13,12 +13,13 @@ $honorSlider = get_field('about_slider_2', $pageId);
             <?php foreach ($honorSlider as $honorSlider) :
                 if ($honorSlider['image_box'] != "") : ?>
                     <div class="honors-box">
-                        <?= wp_get_attachment_image($honorSlider['image_box'], 'full', false, []); ?>
                         <div class="info">
                             <h3><?= $honorSlider['image_title'] ?></h3>
                             <span><?= $honorSlider['image_date'] ?></span>
                         </div>
                     </div>
+
+
             <?php
                 endif;
             endforeach; ?>

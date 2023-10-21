@@ -7,9 +7,9 @@ $stickySlider = get_field('sticky_slider', $pageId);
 get_header(); ?>
 
 <main id="about-page" class="about-page">
-    <!-- <div class="overly first"></div>
+    <div class="overly first"></div>
     <div class="overly second"></div>
-    <div class="overly third"></div> -->
+    <div class="overly third"></div>
 
     <div class="about-page-slider swiper" dir="ltr">
 

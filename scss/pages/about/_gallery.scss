@@ -23,7 +23,7 @@
       overflow-y: scroll;
       height: 65vh;
       width: 100%;
-padding-block-end: 8rem;
+      padding-block-end: 8rem;
       .gallery-box {
         @include flex(column);
         flex: 1 1 45%;
@@ -42,35 +42,88 @@ padding-block-end: 8rem;
       }
     }
   }
-  @media (min-width: 992px) and (max-width: 1400px){
+  @media (min-width: 992px) and (max-width: 1400px) {
     .container {
       .honors-title {
-        .contain{
-          height:55vh;
+        .contain {
+          height: 55vh;
           overflow-y: scroll;
-
         }
       }
     }
   }
-  @media (max-width: 992px){
+  @media (max-width: 992px) {
     .container {
-      margin-block-start:0;
+      margin-block-start: 0;
       .honors-title {
       }
 
-        .contain{
-          height:auto;
-          overflow: unset;
-          padding-block-end:0;
-          .gallery-box {
-          img{
+      .contain {
+        height: auto;
+        overflow: unset;
+        padding-block-end: 0;
+        .gallery-box {
+          img {
             height: 18rem;
           }
-          }
-
         }
-
+      }
     }
   }
+}
+
+.gallery-images-popup {
+  @include flex();
+
+  padding-inline: 1rem;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  background: rgba(26, 33, 42, 0.7);
+  position: fixed;
+  z-index: 99;
+  padding-block-start: 8rem;
+  transform: translateY(-110%);
+  transition: transform 0.5s ease-in-out;
+  .gallery-slider {
+    width: 100%;
+    position: relative;
+    height: 70%;
+
+    i {
+      @include flex();
+
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: 0.625rem;
+      border: 0.5px $gray-2;
+      background: $white-1;
+      z-index: 2;
+      cursor: pointer;
+
+      &:before {
+        color: #cd1313;
+        font-size: 1.5rem;
+      }
+    }
+    .swiper-wrapper {
+      width: 100%;
+      .swiper-slide {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 1.5rem;
+        }
+      }
+    }
+  }
+}
+.gallery-images-popup.show {
+  transform: translateY(0);
 }

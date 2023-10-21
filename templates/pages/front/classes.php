@@ -7,7 +7,7 @@ $coaches = get_field('choose_coaches', $frontId);
 $topStudentTitle = get_field('top_student_title', $frontId);
 
 ?>
-<div class="swiper-slide classes-slide">
+<div class="swiper-slide classes-slide" id="coaches-front-slide">
     <div class="container padding-top height-slide">
         <?Php if ($title) : ?>
             <div class="section-title">
@@ -62,44 +62,59 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                 <div class="description">
                                     <?= get_field('description_text', $coach->ID) ?>
                                 </div>
+                                <?php
+                                $imagesFilms = get_field('add_film_or_images', $coach->ID);
+                                if (is_array($imagesFilms) && count($imagesFilms) > 0) :
+                                    if ($topStudentTitle) : ?>
+                                        <h4><?= $topStudentTitle ?></h4>
+                                    <?php endif;
 
-                                <?php if ($topStudentTitle) : ?>
-                                    <h4><?= $topStudentTitle ?></h4>
-                                <?php endif;
-                                $topStudents = get_field('choose_students', $coach->ID);
-                                if (is_array($topStudents) && count($topStudents) > 0) : ?>
+                                    ?>
 
                                     <div class="students-row">
                                         <div class="students-slider swiper" dir="ltr">
                                             <div class="swiper-wrapper sliders-wrapper">
-                                                <?php foreach ($topStudents as $student) : ?>
-                                                    <div class="student-info swiper-slide student-image">
+                                                <?php
 
-                                                        <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []); ?>
 
-                                                        <div class="achievement-description">
-                                                            <h6><?= get_the_title($student->ID) ?></h6>
-                                                            <span><?= get_field('achievement_description', $student->ID) ?></span>
+                                                foreach ($imagesFilms as $content) :
+                                                    if ($content['add_image'] || $content['add_film']) :
+                                                ?>
+                                                        <div class="student-info swiper-slide student-image">
+                                                            <?php if ($content['film_or_img'] == 'film') { ?>
+                                                                <div class="add-video-content">
+                                                                    <?= wp_get_attachment_image($content['film_cover_image'], 'full', false, []); ?>
+
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="57" viewBox="0 0 56 57" fill="none">
+                                                                        <circle cx="28" cy="28.3101" r="27.5" fill="#FEFFFF" stroke="#E8E9EA" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M37.6563 26.4524L24.004 18.0773C22.518 17.1662 20.5883 18.2147 20.5883 19.9354V36.6834C20.5883 38.4041 22.518 39.4547 24.004 38.5415L37.6541 30.1664C39.0562 29.3103 39.0562 27.3106 37.6563 26.4524Z" fill="#1A212A" />
+                                                                    </svg>
+                                                                </div>
+                                                            <?php }
+                                                            if ($content['film_or_img'] == 'img') {
+
+                                                                echo   wp_get_attachment_image($content['add_image'], 'full', false, []);
+                                                            } ?>
+
                                                         </div>
-                                                    </div>
-                                                <?php endforeach; ?>
-                                                <?php foreach ($topStudents as $student) : ?>
-                                                    <div class="student-info swiper-slide student-image">
+                                                <?php
+                                                    endif;
+                                                endforeach; ?>
 
-                                                        <?= wp_get_attachment_image(get_post_thumbnail_id($student->ID), 'full', false, []); ?>
-
-                                                        <div class="achievement-description">
-                                                            <h6><?= get_the_title($student->ID) ?></h6>
-                                                            <span><?= get_field('achievement_description', $student->ID) ?></span>
-                                                        </div>
-                                                    </div>
-                                                <?php endforeach; ?>
                                             </div>
                                         </div>
-                                    </div> <?php
+                                    </div>
 
+                                    <!-- slider popup  -->
+                                <?php
+                                    get_template_part(
+                                        '/templates/components/student-row-popup',
+                                        null,
+                                        ['id' => $coach->ID]
+                                    );
 
-                                        endif; ?>
+                                endif;
+                                ?>
                             </div>
                         </div>
                 <?php endforeach;

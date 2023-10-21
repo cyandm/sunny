@@ -18,6 +18,24 @@ $imagesGallery = get_field('about_slider_3', $pageId);
                     </div>
             <?php endif;
             endforeach; ?>
+
+            <div class="gallery-images-popup">
+
+                <div class="gallery-slider swiper container">
+                    <i class="icon-close close-gallery-popup"></i>
+                    <div class="swiper-wrapper">
+                        <?php foreach ($imagesGallery as $image) :
+                            if ($image['image'] != "") : ?>
+                                <div class="swiper-slide">
+
+                                    <?= wp_get_attachment_image($image['image'], 'full', false, []); ?>
+
+                                </div>
+                        <?php endif;
+                        endforeach; ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
