@@ -30,12 +30,10 @@ if (blogPageBlog) {
 }
 
 // **************************************page load category for single blog page
-let mobileCategoryList = document.querySelector(".mobile-category-list");
+let mobileCategoryList = document.querySelector("#cat-select-mobile");
 
 if (mobileCategoryList) {
-  for (let i = 0; i < mobileCategoryList.length; i++) {
-    mobileCategoryList.addEventListener("change", () => {
-      window.location = mobileCategoryList[i].value;
-    });
-  }
+  mobileCategoryList.addEventListener("change", (e) => {
+    window.location = e.target.value;
+  });
 }

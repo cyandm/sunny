@@ -36,7 +36,13 @@ $course_page_id = get_posts([
 
         </div>
         <div class="course-img-card">
-            <div class="circle"></div>
+
+            <div class="circle">
+                <div class="multi-circle-animate circle-1"></div>
+                <div class="multi-circle-animate circle-2"></div>
+                <div class="multi-circle-animate circle-3"></div>
+            </div>
+
             <div class="img-shadow">
                 <?php $thumbnail_id = get_post_thumbnail_id($post_id); ?>
                 <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>

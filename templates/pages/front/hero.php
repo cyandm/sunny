@@ -35,16 +35,10 @@ $heroSliders = get_field('front_page_hero_section', $frontId);
 
                             <div class="panels-navigation">
 
-                                <?php if ($num == 1) : ?>
-                                    <div class="nav-panel home-nested-next"><i class="icon-arrow-single-big"></i>
-                                    </div>
-                                <?php elseif ($num == count($heroSliders)) : ?>
-                                    <div class="nav-panel home-nested-prev"><i class="icon-arrow-single-big"></i></div>
-                                <?php else : ?>
-                                    <div class="nav-panel home-nested-prev"><i class="icon-arrow-single-big"></i></div>
-                                    <div class="nav-panel home-nested-next"><i class="icon-arrow-single-big"></i>
-                                    </div>
-                                <?php endif; ?>
+                                <div class="nav-panel home-nested-prev"><i class="icon-arrow-single-big"></i></div>
+                                <div class="nav-panel home-nested-next"><i class="icon-arrow-single-big"></i>
+                                </div>
+
 
                             </div>
                             <div class="pagination-btn">

@@ -8,9 +8,9 @@
 .shop-slider {
   overflow: hidden;
   .shop-content {
-
     > * {
       width: 18rem;
+      max-width: 18rem;
       border-radius: 2.5rem;
       border: 1px solid $gray-2;
       background: $white-1;
@@ -35,23 +35,21 @@
     }
   }
   @media (max-width: 768px) {
-    height: 19.12rem;
+    height: 17.12rem;
 
     .shop-content {
       flex-wrap: nowrap;
       height: 100%;
-      >*{
+      > * {
         width: 18rem;
       }
     }
   }
   @media (min-width: 1400px) {
-
     .shop-content {
       @include flex();
       gap: 1rem;
       flex-wrap: wrap;
     }
   }
-
 }

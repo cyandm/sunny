@@ -20,21 +20,19 @@
     border-radius: 50%;
     border: 1px transparent;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
     &::before {
       font-size: 1.5rem;
       color: $white-1;
     }
-    &:hover{
-
-        background-color: $white-1;
-        border: 1px solid $pink-1;
-        &::before {
-          color:$pink-1;
-        }
-
+    &:hover {
+      background-color: $white-1;
+      border: 1px solid $pink-1;
+      &::before {
+        color: $pink-1;
+      }
     }
   }
-
 }
 .height-slide {
   @include flex(column, space-around, start);

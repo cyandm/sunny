@@ -23,7 +23,7 @@
       overflow-y: scroll;
       height: 65vh;
       width: 100%;
-padding-block-end: 7rem;
+      padding-block-end: 7rem;
       .honors-box {
         @include flex(column);
         flex: 1 1 32%;
@@ -45,6 +45,7 @@ padding-block-end: 7rem;
           max-height: 14.875rem;
           border-radius: 1.5rem;
           object-fit: cover;
+          cursor: pointer;
         }
 
         .info {
@@ -67,15 +68,14 @@ padding-block-end: 7rem;
       }
     }
     @media (max-width: 992px) {
-      margin-block-start:0;
-      .contain{
+      margin-block-start: 0;
+      .contain {
         overflow-y: unset;
-        height:auto;
+        height: auto;
       }
     }
   }
 }
-
 
 .honors-images-popup {
   @include flex();
@@ -92,7 +92,7 @@ padding-block-end: 7rem;
   padding-block-start: 8rem;
   transform: translateY(-110%);
   transition: transform 0.5s ease-in-out;
-  .honors-slider{
+  .honors-slider {
     width: 100%;
     position: relative;
     height: 70%;
@@ -135,4 +135,3 @@ padding-block-end: 7rem;
 .honors-images-popup.show {
   transform: translateY(0);
 }
-

@@ -31,8 +31,10 @@ if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonom
                 <a href="<?= the_permalink($blog_page_id[0]); ?>">همه</a>
             </li>
 
-            <?php foreach ($terms as $cat) : ?>
-                <li class="category-tab <?= ($pageId == $cat->term_id) ? 'active-cat' : ''; ?>" data-slug="<?= $cat->slug ?>">
+            <?php foreach ($terms as $cat) :
+
+            ?>
+                <li class="category-tab <?= (get_queried_object()->term_id == $cat->term_id) ? 'active-cat' : ''; ?>" data-slug="<?= $cat->slug ?>">
                     <a href="<?= get_term_link($cat->term_id) ?>"><?= $cat->name ?></a>
                 </li>
             <?php
@@ -62,25 +64,27 @@ if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonom
 
 <div class="blog-tab-mobile">
 
-    <?php if (get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') :
+    <?php if (get_queried_object_id() == $blog_page_id[0] || is_category(get_queried_object_id())) :
         get_template_part('templates/components/search-form', null, ['menu-mobile' => false]);
     ?>
         <select name="" id="cat-select-mobile" class="cat-select-mobile mobile-category-list">
             <option <?= ($pageId == $blog_page_id[0]) ? 'selected' : '' ?> value="<?= the_permalink($blog_page_id[0]); ?>"> همه</option>
-            <?php $key = 1;
-            foreach ($terms as $term) : ?>
-                <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= get_term_link($cat->term_id) ?>"><?= $term->name ?></option>
             <?php
-                $key++;
+            foreach ($terms as $term) :
+            ?>
+                <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></option>
+            <?php
+
             endforeach; ?>
 
         </select>
+
     <?php else : ?>
-        <select name="" id="cat-select-mobile" class="cat-select-mobile mobile-category-list">
-            <?php $key = 1;
+        <select name="" id="cat-select-mobile-front" class="cat-select-mobile mobile-category-list front">
+            <?php
             foreach ($terms as $term) : ?>
                 <option <?= ($pageId == $term->term_id) ? 'selected' : '' ?> value="<?= $term->slug ?>"><?= $term->name ?></option>
-            <?php $key++;
+            <?php
             endforeach; ?>
         </select>
     <?php endif; ?>

@@ -40,7 +40,7 @@ function menu($menuSlug)
 <?php endif;
 } ?>
 
-<footer class="container <?= (get_queried_object_id() == $aboutPageId[0]) ? 'footer-change ' : '' ?> <?= (get_queried_object_id() == $frontId) ? 'remove-footer' : '' ?>">
+<footer class="container <?= (get_queried_object_id() == $aboutPageId[0]) ? 'footer-change ' : '' ?> <?= (get_queried_object_id() == $frontId && !is_category()) ? 'remove-footer' : '' ?>">
     <div class="footer-top">
         <div class="line">
         </div>

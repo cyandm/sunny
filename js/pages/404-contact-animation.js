@@ -59,31 +59,24 @@ if (contactSvg) {
     ],
     {
       scale: 0,
-      duration: 1.5,
-      delay: 0.5,
+      duration: 1,
+
       y: "100px",
       // x: "100px",
       ease: "expo.inOut",
-      stagger: 0.5,
+      stagger: 0.3,
     }
   );
-
-
-
-
 
   const contactTl = gsap.timeline();
   contactTl.from(contactLineSvg, { opacity: 0, y: 200 });
 
-    const startAnimation=() =>{
+  const startAnimation = () => {
+    circleContact1.style.animation = " moveAnimation 4s ease-in-out infinite";
+    circleContact2.style.animation = "moveAnimation 2s ease-in-out infinite";
+    circleContact3.style.animation = "moveAnimation 2.5s ease-in-out infinite";
+    circleContact4.style.animation = "moveAnimation 3s ease-in-out infinite";
+  };
 
-        circleContact1.style.animation = ' moveAnimation 4s ease-in-out infinite';
-        circleContact2.style.animation = 'moveAnimation 2s ease-in-out infinite';
-        circleContact3.style.animation = 'moveAnimation 2.5s ease-in-out infinite';
-        circleContact4.style.animation = 'moveAnimation 3s ease-in-out infinite';
-    }
-
-
-    setTimeout(startAnimation, 3000);
-
+  setTimeout(startAnimation, 3000);
 }

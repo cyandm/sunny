@@ -3,9 +3,9 @@ import { setElementHeight } from "../../modules/functions";
 const frontBlogSection2 = document.querySelector("#blog-section");
 const blogPage2 = document.querySelector("#blogs-overview");
 
-if (frontBlogSection2 || blogPage2) {
+if (frontBlogSection2) {
   if (window.innerWidth <= 768) {
-    const tabCategory = document.querySelector("#cat-select-mobile");
+    const tabCategory = document.querySelector("#cat-select-mobile-front");
 
     tabCategory.addEventListener("change", (event) => {
       const slugCat = event.target.value;

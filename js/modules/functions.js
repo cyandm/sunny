@@ -15,7 +15,7 @@ export const pullUpAnimation = () => {
 export const circleAnimation = () => {
   gsap.from(".circle-animation", {
     duration: 1,
-    delay: 2.2,
+    delay: 1.5,
     scale: 0,
     ease: "expo.inOut",
   });
@@ -23,7 +23,7 @@ export const circleAnimation = () => {
 export const imageAnimation = () => {
   gsap.from(".image-animate img", {
     duration: 1,
-    delay: 2.5,
+    delay: 1,
     opacity: 0,
     y: "700",
     ease: "expo.inOut",
@@ -32,8 +32,8 @@ export const imageAnimation = () => {
 export const multiCircleAnimate = (circle) => {
   gsap.from(circle, {
     scale: 0,
-    duration: 1,
-    delay: 0.5,
+    duration: 0.5,
+    delay: 0.3,
     ease: "expo.inOut",
     stagger: 0.5,
   });

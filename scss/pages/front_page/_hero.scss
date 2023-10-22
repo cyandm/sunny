@@ -92,6 +92,10 @@
               color: $black-1;
               font-size: 1.5rem;
             }
+            &:hover {
+              background-color: none;
+              border: none;
+            }
           }
         }
         .pagination-btn {
@@ -401,27 +405,22 @@
   }
 }
 
-
-
 .slide-hero-3 {
   @media (min-width: 992px) {
-  .row {
-    .slide-container {
-      .hero-img {
-        img {
-          max-width: 55rem;
-          max-height: 38rem;
+    .row {
+      .slide-container {
+        .hero-img {
+          img {
+            max-width: 55rem;
+            max-height: 38rem;
+          }
         }
-      }
-      .content-hero-slide{
-        .title{
-          top:-50% !important;
+        .content-hero-slide {
+          .title {
+            top: -50% !important;
+          }
         }
       }
     }
   }
 }
-}
-
-
-

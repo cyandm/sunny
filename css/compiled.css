@@ -579,6 +579,11 @@ button {
 .padding-top {
   padding-block-start: 7rem;
 }
+@media (max-width: 1300px) {
+  .padding-top {
+    padding-block-start: 4rem;
+  }
+}
 @media (max-width: 992px) {
   .padding-top {
     padding-block-start: 2rem;
@@ -1208,11 +1213,32 @@ select:focus {
   line-height: 2.25rem;
   color: #8c9094;
 }
-.form-search form:focus {
+.form-search form > div input:focus ::placeholder,
+.form-search form > div input:focus :-moz-placeholder {
+  color: #1a212a !important;
+}
+.form-search form:hover {
   border: 1px solid #1a212a;
 }
-.form-search form:focus > * {
+.form-search form:hover div {
+  /* Firefox < 19 */
+  /* Firefox > 19 */
+  /* Internet Explorer 10 */
+}
+.form-search form:hover div input {
   color: #1a212a;
+}
+.form-search form:hover div input::-webkit-input-placeholder {
+  color: #1a212a !important;
+}
+.form-search form:hover div input:-moz-placeholder {
+  color: #1a212a !important;
+}
+.form-search form:hover div input::-moz-placeholder {
+  color: #1a212a !important;
+}
+.form-search form:hover div input:-ms-input-placeholder {
+  color: #1a212a !important;
 }
 
 .cart-blog {
@@ -1365,6 +1391,9 @@ select:focus {
   box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
   width: 100%;
 }
+.course-card .course-info-card > a {
+  width: 100%;
+}
 .course-card .course-info-card > * {
   display: flex;
   flex-direction: row;
@@ -1404,46 +1433,36 @@ select:focus {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 24rem;
+}
+.course-card .course-img-card .circle > * {
+  aspect-ratio: 1;
+  background: none;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+}
+.course-card .course-img-card .circle .circle-1 {
   width: 23rem;
-  height: 23rem;
-  background: none;
   border: 2.5rem solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
 }
-.course-card .course-img-card .circle::before {
-  content: " ";
+.course-card .course-img-card .circle .circle-2 {
   width: 14rem;
-  height: 14rem;
-  background: none;
-  border: 2rem solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  position: absolute;
+  border: 1.5rem solid rgba(255, 255, 255, 0.5);
 }
-.course-card .course-img-card .circle::after {
-  content: " ";
+.course-card .course-img-card .circle .circle-3 {
   width: 6rem;
-  height: 6rem;
-  background: none;
   border: 1rem solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  position: absolute;
 }
 @media (max-width: 500px) {
   .course-card .course-img-card .circle {
     width: 19.5rem;
-    height: 19.54rem;
   }
-  .course-card .course-img-card .circle::before {
-    content: " ";
+  .course-card .course-img-card .circle .circle-2 {
     width: 12rem;
-    height: 12rem;
-    background: none;
   }
-  .course-card .course-img-card .circle::after {
-    content: " ";
-    width: 4.7rem;
-    height: 4.7rem;
-    background: none;
+  .course-card .course-img-card .circle .circle-3 {
+    width: 7rem;
   }
 }
 .course-card .course-img-card .img-shadow {
@@ -1454,6 +1473,11 @@ select:focus {
   max-width: 22rem;
   max-height: 20rem;
   object-fit: contain;
+}
+.course-card .course-img-card:hover .circle-3,
+.course-card .course-img-card:hover .circle-1,
+.course-card .course-img-card:hover .circle-2 {
+  scale: 1.1;
 }
 
 .course-card.blue {
@@ -1784,6 +1808,7 @@ select:focus {
   border-radius: 50%;
   border: 1px transparent;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 .panels-navigation i::before {
   font-size: 1.5rem;
@@ -2414,8 +2439,14 @@ header .header-large-view .btn-column .profile-btn i {
   box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
   height: 3.25rem;
 }
+header .header-large-view .btn-column .profile-btn i::before {
+  color: #1a212a;
+}
 header .header-large-view .btn-column .profile-btn i:hover {
   background: #1a212a;
+  color: #feffff;
+}
+header .header-large-view .btn-column .profile-btn i:hover::before {
   color: #feffff;
 }
 @media (max-width: 992px) {
@@ -2840,6 +2871,9 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
 body.first-slide header .header-large-view .btn-column .form-search form div input::placeholder {
   color: inherit;
 }
+body.first-slide header .header-large-view .btn-column .form-search form div input:focus::placeholder {
+  color: #1a212a !important;
+}
 
 .section-title {
   display: flex;
@@ -3154,6 +3188,10 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
 .home-nested-slider.hero-section .slide .row .slide-container .panels-navigation i:before {
   color: #1a212a;
   font-size: 1.5rem;
+}
+.home-nested-slider.hero-section .slide .row .slide-container .panels-navigation i:hover {
+  background-color: none;
+  border: none;
 }
 .home-nested-slider.hero-section .slide .row .slide-container .pagination-btn {
   display: flex;
@@ -4106,7 +4144,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   .classes-content .front-coach-content .nav-btn {
     position: absolute;
     width: 100%;
-    top: 20%;
+    top: 10rem;
     height: 2.8rem;
   }
   .classes-content .front-coach-content .nav-btn .panels-navigation {
@@ -4850,6 +4888,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
 }
 .shop-slider .shop-content > * {
   width: 18rem;
+  max-width: 18rem;
   border-radius: 2.5rem;
   border: 1px solid #e8e9ea;
   background: #feffff;
@@ -4874,7 +4913,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
 }
 @media (max-width: 768px) {
   .shop-slider {
-    height: 19.12rem;
+    height: 17.12rem;
   }
   .shop-slider .shop-content {
     flex-wrap: nowrap;
@@ -5086,7 +5125,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   width: 26rem;
   height: 17rem;
   background: none;
-  content: url("http://sunny.local/wp-content/uploads/2023/10/cloaud-after.svg");
+  content: url("https://sunnyrg.com/wp-content/uploads/2023/10/cloaud-after.svg");
   bottom: 0;
   left: -44%;
   position: absolute;
@@ -5097,7 +5136,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   width: 26rem;
   height: 17rem;
   background: none;
-  content: url("http://sunny.local/wp-content/uploads/2023/10/cloaud-before.svg");
+  content: url("https://sunnyrg.com/wp-content/uploads/2023/10/cloaud-before.svg");
   right: 0;
   top: 0;
   position: absolute;
@@ -6782,12 +6821,13 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   width: 100vw;
   height: 100vh;
   gap: 1rem;
   flex-wrap: wrap;
   direction: rtl;
+  padding-block-start: 10rem;
 }
 .sport-slider.swiper-slide .about-nested-slider .swiper-slide .contain .image-content {
   display: flex;
@@ -6923,6 +6963,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
     overflow-y: unset;
     height: auto;
     margin-block-start: 0;
+    padding-block-start: 0;
   }
 }
 @media (max-width: 768px) {
@@ -6996,6 +7037,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   max-height: 14.875rem;
   border-radius: 1.5rem;
   object-fit: cover;
+  cursor: pointer;
 }
 .honors-slider .container .contain .honors-box .info {
   display: flex;
@@ -7164,6 +7206,7 @@ body.first-slide header .header-large-view .btn-column .form-search form div inp
   height: 25.0625rem;
   border-radius: 2.5rem;
   object-fit: cover;
+  cursor: pointer;
 }
 @media (min-width: 992px) and (max-width: 1400px) {
   .gallery-slider .container .honors-title .contain {

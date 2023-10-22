@@ -45,7 +45,7 @@ $video_page_id = get_posts([
     ]);
     ?>
 
-    <header class="<?= (is_front_page() || get_queried_object_id() == $blog_page_id[0] || get_queried_object()->taxonomy == 'category') ? '' : 'header-white' ?>">
+    <header class="<?= (is_front_page() || get_queried_object_id() == $blog_page_id[0] || is_category()) ? '' : 'header-white' ?>">
         <div class="container header-large-view">
             <div class="menu-column">
                 <?php the_custom_logo() ?>
@@ -54,8 +54,8 @@ $video_page_id = get_posts([
             </div>
             <div class="btn-column">
                 <?php get_template_part('templates/components/search-form', null, ['menu-mobile' => false]); ?>
-                <a href="<?= the_permalink($video_page_id[0]);?>" class="sing-up-btn"><i class="icon-play"></i>مشاهده ویدیوها</a>
-                <a href="<?= the_permalink($courses_page_id[0]);?>#courses" class="profile-btn"><i class="icon-note-book"></i></a>
+                <a href="<?= the_permalink($video_page_id[0]); ?>" class="sing-up-btn"><i class="icon-play"></i>مشاهده ویدیوها</a>
+                <a href="<?= the_permalink($courses_page_id[0]); ?>#courses" class="profile-btn"><i class="icon-note-book"></i></a>
 
             </div>
         </div>
@@ -84,7 +84,7 @@ $video_page_id = get_posts([
                 </div>
             </div>
 
-            <a href="<?= the_permalink($video_page_id[0]);?>" class="sing-up-btn"><i class="icon-play"></i>مشاهده ویدیوها</a>
+            <a href="<?= the_permalink($video_page_id[0]); ?>" class="sing-up-btn"><i class="icon-play"></i>مشاهده ویدیوها</a>
 
         </div>
     </header>

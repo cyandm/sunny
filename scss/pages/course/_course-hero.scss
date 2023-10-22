@@ -39,14 +39,14 @@
         bottom: 0;
 
         @include sudo(before, 26rem, 17rem, none) {
-          content: url("http://sunny.local/wp-content/uploads/2023/10/cloaud-after.svg");
+          content: url("https://sunnyrg.com/wp-content/uploads/2023/10/cloaud-after.svg");
           bottom: 0;
           left: -44%;
           position: absolute;
           animation: sway 4s ease-in-out infinite alternate;
         }
         @include sudo(after, 26rem, 17rem, none) {
-          content: url("http://sunny.local/wp-content/uploads/2023/10/cloaud-before.svg");
+          content: url("https://sunnyrg.com/wp-content/uploads/2023/10/cloaud-before.svg");
           right: 0;
           top: 0;
           position: absolute;

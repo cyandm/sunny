@@ -15,18 +15,18 @@ $testimonials = get_field('testimonial_choose', $frontId); ?>
             <div class="video-container">
 
                 <?php foreach ($testimonials as $key => $video) :
-                    $videoSrc=get_field('video_file', $video->ID);
-                    if($videoSrc && get_post_thumbnail_id($video->ID)):?>
-                    <div class="video-content  <?= ($key == 0) ? 'active' : '' ?>" data-id="<?= $video->ID ?>">
-                        <?php $thumbnail_id = get_post_thumbnail_id($video->ID); ?>
-                        <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
+                    $videoSrc = get_field('video_file', $video->ID);
+                    if ($videoSrc && get_post_thumbnail_id($video->ID)) : ?>
+                        <div class="video-content  <?= ($key == 0) ? 'active' : '' ?>" data-id="<?= $video->ID ?>">
+                            <?php $thumbnail_id = get_post_thumbnail_id($video->ID); ?>
+                            <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
 
-                        <i class="icon-play play-video" id="play-video"></i>
+                            <i class="icon-play play-video" id="play-video"></i>
 
-                        <video id="mainVideo" controls>
-                            <source src="<?= $videoSrc ?>" type="video/mp4">
-                        </video>
-                    </div>
+                            <video id="mainVideo" controls>
+                                <source src="<?= $videoSrc ?>" type="video/mp4">
+                            </video>
+                        </div>
                 <?php
                     endif;
                 endforeach; ?>
@@ -53,34 +53,18 @@ $testimonials = get_field('testimonial_choose', $frontId); ?>
                             <div class="swiper-wrapper">
                                 <?php
                                 foreach ($testimonials as $key => $person) :
-                                if(get_field('video_file', $person->ID) && get_post_thumbnail_id($video->ID)):
-                                    ?>
-                                    <div class="swiper-slide person-img  <?= ($key == 0) ? 'active' : '' ?>" data-id="<?= $person->ID ?>">
+                                    if (get_field('video_file', $person->ID) && get_post_thumbnail_id($video->ID)) :
+                                ?>
+                                        <div class="swiper-slide person-img  <?= ($key == 0) ? 'active' : '' ?>" data-id="<?= $person->ID ?>">
 
-                                        <?php $thumbnail_id = get_post_thumbnail_id($person->ID); ?>
-                                        <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
-                                    </div>
+                                            <?php $thumbnail_id = get_post_thumbnail_id($person->ID); ?>
+                                            <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
+                                        </div>
                                 <?php
-                                endif;
+                                    endif;
 
                                 endforeach; ?>
-                                <?php
-                                foreach ($testimonials as $key => $person) : ?>
-                                    <div class="swiper-slide person-img  <?= ($key == 0) ? 'active' : '' ?>" data-id="<?= $person->ID ?>">
 
-                                        <?php $thumbnail_id = get_post_thumbnail_id($person->ID); ?>
-                                        <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
-                                    </div>
-                                <?php
-                                endforeach;
-                                foreach ($testimonials as $key => $person) : ?>
-                                    <div class="swiper-slide person-img  <?= ($key == 0) ? 'active' : '' ?>" data-id="<?= $person->ID ?>">
-
-                                        <?php $thumbnail_id = get_post_thumbnail_id($person->ID); ?>
-                                        <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
-                                    </div>
-                                <?php
-                                endforeach; ?>
                             </div>
                         </div>
                     </div>

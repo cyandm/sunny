@@ -1,7 +1,7 @@
 import { Swiper } from "swiper";
 
 const about = document.querySelector("#about-page");
-if (about && window.innerWidth>992) {
+if (about && window.innerWidth > 992) {
   const galleryBoxes = document.querySelectorAll(".gallery-box");
 
   galleryBoxes.forEach((image) => {
@@ -20,7 +20,7 @@ if (about && window.innerWidth>992) {
 
       const swiper = new Swiper(".body-popup .gallery-slider", {
         slidesPerView: "auto",
-        loop: true,
+        // loop: true,
         spaceBetween: 20,
         breakpoints: {
           992: {
@@ -44,7 +44,6 @@ if (about && window.innerWidth>992) {
     });
   });
 
-
   const honorsBoxes = document.querySelectorAll(".honors-box");
   honorsBoxes.forEach((image) => {
     image.addEventListener("click", (e) => {
@@ -62,7 +61,7 @@ if (about && window.innerWidth>992) {
 
       const swiper = new Swiper(".body-popup .honors-slider", {
         slidesPerView: "auto",
-        loop: true,
+        // loop: true,
         spaceBetween: 20,
         breakpoints: {
           992: {
@@ -71,9 +70,7 @@ if (about && window.innerWidth>992) {
         },
       });
 
-      const closeHonorPopup = cloneHonor.querySelector(
-          ".close-honors-popup"
-      );
+      const closeHonorPopup = cloneHonor.querySelector(".close-honors-popup");
       closeHonorPopup.addEventListener("click", () => {
         cloneHonor.classList.remove("show");
 

@@ -15,14 +15,14 @@
       overflow: hidden;
       text-align: left;
       .contain {
-        @include flex();
+        @include flex(row, center, start);
 
         width: 100vw;
         height: 100vh;
         gap: 1rem;
         flex-wrap: wrap;
         direction: rtl;
-
+        padding-block-start: 10rem;
 
         .image-content {
           @include flex();
@@ -34,7 +34,7 @@
             position: absolute;
             z-index: -1;
             top: 0;
-width: 100%;
+            width: 100%;
             max-height: 19rem;
           }
           img {
@@ -81,12 +81,12 @@ width: 100%;
       }
     }
   }
-  @media (min-width: 992px) and (max-width: 1400px){
+  @media (min-width: 992px) and (max-width: 1400px) {
     .about-nested-slider {
       .swiper-slide {
-        .contain{
+        .contain {
           overflow-y: scroll;
-          height:55vh;
+          height: 55vh;
           margin-block-start: 5rem;
         }
       }
@@ -98,24 +98,24 @@ width: 100%;
       height: auto;
       .swiper-slide {
         height: auto;
-        .contain{
+        .contain {
           flex-direction: column;
           gap: 1.5rem;
           overflow-y: unset;
-          height:auto;
+          height: auto;
           margin-block-start: 0;
+          padding-block-start: 0;
         }
       }
     }
   }
 
   @media (max-width: 768px) {
-    .image-content{
-      svg{
+    .image-content {
+      svg {
         max-height: 15rem !important;
         top: unset !important;
         bottom: 0;
-
       }
     }
   }

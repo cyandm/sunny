@@ -34,8 +34,10 @@ const defaultSwiper = {
 // ****************************** front page swiper slider
 export const coachSlider = new Swiper(".coach-slider", {
   ...defaultSwiper,
-  loop: true,
+  // loop: true,
+  spaceBetween: 16,
   speed: 1000,
+  autoHeight: true,
   navigation: {
     nextEl: ".coach-slider-next",
     prevEl: ".coach-slider-prev",
@@ -47,7 +49,7 @@ export const studentSlider = new Swiper(".students-slider", {
   slidesPerView: "auto",
   spaceBetween: 16,
   nested: true,
-  loop: true,
+  // loop: true,
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
@@ -90,18 +92,19 @@ const shopSliderElement = document.querySelector(".shop-slider");
 export const shopSlider = new Swiper(shopSliderElement, {
   slidesPerView: "auto",
   spaceBetween: 16,
-  loop: true,
+  autoHeight: true,
+  // loop: true,
   // Responsive breakpoints
-  breakpoints: {
-    768: {
-      ...defaultSwiper,
-      spaceBetween: 16,
-      slidesPerColumn: 2,
-      grid: {
-        rows: 2,
-      },
-    },
-  },
+  // breakpoints: {
+  //   768: {
+  //     ...defaultSwiper,
+  //     spaceBetween: 16,
+  //     slidesPerColumn: 2,
+  //     grid: {
+  //       rows: 2,
+  //     },
+  //   },
+  // },
 
   autoplay: {
     delay: 3000,
@@ -117,7 +120,7 @@ if (shopSliderElement && window.innerWidth >= 1400) {
 export const testimonialSlider = new Swiper(".testimonial-slider", {
   slidesPerView: "auto",
   spaceBetween: 16,
-  loop: true,
+  // loop: true,
 
   autoplay: {
     delay: 3000,

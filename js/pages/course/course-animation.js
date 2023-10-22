@@ -6,7 +6,7 @@ if (coursePageAnimation) {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.from(".bg-top-radius", {
-    duration: 1.7,
+    duration: 1,
 
     y: "-700",
     top: "-100%",
@@ -15,19 +15,19 @@ if (coursePageAnimation) {
   });
 
   gsap.from(".image-animate img", {
-    duration: 2,
+    duration: 1,
     opacity: 0,
     y: "700",
     ease: "expo.inOut",
   });
 
   gsap.from(".img-title-animation", {
-    duration: 1.5,
+    duration: 1,
     delay: 1,
     opacity: 0,
     y: 30,
     ease: "expo.inOut",
-    stagger: 0.5,
+    stagger: 0.3,
   });
 
   const courseBlocks = document.querySelectorAll(".course-block");
