@@ -6,7 +6,9 @@
   padding: 1.5rem;
   border-radius: 2.5rem;
   flex: 1;
-
+  > a {
+    width: 100%;
+  }
   .course-info-card {
     @include flex(column, center, start);
     gap: 0.44rem;

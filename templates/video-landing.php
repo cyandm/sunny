@@ -132,8 +132,8 @@ get_header();
                         if ($video2) : ?>
                             <div class="video-part-content slide-video-popup">
 
-                                <?php $thumbnail_id = get_post_thumbnail_id($videoCoach->ID); ?>
-                                <?= wp_get_attachment_image($thumbnail_id, 'full', false, []); ?>
+
+                                <?= wp_get_attachment_image($img2, 'full', false, []); ?>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="57" viewBox="0 0 56 57"
                                      fill="none">
