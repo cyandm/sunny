@@ -8,10 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_card-course.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-course.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/video-landing.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/video-landing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/_video-landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_video-landing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/course/_course-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/course/_course-hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coaches.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coaches.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/classes.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/classes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1697784464730" duration="5674000" />
       <workItem from="1697810453788" duration="20486000" />
       <workItem from="1697905300198" duration="14507000" />
-      <workItem from="1698059342693" duration="11795000" />
+      <workItem from="1698059342693" duration="14078000" />
     </task>
     <servers />
   </component>

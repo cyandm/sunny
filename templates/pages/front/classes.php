@@ -81,7 +81,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                                     if ($content['add_image'] || $content['add_film']) :
                                                 ?>
                                                         <div class="student-info swiper-slide student-image">
-                                                            <?php if ($content['film_or_img'] == 'film') { ?>
+                                                            <?php if ($content['film_or_img'] == 'film' && $content['film_cover_image']) { ?>
                                                                 <div class="add-video-content">
                                                                     <?= wp_get_attachment_image($content['film_cover_image'], 'full', false, []); ?>
 
@@ -91,7 +91,7 @@ $topStudentTitle = get_field('top_student_title', $frontId);
                                                                     </svg>
                                                                 </div>
                                                             <?php }
-                                                            if ($content['film_or_img'] == 'img') {
+                                                            if ($content['film_or_img'] == 'img' && $content['add_image']) {
 
                                                                 echo   wp_get_attachment_image($content['add_image'], 'full', false, []);
                                                             } ?>
