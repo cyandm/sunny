@@ -19,6 +19,7 @@
     max-width: 5.7rem;
     height: 100%;
     border-radius: 2.5rem 0rem 0rem 2.5rem;
+    cursor: pointer;
 
     > diV {
       @include flex(column, space-between, end);

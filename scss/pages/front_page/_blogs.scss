@@ -83,7 +83,7 @@
       pointer: curser;
       transition: all 0.3s ease-in-out;
       position: relative;
-
+      cursor: pointer;
       @include sudo(before, 100%, 100%, $white-1) {
         border-radius: 2.5rem 2.5rem 0rem 0rem;
         position: absolute;

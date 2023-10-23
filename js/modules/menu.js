@@ -37,7 +37,7 @@ if (mobile) {
       } else {
         menuItem.classList.add("active-menu");
         subMenu.style.height = subMenu.scrollHeight + "px";
-        const beforeHeight = subMenu.scrollHeight - 19 + "px";
+        const beforeHeight = subMenu.scrollHeight - 21 + "px";
         subMenu.style.setProperty("--mobile-before-height", beforeHeight);
         const subMenuLi = subMenu.querySelectorAll("li");
         const tl = gsap.timeline();
