@@ -105,8 +105,7 @@
   .front-coach-content {
     flex: 1 1 55%;
     height: 35rem;
-    @include flex(column);
-    align-items: start;
+    @include flex(column,start,start);
     gap: 0.62rem;
     max-width: 55%;
 

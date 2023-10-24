@@ -8,7 +8,7 @@ if (startSection) {
 
   popupVideos.forEach((video) => {
     video.addEventListener("click", () => {
-      console.log(video);
+
       const source = video
         .querySelector(".video-popup video source")
         .getAttribute("src");

@@ -37,6 +37,7 @@ $honorSlider = get_field('about_slider_2', $pageId);
                             <?php endif;
                         endforeach; ?>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
 

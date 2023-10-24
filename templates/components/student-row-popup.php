@@ -45,5 +45,6 @@ $imagesFilms = get_field('add_film_or_images', $coachId);
                 endif;
             endforeach; ?>
         </div>
+        <div class="swiper-pagination"></div>
     </div>
 </div>

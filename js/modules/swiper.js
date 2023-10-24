@@ -7,6 +7,7 @@ import {
 } from "./functions";
 
 import { Swiper } from "swiper";
+import "swiper/scss/pagination";
 import {
   Mousewheel,
   Navigation,
@@ -15,6 +16,7 @@ import {
   Autoplay,
   Thumbs,
   Grid,
+
 } from "swiper/modules";
 
 const defaultSwiper = {
@@ -62,8 +64,12 @@ export const studentSlider = new Swiper(".students-slider", {
 });
 
 export const studentSliderPopup = new Swiper(".students-slider-popup", {
+  ...defaultSwiper,
   slidesPerView: "auto",
   spaceBetween: 20,
+  pagination: {
+    el: ".swiper-pagination",
+  },
   breakpoints: {
     992: {
       slidesPerView: 2,

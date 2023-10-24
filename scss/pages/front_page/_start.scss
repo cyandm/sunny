@@ -190,6 +190,11 @@
                   visibility: visible;
                   transform: translateY(0);
                   height: auto;
+                  display: none;
+                }
+
+                .start-text-btn.more-content.show{
+                  display: flex;
                 }
 
                 .start-text-btn.less-content {

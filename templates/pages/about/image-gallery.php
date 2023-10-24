@@ -34,6 +34,7 @@ $imagesGallery = get_field('about_slider_3', $pageId);
                         <?php endif;
                         endforeach; ?>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>

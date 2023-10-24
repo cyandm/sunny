@@ -113,8 +113,13 @@ if (courseForms) {
         if (key == "course_id" && !value == "") {
           errors.push(integer(value));
         }
+      });
+
+
 
         const isArrayEmptyOrAllUndefined = (array) => {
+          console.log(array);
+
           if (array.length === 0) {
             return true; // The array is empty
           }
@@ -188,7 +193,7 @@ if (courseForms) {
           failMessage.innerHTML += "</ul>";
           failMessage.classList.add("show");
         }
-      });
+
 
       const formMessageCloseButtons = document.querySelectorAll(
         ".form-message-close"
