@@ -7,7 +7,7 @@ import {
 } from "./functions";
 
 import { Swiper } from "swiper";
-import "swiper/scss/pagination";
+
 import {
   Mousewheel,
   Navigation,
