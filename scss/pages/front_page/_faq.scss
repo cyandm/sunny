@@ -104,8 +104,11 @@
       }
     }
   }
-  @media (min-width: 992px) and (max-width: 1200px) {
+
+  @media (min-width: 992px) and (max-width: 1400px) {
     .faq-content {
+      height: 31rem;
+      overflow-y: scroll;
       .faq-drop-down {
         flex: 2;
       }

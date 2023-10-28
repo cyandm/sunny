@@ -115,7 +115,11 @@
         max-width: 22rem;
       }
     }
-
+    @media (min-width: 992px) and (max-width: 1400px) {
+      > div {
+        height: 15rem;
+      }
+    }
     @media (max-width: 1100px) {
       .contact-box-right > .images {
         left: -10.5rem;
@@ -184,5 +188,9 @@
         }
       }
     }
+
+
+
+
   }
 }

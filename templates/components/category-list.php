@@ -21,7 +21,7 @@ $blog_page_id = get_posts([
 
 <!-- ------------------------------------for mobile view-->
 <div class="cat-list-mobile">
-    <select class="mobile-cat mobile-category-list" id="mobile-category-list">
+    <select class="mobile-cat mobile-category-list" id="cat-select-mobile">
         <option id="all" value="<?= get_permalink($blog_page_id[0]) ?>">همه</option>
         <?php foreach ($terms as $key => $term) : ?>
             <?php if ($key < 8) : ?>

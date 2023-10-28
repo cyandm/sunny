@@ -6,6 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/front-page/start-section.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/front-page/start-section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_card-blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-blog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_card-course.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-course.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_slider-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_slider-btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/blog-overview/_blog-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/blog-overview/_blog-hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/category-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/category-list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/maryam/Desktop/Beta-daro/binaapply/online",
+    "last_opened_file_path": "C:/Users/maryam/Local Sites/sunny-last/app/public/wp-content/themes/sunny",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -123,6 +141,7 @@
       <workItem from="1698059342693" duration="15675000" />
       <workItem from="1698167868780" duration="9525000" />
       <workItem from="1698262694642" duration="47000" />
+      <workItem from="1698454394057" duration="10520000" />
     </task>
     <servers />
   </component>

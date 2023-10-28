@@ -73,7 +73,7 @@
         .image-box {
           @include flex();
           position: absolute;
-
+          left: 50%;
           bottom: 0;
 
           .img {

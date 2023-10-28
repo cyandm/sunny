@@ -90,6 +90,19 @@
       color: $blue-2;
     }
   }
+
+
+  @media (min-width: 992px) and (max-width: 1400px) {
+    .img-cart-blog a {
+
+      height: 14rem;
+    }
+
+  }
+
+
+
+
 }
 
 

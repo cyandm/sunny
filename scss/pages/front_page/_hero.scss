@@ -26,7 +26,8 @@
         .circle {
           @include flex();
 
-          @include sudo(after, 43rem, 43rem, $pink-2) {
+          @include sudo(after, 43rem, auto, $pink-2) {
+            aspect-ratio: 1;
             border-radius: 50%;
             position: absolute;
             z-index: -1;
@@ -157,14 +158,45 @@
     .mobile-next-bg {
       display: none;
     }
+    @media (max-width: 1400px) {
+      .row {
+        .slide-container {
+          .circle {
+            &:after {
+              width: 41rem;
+              top: 10%;
+            }
+          }
+          .bottom_circle {
+            width: 60%;
+            left: 20%;
+          }
+          .top_circle {
+            width: 60%;
+            left: 20%;
+          }
+          .content-hero-slide {
+            .hero-img {
+              img {
+                max-height: 40rem;
+              }
+            }
+
+          }
+        }
+      }
+      .title {
+        font-size: 7.75rem;
+        top: 10%;
+      }
+    }
     @media (max-width: 1200px) {
       .row {
         .slide-container {
           .circle {
             &:after {
               width: 40rem;
-              height: 40rem;
-              top: 38%;
+              top: 10%;
             }
           }
           .bottom_circle {

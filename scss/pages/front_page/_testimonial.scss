@@ -132,7 +132,18 @@
       }
     }
   }
+  @media (min-width: 992px) and (max-width: 1400px) {
 
+
+    .front-testimonial-content .testimonial-content .info-row {
+      min-height: 13rem;
+    }
+   .front-testimonial-content .testimonial-content .other-person-content .slider .testimonial-slider {
+      height: 16rem;
+    }
+
+
+  }
   @media (max-width: 992px) {
     .front-testimonial-content {
       margin-block-end: 0.5rem;

@@ -71,6 +71,13 @@
           width: 7rem;
         }
       }
+
+      @media (min-width: 992px) and (max-width: 1400px) {
+
+          height: 20rem;
+
+      }
+
     }
 
     .img-shadow {
