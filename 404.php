@@ -6,7 +6,7 @@ get_header()
         <div class="unfind-row">
             <div class="unfind-content">
                 <div class="img" id="not-fond-animation">
-                    <?php
+                                <?php
                     get_template_part('imgs/svg/404'); ?>
                 </div>
                 <h3>متاسفانه صفحه مورد نظر یافت نشد</h3>

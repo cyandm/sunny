@@ -22,10 +22,13 @@ if (have_comments()) :
         <?php
         $list = wp_list_comments(
             array(
-                'walker' => null,
+
+
+
+                     'walker' => null,
                 'max_depth' => '',
                 'style' => 'div',
-                'callback' => null,
+                '   callback' => null,
                 'end-callback' => null,
                 'type' => 'all',
                 'page' => '',
