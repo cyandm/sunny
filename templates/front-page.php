@@ -13,7 +13,7 @@
             get_template_part('templates/pages/front/classes');
             get_template_part('templates/pages/front/faq');
             get_template_part('templates/pages/front/packages');
-//            get_template_part('templates/pages/front/shop');
+            get_template_part('templates/pages/front/shop');
             get_template_part('templates/pages/front/blog');
             get_template_part('templates/pages/front/contacts');
             ?>
