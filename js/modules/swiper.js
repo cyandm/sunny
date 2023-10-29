@@ -191,7 +191,7 @@ horizontalSliders.forEach((slider, index) => {
   });
 
   if (index == 0) {
-
+    horizontalSwiper.autoplay.start();
     horizontalSwiper.on("slideChange", () => {
       if (horizontalSwiper.realIndex == 0) {
         if (!document.body.classList.contains("first-slide")) {

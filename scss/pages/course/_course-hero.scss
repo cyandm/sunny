@@ -30,7 +30,7 @@
 
       .bg {
         width: 27.5625rem;
-        height: 31.75rem;
+        height: 100%;
         background: $blue-1;
         border-radius: 50% 50% 0 0;
         z-index: -2;
@@ -153,7 +153,7 @@
     }
   }
   @media (max-width: 992px) {
-    padding-block-start: 5rem;
+    padding-block-start: 7rem;
 
     .course-hero {
       flex-direction: column;
@@ -225,12 +225,12 @@
           top: 66%;
         }
         span.img-title-2 {
-          top: 8%;
+          top: 45%;
           right: 0;
         }
         span.img-title-3 {
-          right: 0;
-          bottom: 1.5rem;
+          right: 10%;
+          bottom: 0.5rem;
         }
       }
       .hero-content {
