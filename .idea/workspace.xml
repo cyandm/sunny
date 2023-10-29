@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa15d752-e895-466c-8baf-e6c19c806c33" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/swiper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/shop/_archive-product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/shop/_archive-product.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/utils/_mixin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/utils/_mixin.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/front/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/faq.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +124,7 @@
       <workItem from="1698167868780" duration="9525000" />
       <workItem from="1698262694642" duration="47000" />
       <workItem from="1698454394057" duration="11211000" />
-      <workItem from="1698548196711" duration="4057000" />
+      <workItem from="1698548196711" duration="4093000" />
     </task>
     <servers />
   </component>
