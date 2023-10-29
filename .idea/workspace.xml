@@ -8,22 +8,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/compiled.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/compiled.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dist/scripts.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/front-page/start-section.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/front-page/start-section.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_card-blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-blog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_card-course.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-course.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_slider-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_slider-btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/blog-overview/_blog-hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/blog-overview/_blog-hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/swiper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_classes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_contact.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_faq.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_package.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_start.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/front_page/_testimonial.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/components/category-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/category-list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/pages/shop/_archive-product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/shop/_archive-product.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/utils/_mixin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/utils/_mixin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/front/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/front/faq.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,22 +47,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/maryam/Local Sites/sunny-last/app/public/wp-content/themes/sunny",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maryam/Local Sites/sunny-last/app/public/wp-content/themes/sunny&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\maryam\Local Sites\sunny\app\public\wp-content\themes\sunny" />
@@ -141,7 +134,8 @@
       <workItem from="1698059342693" duration="15675000" />
       <workItem from="1698167868780" duration="9525000" />
       <workItem from="1698262694642" duration="47000" />
-      <workItem from="1698454394057" duration="10520000" />
+      <workItem from="1698454394057" duration="11211000" />
+      <workItem from="1698548196711" duration="4057000" />
     </task>
     <servers />
   </component>

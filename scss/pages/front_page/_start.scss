@@ -9,7 +9,7 @@
         .container {
           @include flex(column, space-between, start);
           direction: rtl;
-          text-align: right;
+          text-align: justify;
           height: 100%;
           padding: 5rem 0 1.5rem 0;
 

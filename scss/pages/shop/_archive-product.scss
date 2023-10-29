@@ -35,6 +35,7 @@
       .text {
         @include font_style(body);
         margin-block-end: 1.5rem;
+        text-align: justify;
       }
 
       .shop-btn {
@@ -66,9 +67,10 @@
     }
 
     .content-img {
+      @include flex();
       img {
         width: 100%;
-        object-fit: cover;
+
       }
     }
   }

@@ -30,8 +30,10 @@
           color: $black-1;
           justify-content: space-between;
           width: 100%;
+
           span {
             width: 90%;
+            text-align: justify;
           }
           i {
             @include flex();
@@ -53,7 +55,9 @@
           max-height: 0;
           overflow: hidden;
           transition: all 0.3s ease-in-out;
-          text-align: right;
+          text-align: justify;
+
+
         }
         &:last-child {
           border-bottom: none;
@@ -73,18 +77,18 @@
     }
     .faq-img {
       @include flex();
-      @include sudo(before, 36.875rem, 36.875rem, #00a195) {
-        border-radius: 50%;
-        position: absolute;
-        z-index: -1;
-      }
-      @include sudo(after, 36.875rem, 36.875rem, none) {
-        border-radius: 50%;
-        position: absolute;
-        border: 1px solid #00a195;
-        top: 3%;
-        z-index: -1;
-      }
+      //@include sudo(before, 36.875rem, 36.875rem, #00a195) {
+      //  border-radius: 50%;
+      //  position: absolute;
+      //  z-index: -1;
+      //}
+      //@include sudo(after, 36.875rem, 36.875rem, none) {
+      //  border-radius: 50%;
+      //  position: absolute;
+      //  border: 1px solid #00a195;
+      //  top: 3%;
+      //  z-index: -1;
+      //}
       position: relative;
 
       img {

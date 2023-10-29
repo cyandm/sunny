@@ -27,7 +27,7 @@ $faqImg = get_field('image_faq_section', $frontId);
                                 <i class="icon-arrow-single-big"></i>
                             </div>
                             <div class="answer">
-                                <?= (strlen($faq->post_content) > 800) ? substr($faq->post_content, 0, 800) . '...' : $faq->post_content; ?>
+                                <?= $faq->post_content;?>
                             </div>
                         </div>
                 <?php endif;

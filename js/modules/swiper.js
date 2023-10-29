@@ -17,6 +17,7 @@ import {
   Thumbs,
   Grid,
 
+
 } from "swiper/modules";
 
 const defaultSwiper = {
@@ -28,6 +29,7 @@ const defaultSwiper = {
     Autoplay,
     Thumbs,
     Grid,
+
   ],
   slidesPerView: 1,
   spaceBetween: 0,
@@ -80,6 +82,7 @@ export const studentSliderPopup = new Swiper(".students-slider-popup", {
 //****************************** package slider */
 const packageSliderElement = document.querySelector(".package-slider");
 export const packageSlider = new Swiper(packageSliderElement, {
+  ...defaultSwiper,
   slidesPerView: "auto",
   spaceBetween: 16,
   loop: true,
@@ -178,13 +181,17 @@ horizontalSliders.forEach((slider, index) => {
     speed: 1000,
     nested: true,
     mousewheel: true,
+
     navigation: {
       nextEl: ".home-nested-next",
       prevEl: ".home-nested-prev",
+
+
     },
   });
 
   if (index == 0) {
+
     horizontalSwiper.on("slideChange", () => {
       if (horizontalSwiper.realIndex == 0) {
         if (!document.body.classList.contains("first-slide")) {
