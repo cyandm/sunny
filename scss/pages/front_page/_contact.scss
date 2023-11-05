@@ -1,6 +1,7 @@
-@use "../../utils/index" as *;
+@use '../../utils/index' as *;
 
 .front-contact-section {
+  margin-block-end: 2rem;
   .front-contact-content {
     @include flex();
     gap: 1rem;
@@ -188,9 +189,5 @@
         }
       }
     }
-
-
-
-
   }
 }

@@ -1,10 +1,9 @@
-@use "../../utils/index" as *;
+@use '../../utils/index' as *;
 
 .home-nested-slider.hero-section {
   height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 0;
+  overflow-x: hidden;
+
   .slide {
     position: relative;
     width: 100%;
@@ -55,6 +54,8 @@
 
           .hero-img {
             img {
+              max-height: 80vh;
+              object-fit: contain;
             }
           }
 
@@ -181,7 +182,6 @@
                 max-height: 40rem;
               }
             }
-
           }
         }
       }
@@ -406,51 +406,6 @@
       i {
         &::before {
           color: $white-1;
-        }
-      }
-    }
-  }
-}
-
-.slide-hero-1 {
-  .row {
-    .content-hero-slide {
-      .hero-img {
-        img {
-          max-width: 1280px;
-          max-height: 753px;
-        }
-      }
-    }
-  }
-}
-.slide-hero-2 {
-  .row {
-    .content-hero-slide {
-      .hero-img {
-        img {
-          max-width: 1280px;
-          max-height: 753px;
-        }
-      }
-    }
-  }
-}
-
-.slide-hero-3 {
-  @media (min-width: 992px) {
-    .row {
-      .slide-container {
-        .hero-img {
-          img {
-            max-width: 1280px;
-            max-height: 753px;
-          }
-        }
-        .content-hero-slide {
-          .title {
-            top: 0 !important;
-          }
         }
       }
     }

@@ -1,45 +1,52 @@
-import { gsap } from "gsap";
+import { gsap } from 'gsap';
 
 // ************************************************ mobile menu
-const mobile = document.querySelector(".hamburger-menu");
+const hamburgerMenuMobile = document.querySelector('.hamburger-menu');
+const close_mobile = document.getElementById('close-menu');
 
-const close_mobile = document.getElementById("close-menu");
-
-if (mobile) {
-  (function () {
-    mobile.addEventListener("click", function () {
-      document.querySelector(".mobile-menu").classList.toggle("display-menu");
-      document.querySelector("header").classList.toggle("custom-z-index");
-      document.querySelector(".mobile-menu-detail").classList.toggle("active");
-      document.body.style.overflow = "hidden";
-      return false;
-    });
-    close_mobile.addEventListener("click", function () {
-      document.querySelector(".mobile-menu-detail").classList.remove("active");
-      document.querySelector(".mobile-menu").classList.remove("display-menu");
-      document.querySelector("header").classList.remove("custom-z-index");
-      document.body.style.overflow = "auto";
-    });
-  })();
-
+if (hamburgerMenuMobile) {
+  const mobileMenuDetail = document.querySelector('.mobile-menu-detail');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const header = document.querySelector('header');
   const menuItemsHasChildren = document.querySelectorAll(
-    ".header-mobile li.menu-item-has-children"
+    '.header-mobile li.menu-item-has-children'
   );
 
+  const closeMenu = () => {
+    mobileMenuDetail.classList.remove('active');
+    mobileMenu.classList.remove('display-menu');
+    header.classList.remove('custom-z-index');
+    document.body.style.overflow = 'auto';
+  };
+
+  const openMenu = () => {
+    mobileMenu.classList.toggle('display-menu');
+    header.classList.toggle('custom-z-index');
+    mobileMenuDetail.classList.toggle('active');
+    document.body.style.overflow = 'hidden';
+    return false;
+  };
+
+  hamburgerMenuMobile.addEventListener('click', openMenu);
+  close_mobile.addEventListener('click', closeMenu);
+  mobileMenu.addEventListener('click', (e) => {
+    e.target === mobileMenu && closeMenu();
+  });
+
   menuItemsHasChildren.forEach((menuItem) => {
-    menuItem.addEventListener("click", (e) => {
+    menuItem.addEventListener('click', (e) => {
       e.stopPropagation();
 
-      const subMenu = menuItem.querySelector("ul");
-      if (menuItem.classList.contains("active-menu")) {
-        menuItem.classList.remove("active-menu");
+      const subMenu = menuItem.querySelector('ul');
+      if (menuItem.classList.contains('active-menu')) {
+        menuItem.classList.remove('active-menu');
         subMenu.style.height = 0;
       } else {
-        menuItem.classList.add("active-menu");
-        subMenu.style.height = subMenu.scrollHeight + "px";
-        const beforeHeight = subMenu.scrollHeight - 21 + "px";
-        subMenu.style.setProperty("--mobile-before-height", beforeHeight);
-        const subMenuLi = subMenu.querySelectorAll("li");
+        menuItem.classList.add('active-menu');
+        subMenu.style.height = subMenu.scrollHeight + 'px';
+        const beforeHeight = subMenu.scrollHeight - 21 + 'px';
+        subMenu.style.setProperty('--mobile-before-height', beforeHeight);
+        const subMenuLi = subMenu.querySelectorAll('li');
         const tl = gsap.timeline();
 
         subMenuLi.forEach((subMenu, index) => {
@@ -56,15 +63,15 @@ if (mobile) {
 }
 
 // *****************************mobile menu search box
-const searchMenuMobile = document.querySelector(".form-search.menu-mobile");
-searchMenuMobile.addEventListener("click", () => {
-  searchMenuMobile.classList.remove("menu-mobile");
+const searchMenuMobile = document.querySelector('.form-search.menu-mobile');
+searchMenuMobile.addEventListener('click', () => {
+  searchMenuMobile.classList.remove('menu-mobile');
 });
 
 //********************** add class to hamburger-menu /
-const backBtn = document.querySelector("#back-btn");
+const backBtn = document.querySelector('#back-btn');
 if (backBtn && window.innerWidth <= 992) {
-  document.querySelector(".hamburger-menu").classList.toggle("with-back-btn");
+  document.querySelector('.hamburger-menu').classList.toggle('with-back-btn');
 }
 
 // *********************** add class to header

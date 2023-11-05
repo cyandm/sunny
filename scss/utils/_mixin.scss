@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 /* Typography**************/
 @mixin base_font() {
@@ -8,50 +8,52 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  font-variant-ligatures: discretionary-ligatures;
+  font-feature-settings: 'ss01' 1, 'salt' 0;
 }
 
 @mixin font_style($type) {
   @include base_font();
-  @if ($type == "t1") {
+  @if ($type == 't1') {
     font-size: 8.75rem;
     font-weight: 700;
   }
-  @if ($type == "h1") {
+  @if ($type == 'h1') {
     font-size: 2.75rem;
   }
 
-  @if ($type == "h2") {
+  @if ($type == 'h2') {
     font-size: 1.5rem;
   }
 
-  @if ($type == "h3") {
+  @if ($type == 'h3') {
     font-size: 1.25rem;
     font-weight: 500;
   }
 
-  @if ($type == "h4") {
+  @if ($type == 'h4') {
     font-size: 1rem;
     font-weight: 500;
   }
-  @if ($type== "body-small") {
+  @if ($type== 'body-small') {
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5rem;
   }
-  @if ($type == "body") {
+  @if ($type == 'body') {
     font-size: 1rem;
     font-weight: 400;
     line-height: 2.25rem;
   }
 
-  @if ($type == "body_b") {
+  @if ($type == 'body_b') {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 2.25rem;
   }
 
-  @if ($type == "caption") {
+  @if ($type == 'caption') {
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.625rem;
@@ -84,7 +86,7 @@
     }
   }
 
-  @include font_style("body");
+  @include font_style('body');
 
   padding: $padding;
   border: $border;
@@ -153,7 +155,7 @@
       }
 
       @if ($hasIcon) {
-        @if ($IconSide == "left") {
+        @if ($IconSide == 'left') {
           justify-content: space-between;
           i {
             &::before {
@@ -178,6 +180,11 @@
         background: $white-2;
         @include font_style(body);
         color: $gray-1;
+        transition: all 0.3s;
+        &::placeholder,
+        :-moz-placeholder {
+          transition: inherit;
+        }
         &:focus {
           ::placeholder,
           :-moz-placeholder {
@@ -218,10 +225,10 @@
 }
 
 //********************* before after mixin
-@mixin sudo_icon($sudo, $content: "", $color, $size: 1.5rem) {
+@mixin sudo_icon($sudo, $content: '', $color, $size: 1.5rem) {
   &::#{$sudo} {
     content: $content;
-    font-family: "icomoon";
+    font-family: 'icomoon';
     color: $color;
     font-size: $size;
     transition: all 0.3s ease-in-out;
@@ -231,7 +238,7 @@
 
 @mixin sudo($sudo, $width, $height, $background) {
   &::#{$sudo} {
-    content: " ";
+    content: ' ';
     width: $width;
     height: $height;
     background: $background;

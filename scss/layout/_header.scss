@@ -1,14 +1,15 @@
-@use "../utils/index" as *;
+@use '../utils/index' as *;
 
 header {
   padding-block-start: 1.5rem;
-  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   z-index: 98;
   left: 0;
   right: 0;
+  position: absolute;
+
   @include sudo(before, 100%, 100%, $white-1) {
     position: absolute;
     top: 0;
@@ -20,7 +21,6 @@ header {
   .header-large-view {
     @include flex(row, space-between);
     width: 100%;
-    height: 3.25rem;
 
     > * {
       @include flex(row, center, center);
@@ -49,10 +49,9 @@ header {
 
         li.menu-item-has-children {
           @include flex();
-          @include sudo_icon("after", "\e91e", $gray-1, $size: 1.5rem) {
+          @include sudo_icon('after', '\e91e', $gray-1, $size: 1.5rem) {
             transition: all 0.3s ease-in-out;
           }
-        ;
           position: relative;
 
           ul.sub-menu {
@@ -68,13 +67,14 @@ header {
             transition: all 0.3s ease-in-out;
             min-width: 11rem;
             gap: 0.5rem;
-            transform: translate(-5rem,5.2rem);
+            top: 100%;
+            right: 0;
 
             > li {
               width: 100%;
 
               a {
-                color: $gray_1;
+                color: inherit;
                 white-space: nowrap;
                 width: 100%;
                 padding: 0.25rem 0.5rem;
@@ -96,7 +96,6 @@ header {
           }
 
           &:hover {
-
             &::after {
               color: $blue-2;
               transform: rotate(180deg);
@@ -119,7 +118,8 @@ header {
           }
         }
 
-        li.active {
+        li.active,
+        li.current-menu-item:not(.faq-menu) {
           a {
             color: $black-1;
           }
@@ -146,6 +146,7 @@ header {
 
           &::before {
             color: $black-1;
+            transition: inherit;
           }
 
           &:hover {
@@ -160,7 +161,7 @@ header {
       }
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1160px) {
       display: none;
     }
   }
@@ -217,7 +218,7 @@ header {
         -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
         -webkit-transition: -webkit-transform 0.4s ease-in-out,
-        visibility 0s 0.4s;
+          visibility 0s 0.4s;
         transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
 
         .logo-close-btn {
@@ -326,7 +327,7 @@ header {
               > a {
                 display: inline-block;
                 padding-inline-start: 2.5rem;
-                @include sudo_icon("after", "\e91e", $gray-1, 1.5rem) {
+                @include sudo_icon('after', '\e91e', $gray-1, 1.5rem) {
                   position: absolute;
                   margin-right: 0.3rem;
                 }
@@ -338,7 +339,6 @@ header {
                   right: 1rem;
                   top: 10px;
                   transition: all 0.5s ease-in-out;
-
                 }
                 display: block;
                 position: relative;
@@ -353,12 +353,11 @@ header {
                   padding: 1rem 0;
                   position: relative;
 
-                  @include sudo("before", 4rem, 2px, $gray-2) {
+                  @include sudo('before', 4rem, 2px, $gray-2) {
                     display: block;
                     margin-left: 1rem;
                     position: absolute;
                     right: 1rem;
-
                   }
 
                   a {
@@ -369,10 +368,10 @@ header {
                     padding-right: 6rem;
                     position: relative;
 
-                    @include sudo("before", 0.62rem, 0.62rem, $gray-2) {
+                    @include sudo('before', 0.62rem, 0.62rem, $gray-2) {
                       border-radius: 50%;
                       position: absolute;
-                      right:5rem;
+                      right: 5rem;
                       top: 7px;
                     }
                   }
@@ -405,41 +404,40 @@ header {
                 &:before {
                   height: $heightMenu;
                 }
-
               }
             }
 
             // Icon styles
             li.home-menu {
-              @include sudo_icon("before", "\e90e", $black-1, "1.5rem");
+              @include sudo_icon('before', '\e90e', $black-1, '1.5rem');
             }
 
             li.course-menu {
-              @include sudo_icon("before", "\e90a", $black-1, "1.5rem");
+              @include sudo_icon('before', '\e90a', $black-1, '1.5rem');
             }
 
             li.blog-menu {
-              @include sudo_icon("before", "\e905", $black-1, "1.5rem");
+              @include sudo_icon('before', '\e905', $black-1, '1.5rem');
             }
 
             li.shop-menu {
-              @include sudo_icon("before", "\e91a", $black-1, "1.5rem");
+              @include sudo_icon('before', '\e91a', $black-1, '1.5rem');
             }
 
             li.coach-menu {
-              @include sudo_icon("before", "\e909", $black-1, "1.5rem");
+              @include sudo_icon('before', '\e909', $black-1, '1.5rem');
             }
 
             li.faq-menu {
-              @include sudo_icon("before", "\e90c", $black-1, "1.5rem");
+              @include sudo_icon('before', '\e90c', $black-1, '1.5rem');
             }
 
             li.about-menu {
-              @include sudo_icon("before", "\e900", $black-1, "1.5rem");
+              @include sudo_icon('before', '\e900', $black-1, '1.5rem');
             }
 
             li.contact-menu {
-              @include sudo_icon("before", "\e908", $black-1, "1.5rem");
+              @include sudo_icon('before', '\e908', $black-1, '1.5rem');
             }
           }
         }
@@ -463,8 +461,8 @@ header {
           &:after {
             transform: rotate(180deg);
             transition: all 0.3s ease-in-out;
-            content: "\e91e";
-            font-family: "icomoon" !important;
+            content: '\e91e';
+            font-family: 'icomoon' !important;
             font-size: 1.25rem;
           }
         }
@@ -494,7 +492,7 @@ header {
       }
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1160px) {
       @include flex(row, space-between, center);
       width: 100%;
     }
@@ -503,6 +501,7 @@ header {
 
 header.header-white {
   padding-block-end: 1rem;
+  position: relative;
 
   &:before {
     transform: translateY(0);
@@ -538,8 +537,13 @@ header.custom-z-index {
 body.first-slide {
   header {
     .header-large-view {
-      ul.menu li > a {
-        color: $white-1;
+      ul.menu {
+        li > a {
+          color: $white-1;
+        }
+        li.menu-item-has-children::after {
+          color: $white-1;
+        }
       }
 
       .menu-column ul.menu li.menu-item-has-children > a {

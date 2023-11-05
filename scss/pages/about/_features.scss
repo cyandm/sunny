@@ -1,0 +1,42 @@
+@use '../../utils/index' as *;
+
+.features {
+  .title-and-navigation {
+    margin-block-start: 4rem;
+
+    @media (max-width: 768px) {
+      margin-block-start: 1rem;
+    }
+
+    h2 {
+      @include font_style(h1);
+      margin-block-end: 0.5rem;
+    }
+  }
+
+  .swiper-slide {
+    @include flex(row, start, start);
+
+    .img-wrapper {
+      flex: 2;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .content {
+      flex: 3;
+
+      h3 {
+        @include font_style(h2);
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

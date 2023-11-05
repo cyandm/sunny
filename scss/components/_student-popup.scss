@@ -1,4 +1,4 @@
-@use "../utils/index" as *;
+@use '../utils/index' as *;
 
 .students-row-popup {
   @include flex();
@@ -13,12 +13,14 @@
   position: fixed;
   z-index: 99;
   padding-block-start: 8rem;
-  transform: translateY(-110%);
-  transition: transform 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
 
   .students-slider-popup {
     width: 100%;
-    position: relative;
+    scale: 0;
+    transition: scale 0.5s 0.5s;
 
     i {
       @include flex();
@@ -42,6 +44,8 @@
 
     .sliders-wrapper {
       width: 100%;
+      margin-block-end: 3rem;
+      align-items: center;
 
       .student-info {
         @include flex();
@@ -50,8 +54,6 @@
         background: $white-1;
         border-radius: 1.5rem;
         gap: 1.5rem;
-        padding-block-end: 1rem;
-        //max-width: 21rem;
 
         > * {
           @include flex(column, start, start);
@@ -61,10 +63,11 @@
         }
         img,
         video {
-          height: 25rem;
           width: 100%;
+          height: auto;
+          max-height: 40rem;
           border-radius: 1.5rem;
-          object-fit: cover;
+          object-fit: contain;
         }
 
         .achievement-description {
@@ -89,11 +92,19 @@
     .students-slider {
       .sliders-wrapper {
         .student-info {
-      video{
-        height: 21rem;
-      }
+          video {
+            height: 21rem;
+          }
         }
       }
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+    .students-slider-popup {
+      scale: 1;
     }
   }
 }

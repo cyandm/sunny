@@ -1,4 +1,4 @@
-@use "../../utils/index" as *;
+@use '../../utils/index' as *;
 
 //----------------------------- class section style
 .classes-content {
@@ -7,41 +7,28 @@
   align-items: start;
   gap: 1.25rem;
   flex-wrap: wrap;
+  @media screen and (min-width: 768px) {
+    height: 100% !important;
+  }
 
   .front-coach-img {
     flex: 1 1 43%;
 
     .img-content {
       @include flex();
-      @include sudo(before, 40%, 100%, $yellow-1) {
-        border-radius: 50% 50% 0 0;
-        position: absolute;
-        bottom: 0;
-        z-index: -1;
-      }
 
       img {
-        max-width: 32rem;
-        max-height: 33.3rem;
-        position: absolute;
-        bottom: -10%;
+        max-height: 65vh;
         object-fit: contain;
       }
     }
-    .img-content.pink {
-      &::before {
-        background: $pink-1;
-      }
-    }
-    .img-content.blue {
-      &::before {
-        background: $blue-1;
-      }
-    }
+
     .video-content {
+      display: none !important;
+
       @include flex();
       cursor: pointer;
-      @include sudo(before, 7.56756rem, 7.56756rem, none) {
+      @include sudo(before, 7.5rem, 7.5rem, none) {
         border: 1rem solid rgba(255, 255, 255, 0.2);
         position: absolute;
         border-radius: 50%;
@@ -96,14 +83,17 @@
 
   .front-coach-content {
     flex: 1 1 55%;
-    height: 35rem;
-    @include flex(column,start,start);
+    height: 100%;
+    @include flex(column, space-between, start);
     gap: 0.62rem;
     max-width: 55%;
 
+    > * {
+      width: 100%;
+    }
+
     h3 {
       @include font_style(h2);
-      @include text_overflow(1);
     }
 
     .nav-btn {
@@ -114,8 +104,6 @@
     .description {
       @include font_style(body);
       color: $black-1;
-      height: 9rem;
-      overflow: hidden;
       text-align: justify;
 
       h3 {
@@ -140,8 +128,7 @@
 
           .student-info {
             position: relative;
-            height: 14.25rem;
-            width: 13rem;
+            aspect-ratio: 1;
             cursor: pointer;
 
             img {
@@ -213,15 +200,17 @@
     }
   }
   @media (min-width: 992px) and (max-width: 1400px) {
-    .front-coach-content .students-row .students-slider .sliders-wrapper .student-info {
-
+    .front-coach-content
+      .students-row
+      .students-slider
+      .sliders-wrapper
+      .student-info {
       height: 12rem;
-
     }
   }
 
   @media (max-width: 992px) {
-    flex-direction: column;
+    //flex-direction: column;
     position: relative;
 
     .front-coach-img {

@@ -1,0 +1,49 @@
+@use '../../utils/index' as *;
+
+.management {
+  background-color: $yellow-1;
+  margin-block: 4rem;
+
+  .container {
+    @include flex();
+
+    .content {
+      flex: 2;
+
+      h2 {
+        @include font_style(h1);
+      }
+
+      h3 {
+        @include font_style(h2);
+      }
+    }
+
+    .img-wrapper {
+      position: relative;
+      isolation: isolate;
+      flex: 1;
+    }
+
+    @media (max-width: 1000px) {
+      padding-block: 4rem 1rem;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .separator {
+    background-image: url('../imgs/about-section.svg');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+    height: 4rem;
+    position: absolute;
+    translate: 0 -100%;
+    width: 100%;
+
+    &.down {
+      rotate: 180deg;
+      translate: 0;
+    }
+  }
+}

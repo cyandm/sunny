@@ -1,55 +1,14 @@
-@use "../../utils/index" as *;
+@use '../../utils/index' as *;
 
-.shop-section {
-  @media (max-width: 768px) {
-    // flex: 1 1 100%;
-  }
-}
-.shop-slider {
-  overflow: hidden;
-  .shop-content {
-    > * {
-      width: 18rem;
-      max-width: 18rem;
-      border-radius: 2.5rem;
-      border: 1px solid $gray-2;
-      background: $white-1;
-    }
-    .swiper-slide {
-      height: fit-content;
-    }
-  }
-  @media (max-width: 1400px) {
-    height: 40rem;
-    .shop-content {
-      flex-wrap: nowrap;
-      height: calc((100% - 30px) / 2);
-    }
-  }
-  @media (max-width: 992px) {
-    .shop-content {
-      > * {
-        min-width: 18rem;
-        max-width: 18rem;
-      }
-    }
-  }
-  @media (max-width: 768px) {
-    height: 17.12rem;
-
-    .shop-content {
-      flex-wrap: nowrap;
-      height: 100%;
-      > * {
-        width: 18rem;
-      }
-    }
-  }
-  @media (min-width: 1400px) {
-    .shop-content {
-      @include flex();
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+.shop-content {
+  @include flex(row, start, start);
+  flex-wrap: wrap;
+  gap: 1rem;
+  > * {
+    flex: 1;
+    flex-basis: 24%;
+    border-radius: 2.5rem;
+    border: 1px solid $gray-2;
+    background: $white-1;
   }
 }

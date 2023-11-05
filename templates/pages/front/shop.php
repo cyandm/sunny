@@ -1,55 +1,50 @@
 <?php
-$frontId = get_option('page_on_front');
-$title = get_field('shop_section_title', $frontId);
-$btnTitle = get_field('shop_section_btn_title', $frontId);
-$btnLink = get_field('shop__section_btn_link', $frontId);
+$frontId = get_option( 'page_on_front' );
+$title = get_field( 'shop_section_title', $frontId );
+$btnTitle = get_field( 'shop_section_btn_title', $frontId );
+$btnLink = get_field( 'shop__section_btn_link', $frontId );
 
 $newQueryArgs = array(
-    'post_type' => 'product',
-    'posts_per_page' => 8,
-    'orderby' => 'date',
-    'order' => 'DESC',
+	'post_type' => 'product',
+	'posts_per_page' => 8,
+	'orderby' => 'date',
+	'order' => 'DESC',
 );
-$allProducts = new WP_Query($newQueryArgs);
+$allProducts = new WP_Query( $newQueryArgs );
 ?>
-<div id="shop" class="swiper-slide shop-section">
-    <div class="container padding-top height-slide">
-        <?Php if ($title) : ?>
-            <div class="section-title">
-                <h2><?= $title ?></h2>
-                <?Php if ($btnTitle) : ?>
-                    <a href="<?= $btnLink ?>"><?= $btnTitle ?></a>
-                <?php endif ?>
-            </div>
-        <?php endif;
+<div id="shop" class="shop-section">
+	<div class="container padding-top height-slide">
+		<?Php if ( $title ) : ?>
+			<div class="section-title">
+				<h2>
+					<?= $title ?>
+				</h2>
+				<?Php if ( $btnTitle ) : ?>
+					<a href="<?= $btnLink ?>">
+						<?= $btnTitle ?>
+					</a>
+				<?php endif ?>
+			</div>
+		<?php endif;
 
-        ?>
-        <div class="shop-slider swiper-container">
-            <div class="swiper-wrapper shop-content">
+		?>
 
-                <?php
-                if ($allProducts->have_posts()) :
-                    while ($allProducts->have_posts()) :
-                        $allProducts->the_post(); ?>
-                        <div class="swiper-slide">
+		<div class="shop-content">
 
-                            <?php
-                            wc_get_template_part('content', 'product');
-                            ?>
-                        </div>
-                <?php
+			<?php
+			if ( $allProducts->have_posts() ) :
+				while ( $allProducts->have_posts() ) :
+					$allProducts->the_post();
 
-                    endwhile;
-                endif;
+					wc_get_template_part( 'content', 'product' );
 
-                wp_reset_postdata(); ?>
+				endwhile;
+			endif;
+
+			wp_reset_postdata(); ?>
+
+		</div>
 
 
-            </div>
-        </div>
-        <div class="breadcrumb-btn">
-            <a href="" class="home-main-slider-next btn-right"><i class="icon-arrow-side-right"></i>مقالات</a>
-            <a href="" class="btn-left home-main-slider-prev"> کلاس ها <i class="icon-arrow-side-left"></i></a>
-        </div>
-    </div>
+	</div>
 </div>

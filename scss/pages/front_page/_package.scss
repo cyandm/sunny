@@ -1,19 +1,12 @@
-@use "../../utils/index" as *;
+@use '../../utils/index' as *;
 .package-slider {
-
-  .package-content {
-
-    .swiper-slide {
-      max-width: 25rem;
-      max-height: 34rem;
-    }
-  }
-
-  @media (min-width: 1400px) {
+  @media (min-width: 1024px) {
     .package-content {
-      @include flex();
+      display: flex;
       gap: 1rem;
-
+      .swiper-slide {
+        flex: 1;
+      }
     }
   }
 }

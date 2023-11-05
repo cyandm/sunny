@@ -1,34 +1,19 @@
-@use "../utils/index" as *;
+@use '../utils/index' as *;
 
 .video-page {
-  .slider-video-section {
-    .video-overview-slider {
-      width: 100%;
-      height: 35rem;
-      .swiper-wrapper {
-        width: 100%;
-        .swiper-slide {
-          width: 85%;
-
-          .video-part-content {
-            height: 35rem;
-          }
-        }
-      }
-    }
-  }
-
   .testimonial-video-section,
   .coaches-video-section {
     margin-block-start: 2rem;
     .video-row {
-      @include flex();
+      @include flex(row, start, start);
       gap: 1rem;
       flex-wrap: wrap;
       > * {
-        flex: 1 1 32%;
+        flex: 1;
+        flex-basis: 32%;
+        max-width: 32%;
         border-radius: 1.875rem;
-        height: 24.5rem;
+        height: auto;
         overflow: hidden;
       }
     }
@@ -37,25 +22,25 @@
   .video-part-content {
     @include sudo(before, 100%, 100%, $black-1) {
       background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 75.74%,
-        rgba(0, 0, 0, 0.8) 100%
+        179deg,
+        rgba(0, 0, 0, 0) 13.41%,
+        rgb(0 0 0) 98.21%
       );
+      opacity: 0;
       position: absolute;
-
+      transition: inherit;
       border-radius: 1.875rem;
     }
     transition: all 0.5s ease-in-out;
     position: relative;
     img {
-      position: absolute;
       border-radius: 1.875rem;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
-      //object-fit: cover;
+      object-fit: cover;
     }
     svg {
       position: absolute;
@@ -75,38 +60,35 @@
       width: 90%;
       h3 {
         @include font_style(h3);
-        @include text_overflow(1);
+        opacity: 0;
         color: $white-1;
+        transition: opacity 0.3s ease;
       }
       span {
         @include font_style(body);
-        @include text_overflow(1);
+        opacity: 0;
         color: $white-1;
+        transition: opacity 0.3s ease;
       }
     }
     video {
       display: none;
     }
     &:hover {
-      &::before {
-        background: linear-gradient(
-            179deg,
-            rgba(0, 0, 0, 0) 13.41%,
-            rgb(0 0 0) 98.21%
-          );
+      &::before,
+      span,
+      h3 {
+        opacity: 1;
       }
       svg {
-        circle{
+        circle {
           fill: none;
-          stroke:$white-1;
+          stroke: $white-1;
           stroke-width: 1px;
-
         }
-        path{
+        path {
           fill: $white-1;
         }
-
-
       }
     }
   }

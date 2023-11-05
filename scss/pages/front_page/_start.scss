@@ -1,4 +1,4 @@
-@use "../../utils/index" as *;
+@use '../../utils/index' as *;
 
 .start-section {
   .home-nested-slider.swiper-container {
@@ -11,20 +11,24 @@
           direction: rtl;
           text-align: justify;
           height: 100%;
-          padding: 5rem 0 1.5rem 0;
+          padding: var(--header-height) 0 1.5rem 0;
 
           .arrow-large-view {
             svg {
               position: absolute;
               left: 0;
+
+              @media (max-width: 1200px) {
+                opacity: 0.3;
+              }
             }
           }
 
           .start-content {
-            @include flex();
+            @include flex(row, start, start);
+            padding-block-start: 4rem;
             gap: 1.25rem;
             flex-wrap: wrap;
-            padding-block-start: 5rem;
 
             > div {
               flex: 1;
@@ -47,14 +51,14 @@
                 border-radius: 50%;
                 background: $blue-1;
                 position: absolute;
-                top: -8%;
+                top: 0;
                 z-index: -1;
                 aspect-ratio: 1;
               }
 
               .diamond {
                 width: 28rem;
-               aspect-ratio: 1;
+                aspect-ratio: 1;
                 transform: rotate(45deg);
                 background: $pink-1;
                 position: absolute;
@@ -94,28 +98,29 @@
                 transition: opacity 0.3s ease-in-out;
                 animation: pulseAnimation 4s ease-in-out infinite;
                 position: absolute;
-                left: 30%;
-                top: -7%;
+                left: 25%;
+                top: 0%;
 
                 .bg-icon-color {
                   width: 6.5rem;
                   height: 6.5rem;
                   border-radius: 50%;
-                  background-color: $yellow-1;
-
+                  background: url('../imgs/sunny.gif');
+                  background-size: cover;
                   position: absolute;
-
                 }
 
                 .tooltip-text {
-
                   width: auto;
                   color: $black-1;
                   position: absolute;
                   z-index: 1;
                   right: -50%;
-                  transform: translate(-50%, 1rem);
+                  translate: -30% 1rem;
                   font-size: 1rem;
+                  background-color: #fff;
+                  border-radius: 1000px;
+                  padding: 0.25rem;
 
                   white-space: nowrap;
                 }
@@ -142,11 +147,12 @@
 
             .start-text {
               @include flex(column, start, start);
+              padding-block-start: 4rem;
               height: 100%;
 
               .start-text-title > h2 {
                 @include font_style(h1);
-                @include text_overflow(1);
+
                 margin-block-end: 0.5rem;
               }
 
@@ -157,7 +163,7 @@
 
                 .start-description {
                   margin-block-end: 0.62rem;
-                  height: 50%;
+                  padding-inline-end: 1rem;
                   overflow: hidden;
 
                   h3 {
@@ -173,6 +179,7 @@
                   transition: all 0.3s ease-in-out;
                   overflow: hidden;
                   cursor: pointer;
+                  display: none !important;
                   i {
                     transform: rotate(180deg);
 
@@ -191,7 +198,7 @@
                   display: none;
                 }
 
-                .start-text-btn.more-content.show{
+                .start-text-btn.more-content.show {
                   display: flex;
                 }
 
@@ -204,10 +211,10 @@
               }
 
               .slide-text-block.active {
-             .start-description{
-               overflow-y: auto;
-               height: 50%;
-             }
+                .start-description {
+                  overflow-y: auto;
+                  height: 50%;
+                }
 
                 .start-text-btn.more-content {
                   opacity: 0;
@@ -240,10 +247,6 @@
           .container {
             justify-content: start;
 
-            .arrow-large-view {
-
-            }
-
             .start-content {
               align-items: start;
               padding-block-start: 3rem;
@@ -255,18 +258,16 @@
 
                 .circle {
                   &::before {
-                    width:32rem;
-
+                    width: 32rem;
                   }
 
                   top: 0;
                   width: 32rem;
-
                 }
 
                 .diamond {
                   width: 25rem;
-                aspect-ratio: 1;
+                  aspect-ratio: 1;
 
                   &::before {
                     width: 25rem;
@@ -275,22 +276,15 @@
                 }
 
                 img.back-img {
-
-                 max-height: 30rem;
-
+                  max-height: 30rem;
                 }
-.video-content{
-  top: 0;
-}
-
+                .video-content {
+                  top: 0;
+                }
               }
-
             }
           }
-
-
         }
-
 
         .slide.diamond {
           .start-content > .start-img {
@@ -304,11 +298,15 @@
         }
       }
     }
-    .slide .row .container .start-content .start-text .slide-text-block.active .start-description {
-
+    .slide
+      .row
+      .container
+      .start-content
+      .start-text
+      .slide-text-block.active
+      .start-description {
       height: 45%;
     }
-
   }
   @media (max-width: 992px) {
     margin-block-start: 2rem;
@@ -415,9 +413,6 @@
                       @include font_style(h3);
                     }
                   }
-
-                  .start-text-btn {
-                  }
                 }
               }
             }
@@ -452,6 +447,8 @@
     transform: translateY(-10rem) !important;
     margin-block-start: 0;
     margin-block-end: -10rem;
+    z-index: 100;
+    position: relative;
     .arrow-mobile {
       svg {
         top: 50% !important;
@@ -460,12 +457,12 @@
   }
   @media (max-width: 500px) {
     .home-nested-slider.swiper-container
-    .start-wrapper
-    .slide
-    .container
-    .start-content
-    .start-img
-    .diamond {
+      .start-wrapper
+      .slide
+      .container
+      .start-content
+      .start-img
+      .diamond {
       width: 15rem !important;
       height: 15rem;
 

@@ -1,4 +1,4 @@
-@use "../../utils/index" as *;
+@use '../../utils/index' as *;
 
 .faq-section {
   .faq-content {
@@ -56,8 +56,6 @@
           overflow: hidden;
           transition: all 0.3s ease-in-out;
           text-align: justify;
-
-
         }
         &:last-child {
           border-bottom: none;
@@ -112,8 +110,10 @@
   @media (min-width: 992px) and (max-width: 1400px) {
     .faq-content {
       height: 31rem;
-      overflow-y: scroll;
       .faq-drop-down {
+        padding-block-start: 12rem;
+        max-height: 100%;
+        overflow-y: auto;
         flex: 2;
       }
       .faq-img {

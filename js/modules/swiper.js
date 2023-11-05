@@ -4,9 +4,9 @@ import {
   imageAnimation,
   initSwiper,
   toggleClassToBodyForSwiper,
-} from "./functions";
+} from './functions';
 
-import { Swiper } from "swiper";
+import { Swiper } from 'swiper';
 
 import {
   Mousewheel,
@@ -16,9 +16,8 @@ import {
   Autoplay,
   Thumbs,
   Grid,
-
-
-} from "swiper/modules";
+  EffectFade,
+} from 'swiper/modules';
 
 const defaultSwiper = {
   modules: [
@@ -29,28 +28,39 @@ const defaultSwiper = {
     Autoplay,
     Thumbs,
     Grid,
-
+    EffectFade,
   ],
   slidesPerView: 1,
   spaceBetween: 0,
 };
 
 // ****************************** front page swiper slider
-export const coachSlider = new Swiper(".coach-slider", {
+export const coachSlider = new Swiper('.coach-slider', {
   ...defaultSwiper,
   // loop: true,
   spaceBetween: 16,
-  speed: 1000,
+  speed: 500,
   autoHeight: true,
+  fadeEffect: {
+    crossFade: true,
+  },
+  effect: 'fade',
+
   navigation: {
-    nextEl: ".coach-slider-next",
-    prevEl: ".coach-slider-prev",
+    nextEl: '.coach-slider-prev',
+    prevEl: '.coach-slider-next',
+  },
+
+  breakpoints: {
+    1024: {
+      autoHeight: false,
+    },
   },
 });
 
-export const studentSlider = new Swiper(".students-slider", {
+export const studentSlider = new Swiper('.students-slider', {
   ...defaultSwiper,
-  slidesPerView: "auto",
+  slidesPerView: 'auto',
   spaceBetween: 16,
   nested: true,
   // loop: true,
@@ -65,219 +75,98 @@ export const studentSlider = new Swiper(".students-slider", {
   },
 });
 
-export const studentSliderPopup = new Swiper(".students-slider-popup", {
+export const studentSliderPopup = new Swiper('.students-slider-popup', {
   ...defaultSwiper,
-  slidesPerView: "auto",
+  slidesPerView: 1,
   spaceBetween: 20,
+
   pagination: {
-    el: ".swiper-pagination",
-  },
-  breakpoints: {
-    992: {
-      slidesPerView: 2,
-    },
+    el: '.swiper-pagination',
+    clickable: true,
   },
 });
 
 //****************************** package slider */
-const packageSliderElement = document.querySelector(".package-slider");
+const packageSliderElement = document.querySelector('.package-slider');
 export const packageSlider = new Swiper(packageSliderElement, {
   ...defaultSwiper,
-  slidesPerView: "auto",
+  slidesPerView: 1,
   spaceBetween: 16,
-  loop: true,
+  //loop: true,
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
+  },
+  breakpoints: {
+    880: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 'auto',
+      width: 1440,
+    },
   },
 });
 
 if (packageSliderElement && window.innerWidth >= 1400) {
   packageSlider.destroy();
 }
-
-//******************************* shop slider in mobile view
-const shopSliderElement = document.querySelector(".shop-slider");
-export const shopSlider = new Swiper(shopSliderElement, {
-  slidesPerView: "auto",
-  spaceBetween: 16,
-  autoHeight: true,
-  // loop: true,
-  // Responsive breakpoints
-  // breakpoints: {
-  //   768: {
-  //     ...defaultSwiper,
-  //     spaceBetween: 16,
-  //     slidesPerColumn: 2,
-  //     grid: {
-  //       rows: 2,
-  //     },
-  //   },
-  // },
-
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-});
-
-if (shopSliderElement && window.innerWidth >= 1400) {
-  shopSlider.destroy();
-}
-
 // ****************************** testimonial swiper slider
-export const testimonialSlider = new Swiper(".testimonial-slider", {
-  slidesPerView: "auto",
+export const testimonialSlider = new Swiper('.testimonial-slider', {
+  slidesPerView: 'auto',
   spaceBetween: 16,
-  // loop: true,
 
   autoplay: {
     delay: 3000,
-    disableOnInteraction: false,
   },
 });
 
-// ********************************* front page main slider
-const homeMainSlider = document.querySelector(".home-main-slider");
-export const frontMainSlider = new Swiper(homeMainSlider, {
+// ******************************* Home Page - Hero Slider
+export const heroSlider = new Swiper('#heroSlider', {
   ...defaultSwiper,
-  direction: "vertical",
-  mousewheel: true,
-  speed: 1000,
+  speed: 1500,
+  autoplay: true,
+  loop: true,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+
   navigation: {
-    nextEl: ".home-main-slider-next",
-    prevEl: ".home-main-slider-prev",
+    nextEl: '#heroSlider .home-nested-next',
+    prevEl: '#heroSlider .home-nested-prev',
   },
 });
 
-if (homeMainSlider) {
-  initSwiper(frontMainSlider);
+const changeFirstSlideClass = (swiper) => {
+  document.body.classList.toggle('first-slide', swiper.realIndex === 0);
+};
 
-  window.addEventListener("load", () => {
-    toggleClassToBodyForSwiper();
-  });
+heroSlider.on('slideChange', (swiper) => changeFirstSlideClass(swiper));
 
-  const scrollTop = document.querySelector("#scroll-to-top");
-  scrollTop.addEventListener("click", () => {
-    frontMainSlider.slideTo(0);
-    frontMainSlider.speed(3000);
-  });
-}
+// ******************************* Home Page - AboutSlider
 
-frontMainSlider.on("slideChange", () => {
-  if (frontMainSlider.realIndex == 0) {
-    document.querySelector("header").classList.remove("header-white");
-  } else {
-    document.body.classList.remove("first-slide");
-
-    document.querySelector("header").classList.add("header-white");
-  }
-});
-
-const horizontalSliders = document.querySelectorAll(".home-nested-slider");
-horizontalSliders.forEach((slider, index) => {
-  const horizontalSwiper = new Swiper(slider, {
-    ...defaultSwiper,
-    speed: 1000,
-    nested: true,
-    mousewheel: true,
-
-    navigation: {
-      nextEl: ".home-nested-next",
-      prevEl: ".home-nested-prev",
-
-
-    },
-  });
-
-  if (index == 0) {
-    horizontalSwiper.autoplay.start();
-    horizontalSwiper.on("slideChange", () => {
-      if (horizontalSwiper.realIndex == 0) {
-        if (!document.body.classList.contains("first-slide")) {
-          document.body.classList.add("first-slide");
-        }
-      } else {
-        document.body.classList.remove("first-slide");
-      }
-    });
-
-    if (window.innerWidth <= 992) {
-      horizontalSwiper.mousewheel.disable();
-    }
-  }
-  if (index == 1) {
-    initSwiper(horizontalSwiper);
-    if (window.innerWidth >= 992) {
-      horizontalSwiper.slides.forEach((startSlide) => {
-        const startDescription = startSlide.querySelector(".start-description");
-
-        startDescription.addEventListener("mouseenter", () => {
-          horizontalSwiper.mousewheel.disable();
-          frontMainSlider.mousewheel.disable();
-        });
-
-        startDescription.addEventListener("mouseleave", () => {
-          horizontalSwiper.mousewheel.enable();
-          frontMainSlider.mousewheel.enable();
-        });
-
-        const moreContent = startSlide.querySelector(".more-content");
-        moreContent.addEventListener("click", () => {
-          moreContent.parentElement.classList.add("active");
-        });
-        const lessContent = startSlide.querySelector(".less-content");
-        lessContent.addEventListener("click", () => {
-          moreContent.parentElement.classList.remove("active");
-        });
-      });
-    }
-  }
-});
-
-// ********************************* about page main slider
-const aboutThumbnailSlideElement = document.querySelector(
-  ".about-thumbnail-slider"
-);
-export const aboutThumbnailSlider = new Swiper(aboutThumbnailSlideElement, {
-  spaceBetween: 10,
-  slidesPerView: "auto",
-  freeMode: true,
-});
-
-const aboutMainSliderElement = document.querySelector(".about-page-slider");
-export const aboutMainSlider = new Swiper(aboutMainSliderElement, {
+export const aboutSlider = new Swiper('#aboutSlider', {
   ...defaultSwiper,
-  speed: 1000,
-  thumbs: {
-    swiper: aboutThumbnailSlider,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
   },
-});
-if (aboutMainSliderElement) {
-  initSwiper(aboutMainSlider);
-}
+  speed: 1000,
 
-const aboutNestedSlider = document.querySelectorAll(".about-nested-slider");
-
-aboutNestedSlider.forEach((aboutSlider) => {
-  const aboutHorizontalSwiper = new Swiper(aboutSlider, {
-    ...defaultSwiper,
-    speed: 1000,
-    nested: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+  navigation: {
+    nextEl: '#aboutSlider .home-nested-next',
+    prevEl: '#aboutSlider .home-nested-prev',
+  },
 });
 
 // ********************************* blog page swiper slider
-export const blogMainSlider = new Swiper(".blog-page-slider", {
+export const blogMainSlider = new Swiper('.blog-page-slider', {
   ...defaultSwiper,
   speed: 1000,
   navigation: {
-    nextEl: ".blog-swiper-button-next",
-    prevEl: ".blog-swiper-button-prev",
+    nextEl: '.blog-swiper-button-next',
+    prevEl: '.blog-swiper-button-prev',
   },
 
   // autoplay: {
@@ -285,27 +174,59 @@ export const blogMainSlider = new Swiper(".blog-page-slider", {
   //   disableOnInteraction: false,
   // },
 });
-if (blogMainSlider) {
-  blogMainSlider.on("slideChange", () => {
-    if (blogMainSlider.realIndex == 0) {
-      if (!document.body.classList.contains("first-slide")) {
-        document.body.classList.add("first-slide");
-      }
-    } else {
-      document.body.classList.remove("first-slide");
-    }
-  });
-}
+
+blogMainSlider.on('slideChange', (swiper) => changeFirstSlideClass(swiper));
 
 pullUpAnimation();
 circleAnimation();
 imageAnimation();
 
 // ********************************* Video overview page swiper slider
-export const videoOverviewSlider = new Swiper(".video-overview-slider", {
-  slidesPerView: "auto",
+export const videoOverviewSlider = new Swiper('.video-overview-slider', {
+  slidesPerView: 'auto',
   speed: 1000,
   spaceBetween: 16,
   loop: true,
   centeredSlides: true,
+});
+
+// ********************************* About Sliders
+export const aboutFeatureSlider = new Swiper('#aboutFeatureSlider', {
+  ...defaultSwiper,
+
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+
+  navigation: {
+    nextEl: '#aboutFeatureNavigation #Prev',
+    prevEl: '#aboutFeatureNavigation #Next',
+  },
+});
+
+export const aboutHistorySlider = new Swiper('#aboutHistorySlider', {
+  ...defaultSwiper,
+
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+
+  navigation: {
+    nextEl: '#aboutHistoryNavigation #Prev',
+    prevEl: '#aboutHistoryNavigation #Next',
+  },
+});
+
+export const aboutHonorSlider = new Swiper('#aboutHonorSlider', {
+  slidesPerView: 1.25,
+  spaceBetween: 20,
+  centeredSlides: true,
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 2.25,
+    },
+  },
 });
