@@ -1,5 +1,0 @@
-@use "../utils/index" as *;
-
-.form-search {
-  @include search_form();
-}
