@@ -1,0 +1,133 @@
+@use '../utils/index' as *;
+
+footer {
+  @include flex(column);
+  display: flex;
+  flex-wrap: wrap;
+  margin-block: 5rem 1.38rem;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+
+  .footer-top {
+    @include flex();
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+
+    .line {
+      @include flex();
+      height: 0.25rem;
+      flex: 1 0 0;
+      background: $yellow-1;
+      width: 100%;
+    }
+
+    .footer-logo {
+      flex-shrink: 0;
+      width: 4rem;
+      height: 4rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .widget-row {
+    @include flex();
+    flex-wrap: wrap;
+    width: 100%;
+    .footer-widget {
+      flex: 1;
+      h4 {
+        @include font_style($type: h4);
+        margin-bottom: 1rem;
+      }
+      div {
+        @include font_style($type: body);
+        color: $gray-1;
+        li {
+          margin-bottom: 0.25rem;
+        }
+      }
+      .map-widget {
+        @include flex(row, start);
+        gap: 0.62rem;
+      }
+      .numbers {
+        @include flex(column, center, end);
+        gap: 0.25rem;
+        color: $blue-2;
+        direction: ltr;
+      }
+
+      @media (max-width: 992px) {
+        flex-basis: 33%;
+      }
+      @media (max-width: 768px) {
+        flex-basis: 50%;
+      }
+    }
+    .address-column {
+      @media (max-width: 768px) {
+        flex-basis: 100%;
+      }
+    }
+    @media (max-width: 992px) {
+      row-gap: 1.75rem;
+    }
+  }
+  .footer-social-media {
+    @include flex(column, center, start);
+    width: 100%;
+    gap: 1rem;
+    h4 {
+      @include font_style(h4);
+      display: none;
+    }
+    .sotioal-row {
+      @include flex();
+      gap: 1rem;
+      i {
+        @include flex();
+        width: 2rem;
+        height: 2rem;
+        background-color: $pink-1;
+        border-radius: 0.25rem;
+        box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+        &::before {
+          font-size: 1.5rem;
+          color: $white-1;
+        }
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+        justify-content: start;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .footer-social-media {
+      h4 {
+        display: block;
+      }
+    }
+
+    .widget-row {
+      align-items: self-start;
+    }
+  }
+}
+.footer-change {
+  display: none;
+  @media (max-width: 992px) {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+footer.remove-footer {
+  display: none;
+}

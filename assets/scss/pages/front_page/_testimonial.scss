@@ -1,0 +1,193 @@
+@use '../../utils/index' as *;
+
+.testimonial-section {
+  .front-testimonial-content {
+    @include flex($align: start);
+
+    gap: 1.25rem;
+    flex-wrap: wrap;
+
+    > div {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .video-container {
+      position: relative;
+      display: flex;
+
+      .video-content {
+        @include flex();
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 2.5rem;
+          z-index: 1;
+        }
+
+        .icon-play {
+          @include flex();
+          position: absolute;
+          width: 4.25rem;
+          height: 4.31981rem;
+          background: $white-1;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 2;
+          transition: all 0.3s ease-in-out;
+          border: 1px transparent;
+
+          &::before {
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+          &:hover {
+            background: none;
+            border: 1px solid $white-1;
+            &::before {
+              color: $white-1;
+            }
+          }
+        }
+
+        video {
+          width: 100%;
+          height: 100%;
+          border-radius: 2.5rem;
+          object-fit: cover;
+        }
+      }
+
+      .video-content.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .testimonial-content {
+      @include flex(column);
+
+      .person-name {
+        @include font_style(h2);
+      }
+
+      .info-row {
+        position: relative;
+        min-height: 14rem;
+        width: 100%;
+
+        .person_info {
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+          position: absolute;
+          top: 0;
+          text-align: justify;
+          padding-left: 1rem;
+        }
+
+        .person_info.active {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .other-person-content {
+        @include flex(column, start, start);
+        width: 100%;
+
+        h3 {
+          @include font_style(h3);
+          margin-block-end: 0.88rem;
+        }
+
+        .slider {
+          width: 100%;
+
+          .testimonial-slider {
+            height: 17rem;
+
+            .swiper-slide {
+              height: 100%;
+              flex-basis: 32%;
+              cursor: pointer;
+              opacity: 0.5;
+              transition: opacity 0.3s;
+
+              &.active {
+                opacity: 1;
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) and (max-width: 1400px) {
+    .front-testimonial-content .testimonial-content .info-row {
+      min-height: 13rem;
+    }
+    .front-testimonial-content
+      .testimonial-content
+      .other-person-content
+      .slider
+      .testimonial-slider {
+      height: 16rem;
+    }
+  }
+  @media (max-width: 992px) {
+    .info-row {
+      min-height: 3rem !important;
+    }
+
+    .front-testimonial-content {
+      margin-block-end: 0.5rem;
+      overflow: hidden;
+      display: block;
+
+      > div {
+        max-width: 100%;
+      }
+
+      .video-container {
+        margin-block-end: 1.5rem;
+      }
+
+      .person-description {
+        display: none;
+        height: 0;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .front-testimonial-content {
+      .testimonial-slider {
+        .swiper-slide {
+          flex-basis: 55% !important;
+        }
+      }
+
+      .video-container {
+        max-height: 19rem;
+      }
+    }
+  }
+}

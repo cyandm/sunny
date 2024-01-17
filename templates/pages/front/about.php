@@ -8,10 +8,10 @@ $startSliders = get_field( 'slider_start_section', $frontId );
 		<div class="swiper-wrapper start-wrapper">
 			<?php
 			$num = 1;
-			foreach ( $startSliders as $Slide ) :
+			foreach ( $startSliders as $index => $Slide ) :
 				if ( $Slide['start_slider_image'] != "" && $Slide['start_slider_title'] != "" ) : ?>
 					<div id="start-<?= $num ?>"
-						class=" swiper-slide slide panel2 full-screen <?= ( $Slide['start_slider_shape'] == 'diamond' ) ? 'diamond' : '' ?>">
+						class=" swiper-slide slide panel2 full-screen  <?= ( $Slide['start_slider_shape'] == 'diamond' ) ? 'diamond' : '' ?>">
 						<div class="row">
 							<div class="container height-slide">
 								<div class="arrow-svg arrow-large-view">
@@ -35,7 +35,7 @@ $startSliders = get_field( 'slider_start_section', $frontId );
 
 										<?php if ( $Slide['start_slider_video'] ) : ?>
 											<div class="video-content popup-play-video" id="play-video">
-												<!-- <img src="<?= get_stylesheet_directory_uri() ?>/imgs/video.png" alt="video"> -->
+
 												<div class="bg-icon-color"></div>
 												<i class="icon-play play-video"></i>
 												<div class="tooltip-text"> سانی در یک نگاه </div>

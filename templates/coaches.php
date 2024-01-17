@@ -1,12 +1,12 @@
 <?php
-$pageId = get_queried_object_id();
-$title = get_field( 'main_title', $pageId );
-$topStudentTitle = get_field( 'slider_content_title', $pageId );
+$page_id = get_queried_object_id();
+$title = get_field( 'main_title', $page_id );
+$topStudentTitle = get_field( 'slider_content_title', $page_id );
 
 $args = array(
 	'post_type' => 'coach',
 	'posts_per_page' => 999,
-	'orderby' => 'date',
+	'orderby' => 'menu_order',
 	'order' => 'DESC',
 );
 $coaches = new WP_Query( $args );
@@ -83,7 +83,7 @@ $coaches = new WP_Query( $args );
 									?>
 
 									<div class="students-row">
-										<div class="students-slider swiper" dir="ltr">
+										<div class="students-slider swiper">
 											<div class="swiper-wrapper sliders-wrapper">
 												<?php
 

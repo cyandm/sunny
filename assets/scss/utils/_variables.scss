@@ -1,0 +1,29 @@
+// ------------------------------------- colors
+$white-1: #feffff;
+$white-2: rgba(255, 255, 255, 0.02);
+$black-1: #1a212a;
+$gray-1: #8c9094;
+$gray-2: #e8e9ea;
+$pink-1: #ff6883;
+$pink-2: #ffa3b3;
+$blue-1: #67d6f9;
+$blue-2: #0b68df;
+$blue-3: #cff4ff;
+$yellow-1: #fff48d;
+$yellow-2: #fbfff5;
+$yellow-3: #6e6500;
+
+// ------------------------------------ font
+$font: 'peyda';
+
+// ------------------------------------flex classes
+.flex-r {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.flex-c {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,113 @@
+@use "../utils/index" as *;
+
+.course-card {
+  @include flex(column);
+  gap: 0.31rem;
+  padding: 1.5rem;
+  border-radius: 2.5rem;
+  flex: 1;
+  > a {
+    width: 100%;
+  }
+  .course-info-card {
+    @include flex(column, center, start);
+    gap: 0.44rem;
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+    background: var(--white-1, #feffff);
+    box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+    width: 100%;
+    > a {
+      width: 100%;
+    }
+
+    > * {
+      @include flex(row, space-between, center);
+      width: 100%;
+    }
+
+    h3 {
+      @include font_style(h2);
+    }
+
+    span {
+      @include font_style(body_b);
+    }
+  }
+
+  .course-img-card {
+    @include flex();
+    position: relative;
+
+    .circle {
+      @include flex();
+      height: 24rem;
+      > * {
+        aspect-ratio: 1;
+        background: none;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+      }
+      .circle-1 {
+        width: 23rem;
+        border: 2.5rem solid rgba(255, 255, 255, 0.5);
+      }
+      .circle-2 {
+        width: 14rem;
+        border: 1.5rem solid rgba(255, 255, 255, 0.5);
+      }
+      .circle-3 {
+        width: 6rem;
+        border: 1rem solid rgba(255, 255, 255, 0.5);
+      }
+
+      @media (max-width: 500px) {
+        width: 19.5rem;
+        .circle-2 {
+          width: 12rem;
+        }
+        .circle-3 {
+          width: 7rem;
+        }
+      }
+
+      @media (min-width: 992px) and (max-width: 1400px) {
+
+          height: 20rem;
+
+      }
+
+    }
+
+    .img-shadow {
+      position: absolute;
+      bottom: -2rem;
+
+      img {
+        max-width: 22rem;
+        max-height: 20rem;
+        object-fit: contain;
+      }
+    }
+    &:hover {
+      .circle-3,
+      .circle-1,
+      .circle-2 {
+        scale: 1.1;
+      }
+    }
+  }
+}
+
+.course-card.blue {
+  background: $blue-1;
+}
+
+.course-card.pink {
+  background: $pink-1;
+}
+
+.course-card.yellow {
+  background: $yellow-1;
+}

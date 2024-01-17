@@ -80,7 +80,7 @@ $topStudentTitle = get_field( 'top_student_title', $frontId );
 										$topStudentTitle && printf( '<h4>%s</h4>', $topStudentTitle ); ?>
 
 										<div class="students-row">
-											<div class="students-slider swiper" dir="ltr">
+											<div class="students-slider swiper">
 												<div class="swiper-wrapper sliders-wrapper">
 													<?php
 													foreach ( $imagesFilms as $content ) :

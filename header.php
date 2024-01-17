@@ -62,9 +62,13 @@ $blog_page_id = get_posts( [
 		</div>
 
 		<div class="container header-mobile">
-			<div class="hamburger-menu">
-
-				<i class="icon-hamberger"></i>
+			<div class="logo-menu-con">
+				<div class="hamburger-menu">
+					<i class="icon-hamberger"></i>
+				</div>
+				<div class="mobile-logo-contain">
+					<?php the_custom_logo() ?>
+				</div>
 			</div>
 			<div class="mobile-menu">
 				<div class="mobile-menu-detail">

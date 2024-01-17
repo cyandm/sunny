@@ -1,0 +1,115 @@
+@use "../utils/index" as *;
+
+.cart-blog {
+  @include flex(column, $align: start);
+
+  padding: 1rem 1rem 1.62rem 1rem;
+  gap: 1rem;
+  border-radius: 2.5rem;
+  border: 1px solid $gray-2;
+  transition: all 0.3s ease-in-out;
+  background: $white-1;
+  transition: all 0.3s ease-in-out;
+  @media (max-width: 768px) {
+    gap: 1.25rem;
+  }
+
+  .img-cart-blog {
+    @include flex();
+
+    width: 100%;
+
+    a {
+      width: 100%;
+
+      overflow: hidden;
+      height: 19rem;
+      border-radius: 1.5rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1.5rem;
+
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .content-cart-blog {
+    padding: 0rem 0.625rem;
+
+    h3 {
+      @include font_style(h3);
+      @include text_overflow(2);
+      margin-bottom: 0.38rem;
+      height: 3.5rem;
+      transition: all 0.3s ease-in-out;
+
+      @media (max-width: 768px) {
+        max-height: 2rem;
+        @include text_overflow(1);
+      }
+    }
+
+    div.description {
+      height: 2.5rem;
+      overflow: hidden;
+      > p:first-child {
+        @include font_style(body);
+        @include text_overflow(1);
+
+        @media (max-width: 768px) {
+          @include text_overflow(3);
+        }
+      }
+    }
+  }
+
+  .info-cart-blog {
+    @include flex();
+    @include font_style(caption);
+
+    padding: 0rem 0.625rem;
+    color: $gray-1;
+    justify-content: space-between;
+    width: 100%;
+
+    .study-time {
+    }
+
+    .blog-date {
+    }
+  }
+
+  &:hover {
+    border-color: $black-1;
+
+    h3 {
+      color: $blue-2;
+    }
+  }
+
+
+  @media (min-width: 992px) and (max-width: 1400px) {
+    .img-cart-blog a {
+
+      height: 14rem;
+    }
+
+  }
+
+
+
+
+}
+
+
+
+//.cart-blog.active {
+//  .content-cart-blog,
+//  .info-cart-blog {
+//    padding: 0rem 1.25rem;
+//  }
+//}

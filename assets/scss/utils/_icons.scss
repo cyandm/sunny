@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icons/icomoon.eot?l3snvy");
+  src: url("../fonts/icons/icomoon.eot?l3snvy#iefix")
+      format("embedded-opentype"),
+    url("../fonts/icons/icomoon.ttf?l3snvy") format("truetype"),
+    url("../fonts/icons/icomoon.woff?l3snvy") format("woff"),
+    url("../fonts/icons/icomoon.svg?l3snvy#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  font-size: 1.5rem;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 1.5rem;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-login1:before {
+  content: "\e91f";
+}
+.icon-trash:before {
+  content: "\e920";
+  color: #ffa3b3;
+}
+.icon-profile-tick1:before {
+  content: "\e921";
+}
+.icon-timer:before {
+  content: "\e922";
+}
+.icon-drag .path1:before {
+  content: "\e923";
+  color: rgb(26, 33, 42);
+}
+.icon-drag .path2:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(254, 255, 255);
+}
+.icon-drag .path3:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: rgb(254, 255, 255);
+}
+.icon-send-2:before {
+  content: "\e926";
+  color: #feffff;
+}
+.icon-arrow-down:before {
+  content: "\e91e";
+}
+.icon-about-sunny:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-arrow-side-left:before {
+  content: "\e902";
+}
+.icon-arrow-side-right:before {
+  content: "\e903";
+}
+.icon-arrow-single-big:before {
+  content: "\e904";
+  color: #ff6883;
+}
+.icon-book-blog:before {
+  content: "\e905";
+}
+.icon-calendar:before {
+  content: "\e906";
+  color: #0b68df;
+}
+.icon-call:before {
+  content: "\e907";
+}
+.icon-call-contact:before {
+  content: "\e908";
+}
+.icon-coach:before {
+  content: "\e909";
+}
+.icon-course:before {
+  content: "\e90a";
+}
+.icon-date:before {
+  content: "\e90b";
+  color: #fff;
+}
+.icon-faq:before {
+  content: "\e90c";
+}
+.icon-hamberger:before {
+  content: "\e90d";
+}
+.icon-home:before {
+  content: "\e90e";
+}
+.icon-insta:before {
+  content: "\e90f";
+  color: #feffff;
+}
+.icon-like:before {
+  content: "\e910";
+}
+.icon-message:before {
+  content: "\e911";
+}
+.icon-minus:before {
+  content: "\e912";
+}
+.icon-note-book:before {
+  content: "\e914";
+  color: #fff;
+}
+.icon-play:before {
+  content: "\e915";
+}
+.icon-plus:before {
+  content: "\e916";
+}
+.icon-reply:before {
+  content: "\e918";
+}
+.icon-send:before {
+  content: "\e919";
+  color: #feffff;
+}
+.icon-shop:before {
+  content: "\e91a";
+}
+.icon-telegram:before {
+  content: "\e91b";
+}
+.icon-user:before {
+  content: "\e91c";
+}
+.icon-whatsapp:before {
+  content: "\e91d";
+  color: #19b4e5;
+}
+.icon-close:before {
+  content: "\e917";
+}
+.icon-search:before {
+  content: "\e913";
+}

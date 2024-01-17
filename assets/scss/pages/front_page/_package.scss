@@ -1,0 +1,13 @@
+@use '../../utils/index' as *;
+.package-slider {
+  overflow: hidden;
+  @media (min-width: 1024px) {
+    .package-content {
+      display: flex;
+      gap: 1rem;
+      .swiper-slide {
+        flex: 1;
+      }
+    }
+  }
+}

@@ -63,7 +63,7 @@ $mapLinks = get_field( 'contact_map_repeater', $frontId );
 					<?php endif; ?>
 				</div>
 				<div class="images">
-					<img src="<?= get_stylesheet_directory_uri() ?>/imgs/social.png" alt="shocial">
+					<img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/social.png' ?>" alt="shocial">
 				</div>
 			</div>
 
@@ -121,7 +121,7 @@ $mapLinks = get_field( 'contact_map_repeater', $frontId );
 					<?php endif; ?>
 				</div>
 				<div class="images">
-					<img src="<?= get_stylesheet_directory_uri() ?>/imgs/phone.png" alt="tel">
+					<img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/phone.png' ?>" alt="tel">
 				</div>
 			</div>
 			<div class="contact-box-wide">
@@ -152,7 +152,7 @@ $mapLinks = get_field( 'contact_map_repeater', $frontId );
 					</div>
 				</div>
 				<div class="images">
-					<img src="<?= get_stylesheet_directory_uri() ?>/imgs/map.png" alt="map">
+					<img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/map.png' ?>" alt="map">
 				</div>
 			</div>
 		</div>

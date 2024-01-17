@@ -1,0 +1,602 @@
+@use '../utils/index' as *;
+
+header {
+  padding-block-start: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 98;
+  left: 0;
+  right: 0;
+  position: absolute;
+
+  @include sudo(before, 100%, 100%, $white-1) {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .header-large-view {
+    @include flex(row, space-between);
+    width: 100%;
+
+    > * {
+      @include flex(row, center, center);
+      gap: 0.75rem;
+    }
+
+    .menu-column {
+      .custom-logo-link {
+        @include flex(row, center, center);
+
+        img {
+          width: 2.75rem;
+          height: 2.75rem;
+        }
+      }
+
+      a {
+        color: $gray-1;
+        transition: all 0.3s ease-in-out;
+      }
+
+      ul.menu {
+        @include flex(row, center, center);
+
+        gap: 1rem;
+
+        li.menu-item-has-children {
+          @include flex();
+          @include sudo_icon('after', '\e91e', $gray-1, $size: 1.5rem) {
+            transition: all 0.3s ease-in-out;
+          }
+          position: relative;
+
+          ul.sub-menu {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            z-index: 9999;
+            border-radius: 1.25rem;
+            border: 1px solid $gray-2;
+            background: $white-1;
+            padding: 1rem;
+            transition: all 0.3s ease-in-out;
+            min-width: 11rem;
+            gap: 0.5rem;
+            top: 100%;
+            right: 0;
+
+            > li {
+              width: 100%;
+
+              a {
+                color: inherit;
+                white-space: nowrap;
+                width: 100%;
+                padding: 0.25rem 0.5rem;
+                display: flex;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                  border-radius: 0.75rem;
+                  background: $blue-3;
+                }
+              }
+            }
+
+            &:hover {
+              opacity: 1;
+              visibility: visible;
+              display: block;
+            }
+          }
+
+          &:hover {
+            &::after {
+              color: $blue-2;
+              transform: rotate(180deg);
+            }
+
+            ul.sub-menu {
+              opacity: 1;
+              visibility: visible;
+              display: block;
+            }
+          }
+        }
+
+        li > a {
+          @include font_style(body);
+          color: $gray-1;
+
+          &:hover {
+            color: $black-1;
+          }
+        }
+
+        li.active,
+        li.current-menu-item:not(.faq-menu) {
+          a {
+            color: $black-1;
+          }
+        }
+      }
+    }
+
+    .btn-column {
+      @include flex(row, center, center);
+
+      gap: 0.5rem;
+
+      .profile-btn {
+        i {
+          @include flex(row, center, center);
+          padding: 0.5rem 1.25rem;
+          color: $black-1;
+          border-radius: 2.5rem;
+          border: 1px solid $black-1;
+          transition: all 0.3s ease-in-out;
+          background: $white-2;
+          box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+          height: 3.25rem;
+
+          &::before {
+            color: $black-1;
+            transition: inherit;
+          }
+
+          &:hover {
+            background: $black-1;
+            color: $white-1;
+
+            &::before {
+              color: $white-1;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1160px) {
+      display: none;
+    }
+  }
+
+  .header-mobile {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+
+    .hamburger-menu {
+      padding: 0.31rem;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: 0.625rem;
+      border: 0.5px solid $gray-2;
+      background: $white-1;
+
+      i {
+        top: 1rem;
+        left: 2rem;
+        height: 43px;
+        cursor: pointer;
+        z-index: 998;
+
+        &::before {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .hamburger-menu.with-back-btn {
+      margin-inline-start: 3rem;
+    }
+
+    .mobile-menu {
+      visibility: hidden;
+      opacity: 0;
+      top: 0;
+      right: 0;
+      max-width: 100%;
+      height: 100%;
+      width: 100%;
+      background: rgba(26, 33, 42, 0.7);
+      position: fixed;
+      z-index: 99;
+      transition: all 0.5s ease-in-out;
+      padding: 1rem;
+
+      .mobile-menu-detail {
+        border-radius: 1.75rem;
+        background: $white-1;
+        padding: 1.25rem 1rem;
+        visibility: hidden;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        -webkit-transition: -webkit-transform 0.4s ease-in-out,
+          visibility 0s 0.4s;
+        transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+
+        .logo-close-btn {
+          @include flex();
+          justify-content: space-between;
+          margin-bottom: 2.5rem;
+
+          .form-search.menu-mobile {
+            form {
+              width: 2.125rem;
+              padding: 0.25rem;
+              height: 2.125rem;
+              border-radius: 0.625rem;
+              transition: all 0.3s ease-in-out;
+
+              div {
+                input {
+                  opacity: 0;
+                }
+
+                i {
+                  &:before {
+                    color: $black-1;
+                    font-size: 1.5rem;
+                  }
+                }
+              }
+            }
+          }
+
+          .icon-close-div {
+            @include flex(row, center, center);
+
+            i {
+              @include flex(row, center, center);
+              color: $pink-1;
+              width: 2.75rem;
+              height: 2.75rem;
+              border-radius: 1rem;
+              background: $white_2;
+              box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+              padding: 0.62rem;
+
+              &::before {
+                font-size: 1.5rem;
+              }
+            }
+          }
+
+          .mobile-logo-contain {
+            a {
+              @include flex(row, center, center);
+
+              img {
+                width: 2.75rem;
+                height: 2.75rem;
+              }
+            }
+          }
+        }
+
+        .menu-contain {
+          ul.menu {
+            @include flex(column, center, start);
+            width: 100%;
+            gap: 1rem;
+            margin-bottom: 1.62rem;
+            position: relative;
+
+            > li {
+              @include font_style(body-small);
+              @include flex();
+              gap: 0.88rem;
+              margin-inline-start: 0.63rem;
+
+              &::before {
+                font-size: 1.5rem;
+                border: 1px transparent;
+                padding: 0.25rem;
+                transition: all 1s ease-in-out;
+              }
+
+              > a {
+                @include flex(row, start, start);
+                color: $black-1;
+                gap: 0.25rem;
+                white-space: nowrap;
+
+                &:hover {
+                  &::before {
+                    transition: all 0.3s ease-in-out;
+                  }
+                }
+              }
+            }
+
+            li.menu-item-has-children {
+              overflow: hidden;
+              display: inline-block;
+
+              &:before {
+                transition: all 1s ease-in-out;
+                position: absolute;
+              }
+
+              > a {
+                display: inline-block;
+                padding-inline-start: 2.5rem;
+                @include sudo_icon('after', '\e91e', $gray-1, 1.5rem) {
+                  position: absolute;
+                  margin-right: 0.3rem;
+                }
+              }
+
+              ul {
+                @include sudo(before, 2px, 0, $gray-2) {
+                  position: absolute;
+                  right: 1rem;
+                  top: 10px;
+                  transition: all 0.5s ease-in-out;
+                }
+                display: block;
+                position: relative;
+                width: auto;
+                height: 0;
+                transition: height 0.5s ease-in-out;
+                overflow: hidden;
+
+                > li {
+                  @include flex(column, center, center);
+                  width: 100%;
+                  padding: 1rem 0;
+                  position: relative;
+
+                  @include sudo('before', 4rem, 2px, $gray-2) {
+                    display: block;
+                    margin-left: 1rem;
+                    position: absolute;
+                    right: 1rem;
+                  }
+
+                  a {
+                    @include text_overflow(1);
+                    color: $gray-1;
+                    font-size: 1rem;
+                    width: 100%;
+                    padding-right: 6rem;
+                    position: relative;
+
+                    @include sudo('before', 0.62rem, 0.62rem, $gray-2) {
+                      border-radius: 50%;
+                      position: absolute;
+                      right: 5rem;
+                      top: 7px;
+                    }
+                  }
+
+                  &:last-of-type {
+                    padding-bottom: 0;
+                  }
+                }
+              }
+            }
+
+            li.menu-item-has-children.active-menu {
+              position: relative;
+              display: inline-block;
+
+              &::before {
+                border: 1px solid $gray-2;
+                border-radius: 0.625rem;
+                position: absolute;
+              }
+
+              > a {
+                &::after {
+                  color: $blue-2;
+                  transform: rotate(180deg);
+                }
+              }
+
+              ul {
+                &:before {
+                  height: $heightMenu;
+                }
+              }
+            }
+
+            // Icon styles
+            li.home-menu {
+              @include sudo_icon('before', '\e90e', $black-1, '1.5rem');
+            }
+
+            li.course-menu {
+              @include sudo_icon('before', '\e90a', $black-1, '1.5rem');
+            }
+
+            li.blog-menu {
+              @include sudo_icon('before', '\e905', $black-1, '1.5rem');
+            }
+
+            li.shop-menu {
+              @include sudo_icon('before', '\e91a', $black-1, '1.5rem');
+            }
+
+            li.coach-menu {
+              @include sudo_icon('before', '\e909', $black-1, '1.5rem');
+            }
+
+            li.faq-menu {
+              @include sudo_icon('before', '\e90c', $black-1, '1.5rem');
+            }
+
+            li.about-menu {
+              @include sudo_icon('before', '\e900', $black-1, '1.5rem');
+            }
+
+            li.contact-menu {
+              @include sudo_icon('before', '\e908', $black-1, '1.5rem');
+            }
+          }
+        }
+      }
+    }
+
+    .mobile-menu.display-menu {
+      visibility: visible;
+      opacity: 1;
+
+      .mobile-menu-detail.active {
+        visibility: visible;
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        -webkit-transition: -webkit-transform 0.4s ease-in-out;
+        transition: transform 0.4s ease-in-out;
+        max-height: 90%;
+        overflow-y: auto;
+
+        .menu-contain ul.menu li.active-2 > a {
+          &:after {
+            transform: rotate(180deg);
+            transition: all 0.3s ease-in-out;
+            content: '\e91e';
+            font-family: 'icomoon' !important;
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+
+    .sotioal-row {
+      @include flex(row, center, center);
+      gap: 0.88rem;
+
+      a {
+        @include flex(column, center, center);
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: $black-1;
+        border-radius: 0.25rem;
+        box-shadow: 0px 4px 10px 0px rgba(26, 33, 42, 0.2);
+
+        i {
+          display: flex;
+
+          &::before {
+            font-size: 1.2rem;
+            color: $white-1;
+          }
+        }
+      }
+    }
+
+    .logo-menu-con {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+
+      .mobile-logo-contain img {
+        display: block;
+        max-width: 40px;
+        max-height: 40px;
+      }
+    }
+
+    @media (max-width: 1160px) {
+      @include flex(row, space-between, center);
+      width: 100%;
+    }
+  }
+}
+
+header.header-white {
+  padding-block-end: 1rem;
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+
+  &:before {
+    transform: translateY(0);
+  }
+
+  .header-large-view {
+    .btn-column {
+      .profile-btn {
+        i {
+          &:before {
+            color: $black-1;
+          }
+        }
+
+        &:hover {
+          i:before {
+            color: $white-1;
+          }
+        }
+      }
+    }
+  }
+}
+
+header.custom-z-index {
+  z-index: 999;
+}
+
+.sing-up-btn {
+  @include btn($icon: true);
+}
+
+body.first-slide {
+  header {
+    .header-large-view {
+      ul.menu {
+        li > a {
+          color: $white-1;
+        }
+        li.menu-item-has-children::after {
+          color: $white-1;
+        }
+      }
+
+      .menu-column ul.menu li.menu-item-has-children > a {
+        &::after {
+          color: $white-1;
+        }
+      }
+
+      .btn-column {
+        .form-search {
+          form {
+            div {
+              color: $white-1;
+
+              i {
+                &::before {
+                  color: $white-1;
+                }
+              }
+
+              input {
+                &::placeholder {
+                  color: inherit;
+                }
+
+                &:focus {
+                  &::placeholder {
+                    color: $black-1 !important;
+                  }
+                }
+
+                color: $white-1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

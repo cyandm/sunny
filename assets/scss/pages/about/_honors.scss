@@ -1,0 +1,50 @@
+@use '../../utils/index' as *;
+
+.honors {
+  .title {
+    h2 {
+      @include font_style(h1);
+      margin-block: 4rem 2rem;
+    }
+  }
+
+  .swiper-slide {
+    position: relative;
+    .img-wrapper {
+      position: relative;
+      @include sudo(
+        after,
+        100%,
+        100%,
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 59.84%,
+          rgba(0, 0, 0, 0.57) 80.45%,
+          rgba(0, 0, 0, 0.9) 100%
+        )
+      ) {
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.5;
+        object-fit: contain;
+        border-radius: 24px;
+      }
+    }
+
+    .caption {
+      position: absolute;
+      right: 1.5rem;
+      bottom: 1rem;
+      z-index: 1000;
+      @include font_style(h3);
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,227 @@
+@use "../../utils//index" as *;
+
+.custom-checkout {
+  form.woocommerce-checkout {
+    @include flex(row, center, start);
+    flex-wrap: wrap;
+    gap: 1rem;
+    > * {
+      flex: 1;
+      padding: 1.5rem;
+      border-radius: 2.5rem;
+      border: 1px solid $gray-2;
+      background: $white-1;
+    }
+    .woocommerce-NoticeGroup {
+      flex: 1 1 100%;
+    }
+    .col2-set {
+      @include flex(column);
+
+      gap: 1rem;
+      > * {
+        width: 100%;
+      }
+      .woocommerce-billing-fields__field-wrapper,
+      .woocommerce-shipping-fields__field-wrapper {
+        @include flex();
+        flex-wrap: wrap;
+        gap: 0.88rem;
+        .form-row {
+          flex: 1 1 46%;
+          label {
+            @include font_style(body);
+            color: $black-1;
+            margin-bottom: 0.25rem;
+          }
+          input,
+          textarea {
+            @include flex();
+            @include font_style(body);
+            border-radius: 2.5rem;
+            border: 1px solid $gray-2;
+            background: $white-2;
+            padding: 0.5rem 1rem 0.5rem 1.25rem;
+            height: 3.2rem;
+            color: $gray-1;
+          }
+
+          .selection {
+            @include font_style(body);
+            @include flex();
+            border-radius: 2.5rem !important;
+            background: $white-2 !important;
+            color: $gray-1 !important;
+            padding: 0.5rem 1rem 0.5rem 1.25rem;
+            border: 1px solid $gray-2;
+            height: 3.2rem;
+
+            .select2-selection__arrow {
+              display: none;
+            }
+
+            .select2-selection--single {
+              width: 100%;
+              border: none;
+              text-align: right;
+              background: $white-2;
+
+              .select2-selection__rendered {
+                color: $gray-2 !important;
+              }
+            }
+          }
+        }
+        #billing_phone_field {
+          flex: 1 1 100%;
+        }
+        #billing_email_field {
+          order: 2;
+        }
+        #billing_postcode_field {
+          order: 1;
+        }
+      }
+    }
+    .woocommerce-checkout-review-order {
+      @include flex(column);
+
+      .shop_table {
+        @include flex();
+        width: 100;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-block-end: 1.5rem;
+        > * {
+          flex: 1 1 46%;
+        }
+        .product-blocks {
+          @include flex();
+          gap: 1rem;
+          flex-wrap: wrap;
+          margin-block-end: 1rem;
+          flex: 1 1 100%;
+
+          > * {
+            @include flex(column);
+            flex: 1;
+            border-radius: 1.25rem;
+            border: 1px solid $gray-2;
+            background: $white-1;
+          }
+          .cart_item {
+            @include flex(column);
+            gap: 0.5rem;
+            width: 11rem;
+            padding: 0.62rem;
+            max-width: 11rem;
+
+            img {
+              width: 6.0625rem;
+              height: 6.3125rem;
+            }
+            .product-name {
+              @include flex();
+              @include font_style(h3);
+              width: 11rem;
+              overflow: hidden;
+            }
+          }
+        }
+        .custom-product-total {
+          @include flex();
+          flex-wrap: wrap;
+        }
+        strong {
+          text-align: left;
+        }
+      }
+
+      #payment {
+        background: $white-1;
+        border-radius: 1.5rem;
+        border: 1px solid $gray-2;
+        .place-order {
+          button {
+            @include btn();
+          }
+        }
+      }
+    }
+  }
+
+  .checkout_coupon {
+  }
+  @media (max-width: 992px) {
+    padding-block-start: 3rem;
+    form.woocommerce-checkout {
+      flex-direction: column;
+
+      .col2-set {
+        .woocommerce-billing-fields__field-wrapper,
+        .woocommerce-shipping-fields__field-wrapper {
+          @include flex();
+
+          .form-row {
+            flex: 1 1 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+#billing_address_2_field,
+#shipping_address_2 {
+  margin-top: 40px;
+  @media (width<=768px) {
+    margin-top: unset;
+  }
+}
+
+.woocommerce form .form-row .input-checkbox,
+#ship-to-different-address-checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid $gray-1;
+  background: $white-1;
+  margin-left: 0.5rem;
+}
+form.checkout_coupon {
+  @include flex(row, space-between);
+  border-radius: 2.5rem !important;
+  border: 1px solid $gray-2 !important;
+  background: $white-1 !important;
+  padding: 0 !important;
+  padding-right: 1.5rem !important;
+  height: 3.5rem;
+  position: relative;
+  .form-row-last {
+    text-align: left;
+    position: absolute;
+    left: 0;
+
+    button {
+      @include btn();
+    }
+  }
+  .form-row {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.woocommerce {
+  .woocommerce-order {
+    padding-block-start: 2rem;
+    h2 {
+      margin-bottom: 1rem;
+      .woocommerce-customer-details > address,
+      table.shop_table {
+        border-radius: 1.5rem;
+        padding: 1rem;
+      }
+    }
+  }
+}

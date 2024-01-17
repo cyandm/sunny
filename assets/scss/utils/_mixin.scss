@@ -1,0 +1,255 @@
+@use './variables' as *;
+
+/* Typography**************/
+@mixin base_font() {
+  color: $black-1;
+  font-family: $font;
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-variant-ligatures: discretionary-ligatures;
+  font-feature-settings: 'ss01' 1, 'salt' 0;
+}
+
+@mixin font_style($type) {
+  @include base_font();
+  @if ($type == 't1') {
+    font-size: 8.75rem;
+    font-weight: 700;
+  }
+  @if ($type == 'h1') {
+    font-size: 2.75rem;
+  }
+
+  @if ($type == 'h2') {
+    font-size: 1.5rem;
+  }
+
+  @if ($type == 'h3') {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  @if ($type == 'h4') {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  @if ($type== 'body-small') {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  @if ($type == 'body') {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2.25rem;
+  }
+
+  @if ($type == 'body_b') {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2.25rem;
+  }
+
+  @if ($type == 'caption') {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+  }
+}
+
+// *****************************flex
+@mixin flex($dir: row, $justyfy: center, $align: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justyfy;
+  align-items: $align;
+}
+
+// ***************************** btn
+@mixin btn($icon: false, $side: false, $red: false) {
+  $padding: 0.5rem 1.5rem;
+  $border: 1px solid transparent;
+  $background: $yellow-1;
+  $color: $yellow-3;
+
+  @if ($icon) {
+    $padding: 0.5rem 1.25rem 0.5rem 1.5rem;
+    transition: all 0.3s ease-in-out;
+
+    @if ($side) {
+      $padding: 0.5rem 1.5rem 0.5rem 1.25rem;
+      $background: $white-1;
+    }
+  }
+
+  @include font_style('body');
+
+  padding: $padding;
+  border: $border;
+  background: $background;
+  color: $color;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  height: 3.2rem;
+  @if ($red== false) {
+    &:hover {
+      border: 1px solid $black-1;
+      background: $white-1;
+      color: $black-1;
+      @if ($icon) {
+        border: 1px solid $black-1;
+        i {
+          &::before {
+            color: $black-1;
+          }
+        }
+      }
+    }
+  } @else {
+    border: 1px solid transparent;
+    background: $yellow-1;
+    color: $yellow-3;
+    box-shadow: none;
+
+    &:hover {
+      border: 1px solid $yellow-3;
+      background: $white-1;
+      color: $yellow-3;
+    }
+  }
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+  @content;
+}
+
+//**************************** search form
+@mixin search_form($hasIcon: true, $IconSide: right) {
+  form {
+    @include flex();
+    width: 13.125rem;
+    padding: 0.5rem 1rem 0.5rem 1.25rem;
+    border-radius: 2.5rem;
+    border: 1px solid $gray-2;
+    background: $white-2;
+    gap: 0;
+    transition: all 0.3s ease-in-out;
+    height: 3.2rem;
+
+    > div {
+      @include flex(row, start);
+
+      @if ($hasIcon) {
+        gap: 0.25rem;
+      }
+
+      @if ($hasIcon) {
+        @if ($IconSide == 'left') {
+          justify-content: space-between;
+          i {
+            &::before {
+              color: $blue-2;
+            }
+          }
+        }
+      }
+      align-items: center;
+      width: 100%;
+
+      i {
+        @include flex();
+
+        &::before {
+          font-size: 1.5rem;
+          color: $gray-1;
+        }
+      }
+
+      input {
+        background: $white-2;
+        @include font_style(body);
+        color: $gray-1;
+        transition: all 0.3s;
+        &::placeholder,
+        :-moz-placeholder {
+          transition: inherit;
+        }
+        &:focus {
+          ::placeholder,
+          :-moz-placeholder {
+            color: $black-1 !important;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      border: 1px solid $black-1;
+
+      div {
+        input {
+          color: $black-1;
+          &::-webkit-input-placeholder {
+            color: $black-1 !important;
+          }
+        }
+
+        /* Firefox < 19 */
+        input:-moz-placeholder {
+          color: $black-1 !important;
+        }
+
+        /* Firefox > 19 */
+        input::-moz-placeholder {
+          color: $black-1 !important;
+        }
+
+        /* Internet Explorer 10 */
+        input:-ms-input-placeholder {
+          color: $black-1 !important;
+        }
+      }
+    }
+  }
+}
+
+//********************* before after mixin
+@mixin sudo_icon($sudo, $content: '', $color, $size: 1.5rem) {
+  &::#{$sudo} {
+    content: $content;
+    font-family: 'icomoon';
+    color: $color;
+    font-size: $size;
+    transition: all 0.3s ease-in-out;
+    @content;
+  }
+}
+
+@mixin sudo($sudo, $width, $height, $background) {
+  &::#{$sudo} {
+    content: ' ';
+    width: $width;
+    height: $height;
+    background: $background;
+    @content;
+  }
+}
+
+@mixin text_overflow($line) {
+  // overflow: hidden;
+  // display: -webkit-box;
+  // -webkit-box-orient: vertical;
+  // line-clamp: $line;
+  // -webkit-line-clamp: $line;
+  // white-space: pre-wrap;
+  // text-align: justify;
+}

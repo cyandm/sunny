@@ -1,0 +1,51 @@
+@use '../utils/index' as *;
+
+.panels-navigation {
+  display: flex;
+  gap: 0.38rem;
+  margin-block-end: 1.12rem;
+  transition: all 0.3s ease-in-out;
+  .next {
+    i {
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  i {
+    @include flex();
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: $yellow-1;
+    border-radius: 50%;
+    border: 1px transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &::before {
+      font-size: 1.5rem;
+      color: $yellow-3;
+    }
+    &:hover {
+      background-color: $yellow-3;
+      border: 1px solid $yellow-1;
+      &::before {
+        color: $yellow-1;
+      }
+    }
+  }
+}
+.height-slide {
+  @include flex(column, space-around, start);
+
+  > * {
+    width: 100%;
+  }
+
+  @media (max-width: 992px) {
+    height: 100% !important;
+  }
+
+  @media (min-width: 992px) and (max-width: 1400px) {
+    justify-content: start;
+  }
+}
