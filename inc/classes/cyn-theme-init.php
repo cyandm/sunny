@@ -18,6 +18,7 @@ if (!class_exists('cyn-theme-init')) {
 			add_filter('upload_mimes', [$this, 'cyn_mime_types']);
 			add_action('wp_head', [$this, 'cyn_script_head']);
 			add_action('wp_body_open', [$this, 'cyn_script_body']);
+			add_action('wp_head', [$this, 'cyn_enqueue_head']);
 		}
 
 
@@ -109,6 +110,17 @@ if (!class_exists('cyn-theme-init')) {
 		{
 			$mimes['svg'] = 'image/svg+xml';
 			return $mimes;
+		}
+		public function cyn_enqueue_head()
+		{
+			echo "<script>";
+			echo "
+				var cyn_head_script = {
+					url: '" . admin_url('admin-ajax.php') . "',
+					nonce: '" . wp_create_nonce('ajax-nonce') . "'
+				}
+			";
+			echo "</script>";
 		}
 	}
 }

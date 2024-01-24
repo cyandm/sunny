@@ -253,3 +253,32 @@
   // white-space: pre-wrap;
   // text-align: justify;
 }
+
+@mixin max_line($line) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@mixin d_flex(
+  $dir: row,
+  $j_c: flex-start,
+  $a_i: flex-start,
+  $wrap: nowrap,
+  $even_column: false,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $j_c;
+  align-items: $a_i;
+  flex-wrap: $wrap;
+  gap: $gap;
+
+  @if ($even_column) {
+    > * {
+      flex: 1;
+    }
+  }
+}

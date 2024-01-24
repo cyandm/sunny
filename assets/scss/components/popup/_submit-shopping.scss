@@ -1,0 +1,77 @@
+@use '../../utils/' as *;
+.popup-submit-shopping {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  overflow: hidden;
+  top: 0;
+  pointer-events: none;
+  z-index: 1000;
+  padding-inline: 1rem;
+  transition: all 0.4s ease-in-out;
+  @include d_flex(row, center, flex-start);
+  .background-popup {
+    background: rgba($black-1, 80%);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+  .form-submit-shopping-wrapper {
+    transform: translateY(-10rem);
+    background-color: $white-1;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    transition: all 0.7s ease-in-out;
+    z-index: 10;
+    margin-top: 5rem;
+    .title-and-close-btn {
+      @include d_flex(row, space-between, center, nowrap, false, 1rem);
+      margin-bottom: 1.5rem;
+    }
+    .form-submit-shopping {
+      @include d_flex(column, flex-start, stretch, nowrap, false, 2rem);
+      .input-group-popup-wrapper {
+        @include d_flex($wrap: wrap, $even-column: true, $gap: 1.5rem);
+        .from-field {
+          label,
+          input {
+            width: 100%;
+          }
+          @include d_flex(column, $gap: 0.3rem);
+          span {
+            color: $pink-1;
+          }
+        }
+        .tel-information {
+          flex-basis: 100%;
+          input {
+            direction: rtl;
+          }
+        }
+      }
+      .btn-submit-component {
+        align-self: flex-end;
+      }
+    }
+  }
+  &[active] {
+    opacity: 1;
+    pointer-events: all;
+    .form-submit-shopping-wrapper {
+      transform: translateY(0);
+    }
+  }
+  @media (max-width: 600px) {
+    .form-submit-shopping-wrapper {
+      width: 100%;
+      .form-submit-shopping {
+        .input-group-popup-wrapper {
+          flex-direction: column;
+          .from-field {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

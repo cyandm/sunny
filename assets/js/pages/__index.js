@@ -8,3 +8,4 @@ import './coach-overview.js';
 import './contact.js';
 import './single-blog.js';
 import './video-overview.js';
+import './single-product.js';

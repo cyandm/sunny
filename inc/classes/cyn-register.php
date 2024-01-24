@@ -1,15 +1,19 @@
 <?php
 
-if ( ! class_exists( 'cyn_register' ) ) {
-	class cyn_register {
-		function __construct() {
-			add_action( 'init', [ $this, 'cyn_post_type_register' ] );
-			add_action( 'init', [ $this, 'cyn_register_admin_menu' ] );
+if (!class_exists('cyn_register')) {
+	class cyn_register
+	{
+		function __construct()
+		{
+			add_action('init', [$this, 'cyn_post_type_register']);
+			add_action('init', [$this, 'cyn_register_admin_menu']);
 		}
 
 		//**************************************** add menu in admin menu
-		public function cyn_register_admin_menu() {
-			function cyn_add_custom_menus() {
+		public function cyn_register_admin_menu()
+		{
+			function cyn_add_custom_menus()
+			{
 
 				add_menu_page(
 					'فرم ها',
@@ -34,19 +38,22 @@ if ( ! class_exists( 'cyn_register' ) ) {
 				);
 			}
 
-			function custom_form_callback() {
+			function custom_form_callback()
+			{
 
 				echo '<h2>فرم ها</h2>';
 			}
 
 
-			add_action( 'admin_menu', 'cyn_add_custom_menus' );
+			add_action('admin_menu', 'cyn_add_custom_menus');
 		}
 
 		//************************************ register post type
-		public function cyn_post_type_register() {
-			function cyn_register_post_type( $name, $slug, $icon, $menu ) {
-				$labels = [ 
+		public function cyn_post_type_register()
+		{
+			function cyn_register_post_type($name, $slug, $icon, $menu)
+			{
+				$labels = [
 					'name' => $name,
 					'singular_name' => $name,
 					'menu_name' => $name,
@@ -62,49 +69,54 @@ if ( ! class_exists( 'cyn_register' ) ) {
 					'not_found_in_trash' => $name . ' پیدا نشد'
 				];
 
-				$args = [ 
+				$args = [
 					'labels' => $labels,
 					'public' => true,
 					'publicly_queryable' => true,
 					'show_ui' => true,
 					'show_in_menu' => $menu,
 					'query_var' => true,
-					'rewrite' => [ 'slug' => $slug ],
+					'rewrite' => ['slug' => $slug],
 					'exclude_from_search' => false,
 					'has_archive' => true,
 					'hierarchical' => false,
 					'menu_order' => true,
 					//                    'menu_position' = null,
 					'menu_icon' => $icon,
-					'supports' => [ 'title', 'editor', 'thumbnail', 'page-attributes' ],
+					'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
 
 				];
 
 
-				register_post_type( $slug, $args );
+				register_post_type($slug, $args);
 			}
 
 
 			/***************************** register faq post type */
-			cyn_register_post_type( "سوالات متداول", "faq", "dashicons-editor-help", true );
+			cyn_register_post_type("سوالات متداول", "faq", "dashicons-editor-help", true);
 
 			/***************************** register Testimonial post type */
-			cyn_register_post_type( "نظرهمراه", "testimonial", "dashicons-format-quote", 'edit-comments.php' );
+			cyn_register_post_type("نظرهمراه", "testimonial", "dashicons-format-quote", 'edit-comments.php');
 
 			/***************************** register Course post type */
-			cyn_register_post_type( "دوره", "course", "dashicons-album", "custom_club_affairs_menu" );
+			cyn_register_post_type("دوره", "course", "dashicons-album", "custom_club_affairs_menu");
 
 			// **************************************register Coach post type
-			cyn_register_post_type( "مربی", "coach", "dashicons-businessman", "custom_club_affairs_menu" );
+			cyn_register_post_type("مربی", "coach", "dashicons-businessman", "custom_club_affairs_menu");
 
 			/***************************** register student post type */
-			cyn_register_post_type( "هنرجو", "student", "dashicons-id", "custom_club_affairs_menu" );
+			cyn_register_post_type("هنرجو", "student", "dashicons-id", "custom_club_affairs_menu");
 
 			//***************************** register contact form post type
-			cyn_register_post_type( " فرم تماس با ما", "contact_form", "dashicons-email-alt", "custom_form_menu" );
+			cyn_register_post_type(" فرم تماس با ما", "contact_form", "dashicons-email-alt", "custom_form_menu");
 
 			//***************************** register course form post type
-			cyn_register_post_type( "فرم ثبت نام ", "course_form", "dashicons-email-alt2", "custom_form_menu" );
+			cyn_register_post_type("فرم ثبت نام ", "course_form", "dashicons-email-alt2", "custom_form_menu");
+
+			//***************************** register shopping form post type
+			$post_type = "shopping_submit_form";
+			$GLOBALS["shopping_submit_form-post-type"] = $post_type;
+			cyn_register_post_type("فرم ثبت سفارش ", "shopping_submit_form", "dashicons-email-alt2", "custom_form_menu");
 		}
 	}
 }

@@ -1,0 +1,44 @@
+@use '../utils/' as *;
+.card-successful-notif {
+  opacity: 0;
+  padding-inline: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  .successful-notif {
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.625rem;
+    color: $white-1;
+    background-color: rgba($green-2, 64%);
+    border: 1px solid $green-2;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(7px);
+
+    .message {
+      @include font_style('body_b');
+      color: $white-1;
+    }
+    .btn-submit {
+      color: $white-1;
+      border-radius: 2.5rem;
+      padding: 0.5rem 1.5rem;
+      background: $green-4;
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 800px) {
+    width: 70%;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    .message {
+      @include font_style('body');
+      color: $white-1;
+    }
+  }
+}
