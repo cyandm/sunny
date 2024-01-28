@@ -2389,6 +2389,12 @@ button.swiper-pagination-bullet {
   top: 0;
   right: 0;
   width: 50%;
+  transition: all 0.7s ease-in-out;
+  transform: translateX(-20%);
+}
+.card-successful-notif.active {
+  transform: translateX(0);
+  opacity: 1;
 }
 .card-successful-notif .successful-notif {
   width: 100%;
@@ -2417,7 +2423,7 @@ button.swiper-pagination-bullet {
   line-height: 2.25rem;
   color: #feffff;
 }
-.card-successful-notif .successful-notif .btn-submit {
+.card-successful-notif .successful-notif .btn-close-notif {
   color: #feffff;
   border-radius: 2.5rem;
   padding: 0.5rem 1.5rem;
@@ -2560,6 +2566,40 @@ button.swiper-pagination-bullet {
 }
 .input-field-component:focus {
   border: 1px solid #ff6883;
+}
+
+.classes-card {
+  border: 1px solid #e8e9ea;
+  padding: 1.5rem;
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.classes-card h3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.classes-card .time-and-days {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  color: #0b68df;
+}
+.classes-card .class-coach {
+  color: #8c9094;
+}
+.classes-card .btn-submit-component {
+  width: 100%;
+  font-size: 1rem;
 }
 
 footer {
@@ -9713,6 +9753,166 @@ form.checkout_coupon .form-row {
   .video-page .coaches-video-section .video-row > * {
     flex: 1 1 100%;
   }
+}
+
+main.single-course-page .class-details-explain {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+}
+main.single-course-page .class-details-explain .class-thumbnail-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+}
+main.single-course-page .class-details-explain .class-thumbnail-group > * {
+  flex: 1;
+}
+main.single-course-page .class-details-explain .class-detail-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+}
+main.single-course-page .class-details-explain .class-detail-group > * {
+  flex: 1;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail {
+  border: 1px solid #e8e9ea;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property:not(:last-child) {
+  border-bottom: 1px solid #e8e9ea;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property > * {
+  flex: 1;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property.times-and-days .property-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property.times-and-days .property-value > * {
+  flex: 1;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property.times-and-days .property-value > div {
+  width: max-content;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .btn-wrapper {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  width: 100%;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .btn-wrapper .btn-submit-component {
+  width: 100%;
+}
+main.single-course-page .other-classes {
+  margin-top: 2rem;
+  width: 100%;
+}
+main.single-course-page .other-classes h2 {
+  margin-bottom: 1.5rem;
+}
+main.single-course-page .other-classes .classes-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+main.courses-page .course-container .btn-class-and-title {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+main.courses-page .course-container .btn-class-and-title > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+main.courses-page .course-container .class-categories {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-bottom: 1px solid #fff48d;
+}
+main.courses-page .course-container .class-categories .category-class {
+  border: 1px solid transparent;
+  border-radius: 2.5rem 2.5rem 0rem 0rem;
+  padding: 0.75rem 2rem 0.75rem 2rem;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+main.courses-page .course-container .class-categories .category-class:hover {
+  border: 1px solid #fff48d;
+  cursor: pointer;
+}
+main.courses-page .course-container .class-categories .category-class.active {
+  background-color: #fff48d;
+}
+main.courses-page .course-container .class-card-container {
+  --height: 10px;
+  height: var(--height);
+  position: relative;
+}
+main.courses-page .course-container .class-card-container .class-card-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: all 0.3s ease-in-out;
+}
+main.courses-page .course-container .class-card-container .class-card-wrapper.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
 }
 
 /*# sourceMappingURL=compiled.css.map */

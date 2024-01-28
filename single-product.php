@@ -43,7 +43,7 @@ function swiper_slider($images_slider)
     <?php get_template_part('/templates/components/notifications/successful');
     ?>
     <?php
-    get_template_part('/templates/components/popup/submit', 'shopping', ['product_id' => $product_id]);
+    get_template_part('/templates/components/popup/submit', 'shopping', ['id' => $product_id, 'type' => 'shopping']);
     ?>
     <?php get_template_part('/templates/components/back-btn'); ?>
 
@@ -137,68 +137,46 @@ function swiper_slider($images_slider)
 
         </div>
     </section>
-    <section class="favorite-products">
-        <p class="favorite-products__title">
-            شاید بپسندید
-        </p>
-        <div class="favorite-products__favorite_post-wrapper">
 
-            <?php
 
-            if ($favorite_products) {
-                echo '<h2>محصولات مرتبط</h2>';
-                echo '<ul class="products">';
+    <?php if ($favorite_products) : ?>
+        <section class="favorite-products">
+            <p class="favorite-products__title">شاید بپسندید</p>
+            <div class="favorite-products__favorite_post-wrapper">
 
-                foreach ($favorite_products as $favorite_product_id) {
+                <?php
+                foreach ($favorite_products as $favorite_product_id) :
                     $favorite_product = wc_get_product($favorite_product_id);
+                ?>
+                    <div class="cart-products-box">
 
-                    // نمایش لینک و عنوان محصول مرتبط
-                    echo '<li>';
-                    echo '<a href="' . esc_url(get_permalink($favorite_product_id)) . '">' . esc_html($favorite_product->get_name()) . '</a>';
-                    echo '</li>';
-                }
 
-                echo '</ul>';
-            } ?>
-            <div class="cart-products-box">
-                <h2 class="favorite-products__title">حلقه ریتمیک</h2>
-                <div class="favorite-products__img"><img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/pngwing6.png' ?>"></div>
-                <div class="btn-cart-custom">
-                    <div>خرید</div>
-                    <div>۲۵۰٫۰۰۰</div>
-                </div>
+                        <h2 class="favorite-products__title"><?= $favorite_product->get_name() ?></h2>
+                        <div class="favorite-products__img">
+                            <?php if (!empty(get_the_post_thumbnail())) {
+                                echo get_the_post_thumbnail($favorite_product_id);
+                            } else {
+                                printf(
+                                    '<img src="%s" alt="image-not-set" >',
+                                    get_stylesheet_directory_uri() . '/assets/imgs/placeholder.png'
+                                );
+                            } ?>
+                        </div>
+                        <div class="btn-cart-custom">
+                            <a href="<?= get_permalink($favorite_product_id) ?>">
+                                <div>خرید</div>
+                                <div><?= $favorite_product->get_price(); ?></div>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata() ?>
+
             </div>
 
-            <div class="cart-products-box">
-                <h2 class="favorite-products__title">روبان ریتمیک</h2>
-                <div class="favorite-products__img"><img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/pngwing10.png' ?>"></div>
-                <div class="btn-cart-custom">
-                    <div>خرید</div>
-                    <div>۲۵۰٫۰۰۰</div>
-                </div>
-            </div>
+        </section>
+    <?php endif; ?>
 
-            <div class="cart-products-box">
-                <h2 class="favorite-products__title">جاگلین کلاب</h2>
-                <div class="favorite-products__img"><img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/pngwing11.png' ?>"></div>
-                <div class="btn-cart-custom">
-                    <div>خرید</div>
-                    <div>۲۵۰٫۰۰۰</div>
-                </div>
-            </div>
-
-            <div class="cart-products-box">
-                <h2 class="favorite-products__title">روبان ریتمیک</h2>
-                <div class="favorite-products__img"><img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/pngwing12.png' ?>"></div>
-                <div class="btn-cart-custom">
-                    <div>خرید</div>
-                    <div>۲۵۰٫۰۰۰</div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
 </main>
 
 <?php get_footer(); ?>

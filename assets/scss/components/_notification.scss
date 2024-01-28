@@ -6,6 +6,12 @@
   top: 0;
   right: 0;
   width: 50%;
+  transition: all 0.7s ease-in-out;
+  transform: translateX(-20%);
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
   .successful-notif {
     width: 100%;
     display: flex;
@@ -23,7 +29,7 @@
       @include font_style('body_b');
       color: $white-1;
     }
-    .btn-submit {
+    .btn-close-notif {
       color: $white-1;
       border-radius: 2.5rem;
       padding: 0.5rem 1.5rem;

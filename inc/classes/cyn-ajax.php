@@ -226,8 +226,10 @@ if (!class_exists('cyn_ajax')) {
                 نام: " .  $dbData['user_name'] . "\n
                 نام خانوادگی: " . $dbData['user_last_name'] . "\n
                 شماره: " . $dbData['user_phone'] . " \n
-                محصول: " . $dbData['product'] . "
+                محصول: " . '<a href="' . get_permalink($dbData['product']) . '"> ' . get_the_title($dbData['product']) . '</a>'  . "
+                
             ";
+
             $new_post = array(
                 'post_type' => $GLOBALS["shopping_submit_form-post-type"],
                 'post_title' => $dbData['user_name'],

@@ -8,9 +8,9 @@ function objectifyFormArray(formArray) {
 jQuery(document).ready(($) => {
   const shoppingForm = $('#shopping-form');
   const shoppingFormInput = document.querySelectorAll('#shopping-form .data');
-
+  const popupShopping = document.getElementById('popupSubmitShopping');
   const shoppingFormSubmit = $('#shopping-form #shopping-form-submit');
-
+  const cardSuccessfulNotif = $('#cardSuccessfulNotif');
   $(shoppingForm).on('submit', (e) => {
     e.preventDefault();
 
@@ -30,10 +30,11 @@ jQuery(document).ready(($) => {
         shoppingFormInput.forEach((el) => {
           el.value = '';
         });
-        $(shoppingFormSubmit).text('ارسال شد');
+        $(popupShopping).removeAttr('active');
+
         setTimeout(() => {
-          $(shoppingFormSubmit).text('سفارش');
-        }, 1000);
+          $(cardSuccessfulNotif).addClass('active');
+        }, 500);
       },
       error: (err) => {
         console.error(err);

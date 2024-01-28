@@ -1,0 +1,58 @@
+@use '../utils/' as *;
+main.courses-page {
+  .course-container {
+    .btn-class-and-title {
+      margin-bottom: 2rem;
+
+      @include d_flex(row, flex-start, center, $gap: 2rem);
+
+      > div {
+        @include d_flex(row, center, center, $gap: 0.5rem);
+      }
+    }
+
+    .class-categories {
+      margin-bottom: 1rem;
+      @include d_flex(row, flex-start, center);
+      border-bottom: 1px solid $yellow-1;
+
+      .category-class {
+        border: 1px solid transparent;
+        border-radius: 2.5rem 2.5rem 0rem 0rem;
+        padding: 0.75rem 2rem 0.75rem 2rem;
+        transition: all 0.3s ease-in-out;
+        background-color: transparent;
+        @include d_flex(row, center, center);
+        &:hover {
+          border: 1px solid $yellow-1;
+          cursor: pointer;
+        }
+        &.active {
+          background-color: $yellow-1;
+        }
+      }
+    }
+    .class-card-container {
+      --height: 10px;
+      height: var(--height);
+      position: relative;
+      .class-card-wrapper {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+        gap: 1rem;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(50px);
+        transition: all 0.3s ease-in-out;
+        &.active {
+          opacity: 1;
+          pointer-events: all;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

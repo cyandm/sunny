@@ -6,7 +6,10 @@ if (!class_exists('cyn_register')) {
 		function __construct()
 		{
 			add_action('init', [$this, 'cyn_post_type_register']);
+			add_action('init', [$this, 'cyn_course_post_type']);
 			add_action('init', [$this, 'cyn_register_admin_menu']);
+			add_action('init', [$this, 'cyn_add_course_cat_taxonomy']);
+			add_action('init', [$this, 'cyn_add_tag_taxonomy']);
 		}
 
 		//**************************************** add menu in admin menu
@@ -91,7 +94,6 @@ if (!class_exists('cyn_register')) {
 				register_post_type($slug, $args);
 			}
 
-
 			/***************************** register faq post type */
 			cyn_register_post_type("سوالات متداول", "faq", "dashicons-editor-help", true);
 
@@ -99,7 +101,7 @@ if (!class_exists('cyn_register')) {
 			cyn_register_post_type("نظرهمراه", "testimonial", "dashicons-format-quote", 'edit-comments.php');
 
 			/***************************** register Course post type */
-			cyn_register_post_type("دوره", "course", "dashicons-album", "custom_club_affairs_menu");
+			//cyn_register_post_type("کلاس", "course", "dashicons-album", "custom_club_affairs_menu");
 
 			// **************************************register Coach post type
 			cyn_register_post_type("مربی", "coach", "dashicons-businessman", "custom_club_affairs_menu");
@@ -117,6 +119,80 @@ if (!class_exists('cyn_register')) {
 			$post_type = "shopping_submit_form";
 			$GLOBALS["shopping_submit_form-post-type"] = $post_type;
 			cyn_register_post_type("فرم ثبت سفارش ", "shopping_submit_form", "dashicons-email-alt2", "custom_form_menu");
+		}
+
+		function cyn_course_post_type()
+		{
+			$labels = [
+				'name' => 'کلاس ها',
+				'singular_name' => 'کلاس',
+				'menu_name' => ' کلاس ها',
+				'name_admin_bar' => 'کلاس',
+				'add_new' => 'افزودن ' . 'کلاس',
+				'add_new_item' => 'افزودن ' . 'کلاس' . ' جدید',
+				'new_item' => 'کلاس' . ' جدید',
+				'edit_item' => 'ویرایش ' . 'کلاس',
+				'view_item' => 'دیدن ' . 'کلاس',
+				'all_items' => 'همه ' . 'کلاس' . ' ها',
+				'search_items' => 'جستجو ' . 'کلاس',
+				'not_found' => 'کلاس' . ' پیدا نشد',
+				'not_found_in_trash' => 'کلاس' . ' پیدا نشد'
+			];
+
+			$args = [
+				'labels' => $labels,
+				'public' => true,
+				'publicly_queryable' => true,
+				'show_ui' => true,
+				'show_in_menu' => true,
+				'query_var' => true,
+				'rewrite' => ['slug' => 'course'],
+				'exclude_from_search' => false,
+				'has_archive' => true,
+				'hierarchical' => false,
+				'menu_order' => true,
+				//                    'menu_position' = null,
+				'menu_icon' => 'dashicons-buddicons-buddypress-logo',
+				'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
+
+			];
+
+
+			register_post_type('course', $args);
+		}
+		public function cyn_add_course_cat_taxonomy()
+		{
+			$labels = [
+				'name' => 'دسته بندی ها '
+			];
+
+			$args = [
+				'hierarchical' => true,
+				'labels' => $labels,
+				'show_ui' => true,
+				'show_admin_column' => true,
+				'query_var' => true,
+				'rewrite' => ['slug' => 'course-cat'],
+			];
+
+			register_taxonomy('course-cat', ['course'], $args);
+		}
+		public function cyn_add_tag_taxonomy()
+		{
+			$labels = [
+				'name' => 'سطوح کلاس '
+			];
+
+			$args = [
+				'hierarchical' => true,
+				'labels' => $labels,
+				'show_ui' => true,
+				'show_admin_column' => true,
+				'query_var' => true,
+				'rewrite' => ['slug' => 'course-tag'],
+			];
+
+			register_taxonomy('course-tag', ['course'], $args);
 		}
 	}
 }

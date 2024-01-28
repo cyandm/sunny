@@ -1,0 +1,55 @@
+@use '../utils/' as *;
+main.single-course-page {
+  .class-details-explain {
+    @include d_flex(column, flex-start, stretch, $gap: 1.5rem);
+    .class-thumbnail-group {
+      @include d_flex(row, space-between, center, nowrap, true, 1.25rem);
+    }
+    .class-detail-group {
+      @include d_flex(row, space-between, center, nowrap, true, 1.25rem);
+      .class-detail {
+        border: 1px solid $gray-2;
+        border-radius: 1.5rem;
+
+        @include d_flex(column, flex-start, stretch, $gap: 1.5rem);
+        .detail-group-wrapper {
+          .detail-property {
+            &:not(:last-child) {
+              border-bottom: 1px solid $gray-2;
+            }
+            padding: 1.5rem;
+            @include d_flex(row, space-between, center, nowrap, true, 1.25rem);
+            &.times-and-days {
+              .property-value {
+                @include d_flex(row, flex-end, center, nowrap, true, 0.5rem);
+                > div {
+                  width: max-content;
+                }
+              }
+            }
+          }
+        }
+        .btn-wrapper {
+          padding: 0 1.5rem 1.5rem 1.5rem;
+          width: 100%;
+          .btn-submit-component {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .other-classes {
+    margin-top: 2rem;
+    width: 100%;
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+    .classes-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+      gap: 1rem;
+      width: 100%;
+    }
+  }
+}

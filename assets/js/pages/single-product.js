@@ -6,6 +6,11 @@ const popupSubmitShopping = document.getElementById('popupSubmitShopping');
 const popupSubmitShoppingBGColor = document.querySelector(
   '#popupSubmitShopping .background-popup'
 );
+const btnCloseNotif = document.querySelector(
+  '#cardSuccessfulNotif .btn-close-notif'
+);
+const Notif = document.getElementById('cardSuccessfulNotif');
+
 const btnClosePopupShopping = document.getElementById('btnClosePopupShopping');
 
 if (popupSubmitShoppingHandler) {
@@ -27,6 +32,11 @@ if (btnClosePopupShopping) {
 if (popupSubmitShoppingBGColor) {
   popupSubmitShoppingBGColor.addEventListener('click', () => {
     popupSubmitShopping.removeAttribute('active');
+  });
+}
+if (btnCloseNotif) {
+  btnCloseNotif.addEventListener('click', () => {
+    Notif.classList.remove('active');
   });
 }
 

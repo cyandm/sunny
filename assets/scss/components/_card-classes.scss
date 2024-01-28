@@ -1,0 +1,22 @@
+@use '../utils/' as *;
+
+.classes-card {
+  border: 1px solid $gray-2;
+  padding: 1.5rem;
+  border-radius: 2.5rem;
+  @include d_flex(column, space-between, stretch, $gap: 1rem);
+  h3 {
+    @include max_line(1);
+  }
+  .time-and-days {
+    @include d_flex(row, space-between, center);
+    color: $blue-2;
+  }
+  .class-coach {
+    color: $gray-1;
+  }
+  .btn-submit-component {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

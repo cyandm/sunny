@@ -8517,7 +8517,9 @@
   jQuery(document).ready(($) => {
     const shoppingForm = $("#shopping-form");
     const shoppingFormInput = document.querySelectorAll("#shopping-form .data");
+    const popupShopping = document.getElementById("popupSubmitShopping");
     const shoppingFormSubmit = $("#shopping-form #shopping-form-submit");
+    const cardSuccessfulNotif = $("#cardSuccessfulNotif");
     $(shoppingForm).on("submit", (e) => {
       e.preventDefault();
       const formDataArray = $(shoppingForm).serializeArray();
@@ -8535,10 +8537,10 @@
           shoppingFormInput.forEach((el) => {
             el.value = "";
           });
-          $(shoppingFormSubmit).text("\u0627\u0631\u0633\u0627\u0644 \u0634\u062F");
+          $(popupShopping).removeAttr("active");
           setTimeout(() => {
-            $(shoppingFormSubmit).text("\u0633\u0641\u0627\u0631\u0634");
-          }, 1e3);
+            $(cardSuccessfulNotif).addClass("active");
+          }, 500);
         },
         error: (err) => {
           console.error(err);
@@ -13965,6 +13967,10 @@
   var popupSubmitShoppingBGColor = document.querySelector(
     "#popupSubmitShopping .background-popup"
   );
+  var btnCloseNotif = document.querySelector(
+    "#cardSuccessfulNotif .btn-close-notif"
+  );
+  var Notif = document.getElementById("cardSuccessfulNotif");
   var btnClosePopupShopping = document.getElementById("btnClosePopupShopping");
   if (popupSubmitShoppingHandler) {
     popupSubmitShoppingHandler.addEventListener("click", () => {
@@ -13985,6 +13991,11 @@
       popupSubmitShopping.removeAttribute("active");
     });
   }
+  if (btnCloseNotif) {
+    btnCloseNotif.addEventListener("click", () => {
+      Notif.classList.remove("active");
+    });
+  }
   var swiperThumbnail = new Swiper(".swiper-thumbnail-image", {
     modules: [freeMode],
     spaceBetween: 10,
@@ -14000,6 +14011,45 @@
       swiper: swiperThumbnail
     }
   });
+
+  // assets/js/pages/course.js
+  var catNameGroup = document.querySelectorAll(
+    ".class-categories .category-class"
+  );
+  var tabClasses = document.querySelectorAll(".class-card-wrapper");
+  var singleCourse = document.querySelector(".courses-page");
+  var setHeightClassContainer = () => {
+    if (singleCourse) {
+      const tabClass = document.querySelector(".class-card-wrapper.active");
+      const containerClassTabs = document.querySelector(".class-card-container");
+      containerClassTabs.style.setProperty(
+        "--height",
+        tabClass.offsetHeight + 10 + "px"
+      );
+    }
+  };
+  if (singleCourse) {
+    if (catNameGroup) {
+      catNameGroup.forEach((cat) => {
+        cat.addEventListener("click", () => {
+          catNameGroup.forEach((elGroup) => {
+            elGroup.classList.remove("active");
+          });
+          cat.classList.add("active");
+          if (tabClasses) {
+            tabClasses.forEach((tab) => {
+              tab.classList.remove("active");
+              if (tab.dataset.tab === cat.dataset.tab) {
+                tab.classList.add("active");
+              }
+            });
+          }
+          setHeightClassContainer();
+        });
+      });
+    }
+    setHeightClassContainer();
+  }
 
   // assets/js/modules/animation.js
   var arrowPath = document.getElementById("arrowPath");
