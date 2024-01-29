@@ -1,0 +1,64 @@
+@use '../utils/' as *;
+.ticker-section {
+  margin-block-start: 2rem;
+
+  .section-title-sub {
+    padding-inline-start: 2.5rem;
+    h2 {
+      @include font_style(h2);
+      @include text_overflow(1);
+      margin-block-end: 0.39rem;
+    }
+    span {
+      @include font_style(h3);
+      @include text_overflow(1);
+    }
+  }
+
+  .ticker {
+    overflow: hidden;
+    ul {
+      @include flex;
+
+      direction: ltr;
+      margin-block-start: 2rem;
+      gap: 2rem;
+      .ticker-items {
+        @include flex;
+
+        direction: ltr;
+        gap: 2rem;
+
+        li {
+          direction: rtl;
+          a {
+            @include flex;
+            gap: 0.37rem;
+            border-radius: 2.5rem;
+            background: #ff3d5a;
+            padding: 0.5rem 1.25rem 0.5rem 0.75rem;
+            span {
+              @include font_style(body_b);
+              color: $white-1;
+              white-space: nowrap;
+            }
+
+            i {
+              @include flex;
+              width: 3.4375rem;
+              height: 3.4375rem;
+              background: $white-1;
+              border-radius: 50%;
+              transform: rotate(180deg);
+
+              &::before {
+                font-size: 1.5rem;
+                color: $black-1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,49 @@
 @use '../utils/' as *;
 main.single-course-page {
+  margin-top: 1rem;
+  .container {
+    position: relative;
+  }
   .class-details-explain {
     @include d_flex(column, flex-start, stretch, $gap: 1.5rem);
     .class-thumbnail-group {
-      @include d_flex(row, space-between, center, nowrap, true, 1.25rem);
+      @include d_flex(row, space-between, stretch, nowrap, false, 1.25rem);
+      .class-thumbnail {
+        img {
+          max-height: 31rem;
+          border-radius: 2.5rem;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .thumbnail1 {
+        flex: 1;
+        img {
+          aspect-ratio: 4/3;
+        }
+      }
+      .thumbnail2 {
+        img {
+          aspect-ratio: 1/1;
+        }
+      }
+      @media (max-width: 1000px) {
+        > div {
+          flex: 1;
+        }
+      }
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
     }
     .class-detail-group {
       @include d_flex(row, space-between, center, nowrap, true, 1.25rem);
+      .class-description {
+        h2 {
+          margin-bottom: 0.75rem;
+        }
+      }
       .class-detail {
         border: 1px solid $gray-2;
         border-radius: 1.5rem;
@@ -19,9 +56,18 @@ main.single-course-page {
             }
             padding: 1.5rem;
             @include d_flex(row, space-between, center, nowrap, true, 1.25rem);
+            .property-name {
+              color: $gray-1;
+            }
+            .property-value {
+              text-align: end;
+              @include d_flex(row, flex-end, center, wrap, false, 0.5rem);
+            }
+            .price {
+              color: $blue-2;
+            }
             &.times-and-days {
               .property-value {
-                @include d_flex(row, flex-end, center, nowrap, true, 0.5rem);
                 > div {
                   width: max-content;
                 }
@@ -35,6 +81,16 @@ main.single-course-page {
           .btn-submit-component {
             width: 100%;
           }
+        }
+      }
+      @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: stretch;
+        .class-detail {
+          width: 100%;
+        }
+        .class-description {
+          width: 100%;
         }
       }
     }

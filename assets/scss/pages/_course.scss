@@ -2,12 +2,28 @@
 main.courses-page {
   .course-container {
     .btn-class-and-title {
-      margin-bottom: 2rem;
+      margin-block: 2rem;
 
-      @include d_flex(row, flex-start, center, $gap: 2rem);
+      @include d_flex(row, space-between, center, $gap: 1rem);
 
-      > div {
+      a {
+        background-color: $black-1;
+        color: $white-1;
+        border: 1px solid transparent;
         @include d_flex(row, center, center, $gap: 0.5rem);
+        transition: all 0.3s ease-in-out;
+        border-radius: 2.5rem;
+        padding: 0.5rem 1.5rem;
+        svg {
+          transform: translateY(-2px);
+          width: 1.5rem;
+        }
+        &:hover {
+          border: 1px solid $black-1;
+          color: $black-1;
+          background-color: transparent;
+          cursor: pointer;
+        }
       }
     }
 

@@ -149,11 +149,9 @@ function swiper_slider($images_slider)
                     $favorite_product = wc_get_product($favorite_product_id);
                 ?>
                     <div class="cart-products-box">
-
-
                         <h2 class="favorite-products__title"><?= $favorite_product->get_name() ?></h2>
                         <div class="favorite-products__img">
-                            <?php if (!empty(get_the_post_thumbnail())) {
+                            <?php if (!empty(get_the_post_thumbnail($favorite_product_id))) {
                                 echo get_the_post_thumbnail($favorite_product_id);
                             } else {
                                 printf(
@@ -165,7 +163,7 @@ function swiper_slider($images_slider)
                         <div class="btn-cart-custom">
                             <a href="<?= get_permalink($favorite_product_id) ?>">
                                 <div>خرید</div>
-                                <div><?= $favorite_product->get_price(); ?></div>
+                                <div><?= $favorite_product->get_price(); ?>تومان</div>
                             </a>
                         </div>
                     </div>

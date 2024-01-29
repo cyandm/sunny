@@ -2081,6 +2081,7 @@ button.swiper-pagination-bullet {
   font-feature-settings: "ss01" 1, "salt" 0;
   font-size: 1.25rem;
   font-weight: 500;
+  font-weight: bold;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -2516,6 +2517,7 @@ button.swiper-pagination-bullet {
   flex: 1;
 }
 .popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field {
+  min-width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2527,17 +2529,31 @@ button.swiper-pagination-bullet {
 .popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field input {
   width: 100%;
 }
+.popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field label[type=number],
+.popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field input[type=number] {
+  -moz-appearance: textfield;
+}
+.popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field label[type=number]::-webkit-outer-spin-button, .popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field label[type=number]::-webkit-inner-spin-button,
+.popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field input[type=number]::-webkit-outer-spin-button,
+.popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .from-field span {
   color: #ff6883;
 }
 .popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .tel-information {
-  flex-basis: 100%;
+  min-width: 100%;
+}
+.popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .tel-information.in-class-form {
+  min-width: 45%;
 }
 .popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .input-group-popup-wrapper .tel-information input {
   direction: rtl;
 }
 .popup-submit-shopping .form-submit-shopping-wrapper .form-submit-shopping .btn-submit-component {
   align-self: flex-end;
+  font-size: 1rem;
 }
 .popup-submit-shopping[active] {
   opacity: 1;
@@ -2600,6 +2616,130 @@ button.swiper-pagination-bullet {
 .classes-card .btn-submit-component {
   width: 100%;
   font-size: 1rem;
+}
+
+.tag-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #feffff;
+}
+.tag-wrapper > div {
+  padding: 0rem 0.75rem;
+  border-radius: 0.5rem;
+}
+.tag-wrapper .red {
+  background-color: red;
+}
+.tag-wrapper .purple {
+  background-color: #cc39f1;
+}
+.tag-wrapper .blue {
+  background-color: #5fa8eb;
+}
+.tag-wrapper .green {
+  background-color: #73e46a;
+}
+.tag-wrapper .orange {
+  background-color: #f39629;
+}
+
+.ticker-section {
+  margin-block-start: 2rem;
+}
+.ticker-section .section-title-sub {
+  padding-inline-start: 2.5rem;
+}
+.ticker-section .section-title-sub h2 {
+  color: #1a212a;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-variant-ligatures: discretionary-ligatures;
+  font-feature-settings: "ss01" 1, "salt" 0;
+  font-size: 1.5rem;
+  margin-block-end: 0.39rem;
+}
+.ticker-section .section-title-sub span {
+  color: #1a212a;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-variant-ligatures: discretionary-ligatures;
+  font-feature-settings: "ss01" 1, "salt" 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.ticker-section .ticker {
+  overflow: hidden;
+}
+.ticker-section .ticker ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  direction: ltr;
+  margin-block-start: 2rem;
+  gap: 2rem;
+}
+.ticker-section .ticker ul .ticker-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  direction: ltr;
+  gap: 2rem;
+}
+.ticker-section .ticker ul .ticker-items li {
+  direction: rtl;
+}
+.ticker-section .ticker ul .ticker-items li a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.37rem;
+  border-radius: 2.5rem;
+  background: #ff3d5a;
+  padding: 0.5rem 1.25rem 0.5rem 0.75rem;
+}
+.ticker-section .ticker ul .ticker-items li a span {
+  color: #1a212a;
+  font-family: "peyda";
+  font-size: 8.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-variant-ligatures: discretionary-ligatures;
+  font-feature-settings: "ss01" 1, "salt" 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  color: #feffff;
+  white-space: nowrap;
+}
+.ticker-section .ticker ul .ticker-items li a i {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 3.4375rem;
+  height: 3.4375rem;
+  background: #feffff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+.ticker-section .ticker ul .ticker-items li a i::before {
+  font-size: 1.5rem;
+  color: #1a212a;
 }
 
 footer {
@@ -9606,9 +9746,11 @@ form.checkout_coupon .form-row {
   line-height: normal;
   font-variant-ligatures: discretionary-ligatures;
   font-feature-settings: "ss01" 1, "salt" 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 1rem;
-  margin-top: 2.75rem;
+  margin-top: 1rem;
 }
 .single-product .favorite-products__favorite_post-wrapper {
   display: grid;
@@ -9755,6 +9897,12 @@ form.checkout_coupon .form-row {
   }
 }
 
+main.single-course-page {
+  margin-top: 1rem;
+}
+main.single-course-page .container {
+  position: relative;
+}
 main.single-course-page .class-details-explain {
   display: flex;
   flex-direction: column;
@@ -9767,12 +9915,35 @@ main.single-course-page .class-details-explain .class-thumbnail-group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: nowrap;
   gap: 1.25rem;
 }
-main.single-course-page .class-details-explain .class-thumbnail-group > * {
+main.single-course-page .class-details-explain .class-thumbnail-group .class-thumbnail img {
+  max-height: 31rem;
+  border-radius: 2.5rem;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+main.single-course-page .class-details-explain .class-thumbnail-group .thumbnail1 {
   flex: 1;
+}
+main.single-course-page .class-details-explain .class-thumbnail-group .thumbnail1 img {
+  aspect-ratio: 4/3;
+}
+main.single-course-page .class-details-explain .class-thumbnail-group .thumbnail2 img {
+  aspect-ratio: 1/1;
+}
+@media (max-width: 1000px) {
+  main.single-course-page .class-details-explain .class-thumbnail-group > div {
+    flex: 1;
+  }
+}
+@media (max-width: 768px) {
+  main.single-course-page .class-details-explain .class-thumbnail-group {
+    flex-direction: column;
+  }
 }
 main.single-course-page .class-details-explain .class-detail-group {
   display: flex;
@@ -9784,6 +9955,9 @@ main.single-course-page .class-details-explain .class-detail-group {
 }
 main.single-course-page .class-details-explain .class-detail-group > * {
   flex: 1;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-description h2 {
+  margin-bottom: 0.75rem;
 }
 main.single-course-page .class-details-explain .class-detail-group .class-detail {
   border: 1px solid #e8e9ea;
@@ -9810,16 +9984,20 @@ main.single-course-page .class-details-explain .class-detail-group .class-detail
 main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property > * {
   flex: 1;
 }
-main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property.times-and-days .property-value {
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property .property-name {
+  color: #8c9094;
+}
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property .property-value {
+  text-align: end;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
-main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property.times-and-days .property-value > * {
-  flex: 1;
+main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property .price {
+  color: #0b68df;
 }
 main.single-course-page .class-details-explain .class-detail-group .class-detail .detail-group-wrapper .detail-property.times-and-days .property-value > div {
   width: max-content;
@@ -9830,6 +10008,18 @@ main.single-course-page .class-details-explain .class-detail-group .class-detail
 }
 main.single-course-page .class-details-explain .class-detail-group .class-detail .btn-wrapper .btn-submit-component {
   width: 100%;
+}
+@media (max-width: 800px) {
+  main.single-course-page .class-details-explain .class-detail-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  main.single-course-page .class-details-explain .class-detail-group .class-detail {
+    width: 100%;
+  }
+  main.single-course-page .class-details-explain .class-detail-group .class-description {
+    width: 100%;
+  }
 }
 main.single-course-page .other-classes {
   margin-top: 2rem;
@@ -9846,21 +10036,37 @@ main.single-course-page .other-classes .classes-wrapper {
 }
 
 main.courses-page .course-container .btn-class-and-title {
-  margin-bottom: 2rem;
+  margin-block: 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 2rem;
+  gap: 1rem;
 }
-main.courses-page .course-container .btn-class-and-title > div {
+main.courses-page .course-container .btn-class-and-title a {
+  background-color: #1a212a;
+  color: #feffff;
+  border: 1px solid transparent;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2.5rem;
+  padding: 0.5rem 1.5rem;
+}
+main.courses-page .course-container .btn-class-and-title a svg {
+  transform: translateY(-2px);
+  width: 1.5rem;
+}
+main.courses-page .course-container .btn-class-and-title a:hover {
+  border: 1px solid #1a212a;
+  color: #1a212a;
+  background-color: transparent;
+  cursor: pointer;
 }
 main.courses-page .course-container .class-categories {
   margin-bottom: 1rem;

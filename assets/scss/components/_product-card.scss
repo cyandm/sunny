@@ -10,7 +10,8 @@
   gap: 0.62rem;
   width: 100%;
   h2 {
-    @include font_style(h3);
+    @include font_style('h3');
+    font-weight: bold;
     @include max_line(1);
     order: -1;
   }

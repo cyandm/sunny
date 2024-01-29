@@ -21,166 +21,49 @@
   var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
   // assets/js/pages/course/course-form.js
-  var courseForms = document.querySelectorAll(".send-course-form");
-  if (courseForms) {
-    courseForms.forEach((courseForm, index) => {
-      courseForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        console.log("base form");
-        console.log(e.target);
-        let submitForm = e.target.querySelector("button");
-        console.log(submitForm);
-        submitForm.disabled = false;
-        let successMessage = courseForm.parentElement.querySelector("#success_message");
-        let failMessage = courseForm.parentElement.querySelector("#fail_message");
-        successMessage.innerHTML = "";
-        failMessage.innerHTML = "";
-        let allData = [];
-        e.target.querySelectorAll("input").forEach((element) => {
-          allData[element.getAttribute("name")] = element.value;
-        });
-        console.log(allData);
-        let errors = [];
-        Object.entries(allData).forEach(([key, value]) => {
-          const fieldName = (fieldName2) => {
-            if (fieldName2 === "name") {
-              return "\u0646\u0627\u0645 ";
-            }
-            if (fieldName2 === "last_name") {
-              return "\u0646\u0627\u0645 \u062E\u0627\u0646\u0648\u0627\u062F\u06AF\u06CC ";
-            }
-            if (fieldName2 === "phone") {
-              return "\u0634\u0645\u0627\u0631\u0647 \u062A\u0645\u0627\u0633 ";
-            }
-            if (fieldName2 === "date") {
-              return " \u062A\u0627\u0631\u06CC\u062E \u062A\u0648\u0644\u062F";
-            }
-            if (fieldName2 === "course_id") {
-              return " \u0634\u0645\u0627\u0631\u0647 \u062F\u0648\u0631\u0647";
-            }
-          };
-          const sanitizeInput = (input) => {
-            const symbolsPattern = /[\!\@\#\$\%\^\&\*\)\(\+\=\<\>\{\}\[\]\:\;\'\"\|\~\`\_\-]/;
-            if (input.match(symbolsPattern)) {
-              return "\u0644\u0637\u0641\u0627 " + fieldName(key) + " \u0645\u0646\u0627\u0633\u0628 \u0648\u0627\u0631\u062F \u06A9\u0646\u06CC\u062F ";
-            }
-          };
-          const checkMobile = (tel) => {
-            const mobilePattern = /^(\+98|0)?9\d{9}$/;
-            if (!tel.match(mobilePattern)) {
-              return "\u0644\u0637\u0641\u0627 \u0634\u0645\u0627\u0631\u0647 \u062A\u0644\u0641\u0646 \u0648\u0627\u0631\u062F \u06A9\u0646\u06CC\u062F ";
-            }
-          };
-          const checkDate = (date) => {
-            const datePattern = /^(13\d{2}|14\d{2}|15\d{2}|16\d{2}|17\d{2}|18\d{2}|19\d{2}|20\d{2})\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])$/;
-            if (!date.match(datePattern)) {
-              return "\u0644\u0637\u0641\u0627 \u062A\u0627\u0631\u06CC\u062E \u0631\u0627 \u0628\u0647 \u0641\u0631\u0645\u062A \u0635\u062D\u06CC\u062D \u0648\u0627\u0631\u062F \u06A9\u0646\u06CC\u062F (\u0645\u062B\u0627\u0644: 1385/07/11).";
-            }
-          };
-          const integer = (id) => {
-            const isInteger = Number.isInteger(parseInt(id));
-            if (!isInteger) {
-              return "\u0644\u0637\u0641\u0627 \u0634\u0645\u0627\u0631\u0647 \u062F\u0648\u0631\u0647 \u0631\u0627 \u0648\u0627\u0631\u062F \u06A9\u0646\u06CC\u062F";
-            }
-          };
-          if (value === "") {
-            let error = fieldName(key) + "  \u0636\u0631\u0648\u0631\u06CC \u0627\u0633\u062A ";
-            errors.push(error);
-          }
-          if (!value == "" && key != "phone" && key != "date" && key != "course_id") {
-            errors.push(sanitizeInput(value));
-          }
-          if (key == "date" && !value == "") {
-            errors.push(checkDate(value));
-          }
-          if (key == "phone" && !value == "") {
-            errors.push(checkMobile(value));
-          }
-          if (key == "course_id" && !value == "") {
-            errors.push(integer(value));
-          }
-        });
-        const isArrayEmptyOrAllUndefined = (array) => {
-          console.log(array);
-          if (array.length === 0) {
-            return true;
-          }
-          for (const element of array) {
-            if (element !== void 0) {
-              return false;
-            }
-          }
-          return true;
-        };
-        if (isArrayEmptyOrAllUndefined(errors)) {
-          const xhr = new XMLHttpRequest();
-          xhr.open("POST", ajax_var.url, true);
-          xhr.setRequestHeader(
-            "Content-Type",
-            "application/x-www-form-urlencoded"
-          );
-          console.log("before on ready state");
-          xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-              const response = JSON.parse(xhr.responseText);
-              if (response.success === true) {
-                console.log(response);
-                response.data;
-                submitForm.disabled = false;
-                Array.from(courseForm.querySelectorAll("input")).forEach(
-                  (element) => {
-                    element.value = "";
-                    element.disabled = true;
-                    element.classList.add("disabled");
-                    submitForm.style.display = "none";
-                  }
-                );
-                successMessage.innerHTML = response.message + '<div class="form-message-close"><i class="icon-close"></i></div>';
-                successMessage.innerHTML += "</ul>";
-                successMessage.classList.add("show");
-              }
-            }
-          };
-          const formData = new URLSearchParams();
-          formData.append("action", "course_form");
-          formData.append("_nonce", ajax_var.nonce);
-          for (const [key, value] of Object.entries(allData)) {
-            formData.append(key, value);
-          }
-          xhr.send(formData);
-        } else {
-          submitForm.disabled = false;
-          failMessage.innerHTML = "";
-          failMessage.innerHTML = '<ul><div class="form-message-close"><i  class="icon-close"></i></div></ul>';
-          errors.forEach((v) => {
-            if (v !== void 0) {
-              failMessage.querySelector("ul").innerHTML += "<li> - " + v + "</li>";
-            }
+  function objectifyFormArray(formArray) {
+    var returnArray = {};
+    for (var i = 0; i < formArray.length; i++) {
+      returnArray[formArray[i]["name"]] = formArray[i]["value"];
+    }
+    return returnArray;
+  }
+  jQuery(document).ready(($) => {
+    const courseForm = $("#shopping-form");
+    const courseFormInput = document.querySelectorAll("#shopping-form .data");
+    const popupCourse = document.getElementById("popupSubmitShopping");
+    const courseFormSubmit = $("#shopping-form #shopping-form-submit");
+    const cardSuccessful = $("#cardSuccessfulNotif");
+    $(courseForm).on("submit", (e) => {
+      e.preventDefault();
+      const formDataArray = $(courseForm).serializeArray();
+      const formData = objectifyFormArray(formDataArray);
+      $.ajax({
+        url: cyn_head_script.url,
+        type: "post",
+        data: {
+          action: "cyn_course_form",
+          _nonce: cyn_head_script.nonce,
+          data: formData
+        },
+        success: (res) => {
+          console.warn(res);
+          courseFormInput.forEach((el) => {
+            el.value = "";
           });
-          failMessage.innerHTML += "</ul>";
-          failMessage.classList.add("show");
+          $(popupCourse).removeAttr("active");
+          setTimeout(() => {
+            $(cardSuccessful).addClass("active");
+          }, 500);
+        },
+        error: (err) => {
+          console.error(err);
+          $(courseFormSubmit).removeClass("pending");
+          $(courseFormSubmit).addClass("error");
         }
-        const formMessageCloseButtons = document.querySelectorAll(
-          ".form-message-close"
-        );
-        formMessageCloseButtons.forEach((button) => {
-          button.addEventListener("click", (e2) => {
-            e2.preventDefault();
-            closeToaster();
-          });
-        });
-        document.body.addEventListener("click", (e2) => {
-          closeToaster();
-        });
-        const closeToaster = () => {
-          const formMessages = document.querySelectorAll(".form-message");
-          formMessages.forEach((message) => {
-            message.classList.remove("show");
-          });
-        };
       });
     });
-  }
+  });
 
   // node_modules/gsap/gsap-core.js
   function _assertThisInitialized(self) {
@@ -8487,9 +8370,9 @@
   };
 
   // assets/js/pages/course/course-overview.js
-  var courseForms2 = document.querySelectorAll(".course-form-block");
-  if (courseForms2) {
-    courseForms2.forEach((courseForm) => {
+  var courseForms = document.querySelectorAll(".course-form-block");
+  if (courseForms) {
+    courseForms.forEach((courseForm) => {
       const showForm = courseForm.querySelector(".show-form");
       const formCode = courseForm.querySelector(".course-form");
       const detailsCourse = courseForm.querySelector(".details-course");
@@ -8507,7 +8390,7 @@
   }
 
   // assets/js/pages/course/shopping-from.js
-  function objectifyFormArray(formArray) {
+  function objectifyFormArray2(formArray) {
     var returnArray = {};
     for (var i = 0; i < formArray.length; i++) {
       returnArray[formArray[i]["name"]] = formArray[i]["value"];
@@ -8523,7 +8406,7 @@
     $(shoppingForm).on("submit", (e) => {
       e.preventDefault();
       const formDataArray = $(shoppingForm).serializeArray();
-      const formData = objectifyFormArray(formDataArray);
+      const formData = objectifyFormArray2(formDataArray);
       $.ajax({
         url: cyn_head_script.url,
         type: "post",
@@ -14029,6 +13912,9 @@
     }
   };
   if (singleCourse) {
+    window.addEventListener("resize", () => {
+      setHeightClassContainer();
+    });
     if (catNameGroup) {
       catNameGroup.forEach((cat) => {
         cat.addEventListener("click", () => {
@@ -14049,6 +13935,42 @@
       });
     }
     setHeightClassContainer();
+  }
+
+  // assets/js/pages/single-course.js
+  var popupSubmitCourseHandler = document.getElementById("btnRegister");
+  var popupSubmitCourse = document.getElementById("popupSubmitShopping");
+  var popupSubmitCourseBGColor = document.querySelector(
+    "#popupSubmitShopping .background-popup"
+  );
+  var btnCloseNotification = document.querySelector(
+    "#cardSuccessfulNotif .btn-close-notif"
+  );
+  var notification = document.getElementById("cardSuccessfulNotif");
+  var btnClosePopupClose = document.getElementById("btnClosePopupShopping");
+  if (popupSubmitCourseHandler) {
+    popupSubmitCourseHandler.addEventListener("click", () => {
+      if (!popupSubmitCourseHandler.hasAttribute("disabled")) {
+        if (popupSubmitCourse) {
+          popupSubmitCourse.setAttribute("active", "");
+        }
+      }
+    });
+  }
+  if (btnClosePopupClose) {
+    btnClosePopupClose.addEventListener("click", () => {
+      btnClosePopupClose.removeAttribute("active");
+    });
+  }
+  if (popupSubmitCourseBGColor) {
+    popupSubmitCourseBGColor.addEventListener("click", () => {
+      popupSubmitCourse.removeAttribute("active");
+    });
+  }
+  if (btnCloseNotification) {
+    btnCloseNotification.addEventListener("click", () => {
+      notification.classList.remove("active");
+    });
   }
 
   // assets/js/modules/animation.js

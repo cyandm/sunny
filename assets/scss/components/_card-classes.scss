@@ -20,3 +20,27 @@
     font-size: 1rem;
   }
 }
+.tag-wrapper {
+  @include d_flex(row, flex-start, center, wrap, $gap: 0.5rem);
+  font-size: 0.75rem;
+  color: $white-1;
+  > div {
+    padding: 0rem 0.75rem;
+    border-radius: 0.5rem;
+  }
+  .red {
+    background-color: red;
+  }
+  .purple {
+    background-color: #cc39f1;
+  }
+  .blue {
+    background-color: #5fa8eb;
+  }
+  .green {
+    background-color: #73e46a;
+  }
+  .orange {
+    background-color: #f39629;
+  }
+}

@@ -33,17 +33,30 @@
       .input-group-popup-wrapper {
         @include d_flex($wrap: wrap, $even-column: true, $gap: 1.5rem);
         .from-field {
+          min-width: 45%;
           label,
           input {
             width: 100%;
+            &[type='number'] {
+              &::-webkit-outer-spin-button,
+              &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+              -moz-appearance: textfield;
+            }
           }
+
           @include d_flex(column, $gap: 0.3rem);
           span {
             color: $pink-1;
           }
         }
         .tel-information {
-          flex-basis: 100%;
+          min-width: 100%;
+          &.in-class-form {
+            min-width: 45%;
+          }
           input {
             direction: rtl;
           }
@@ -51,6 +64,7 @@
       }
       .btn-submit-component {
         align-self: flex-end;
+        font-size: 1rem;
       }
     }
   }

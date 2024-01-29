@@ -18,6 +18,9 @@ const setHeightClassContainer = () => {
 };
 
 if (singleCourse) {
+  window.addEventListener('resize', () => {
+    setHeightClassContainer();
+  });
   if (catNameGroup) {
     catNameGroup.forEach((cat) => {
       cat.addEventListener('click', () => {

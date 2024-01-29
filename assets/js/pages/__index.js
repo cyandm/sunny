@@ -10,3 +10,4 @@ import './single-blog.js';
 import './video-overview.js';
 import './single-product.js';
 import './course.js';
+import './single-course.js';

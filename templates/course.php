@@ -20,11 +20,14 @@ $class_PDF = null !== get_field('classes_pdf', $page_id) ? get_field('classes_pd
 $cats = get_categories([
 	'taxonomy' => 'course-cat',
 	'hide_empty' => true,
+
 ]);
 
 
 $classes = new WP_Query([
 	'post_type' => 'course',
+	'post_status' => 'publish',
+	'posts_per_page' => -1,
 ]);
 
 $cats_name_group = [];
@@ -75,73 +78,7 @@ foreach ($cats as $cat) {
 		</div>
 
 	</div>
-	<div class="ticker-section">
-		<?php // if ($tickerTitle) : 
-		?>
-			<div class="section-title-sub">
-				<h2>
-					<?php // echo $tickerTitle 
-					?>
-				</h2>
-				<span>
-					<?php // echo $tickerSubTitle 
-					?>
-				</span>
-			</div>
-		<?php // endif;
-
-		//if ($tickers) : 
-		?>
-
-			<div class="ticker ticker-container">
-				<ul class="ticker-custom">
-					<?php // foreach ($tickers as $ticker) :
-					//if ($ticker['label'] != '') : 
-					?>
-							<li>
-								<a href="<?php // echo $ticker['link'] 
-											?>"><span>
-										<?php // echo $ticker['label'] 
-										?>
-									</span><i class="icon-arrow-right"></i></a>
-							</li>
-							<?php
-							//endif;
-							//endforeach; 
-							?>
-					<?php //foreach ($tickers as $ticker) :
-					//if ($ticker['label'] != '') : 
-					?>
-							<li>
-								<a href="<?php // echo $ticker['link'] 
-											?>"><span>
-										<?php // echo $ticker['label'] 
-										?>
-									</span><i class="icon-arrow-right"></i></a>
-							</li>
-							<?php
-							//endif;
-							//endforeach; 
-							?>
-					<?php //foreach ($tickers as $ticker) :
-					//if ($ticker['label'] != '') : 
-					?>
-							<li>
-								<a href="<?php // echo $ticker['link'] 
-											?>"><span>
-										<?php // echo $ticker['label'] 
-										?>
-									</span><i class="icon-arrow-right"></i></a>
-							</li>
-							<?php
-							//endif;
-							//endforeach; 
-							?>
-				</ul>
-			</div>
-		<?php //endif; 
-		?>
-	</div>
+	
 </main> -->
 
 <main class="courses-page">
@@ -149,7 +86,9 @@ foreach ($cats as $cat) {
 		<div class="btn-class-and-title">
 			<h2>همه کلاس ها</h2>
 			<a href="<?php if (!empty($class_PDF)) echo $class_PDF;
-						else echo '#' ?>" <?php if (!empty($class_PDF)) echo 'download' ?> class="btn-submit-component"><i class="icon-book-blog"></i> دانلود pdf کلاس ها </a>
+						else echo '#' ?>" <?php if (!empty($class_PDF)) echo 'download' ?>>
+				<?php get_template_part('templates/components/svg/icon', 'download'); ?>
+				pdf کلاس ها </a>
 		</div>
 		<?php if (count(array_filter($cats_name_group)) > 0) : ?>
 			<div class="class-categories">
@@ -189,9 +128,10 @@ foreach ($cats as $cat) {
 			</div>
 
 		<?php endif ?>
-		<div></div>
-	</section>
 
+
+	</section>
+	<?php get_template_part('templates/components/ticker') ?>
 </main>
 
 <?php get_footer(); ?>

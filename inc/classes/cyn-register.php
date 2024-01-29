@@ -113,6 +113,8 @@ if (!class_exists('cyn_register')) {
 			cyn_register_post_type(" فرم تماس با ما", "contact_form", "dashicons-email-alt", "custom_form_menu");
 
 			//***************************** register course form post type
+			$post_type_form_course = "course_form";
+			$GLOBALS["course_submit_form-post-type"] = $post_type_form_course;
 			cyn_register_post_type("فرم ثبت نام ", "course_form", "dashicons-email-alt2", "custom_form_menu");
 
 			//***************************** register shopping form post type
@@ -184,7 +186,7 @@ if (!class_exists('cyn_register')) {
 			];
 
 			$args = [
-				'hierarchical' => true,
+				'hierarchical' => false,
 				'labels' => $labels,
 				'show_ui' => true,
 				'show_admin_column' => true,
