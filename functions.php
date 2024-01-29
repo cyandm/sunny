@@ -13,7 +13,7 @@ require_once(__DIR__ . '/inc/classes/cyn-woocommerce.php');
 
 
 /***************************** Instance Classes */
-$cyn_theme_init = new cyn_theme_init(false, '2.3.0');
+$cyn_theme_init = new cyn_theme_init(false, '2.4.0');
 $cyn_acf = new cyn_acf();
 $cyn_register = new cyn_register();
 $cyn_general = new cyn_general();
