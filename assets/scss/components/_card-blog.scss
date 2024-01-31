@@ -1,7 +1,7 @@
-@use "../utils/index" as *;
+@use '../utils/index' as *;
 
 .cart-blog {
-  @include flex(column, $align: start);
+  @include flex(column, $justyfy: flex-start, $align: stretch);
 
   padding: 1rem 1rem 1.62rem 1rem;
   gap: 1rem;
@@ -44,11 +44,9 @@
       @include font_style(h3);
       @include text_overflow(2);
       margin-bottom: 0.38rem;
-      height: 3.5rem;
       transition: all 0.3s ease-in-out;
 
       @media (max-width: 768px) {
-        max-height: 2rem;
         @include text_overflow(1);
       }
     }
@@ -75,12 +73,6 @@
     color: $gray-1;
     justify-content: space-between;
     width: 100%;
-
-    .study-time {
-    }
-
-    .blog-date {
-    }
   }
 
   &:hover {
@@ -91,25 +83,9 @@
     }
   }
 
-
   @media (min-width: 992px) and (max-width: 1400px) {
     .img-cart-blog a {
-
       height: 14rem;
     }
-
   }
-
-
-
-
 }
-
-
-
-//.cart-blog.active {
-//  .content-cart-blog,
-//  .info-cart-blog {
-//    padding: 0rem 1.25rem;
-//  }
-//}
